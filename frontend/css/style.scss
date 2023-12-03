@@ -8,7 +8,7 @@
 
 /*slick.cssの読み込み
 ---------------------------------------------------------------------------*/
-@import url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
+// @import url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
 
 /*Font Awesomeの読み込み
 ---------------------------------------------------------------------------*/
@@ -825,6 +825,32 @@ ul.menu a::before {
 	cursor: pointer;
 	filter: brightness(1.1);/*少しだけ明るくする*/
 	color: #fff;			/*文字色*/
+}
+
+.security-portal-btn {
+    width: 100%;
+    line-height: 48px;
+    background: -moz-linear-gradient(top,  #cb796b 0%, #af3521 8%, #a82812 11%, #a52812 22%, #8f2310 57%, #87210f 76%, #7e1f0e 86%, #7e1f0e 89%, #832b1c 92%, #ab7167 100%);
+    background: -webkit-linear-gradient(top,  #cb796b 0%,#af3521 8%,#a82812 11%,#a52812 22%,#8f2310 57%,#87210f 76%,#7e1f0e 86%,#7e1f0e 89%,#832b1c 92%,#ab7167 100%);
+    background: linear-gradient(to bottom,  #cb796b 0%,#af3521 8%,#a82812 11%,#a52812 22%,#8f2310 57%,#87210f 76%,#7e1f0e 86%,#7e1f0e 89%,#832b1c 92%,#ab7167 100%);
+    border-radius: 6px 6px 6px 6px;
+
+    a {
+      display: block;
+      width: 100%;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-align: center;
+      vertical-align: middle;
+      letter-spacing: 4px;
+      text-decoration: none;
+    }
+
+    &:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
 }
 
 /*list、list2内で使う場合のボタン*/
