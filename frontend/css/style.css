@@ -114,7 +114,10 @@ header #logo {
 
 /*メニュー１個あたりの設定*/
 #menubar ul li {
-	background: linear-gradient(#4ca845, #27951e 49%, #1b8913 50%);		/*グラデーション*/
+  background: #2c7046;
+  background: -moz-linear-gradient(top,  #2c7046 0%, #2c7046 49%, #28653f 50%, #2c7046 100%);
+  background: -webkit-linear-gradient(top,  #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
+  background: linear-gradient(to bottom,  #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
 }
 #menubar a {
 	display: block;text-decoration: none;
@@ -122,9 +125,12 @@ header #logo {
 	color: #fff;		/*文字色*/
 	padding: 14px 0;	/*上下、左右へのメニュー内の余白*/
 }
-/*マウスオン時*/
+
 #menubar ul li:hover {
-	background: #111;
+  background: #165B30;
+  background: -moz-linear-gradient(top,  #165B30 0%, #165B30 49%, #1a512f 50%, #165B30 100%);
+  background: -webkit-linear-gradient(top,  #165B30 0%,#165B30 49%,#1a512f 50%,#165B30 100%);
+  background: linear-gradient(to bottom,  #165B30 0%,#165B30 49%,#1a512f 50%,#165B30 100%); 
 }
 
 /*装飾文字（英語表記）*/
