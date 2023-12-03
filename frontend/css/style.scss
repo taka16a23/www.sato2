@@ -109,13 +109,11 @@ header #logo {
   padding: 0;
   
   li {
-    background: #2c7046;
     background: -moz-linear-gradient(top,  #2c7046 0%, #2c7046 49%, #28653f 50%, #2c7046 100%);
     background: -webkit-linear-gradient(top,  #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
     background: linear-gradient(to bottom,  #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
 
     &:hover {
-      background: #165B30;
       background: -moz-linear-gradient(top,  #165B30 0%, #165B30 49%, #1a512f 50%, #165B30 100%);
       background: -webkit-linear-gradient(top,  #165B30 0%,#165B30 49%,#1a512f 50%,#165B30 100%);
       background: linear-gradient(to bottom,  #165B30 0%,#165B30 49%,#1a512f 50%,#165B30 100%);
@@ -124,7 +122,9 @@ header #logo {
 
   a {
 	  display: block;text-decoration: none;
+    font-weight: bold;
 	  text-align: center;
+    letter-spacing: 4px;
 	  color: #fff;
 	  padding: 14px 0;
   }  
@@ -226,26 +226,38 @@ a.ddmenu::before {
 /*contentsブロック設定（main、sub、sideを囲むブロック）
 ---------------------------------------------------------------------------*/
 #contents {
-	margin: 3%;		/*外側に空けるスペース*/
+	margin: 2.5%;
 }
 
 
 /*mainブロック設定
 ---------------------------------------------------------------------------*/
 main {
-	order: 0;		/*表示させる順番。main、sub、sideそれぞれに指定しており、数字の「小さな順」に上から並びます。*/
+	order: 0;
 	margin-bottom: 40px;
+
+  h2 {
+	  background: -moz-linear-gradient(to bottom, #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
+	  background: -webkit-linear-gradient(to bottom, #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
+	  background: linear-gradient(to bottom, #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
+	  color: #fff;
+	  font-size: 1.2rem;
+	  font-weight: normal;
+	  padding: 5px 20px;
+	  margin: 0 0 20px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    a {
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
-/*mainブロック内のh2タグ*/
-main h2 {
-	background: linear-gradient(#4ca845, #27951e 49%, #1b8913 50%);		/*グラデーション*/
-	color: #fff;
-	font-size: 1.2rem;		/*文字サイズ。remの単位についてはテンプレート内の解説をお読み下さい。*/
-	font-weight: normal;	/*文字の太さを標準に*/
-	padding: 5px 20px;		/*h2タグ内の余白。上下、左右の順。*/
-	margin: 0 0 20px;		/*h2タグの外側にとるスペース。上、左右、下の順。*/
-}
 
 /*mainブロック内のh3タグ*/
 main h3 {
