@@ -3,8 +3,10 @@
 /* リセットCSS */
 @import "destyle";
 
-/*Font Awesomeの読み込み
----------------------------------------------------------------------------*/
+/* Noto Sans JP */
+@import url("http://fonts.googleapis.com/earlyaccess/notosansjp.css");
+
+/* Font Awesomeの読み込み */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
 
 $themecolor: #2c7046;
@@ -21,15 +23,15 @@ $themecolor1: #165B30;
 html,body {
 	margin: 0;padding: 0;
 	overflow-x: hidden;
-	font-size: 14px;	/*基準となるフォントサイズ。下の方にある「画面幅1000px以上」で基準を大きなサイズに再設定しています。*/
+	font-size: 16px;
 }
 
 body {
-	font-family: "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+	font-family: メイリオ, Meiryo, "Noto Sans JP", sans-serif;
 	-webkit-text-size-adjust: none;
-	background: #fff;	/*背景色*/
-	color: #555;		/*全体の文字色*/
-	line-height: 2;		/*行間*/
+	background: #fff;
+	color: #555;
+	line-height: 2;
 }
 
 /*リセット*/
@@ -201,7 +203,7 @@ header #logo {
 
 /*ドロップダウンメニューを持つ親に矢印アイコンをつける設定*/
 a.ddmenu::before {
-	font-family: "Font Awesome 5 Free";	/*Font Awesomeを使う指定*/
+	font-family: "Font Awesome 5 Free";
 	content: "\f150";	/*使いたいアイコン名をここで指定。Font Awesomeに記載されています。詳しくは当テンプレートのマニュアルを読んで下さい。*/
 	font-weight: bold;		/*この手の設定がないとアイコンが出ない場合があります*/
 	margin-right: 0.5em;	/*アイコンとテキストとの間に空けるスペース*/
@@ -259,9 +261,10 @@ main {
 	margin-bottom: 40px;
 
   h2 {
-	  background: -moz-linear-gradient(to bottom, #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
-	  background: -webkit-linear-gradient(to bottom, #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
-	  background: linear-gradient(to bottom, #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
+	  // background: -moz-linear-gradient(to bottom, #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
+	  // background: -webkit-linear-gradient(to bottom, #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
+	  // background: linear-gradient(to bottom, #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
+    background: #2c7046;
 	  color: #fff;
 	  font-size: 1.2rem;
 	  font-weight: normal;
@@ -269,7 +272,9 @@ main {
     letter-spacing: 4px;
     font-weight: bold;
     line-height: 48px;
-
+    &:hover {
+      opacity: 0.8;
+    }
     a {
       display: block;
       color: #fff;
@@ -1263,7 +1268,7 @@ ul.menu a::before {
 
   #linkTree a {
     display: block;
-    padding: 0px 4px 0px 4px;
+    padding: 0px 10px;
   }
   #linkTree li {
     // height: 30px;
