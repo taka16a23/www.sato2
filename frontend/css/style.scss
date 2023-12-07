@@ -1,19 +1,19 @@
 @charset "utf-8";
 
-
-
-/*リセットCSS（sanitize.css）の読み込み
----------------------------------------------------------------------------*/
-@import url("https://unpkg.com/sanitize.css");
-
-/*slick.cssの読み込み
----------------------------------------------------------------------------*/
-// @import url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
+/* リセットCSS */
+@import "destyle";
 
 /*Font Awesomeの読み込み
 ---------------------------------------------------------------------------*/
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
 
+$themecolor: #2c7046;
+$themecolor1: #165B30;
+
+// $themecolor-dark: #028ee1;
+// $themecolor-alt: #26c6da;
+// $theme-light: #fff;
+// $theme-dark: #212529;
 
 
 /*全体の設定
@@ -50,31 +50,53 @@ video {max-width: 100%;}
 iframe {width: 100%;}
 
 /*ul,olタグ*/
-ul, ol {margin-bottom: 30px;}
+// ul, ol {margin-bottom: 30px;}
 
 /*sectionタグ*/
 section + section {
 	margin-top: 50px;
 }
 
+.zip-before:before {
+  content: "〒";
+}
+
+.address-before:before {
+  content: "\f041";
+  font: normal normal normal 14px/1 FontAwesome;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+.phone-before:before {
+  content: "電話番号:";
+}
+
+.fax-before:before {
+  content: "FAX:";
+}
+
+@import "footer";
 
 /*リンクテキスト全般の設定
 ---------------------------------------------------------------------------*/
 a {
 	color: #555;	/*文字色*/
 	transition: 0.3s;
+
+  &:hover {
+    color: $themecolor;
+    text-decoration: underline;
+  }
 }
 
-a:hover {
-	color: #1b8913;	/*マウスオン時の文字色*/
+body {
+  background-color: #1A1A1A;
 }
-
-
-/*container（サイト全体を囲むブロック）
----------------------------------------------------------------------------*/
 #container {
-	max-width: 1500px;	/*最大幅。これ以上広がらない。*/
+	max-width: 1400px;
 	margin: 0 auto;
+  background-color: white;
 }
 
 
@@ -109,14 +131,14 @@ header #logo {
   padding: 0;
   
   li {
-    background: -moz-linear-gradient(top,  #2c7046 0%, #2c7046 49%, #28653f 50%, #2c7046 100%);
-    background: -webkit-linear-gradient(top,  #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
-    background: linear-gradient(to bottom,  #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
+    background: -moz-linear-gradient(top, $themecolor 0%, $themecolor 49%, #28653f 50%, $themecolor 100%);
+    background: -webkit-linear-gradient(top, $themecolor 0%,$themecolor 49%,#28653f 50%,$themecolor 100%);
+    background: linear-gradient(to bottom, $themecolor 0%,$themecolor 49%,#28653f 50%,$themecolor 100%);
 
     &:hover {
-      background: -moz-linear-gradient(top,  #165B30 0%, #165B30 49%, #1a512f 50%, #165B30 100%);
-      background: -webkit-linear-gradient(top,  #165B30 0%,#165B30 49%,#1a512f 50%,#165B30 100%);
-      background: linear-gradient(to bottom,  #165B30 0%,#165B30 49%,#1a512f 50%,#165B30 100%);
+      background: -moz-linear-gradient(top, $themecolor1 0%, $themecolor1 49%, #1a512f 50%, $themecolor1 100%);
+      background: -webkit-linear-gradient(top, $themecolor1 0%,$themecolor1 49%,#1a512f 50%,$themecolor1 100%);
+      background: linear-gradient(to bottom, $themecolor1 0%,$themecolor1 49%,#1a512f 50%,$themecolor1 100%);
     }
   }
 
@@ -243,21 +265,26 @@ main {
 	  color: #fff;
 	  font-size: 1.2rem;
 	  font-weight: normal;
-	  padding: 5px 20px;
-	  margin: 0 0 20px;
+	  margin: 0 0 16px;
     letter-spacing: 4px;
     font-weight: bold;
+    line-height: 48px;
+
     a {
+      display: block;
       color: #fff;
       text-decoration: none;
+      span {
+	      margin: 5px 20px;
+      }
       &:hover {
         color: #fff;
         text-decoration: underline;
       }
     }
+    
   }
 }
-
 
 /*mainブロック内のh3タグ*/
 main h3 {
@@ -307,17 +334,17 @@ main p {
 }
 
 /*subとside内のh2タグ*/
-#sub h2, #side h2 {
-	margin: 0;
-	font-size: 1.2em;		/*文字サイズを少しだけ大きめに*/
-	font-weight: normal;	/*文字の太さを標準に*/
-	margin-bottom: 10px;	/*下に空けるスペース*/
-}
-#sub h2::before, #side h2::before {
-	content: "";
-	border-left: 3px solid #1b8913;	/*左側の線の幅、線種、色*/
-	padding-right: 10px;			/*線とテキストの間に空ける余白*/
-}
+// #sub h2, #side h2 {
+	// margin: 0;
+	// font-size: 1.2em;		/*文字サイズを少しだけ大きめに*/
+	// font-weight: normal;	/*文字の太さを標準に*/
+	// margin-bottom: 10px;	/*下に空けるスペース*/
+// }
+// #sub h2::before, #side h2::before {
+	// content: "";
+	// border-left: 3px solid #1b8913;	/*左側の線の幅、線種、色*/
+	// padding-right: 10px;			/*線とテキストの間に空ける余白*/
+// }
 
 
 /*submenu（subとsideで使っているメニュー）
@@ -394,27 +421,6 @@ ul.submenu li a {
 	padding-bottom: 5px;	/*下に空けるスペース*/
 }
 
-
-/*フッター設定
----------------------------------------------------------------------------*/
-footer small {font-size: 100%;}
-
-footer {
-	font-size: 0.6rem;		/*文字サイズ。remの単位についてはテンプレート内の解説をお読み下さい。*/
-	background: #1b8913;	/*背景色*/
-	color: #fff;			/*文字色*/
-	text-align: center;		/*内容をセンタリング*/
-	padding: 20px;			/*ボックス内の余白*/
-}
-
-/*リンクテキスト*/
-footer a {color: #fff;text-decoration: none;}
-
-/*リンクテキストのマウスオン時*/
-footer a:hover {color: #fff;}
-
-/*著作部分*/
-footer .pr {display: block;}
 
 
 /*一覧ブロック（listおよびlist2共通設定）
@@ -665,33 +671,6 @@ dl.line dd {
 }
 
 
-/*詳細ページ
----------------------------------------------------------------------------*/
-/*大きな画像のボックスと説明文を入れるボックス*/
-#item-image {
-	position: relative;
-	margin: 0 auto 20px;
-	text-align: center;
-	width: 100%;
-}
-
-/*大きな画像のボックスの中の画像*/
-#item-image img {
-	width: 100%;
-}
-
-/*サムネイル画像*/
-.thumbnail {
-	width: 80px;	/*画像の幅*/
-	border: 1px solid #dcdcdc;	/*枠線の幅、線種、色*/
-	margin-bottom: 5px;
-}
-
-.thumbnail:hover {
-	border: 1px solid #999;	/*マウスオン時の枠線の幅、線種、色*/
-}
-
-
 /*パノラマ画像のサイズ設定（※CMS用）
 ---------------------------------------------------------------------------*/
 .panorama-img {
@@ -840,29 +819,29 @@ ul.menu a::before {
 }
 
 .security-portal-btn {
+  width: 100%;
+  line-height: 48px;
+  background: -moz-linear-gradient(top,  #cb796b 0%, #af3521 8%, #a82812 11%, #a52812 22%, #8f2310 57%, #87210f 76%, #7e1f0e 86%, #7e1f0e 89%, #832b1c 92%, #ab7167 100%);
+  background: -webkit-linear-gradient(top,  #cb796b 0%,#af3521 8%,#a82812 11%,#a52812 22%,#8f2310 57%,#87210f 76%,#7e1f0e 86%,#7e1f0e 89%,#832b1c 92%,#ab7167 100%);
+  background: linear-gradient(to bottom,  #cb796b 0%,#af3521 8%,#a82812 11%,#a52812 22%,#8f2310 57%,#87210f 76%,#7e1f0e 86%,#7e1f0e 89%,#832b1c 92%,#ab7167 100%);
+  border-radius: 6px 6px 6px 6px;
+
+  a {
+    display: block;
     width: 100%;
-    line-height: 48px;
-    background: -moz-linear-gradient(top,  #cb796b 0%, #af3521 8%, #a82812 11%, #a52812 22%, #8f2310 57%, #87210f 76%, #7e1f0e 86%, #7e1f0e 89%, #832b1c 92%, #ab7167 100%);
-    background: -webkit-linear-gradient(top,  #cb796b 0%,#af3521 8%,#a82812 11%,#a52812 22%,#8f2310 57%,#87210f 76%,#7e1f0e 86%,#7e1f0e 89%,#832b1c 92%,#ab7167 100%);
-    background: linear-gradient(to bottom,  #cb796b 0%,#af3521 8%,#a82812 11%,#a52812 22%,#8f2310 57%,#87210f 76%,#7e1f0e 86%,#7e1f0e 89%,#832b1c 92%,#ab7167 100%);
-    border-radius: 6px 6px 6px 6px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    letter-spacing: 4px;
+    text-decoration: none;
+  }
 
-    a {
-      display: block;
-      width: 100%;
-      color: white;
-      font-size: 1.1rem;
-      font-weight: bold;
-      text-align: center;
-      vertical-align: middle;
-      letter-spacing: 4px;
-      text-decoration: none;
-    }
-
-    &:hover {
-      opacity: 0.8;
-      text-decoration: underline;
-    }
+  &:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
 }
 
 /*list、list2内で使う場合のボタン*/
@@ -973,7 +952,6 @@ ul.menu a::before {
 
 .faq dt span {text-indent: 0;}
 
-
 /*PAGE TOP（↑）設定
 ---------------------------------------------------------------------------*/
 .pagetop-show {display: block;}
@@ -1019,17 +997,6 @@ ul.menu a::before {
 ---------------------------------------------------------------------------*/
 @media screen and (max-width:400px) {
 
-
-/*header（ロゴなどが入った最上段のブロック）
----------------------------------------------------------------------------*/
-/*ロゴ画像*/
-header #logo {
-	width: 150px;		/*ロゴ画像の幅*/
-}
-
-
-/*　※注意！　下の閉じカッコ　}　はこのブロックに必要なので、削除しないで下さい。　*/
-
 }
 
 
@@ -1040,20 +1007,17 @@ header #logo {
 @media screen and (min-width:600px) {
 
 
-/*一覧ブロック（listタイプ）
+  /*一覧ブロック（listタイプ）
 ---------------------------------------------------------------------------*/
-/*listボックスを囲むボックス*/
-.list-container {
-	flex-direction: row;	/*子要素を横並びにする*/
-}
+  /*listボックスを囲むボックス*/
+  .list-container {
+	  flex-direction: row;	/*子要素を横並びにする*/
+  }
 
-/*listボックス。１個あたりのボックスの指定です。*/
-.list-container .list {
-	width: 49%;	/*ボックスの幅*/
-}
-
-
-/*　※注意！　下の閉じカッコ　}　はこのブロックに必要なので、削除しないで下さい。　*/
+  /*listボックス。１個あたりのボックスの指定です。*/
+  .list-container .list {
+	  width: 49%;	/*ボックスの幅*/
+  }
 
 }
 
@@ -1064,231 +1028,252 @@ header #logo {
 ---------------------------------------------------------------------------*/
 @media screen and (min-width:1000px) {
 
-
 /*全体の設定
 ---------------------------------------------------------------------------*/
-html, body {
-	font-size: 16px;	/*基準となるフォントサイズの上書き*/
-}
+  html, body {
+	  font-size: 16px;	/*基準となるフォントサイズの上書き*/
+  }
 
 
-/*header（ロゴなどが入った最上段のブロック）
+  /*header（ロゴなどが入った最上段のブロック）
 ---------------------------------------------------------------------------*/
-/*ヘッダーブロック*/
-header {
-	flex-direction: row;			/*子要素を横並びにする*/
-	justify-content: space-between;	/*並びかたの種類の指定*/
-	align-items: center;			/*垂直揃えの指定。天地中央に配置されるように。*/
-}
+  /*ヘッダーブロック*/
+  header {
+	  flex-direction: row;			/*子要素を横並びにする*/
+	  justify-content: space-between;	/*並びかたの種類の指定*/
+	  align-items: center;			/*垂直揃えの指定。天地中央に配置されるように。*/
+  }
 
-/*ロゴ画像*/
-header #logo {
-	margin: 0;
-}
+  /*ロゴ画像*/
+  header #logo {
+	  margin: 0;
+  }
 
 
-/*menubarブロック設定
+  /*menubarブロック設定
 ---------------------------------------------------------------------------*/
-/*メニューブロック全体*/
-#menubar ul {
-	margin: 0;
-	display: flex;
-	justify-content: space-around;
-	line-height: 1.6;	/*行間を少しだけ狭くする*/
-}
+  /*メニューブロック全体*/
+  #menubar ul {
+	  margin: 0;
+	  display: flex;
+	  justify-content: space-around;
+	  line-height: 1.6;	/*行間を少しだけ狭くする*/
+  }
 
-/*メニュー１個あたりの設定*/
-#menubar ul li {
-	flex: 1;
-}
+  /*メニュー１個あたりの設定*/
+  #menubar ul li {
+	  flex: 1;
+  }
 
 
-/*ドロップダウンメニュー
+  /*ドロップダウンメニュー
 ---------------------------------------------------------------------------*/
-#menubar .ddmenu_parent{
-	position: relative;	/*ddmenu ulの幅となる基準を作っておく*/
-}
+  #menubar .ddmenu_parent{
+	  position: relative;	/*ddmenu ulの幅となる基準を作っておく*/
+  }
 
-/*ドロップダウンメニューブロック全体*/
-#menubar .ddmenu_parent ul {
-	position: absolute;			/*絶対配置するための指定*/
-	z-index: 100;
-	width: 100%;				/*親のliタグに幅を合わせる*/
-}
+  /*ドロップダウンメニューブロック全体*/
+  #menubar .ddmenu_parent ul {
+	  position: absolute;			/*絶対配置するための指定*/
+	  z-index: 100;
+	  width: 100%;				/*親のliタグに幅を合わせる*/
+  }
 
-/*３本バー（ハンバーガー）アイコン設定
+  /*３本バー（ハンバーガー）アイコン設定
 ---------------------------------------------------------------------------*/
-/*ハンバーガーメニューを非表示にする*/
-#menubar_hdr {display: none;}
+  /*ハンバーガーメニューを非表示にする*/
+  #menubar_hdr {display: none;}
 
 
-/*contentsブロック設定（main、sub、sideを囲むブロック）
+  /*contentsブロック設定（main、sub、sideを囲むブロック）
 ---------------------------------------------------------------------------*/
-#contents {
-	display: flex;	/*中身(main、sub、side)を横に並べる*/
-}
+  #contents {
+	  display: flex;	/*中身(main、sub、side)を横に並べる*/
+  }
 
-
-/*mainブロック設定
+  /*mainブロック設定
 ---------------------------------------------------------------------------*/
-main {
-	flex: 1;
-	order: 1;		/*表示させる順番。main、sub、sideそれぞれに指定しており、数字の「小さな順」に左から並びます。*/
-	margin: 0 30px;	/*上下、左右へのマージン。両サイドのブロックとの余白になります。*/
-}
+  main {
+	  flex: 1;
+	  order: 1;		/*表示させる順番。main、sub、sideそれぞれに指定しており、数字の「小さな順」に左から並びます。*/
+	  margin: 0 30px;	/*上下、左右へのマージン。両サイドのブロックとの余白になります。*/
+  }
 
-/*２カラム利用時に右側のマージンをなくす*/
-.c2 main {
-	margin-right: 0;
-}
+  /*２カラム利用時に右側のマージンをなくす*/
+  .c2 main {
+	  margin-right: 0;
+  }
 
-/*１カラム利用時にマージンをなくす*/
-.c1 main {
-	margin: 0;
-}
+  /*１カラム利用時にマージンをなくす*/
+  .c1 main {
+	  margin: 0;
+  }
 
 
-/*subブロック設定
+  /*subブロック設定
 ---------------------------------------------------------------------------*/
-#sub {
-	width: 200px;	/*幅*/
-	order: 0;		/*表示させる順番。main、sub、sideそれぞれに指定しており、数字の「小さな順」に左から並びます。*/
-}
+  #sub {
+	  width: 200px;	/*幅*/
+	  order: 0;		/*表示させる順番。main、sub、sideそれぞれに指定しており、数字の「小さな順」に左から並びます。*/
+  }
 
 
-/*sideブロック設定
+  /*sideブロック設定
 ---------------------------------------------------------------------------*/
-#side {
-	width: 200px;
-	order: 2;		/*表示させる順番。main、sub、sideそれぞれに指定しており、数字の「小さな順」に左から並びます。*/
-}
-
-
-/*フッターメニュー設定
+  #side {
+	  width: 200px;
+	  order: 2;		/*表示させる順番。main、sub、sideそれぞれに指定しており、数字の「小さな順」に左から並びます。*/
+  }
+  /*一覧ブロック（list2。横長タイプ。）
 ---------------------------------------------------------------------------*/
-/*ボックス全体の設定*/
-#footermenu {
-	font-size: 0.8rem;	/*文字サイズ。remの単位についてはテンプレート内の解説をお読み下さい。*/
-	padding: 20px 50px;	/*上下、左右へのボックス内の余白*/
-}
+  /*list2ボックス。１個あたりのボックスの指定です。*/
+  .list2 {
+	  padding-left: 10px;	/*ボックス内の左側にだけ余白を作る*/
+  }
 
 
-/*一覧ブロック（list2。横長タイプ。）
+  /*list、list2内で使っているtableっぽく見える所。
 ---------------------------------------------------------------------------*/
-/*list2ボックス。１個あたりのボックスの指定です。*/
-.list2 {
-	padding-left: 10px;	/*ボックス内の左側にだけ余白を作る*/
-}
+  /*list2ブロック内でのline設定*/
+  .list2 dl.line dd {
+	  width: calc(50% - 8em - 10px);	/*大きな端末向けの再設定。２列にしたいので、100%でなく半分の50%から引いています。*/
+	  margin-right: 10px;				/*２列になった際の間のスペース*/
+  }
+
+  .list2 dl.line {border-top: none;}
+
+  .list2 dl.line dt:nth-of-type(1), .list2 dl.line dd:nth-of-type(1),
+  .list2 dl.line dt:nth-of-type(2), .list2 dl.line dd:nth-of-type(2) {
+	  border-top: 1px solid #ccc;
+  }
+
+  /*「お知らせ」ブロック ---------------------------------------------------------------------------*/
+  /*日付(dt)設定*/
+  #new dt {
+	  width: 14em;	/*幅。14文字(em)分。*/
+	  display: flex;	/*flexボックスを使う指定*/
+	  justify-content: space-between;	/*日付とアイコンをそれぞれ端に寄せる*/
+  }
+
+  /*日付の横のマーク（共通設定）*/
+  #new dt span {
+	  display: inline-block;	/*表示させる*/
+	  width: 6em;				/*幅。6文字(em)分。*/
+	  background: #999;		/*背景色*/
+	  color: #fff;			/*文字色*/
+	  font-size: 0.9em;		/*文字サイズを90%に。*/
+	  text-align: center;		/*文字をセンタリング*/
+	  border-radius: 3px;		/*角を少しだけ丸くする*/
+	  margin-right: 1.2em;	/*アイコンの右側に空けるスペース*/
+	  align-self: flex-start;	/*高さを間延びさせない指定*/
+	  line-height: 1.8;		/*行間を少し狭く*/
+	  position: relative;top: 0.4em;	/*上下の配置バランスの微調整*/
+  }
+
+  /*bg1設定。色がついたアイコンの設定。*/
+  #new dt span.icon-bg1 {
+	  background: #1b8913;	/*背景色*/
+  }
+
+  /*記事(dd)設定*/
+  #new dd {
+	  width: calc(100% - 14em);	/*「14em」は上の「#new dt」のwidthの値です。*/
+  }
+
+  /*CMS用*/
+  #new.cms dt {width: 8em;}
+  #new.cms dd {width: calc(100% - 8em);}
 
 
-/*list、list2内で使っているtableっぽく見える所。
+  /*list_base.htmlの設定---------------------------------------------------------------------------*/
+  /*メニュー全体を囲むブロック*/
+  ul.menu {
+	  display: flex;					/*flexボックスを使う指定*/
+	  flex-wrap: wrap;				/*折り返す指定*/
+	  justify-content: space-between;	/*並びかたの種類の指定*/
+  }
+
+  /*メニュー１個あたりの設定*/
+  ul.menu li {
+	  width: 49%;		/*幅*/
+	  margin-bottom: 20px;	/*メニューの上下間に空けるスペース*/
+  }
+
+  /*リンクテキスト*/
+  ul.menu a {
+	  padding: 20px 30px;	/*上下、左右へのメニュー内の余白*/
+  }
+
+
+  /*テーブル
 ---------------------------------------------------------------------------*/
-/*list2ブロック内でのline設定*/
-.list2 dl.line dd {
-	width: calc(50% - 8em - 10px);	/*大きな端末向けの再設定。２列にしたいので、100%でなく半分の50%から引いています。*/
-	margin-right: 10px;				/*２列になった際の間のスペース*/
-}
+  /*テーブル１行目に入った見出し部分（※caption）*/
+  .ta1 caption {
+	  padding: 5px 15px;		/*上下、左右へのボックス内の余白*/
+  }
 
-.list2 dl.line {border-top: none;}
+  /*th（左側）、td（右側）の共通設定*/
+  .ta1 th, .ta1 td {
+	  padding: 20px 15px;		/*上下、左右へのボックス内の余白*/
+  }
 
-.list2 dl.line dt:nth-of-type(1), .list2 dl.line dd:nth-of-type(1),
-.list2 dl.line dt:nth-of-type(2), .list2 dl.line dd:nth-of-type(2) {
-	border-top: 1px solid #ccc;
-}
-
-
-/*パノラマ画像のサイズ設定（※CMS用）
----------------------------------------------------------------------------*/
-.panorama-img {
-	height: 500px !important;
-}
+  /*th（左側）のみの設定*/
+  .ta1 th {
+	  width: 20%;		/*幅*/
+  }
 
 
-/*「お知らせ」ブロック
----------------------------------------------------------------------------*/
-/*日付(dt)設定*/
-#new dt {
-	width: 14em;	/*幅。14文字(em)分。*/
-	display: flex;	/*flexボックスを使う指定*/
-	justify-content: space-between;	/*日付とアイコンをそれぞれ端に寄せる*/
-}
+  /*その他 ---------------------------------------------------------------------------*/
+  .ws {width: 48%;display: inline;}
+  .sn {display: block;}
+  .sh {display: none;}
 
-/*日付の横のマーク（共通設定）*/
-#new dt span {
-	display: inline-block;	/*表示させる*/
-	width: 6em;				/*幅。6文字(em)分。*/
-	background: #999;		/*背景色*/
-	color: #fff;			/*文字色*/
-	font-size: 0.9em;		/*文字サイズを90%に。*/
-	text-align: center;		/*文字をセンタリング*/
-	border-radius: 3px;		/*角を少しだけ丸くする*/
-	margin-right: 1.2em;	/*アイコンの右側に空けるスペース*/
-	align-self: flex-start;	/*高さを間延びさせない指定*/
-	line-height: 1.8;		/*行間を少し狭く*/
-	position: relative;top: 0.4em;	/*上下の配置バランスの微調整*/
-}
+  .nav-btn {
+    // height: 35px;
+    // padding: 5px;
+    // padding-top: 10px;
+    padding: 8px 10px 8px 10px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    line-height: 30px;
+    outline: none;
+    background-color: #2C7046;
+    position: relative;
 
-/*bg1設定。色がついたアイコンの設定。*/
-#new dt span.icon-bg1 {
-	background: #1b8913;	/*背景色*/
-}
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .sub-nav-block {
+    margin-bottom: 10px;
+  }
+  .sub-block {
+    margin-bottom: 8px;
+  }
 
-/*記事(dd)設定*/
-#new dd {
-	width: calc(100% - 14em);	/*「14em」は上の「#new dt」のwidthの値です。*/
-}
+  #linkTree {
+    margin-top: 16px;
+  }
 
-/*CMS用*/
-#new.cms dt {width: 8em;}
-#new.cms dd {width: calc(100% - 8em);}
-
-
-/*list_base.htmlの設定
----------------------------------------------------------------------------*/
-/*メニュー全体を囲むブロック*/
-ul.menu {
-	display: flex;					/*flexボックスを使う指定*/
-	flex-wrap: wrap;				/*折り返す指定*/
-	justify-content: space-between;	/*並びかたの種類の指定*/
-}
-
-/*メニュー１個あたりの設定*/
-ul.menu li {
-	width: 49%;		/*幅*/
-	margin-bottom: 20px;	/*メニューの上下間に空けるスペース*/
-}
-
-/*リンクテキスト*/
-ul.menu a {
-	padding: 20px 30px;	/*上下、左右へのメニュー内の余白*/
-}
-
-
-/*テーブル
----------------------------------------------------------------------------*/
-/*テーブル１行目に入った見出し部分（※caption）*/
-.ta1 caption {
-	padding: 5px 15px;		/*上下、左右へのボックス内の余白*/
-}
-
-/*th（左側）、td（右側）の共通設定*/
-.ta1 th, .ta1 td {
-	padding: 20px 15px;		/*上下、左右へのボックス内の余白*/
-}
-
-/*th（左側）のみの設定*/
-.ta1 th {
-	width: 20%;		/*幅*/
-}
-
-
-/*その他
----------------------------------------------------------------------------*/
-.ws {width: 48%;display: inline;}
-.sn {display: block;}
-.sh {display: none;}
-
-
-/*　※注意！　下の閉じカッコ　}　はこのブロックに必要なので、削除しないで下さい。　*/
-
+  #linkTree a {
+    display: block;
+    padding: 0px 4px 0px 4px;
+  }
+  #linkTree li {
+    // height: 30px;
+    letter-spacing: 1px;
+    // background-color: #f5f5f5;
+    background-color: rgba(0,0,0,0.03);
+    background-image: linear-gradient(to bottom, #f5f5f5, #ededed);    
+  }
+  #linkTree li:hover {
+    background-color: #E8E9E8;
+    background-image: linear-gradient(to bottom, #E8E9E8, #D4D6D4);    
+  }
 }

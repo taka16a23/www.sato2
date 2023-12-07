@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>里自治会</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png?">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="ここにサイト説明を入れます">
     <link rel="stylesheet" href="css/style.css">
@@ -56,7 +57,7 @@
       <div id="contents">
         <main>
           <section>
-            <h2><a href="#" alt="" title="最新情報一覧">最新情報</a></h2>
+            <h2><a href="#" alt="" title="最新情報一覧"><span>最新情報</span></a></h2>
             <dl id="new">
               <dt>2022/10/07<span>その他</span></dt>
               <dd>Windows版ChromeやFirefoxでドロップダウンを使った場合、移動先ページでドロップダウンが残ってしまう不具合があったのを改善。<br>
@@ -79,150 +80,226 @@
           </section>
         </main>
         <div id="sub">
-          <div class="security-portal-btn">
+          <div class="sub-block security-portal-btn">
             <a href="/security/secportal/" title="避難の判断に有用な情報です">防災統合情報</a>
           </div>
-          <nav class="box1">
-            <h2>メニュータイトル(subブロック)</h2>
-            <ul class="submenu">
-              <li><a href="#">メニューサンプル</a></li>
-              <li><a href="#">メニューサンプル</a></li>
-              <li><a href="#">メニューサンプル</a></li>
-              <li><a href="#">メニューサンプル</a></li>
-              <li><a href="#">メニューサンプル</a></li>
-            </ul>
-          </nav>
-          <nav>
-            <h2>メニュータイトル(subブロック)</h2>
-            <ul class="submenu">
-              <li><a href="#">メニューサンプル</a></li>
-              <li><a href="#">メニューサンプル</a></li>
-              <li><a href="#">メニューサンプル</a></li>
-              <li><a href="#">メニューサンプル</a></li>
-              <li><a href="#">メニューサンプル</a></li>
-            </ul>
-          </nav>
-          <h2>今月の注目(subブロック)</h2>
-          <div class="list">
-	          <div>
-	            <figure><a href="item.html"><img src="images/sample1.jpg" alt=""></a></figure>
-	            <h4>WEBデザイナー募集！未経験歓迎！</h4>
-		          <dl class="line">
-		            <dt>求人ナンバー</dt>
-		            <dd>No.XXX</dd>
-		            <dt>企業名</dt>
-		            <dd>サンプルカンパニー</dd>
-		            <dt>給与・時給</dt>
-		            <dd>時給1,100円〜　研修期間：時給800円</dd>
-		            <dt>勤務地</dt>
-		            <dd>千葉市中央区</dd>
-		            <dt>勤務時間</dt>
-		            <dd>19:00〜　1日3時間程度</dd>
-		          </dl>
-	          </div>
-	          <p class="btn"><a href="item.html">詳細を見る</a></p>
+          <div class="sub-block" id="linkTree">
+            <div class="sub-nav-block" id="newsLinks">
+              <h2 class="nav-btn selected">過去のおしらせ</h2>
+              <ol style="display: block;">
+                <li>
+                  <a href="/news/?year=2004" title="2004年のおしらせを見る">2004年</a>
+                </li>
+                
+                <li>
+                  <p><a href="/news/?year=2005" title="2005年のおしらせを見る">2005年</a></p>
+                </li>
+                
+                <li>
+                  <p><a href="/news/?year=2007" title="2007年のおしらせを見る">2007年</a></p>
+                </li>
+                
+                <li>
+                  <p><a href="/news/?year=2008" title="2008年のおしらせを見る">2008年</a></p>
+                </li>
+                
+                <li>
+                  <p><a href="/news/?year=2010" title="2010年のおしらせを見る">2010年</a></p>
+                </li>
+                
+                <li>
+                  <p><a href="/news/?year=2012" title="2012年のおしらせを見る">2012年</a></p>
+                </li>
+                
+                <li>
+                  <p><a href="/news/?year=2013" title="2013年のおしらせを見る">2013年</a></p>
+                </li>
+                
+                <li>
+                  <p><a href="/news/?year=2014" title="2014年のおしらせを見る">2014年</a></p>
+                </li>
+                
+                <li>
+                  <p><a href="/news/?year=2015" title="2015年のおしらせを見る">2015年</a></p>
+                </li>
+                
+                <li>
+                  <p><a href="/news/?year=2016" title="2016年のおしらせを見る">2016年</a></p>
+                </li>
+                
+                <li>
+                  <p><a href="/news/?year=2017" title="2017年のおしらせを見る">2017年</a></p>
+                </li>
+                
+                <li>
+                  <p><a href="/news/?year=2018" title="2018年のおしらせを見る">2018年</a></p>
+                </li>
+                
+                <li>
+                  <p><a href="/news/?year=2023" title="2023年のおしらせを見る">2023年</a></p>
+                </li>
+                
+              </ol>
+            </div>
+            <div class="sub-nav-block" id="activityLinks">
+              <h2 class="nav-btn ">活動報告</h2>
+              <ol style="display: none;">
+                
+                <li>
+                  <p>
+                    <a href="/activity/?year=2016" title="2016年の活動を見る">2016年</a>
+                  </p>
+                </li>
+                
+                <li>
+                  <p>
+                    <a href="/activity/?year=2017" title="2017年の活動を見る">2017年</a>
+                  </p>
+                </li>
+                
+                <li>
+                  <p>
+                    <a href="/activity/?year=2023" title="2023年の活動を見る">2023年</a>
+                  </p>
+                </li>
+                
+              </ol>
+            </div>
+            <div class="sub-nav-block" id="securityLinks">
+              <h2 class="nav-btn ">防犯・防災</h2>
+              <ol>
+                <li>
+                  <p>
+                    <a href="/security/secportal/" title="防災ポータルサイトを見る">防災統合情報</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <a href="/security/secportal/#evacuationMapArea" title="避難地図を見る">避難地図</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <a href="/security/knowledge/" title="防災予備知識を見る">防災予備知識</a>
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <div class="sub-nav-block" id="boardLinks">
+              <h2 class="nav-btn ">回覧板</h2>
+              <ol>
+                
+                <li>
+                  <p>
+                    <a href="/board/?year=2004" title="2004年の回覧を表示する">2004年</a>
+                  </p>
+                </li>
+                
+                <li>
+                  <p>
+                    <a href="/board/?year=2005" title="2005年の回覧を表示する">2005年</a>
+                  </p>
+                </li>
+                
+                <li>
+                  <p>
+                    <a href="/board/?year=2007" title="2007年の回覧を表示する">2007年</a>
+                  </p>
+                </li>
+                
+                <li>
+                  <p>
+                    <a href="/board/?year=2008" title="2008年の回覧を表示する">2008年</a>
+                  </p>
+                </li>
+                
+                <li>
+                  <p>
+                    <a href="/board/?year=2010" title="2010年の回覧を表示する">2010年</a>
+                  </p>
+                </li>
+                
+                <li>
+                  <p>
+                    <a href="/board/?year=2012" title="2012年の回覧を表示する">2012年</a>
+                  </p>
+                </li>
+                
+                <li>
+                  <p>
+                    <a href="/board/?year=2013" title="2013年の回覧を表示する">2013年</a>
+                  </p>
+                </li>
+                
+                <li>
+                  <p>
+                    <a href="/board/?year=2014" title="2014年の回覧を表示する">2014年</a>
+                  </p>
+                </li>
+                
+                <li>
+                  <p>
+                    <a href="/board/?year=2015" title="2015年の回覧を表示する">2015年</a>
+                  </p>
+                </li>
+                
+                <li>
+                  <p>
+                    <a href="/board/?year=2016" title="2016年の回覧を表示する">2016年</a>
+                  </p>
+                </li>
+                
+                <li>
+                  <p>
+                    <a href="/board/?year=2017" title="2017年の回覧を表示する">2017年</a>
+                  </p>
+                </li>
+                
+                <li>
+                  <p>
+                    <a href="/board/?year=2018" title="2018年の回覧を表示する">2018年</a>
+                  </p>
+                </li>
+                
+                <li>
+                  <p>
+                    <a href="/board/?year=2023" title="2023年の回覧を表示する">2023年</a>
+                  </p>
+                </li>
+                
+              </ol>
+            </div>
+            <div class="sub-nav-block" id="aboutLinks">
+              <h2 class="nav-btn ">自治会案内</h2>
+              <ol>
+                <li>
+                  <p>
+                    <a href="/about/rule/" title="会則を見る">会則</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <a href="/about/hall/" title="里公民館のページを見る">里公民館(予定・申込み)</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <a href="/about/group/" title="ブロックと組の地図を見る">ブロックと組</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <a href="/about/solve/#faq" title="QAを見る">よくある質問</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <a href="/about/solve/#contact" title="情報提供・問い合わせをする">情報提供・お問い合わせ</a>
+                  </p>
+                </li>
+              </ol>
+            </div>
           </div>
-          <div class="list">
-	          <div>
-	            <figure><a href="item.html"><img src="images/sample1.jpg" alt=""></a></figure>
-	            <h4>WEBデザイナー募集！未経験歓迎！</h4>
-		          <dl class="line">
-		            <dt>求人ナンバー</dt>
-		            <dd>No.XXX</dd>
-		            <dt>企業名</dt>
-		            <dd>サンプルカンパニー</dd>
-		            <dt>給与・時給</dt>
-		            <dd>時給1,100円〜　研修期間：時給800円</dd>
-		            <dt>勤務地</dt>
-		            <dd>千葉市中央区</dd>
-		            <dt>勤務時間</dt>
-		            <dd>19:00〜　1日3時間程度</dd>
-		          </dl>
-	          </div>
-	          <p class="btn"><a href="item.html">詳細を見る</a></p>
-          </div>
-          <div class="list">
-	          <div>
-	            <figure><a href="item.html"><img src="images/sample1.jpg" alt=""></a></figure>
-	            <h4>WEBデザイナー募集！未経験歓迎！</h4>
-		          <dl class="line">
-		            <dt>求人ナンバー</dt>
-		            <dd>No.XXX</dd>
-		            <dt>企業名</dt>
-		            <dd>サンプルカンパニー</dd>
-		            <dt>給与・時給</dt>
-		            <dd>時給1,100円〜　研修期間：時給800円</dd>
-		            <dt>勤務地</dt>
-		            <dd>千葉市中央区</dd>
-		            <dt>勤務時間</dt>
-		            <dd>19:00〜　1日3時間程度</dd>
-		          </dl>
-	          </div>
-	          <p class="btn"><a href="item.html">詳細を見る</a></p>
-          </div>
-          <h2>今月の注目(subブロック)</h2>
-          <div class="list2">
-	          <figure><a href="item.html"><img src="images/sample1.jpg" alt=""></a></figure>
-	          <div>
-	            <h4><a href="item.html">WEBデザイナー募集！未経験歓迎！</a></h4>
-	          </div>
-          </div>
-          <div class="list2">
-	          <figure><a href="item.html"><img src="images/sample1.jpg" alt=""></a></figure>
-	          <div>
-	            <h4><a href="item.html">WEBデザイナー募集！未経験歓迎！</a></h4>
-	          </div>
-          </div>
-          <div class="list2">
-	          <figure><a href="item.html"><img src="images/sample1.jpg" alt=""></a></figure>
-	          <div>
-	            <h4><a href="item.html">WEBデザイナー募集！未経験歓迎！</a></h4>
-	          </div>
-          </div>
-          <div class="list2">
-	          <figure><a href="item.html"><img src="images/sample1.jpg" alt=""></a></figure>
-	          <div>
-	            <h4><a href="item.html">WEBデザイナー募集！未経験歓迎！</a></h4>
-	          </div>
-          </div>
-
-          <div class="list2">
-	          <figure><a href="item.html"><img src="images/sample1.jpg" alt=""></a></figure>
-	          <div>
-	            <h4><a href="item.html">WEBデザイナー募集！未経験歓迎！</a></h4>
-	          </div>
-          </div>
-
-          <div class="list2">
-	          <div>
-	            <h4><a href="item.html">WEBデザイナー募集！</a></h4>
-	          </div>
-          </div>
-
-          <div class="list2">
-	          <div>
-	            <h4><a href="item.html">WEBデザイナー募集！</a></h4>
-	          </div>
-          </div>
-
-          <div class="list2">
-	          <div>
-	            <h4><a href="item.html">WEBデザイナー募集！</a></h4>
-	          </div>
-          </div>
-
-          <div class="list2">
-	          <div>
-	            <h4><a href="item.html">WEBデザイナー募集！</a></h4>
-	          </div>
-          </div>
-
-          <div class="list2">
-	          <div>
-	            <h4><a href="item.html">WEBデザイナー募集！</a></h4>
-	          </div>
-          </div>
-
         </div>
         <div id="side">
           <nav class="box1">
@@ -313,103 +390,118 @@
 	          </div>
           </div>
 
-          <h2>今月の注目(sideブロック)</h2>
-
-          <div class="list">
-	          <div>
-	            <figure><a href="item.html"><img src="images/sample1.jpg" alt=""></a></figure>
-	            <h4>WEBデザイナー募集！未経験歓迎！</h4>
-		          <dl class="line">
-		            <dt>求人ナンバー</dt>
-		            <dd>No.XXX</dd>
-		            <dt>企業名</dt>
-		            <dd>サンプルカンパニー</dd>
-		            <dt>給与・時給</dt>
-		            <dd>時給1,100円〜　研修期間：時給800円</dd>
-		            <dt>勤務地</dt>
-		            <dd>千葉市中央区</dd>
-		            <dt>勤務時間</dt>
-		            <dd>19:00〜　1日3時間程度</dd>
-		          </dl>
-	          </div>
-	          <p class="btn"><a href="item.html">詳細を見る</a></p>
-          </div>
-
-          <div class="list">
-	          <div>
-	            <figure><a href="item.html"><img src="images/sample1.jpg" alt=""></a></figure>
-	            <h4>WEBデザイナー募集！未経験歓迎！</h4>
-		          <dl class="line">
-		            <dt>求人ナンバー</dt>
-		            <dd>No.XXX</dd>
-		            <dt>企業名</dt>
-		            <dd>サンプルカンパニー</dd>
-		            <dt>給与・時給</dt>
-		            <dd>時給1,100円〜　研修期間：時給800円</dd>
-		            <dt>勤務地</dt>
-		            <dd>千葉市中央区</dd>
-		            <dt>勤務時間</dt>
-		            <dd>19:00〜　1日3時間程度</dd>
-		          </dl>
-	          </div>
-	          <p class="btn"><a href="item.html">詳細を見る</a></p>
-          </div>
-
-          <div class="list">
-	          <div>
-	            <figure><a href="item.html"><img src="images/sample1.jpg" alt=""></a></figure>
-	            <h4>WEBデザイナー募集！未経験歓迎！</h4>
-		          <dl class="line">
-		            <dt>求人ナンバー</dt>
-		            <dd>No.XXX</dd>
-		            <dt>企業名</dt>
-		            <dd>サンプルカンパニー</dd>
-		            <dt>給与・時給</dt>
-		            <dd>時給1,100円〜　研修期間：時給800円</dd>
-		            <dt>勤務地</dt>
-		            <dd>千葉市中央区</dd>
-		            <dt>勤務時間</dt>
-		            <dd>19:00〜　1日3時間程度</dd>
-		          </dl>
-	          </div>
-	          <p class="btn"><a href="item.html">詳細を見る</a></p>
-          </div>
         </div>
 
       </div>
 
-      <div id="footermenu">
-        <ul>
-          <li class="title">メニュー</li>
-          <li><a href="index.html">ホーム</a></li>
-          <li><a href="company.html">会社概要</a></li>
-        </ul>
-        <ul>
-          <li class="title">メニュー見出し</li>
-          <li><a href="#">サンプルメニューサンプルメニュー</a></li>
-          <li><a href="#">サンプルメニュー</a></li>
-          <li><a href="#">サンプルメニュー</a></li>
-          <li><a href="#">サンプルメニュー</a></li>
-        </ul>
-        <ul>
-          <li class="title">メニュー見出し</li>
-          <li><a href="#">サンプルメニューサンプルメニュー</a></li>
-          <li><a href="#">サンプルメニュー</a></li>
-          <li><a href="#">サンプルメニュー</a></li>
-          <li><a href="#">サンプルメニュー</a></li>
-        </ul>
-        <ul>
-          <li class="title">メニュー見出し</li>
-          <li><a href="#">サンプルメニューサンプルメニュー</a></li>
-          <li><a href="#">サンプルメニュー</a></li>
-          <li><a href="#">サンプルメニュー</a></li>
-          <li><a href="#">サンプルメニュー</a></li>
-        </ul>
-      </div>
-
       <footer>
-        <small>Copyright&copy; <a href="index.html">SAMPLE COMPANY</a> All Rights Reserved.</small>
-        <span class="pr"><a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
+        <div class="container">
+          <div class="sitemap">
+            <div class="sitemap-block">
+              <h3 class="sitemap-block-title"><a href="/news/">おしらせ</a></h3>
+              <ol>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+              </ol>
+            </div>
+            <div class="sitemap-block">
+              <h3 class="sitemap-block-title"><a href="/activity/">ご報告</a></h3>
+              <ol>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+              </ol>
+            </div>
+            <div class="sitemap-block">
+              <h3 class="sitemap-block-title"><a href="/board/">回覧板</a></h3>
+              <ol>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+                <li class="sitemap-item"><a href="/news/?year=2000">2000年</a></li>
+              </ol>
+            </div>
+            <div class="sitemap-block">
+              <h3 class="sitemap-block-title"><a href="/security/">防犯・防災</a></h3>
+              <ol>
+                <li class="sitemap-item"><a href="/security/secportal/">統合情報</a></li>
+                <li class="sitemap-item"><a href="/security/secportal/#evacuationMapArea">避難地図</a></li>
+                <li class="sitemap-item"><a href="/security/knowledge/">防災予備知識</a></li>
+              </ol>
+            </div>
+            <div class="sitemap-block">
+              <h3 class="sitemap-block-title"><a href="/formats/">各種申請</a></h3>
+              <ol>
+                <li class="sitemap-item"><a href="/formats/#formatSato">里自治会関係書式</a></li>
+                <li class="sitemap-item"><a href="/formats/#formatETC">自治体等関係書式</a></li>
+              </ol>
+            </div>
+            <div class="sitemap-block">
+              <h3 class="sitemap-block-title"><a href="/about/">自治会案内</a></h3>
+              <ol>
+                <li class="sitemap-item"><a href="/about/rule/">会則</a></li>
+                <li class="sitemap-item"><a href="/about/hall/">公民館</a></li>
+                <li class="sitemap-item"><a href="/about/group/">ブロックと組</a></li>
+                <li class="sitemap-item"><a href="/about/solve/#faq">よくある質問</a></li>
+                <li class="sitemap-item"><a href="/about/solve/#contact">情報提供・お問い合わせ</a></li>
+              </ol>
+            </div>
+            <div class="sitemap-block">
+              <h3 class="sitemap-block-title">その他</h3>
+              <ol>
+                <li class="sitemap-item"><a href="/news/feed/">RSS</a></li>
+              </ol>
+            </div>
+          </div>
+          <div class="aboutme">
+            <div class="title">里自治会</div>
+            <div class="detail">
+              <div class="zip-before">&nbsp;520-2276</div>
+              <div><a href="https://www.google.co.jp/maps/place/%E3%80%92520-2276+Shiga-ken,+%C5%8Ctsu-shi,+Sato,+5+Chome%E2%88%927%E2%88%9222+%E9%87%8C%E5%85%AC%E6%B0%91%E9%A4%A8/@34.9394985,135.9306612,17z/data=!4m2!3m1!1s0x60016cee67f7d6df:0xe8e861cb3f9f2737?hl=ja" target="_blank" title="地図を見る" class="address-before">滋賀県大津市里5丁目7-22</a></div>
+              <div class="phone-before">&nbsp;077-546-6905</div>
+              <div class="fax-before">&nbsp;077-546-6905</div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <small>Copyright&copy; a23 All Rights Reserved.</small>
+        </div>
       </footer>
 
     </div>
@@ -424,6 +516,14 @@
 
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/slick.js"></script>
+    <script>
+      $(function () {
+        $('#linkTree h2').click(function() {
+          $(this).next('ol').slideToggle('fast');
+          $(this).toggleClass('selected');
+        });
+      });
+    </script>
 
   </body>
 </html>
