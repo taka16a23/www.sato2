@@ -30,6 +30,10 @@ footer {
         text-align: center;
         font-size: 2rem;
         font-weight: bold;
+        a:hover {
+          text-decoration: none;
+          opacity: 0.8;
+        }
       }
       .detail {
         margin-left: 0;
