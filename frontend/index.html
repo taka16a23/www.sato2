@@ -58,21 +58,53 @@
         <main>
           <section>
             <h2><a href="#" alt="" title="最新情報一覧"><span>最新情報</span></a></h2>
-            <dl id="new">
-              <dt>2022/10/07<span>その他</span></dt>
-              <dd>Windows版ChromeやFirefoxでドロップダウンを使った場合、移動先ページでドロップダウンが残ってしまう不具合があったのを改善。<br>
-                <a href="https://template-party.com/update/20221006_biz57.html">詳細はこちらをご覧下さい。</a></dd>
-              <dt>2022/08/22<span>その他</span></dt>
-              <dd>tp_biz57_job配布開始。</dd>
-              <dt>20XX/00/00<span class="icon-bg1">求人</span></dt>
-              <dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-              <dt>20XX/00/00<span class="icon-bg1">求人</span></dt>
-              <dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-              <dt>20XX/00/00</dt>
-              <dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-              <dt>20XX/00/00<span>その他</span></dt>
-              <dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-            </dl>
+            <ul>
+              <li class="news-item">
+                <a href="#">
+                  <span class="news-cell news-date">2022/10/07</span>
+                  <p class="news-cell news-category">
+                    <span class="news-category-board" style="color:#FFFFFF;background-color:#0081CC">回覧</span>
+                  </p>
+                  <span class="news-cell news-title">Windows版ChromeやFirefoxでドロップダウンを使った場合、移動先ページでドロップダウンが残ってしまう不具合があったのを改善。</span>
+                </a>
+              </li>
+              <li class="news-item">
+                <a href="#">
+                  <span class="news-cell news-date">2022/08/22</span>
+                  <p class="news-cell news-category">
+                    <span class="news-category-news" style="color:#FFFFFF;background-color:#EF8694">お知らせ</span>
+                  </p>
+                  <span class="news-cell news-title">tp_biz57_job配布開始。</span>
+                </a>
+              </li>
+              <li class="news-item">
+                <a href="#">
+                  <span class="news-cell news-date">20XX/00/00</span>
+                  <p class="news-cell news-category">
+                    <span class="news-category-activity" style="color:#FFFFFF;background-color:#19AB40">ご報告</span>
+                  </p>
+                  <span class="news-cell news-title">Windows版ChromeやFirefoxでドロップダウンを使った場合、移動先ページでドロップダウンが残ってしまう不具合があったのを改善。</span>
+                </a>
+              </li>
+              <li class="news-item">
+                <a href="#">
+                  <span class="news-cell news-date">2022/10/07</span>
+                  <p class="news-cell news-category">
+                    <span class="news-category-security" style="color:#FFFFFF;background-color:#EA6E56">防犯</span>
+                  </p>
+                  <span class="news-cell news-title">サンプルテキスト。サンプルテキスト。サンプルテキスト。</span>
+                </a>
+              </li>
+              <li class="news-item">
+                <a href="#">
+                  <span class="news-cell news-date">2022/10/07</span>
+                  <p class="news-cell news-category">
+                    <span class="news-category-news" style="color:#FFFFFF;background-color: #706b6a">その他</span>
+                  </p>
+                  <span class="news-cell news-title">サンプルテキスト。サンプルテキスト。サンプルテキスト。</span>
+                </a>
+              </li>
+            </ul>
           </section>
           <section>
             <h2><a href="#" alt="" title="カレンダー"><span>当面の予定</span></a></h2>
@@ -86,7 +118,7 @@
           <div class="sub-block" id="linkTree">
             <div class="sub-nav-block" id="newsLinks">
               <h2 class="nav-btn selected">過去のおしらせ</h2>
-              <ol style="display: block;">
+              <ol style="display: none;">
                 <li>
                   <a href="/news/?year=2004" title="2004年のおしらせを見る">2004年</a>
                 </li>
@@ -144,7 +176,6 @@
             <div class="sub-nav-block" id="activityLinks">
               <h2 class="nav-btn ">活動報告</h2>
               <ol style="display: none;">
-                
                 <li>
                   <p>
                     <a href="/activity/?year=2016" title="2016年の活動を見る">2016年</a>
@@ -162,12 +193,11 @@
                     <a href="/activity/?year=2023" title="2023年の活動を見る">2023年</a>
                   </p>
                 </li>
-                
               </ol>
             </div>
             <div class="sub-nav-block" id="securityLinks">
               <h2 class="nav-btn ">防犯・防災</h2>
-              <ol>
+              <ol style="display: none;">
                 <li>
                   <p>
                     <a href="/security/secportal/" title="防災ポータルサイトを見る">防災統合情報</a>
@@ -187,26 +217,22 @@
             </div>
             <div class="sub-nav-block" id="boardLinks">
               <h2 class="nav-btn ">回覧板</h2>
-              <ol>
-                
+              <ol style="display: none;">
                 <li>
                   <p>
                     <a href="/board/?year=2004" title="2004年の回覧を表示する">2004年</a>
                   </p>
                 </li>
-                
                 <li>
                   <p>
                     <a href="/board/?year=2005" title="2005年の回覧を表示する">2005年</a>
                   </p>
                 </li>
-                
                 <li>
                   <p>
                     <a href="/board/?year=2007" title="2007年の回覧を表示する">2007年</a>
                   </p>
                 </li>
-                
                 <li>
                   <p>
                     <a href="/board/?year=2008" title="2008年の回覧を表示する">2008年</a>
@@ -271,7 +297,7 @@
             </div>
             <div class="sub-nav-block" id="aboutLinks">
               <h2 class="nav-btn ">自治会案内</h2>
-              <ol>
+              <ol style="display: none;">
                 <li>
                   <p>
                     <a href="/about/rule/" title="会則を見る">会則</a>

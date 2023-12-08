@@ -1188,8 +1188,7 @@ ul.menu a::before {
   /*CMS用*/
   #new.cms dt {width: 8em;}
   #new.cms dd {width: calc(100% - 8em);}
-
-
+  
   /*list_base.htmlの設定---------------------------------------------------------------------------*/
   /*メニュー全体を囲むブロック*/
   ul.menu {
@@ -1282,3 +1281,61 @@ ul.menu a::before {
     background-image: linear-gradient(to bottom, #E8E9E8, #D4D6D4);    
   }
 }
+
+.news-item {
+  
+  &:hover {
+    background-color: #E8E9E8;
+  }
+  a {
+    display: block;
+    padding: 8px 0;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.news-cell {
+  padding: 4px 0;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.news-date {
+  width: 8rem;
+  font-weight: bold;
+}
+
+.news-category {
+  display: none;
+  width: 7rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  border-radius: 4px 4px 4px 4px;
+  span {
+    display: inline-block;
+    width: 100%;
+    border-radius: 4px 4px 4px 4px;
+  }
+}
+.news-title {
+  padding: 0 1rem;
+  text-align: left;
+}
+
+@media screen and (min-width:600px) {
+  
+  .news-category {
+    display: table-cell;
+  }
+}
+
+
+@media screen and (min-width:1000px) {
+  
+  .news-category {
+    display: table-cell;
+  }
+}
+
