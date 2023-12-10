@@ -1,0 +1,24 @@
+.pagetop-show {
+  display: block;
+}
+
+.pagetop a {
+	display: block;
+  text-decoration: none;
+  text-align: center;
+	position: fixed;
+	z-index: 99;
+	right: 20px;
+	bottom: 20px;
+	color: #fff;
+	font-size: 1.5rem;
+	background: rgba(0,0,0,0.3);
+	width: 60px;
+	line-height: 60px;
+  border-radius: 40px;
+
+  &:hover {
+    color: #fff;
+	  background: rgba(0,0,0,0.5);
+  }
+}

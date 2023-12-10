@@ -44,6 +44,7 @@ $breakpoints: (
 
 /* ドロップダウン */
 @import "components/dropdown";
+@import "components/pagetop";
 
 
 html,body {
@@ -413,45 +414,12 @@ ul.menu a::before {
 	transform: scale(1.6);	/*サイズを少し大きくする*/
 }
 
-/*PAGE TOP（↑）設定
----------------------------------------------------------------------------*/
-.pagetop-show {
-  display: block;
-}
-
-/*ボタンの設定*/
-.pagetop a {
-	display: block;
-  text-decoration: none;
-  text-align: center;
-	position: fixed;
-	z-index: 99;
-	right: 20px;
-	bottom: 20px;
-	color: #fff;
-	font-size: 1.5rem;
-	background: rgba(0,0,0,0.3);
-	width: 60px;
-	line-height: 60px;
-}
-
-/*マウスオン時*/
-.pagetop a:hover {
-	background: rgba(0,0,0,0.5);
-}
-
-/*---------------------------------------------------------------------------
-ここから下は画面幅400px以下の追加指定
----------------------------------------------------------------------------*/
+/* 画面幅400px以下の指定 */
 @media screen and (max-width:400px) {
 
 }
 
-
-
-/*---------------------------------------------------------------------------
-ここから下は画面幅600px以上の追加指定
----------------------------------------------------------------------------*/
+/* 画面幅600px以上の指定 */
 @media screen and (min-width:map-get($breakpoints, md)) {
 
 }
