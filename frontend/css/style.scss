@@ -55,6 +55,7 @@ html,body {
 	font-family: メイリオ, Meiryo, "Noto Sans JP", sans-serif;
 	-webkit-text-size-adjust: none;
   background-color: #1A1A1A;
+  scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -65,9 +66,11 @@ html,body {
 	line-height: 2;
 }
 
-.main-image {
-	position: relative;
-  
+.head {
+
+  .head-image {
+    width: 100%;
+  }
   &:hover {
     opacity: 0.8;
   }
@@ -285,15 +288,20 @@ a {
   .daily-today,
   .daily-tomorrow {
     margin-bottom: 14px;
-    h3::before {
+    .caption::before {
       content: "";
-      border-left: 3px solid #1b8913;
+      border-left: 4px solid #1b8913;
       padding-right: 10px;
+    }
+    .daily-label {
+      border-left: 4px solid #1b8913;
+      text-align: center;
     }
   }
   .daily-link {
     padding-left: 0.8rem;
     text-decoration: underline;
+    text-align: center;
   }
   .tomorrow {
     margin-top: 36px;
