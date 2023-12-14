@@ -1,18 +1,10 @@
 @charset "utf-8";
 
-/* リセットCSS */
-@import "destyle";
-
-
-
 /* Noto Sans JP */
 @import url("http://fonts.googleapis.com/earlyaccess/notosansjp.css");
 
-/* Font Awesomeの読み込み */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
-
-$themecolor: #2c7046;
-$themecolor1: #165B30;
+/* material design icons */
+@import 'icons/material-design-iconic-font/css/materialdesignicons.min.css';
 
 $breakpoints: (
   xs: 0,
@@ -22,23 +14,11 @@ $breakpoints: (
   xl: 1536px,
 ) !default;
 
+/* リセットCSS */
+@import "destyle";
 
-// @use "./breakpoints" as bp;
-// :root {
-//   --breakpoint-xs: #{map-get(bp.$breakpoints, xs)};
-//   --breakpoint-sm: #{map-get(bp.$breakpoints, sm)};
-//   --breakpoint-md: #{map-get(bp.$breakpoints, md)};
-//   --breakpoint-lg: #{map-get(bp.$breakpoints, lg)};
-//   --breakpoint-xl: #{map-get(bp.$breakpoints, xl)};
-//   --content-max: #{map-get(bp.$breakpoints, xl)};
-// }
-
-// $themecolor-dark: #028ee1;
-// $themecolor-alt: #26c6da;
-// $theme-light: #fff;
-// $theme-dark: #212529;
-
-
+@import "variables/colors";
+$base-font-family: メイリオ, Meiryo, "Noto Sans JP", sans-serif;
 @import "menubar";
 @import "footer";
 
@@ -46,57 +26,10 @@ $breakpoints: (
 @import "components/dropdown";
 @import "components/pagetop";
 
-
-html,body {
-	margin: 0;
-  padding: 0;
-	overflow-x: hidden;
-	font-size: 16px;
-	font-family: メイリオ, Meiryo, "Noto Sans JP", sans-serif;
-	-webkit-text-size-adjust: none;
-  background-color: #1A1A1A;
-  scroll-behavior: smooth;
-}
-
-.wrapper {
-  max-width: 1400px;
-	margin: 0 auto;
-  color: #555;
-  background-color: white;
-	line-height: 2;
-}
-
-.head {
-
-  .head-image {
-    width: 100%;
-  }
-  &:hover {
-    opacity: 0.8;
-  }
-}
-
-
-
-
-.calendar {
-  width: 100%;
-}
-
-#contents {
-	margin: 2.5%;
-}
-
 /* 装飾 */
-.zip-before:before {
+.yuubin-before:before {
+  // content: "\03012";
   content: "〒";
-}
-
-.address-before:before {
-  content: "\f041";
-  font: normal normal normal 14px/1 FontAwesome;
-  margin-right: 2px;
-  vertical-align: middle;
 }
 
 .phone-before:before {
@@ -108,71 +41,92 @@ html,body {
 }
 /* ---- */
 
+html,body {
+	margin: 0;
+  padding: 0;
+	overflow-x: hidden;
+	font-size: 16px;
+	font-family: $base-font-family;
+	-webkit-text-size-adjust: none;
+  background-color: $color-background-fallback;
+  /* for pagetop button */
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  max-width: 1400px;
+	margin: 0 auto;
+  color: $color-foreground-default;
+  background-color: $color-background-default;
+	line-height: 2;
+}
 
 /* 全般の設定 */
 a {
-	color: #555;
-	transition: 0.3s;
+	color: $color-foreground-default;
 
   &:hover {
-    color: $themecolor;
+    color: $color-brand-default;
     text-decoration: underline;
   }
 }
+
+.head:hover {
+  opacity: 0.8;
+}
+
+.contents {
+	margin: 2.5%;
+}
+
 .card + .card {
 	margin-top: 36px;
 }
 
+/* google calendar */
+.calendar {
+  width: 100%;
+}
 
-
-/* メインメニュー */
-#menubar {
+/* メニュー */
+.menu-area {
   display: none;
-  background: -moz-linear-gradient(top, $themecolor 0%, $themecolor 49%, #28653f 50%, $themecolor 100%);
-  background: -webkit-linear-gradient(top, $themecolor 0%,$themecolor 49%,#28653f 50%,$themecolor 100%);
-  background: linear-gradient(to bottom, $themecolor 0%,$themecolor 49%,#28653f 50%,$themecolor 100%);
+  background: -moz-linear-gradient(top, $color-brand-default 0%, $color-brand-default 49%, #1a512f 50%, $color-brand-default 100%);
+  background: -webkit-linear-gradient(top, $color-brand-default 0%, $color-brand-default 49%,#1a512f 50%, $color-brand-default 100%);
+  background: linear-gradient(to bottom, $color-brand-default 0%, $color-brand-default 49%,#1a512f 50%, $color-brand-default 100%);
 
-  .mainmenu-container {
+  .menu-list {
 	  display: flex;
 	  justify-content: space-around;
 	  margin: 0;
     padding: 0;
 	  line-height: 1.6;
-    list-style: none;
     
-    .mainmenu-item {
+    .menu-item {
       flex: 1;
       
-      &:hover {
-        background: -moz-linear-gradient(top, $themecolor1 0%, $themecolor1 49%, #1a512f 50%, $themecolor1 100%);
-        background: -webkit-linear-gradient(top, $themecolor1 0%,$themecolor1 49%,#1a512f 50%,$themecolor1 100%);
-        background: linear-gradient(to bottom, $themecolor1 0%,$themecolor1 49%,#1a512f 50%,$themecolor1 100%);
+      .menu-label {
+	      display: block;
+        text-decoration: none;
+        font-weight: bold;
+	      text-align: center;
+        letter-spacing: 4px;
+	      color: $color-foreground-contrast-default;
+	      padding: 14px 0;
       }
-    }
 
-    .mainmenu-label {
-	    display: block;
-      text-decoration: none;
-      font-weight: bold;
-	    text-align: center;
-      letter-spacing: 4px;
-	    color: #fff;
-	    padding: 14px 0;
+      &:hover {
+        background: -moz-linear-gradient(top, $color-brand-mute 0%, $color-brand-mute 49%, #28653f 50%, $color-brand-mute 100%);
+        background: -webkit-linear-gradient(top, $color-brand-mute 0%, $color-brand-mute 49%,#28653f 50%, $color-brand-mute 100%);
+        background: linear-gradient(to bottom, $color-brand-mute 0%, $color-brand-mute 49%,#28653f 50%, $color-brand-mute 100%);
+      }
     }
   }
 }
 
-/* ドロップダウンデザイン */
-.dropdown > .mainmenu-label:after {
-	font-family: "Font Awesome 5 Free";
-	content: "\f0d7";
-	font-weight: bold;
-	margin-left: 0.5em;
-}
-
 .dropdown-item {
-	color: #666;
-  background: #fff;
+	color: $color-dropdown-foreground-default;
+  background: $color-dropdown-background-default;
 	border: 1px solid #ccc;
   letter-spacing: 4px;
   text-decoration: none;
@@ -180,202 +134,21 @@ a {
   font-weight: bold;
 	text-align: center;
   .dropdown-label {
+    color: $color-dropdown-foreground-default;
     text-decoration: none;
 	  padding: 14px 0;
   }
   &:hover .dropdown-label {
-    color: #1b8913;
-  }
-}
-
-#main {
-	order: 0;
-	margin-bottom: 40px;
-
-  h2 {
-	  // background: -moz-linear-gradient(to bottom, #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
-	  // background: -webkit-linear-gradient(to bottom, #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
-	  // background: linear-gradient(to bottom, #2c7046 0%,#2c7046 49%,#28653f 50%,#2c7046 100%);
-    background: #2c7046;
-	  color: #fff;
-	  font-size: 1.2rem;
-	  font-weight: normal;
-	  margin: 0 0 16px;
-    letter-spacing: 4px;
-    font-weight: bold;
-    line-height: 48px;
-    &:hover {
-      opacity: 0.8;
-    }
-    a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      span {
-	      margin: 5px 20px;
-      }
-      &:hover {
-        color: #fff;
-        text-decoration: underline;
-      }
-    }
-    
-  }
-}
-
-#side {
-  h2 {
-    background: #2c7046;
-	  color: #fff;
-	  font-size: 1.2rem;
-	  font-weight: normal;
-	  margin: 0 0 16px;
-    letter-spacing: 4px;
-    font-weight: bold;
-    line-height: 48px;
-    text-align: center;
-    &:hover {
-      opacity: 0.8;
-    }
-    a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      span {
-	      margin: 5px 20px;
-      }
-      &:hover {
-        color: #fff;
-        text-decoration: underline;
-      }
-    }
-  }
-  .daily-date-calendar {
-    margin-bottom: 16px;
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-  .daily-year {
-    font-weight: bold;
-    color: #555;
-    letter-spacing: 2px;
-  }
-  .daily-date {
-    text-align: center;
-    color: #555;
-    a:hover {
-      color: #555;
-      text-decoration: none;
-    }
-    .daily-day {
-      letter-spacing: 4px;
-    }
-
-    .daily-date-num {
-      color: #1A1A1A;
-      font-weight: bold;
-      font-size: 50px;
-      line-height: 46px;
-    }
-  }
-  .daily-weekly {
-    text-align: center;
-    font-weight: bold;
-    color: #555;
-    letter-spacing: 2px;
-  }
-  .daily-today,
-  .daily-tomorrow {
-    margin-bottom: 14px;
-    .caption::before {
-      content: "";
-      border-left: 4px solid #1b8913;
-      padding-right: 10px;
-    }
-    .daily-label {
-      border-left: 4px solid #1b8913;
-      text-align: center;
-    }
-  }
-  .daily-link {
-    padding-left: 0.8rem;
-    text-decoration: underline;
-    text-align: center;
-  }
-  .tomorrow {
-    margin-top: 36px;
+    color: $color-dropdown-foreground-default-hover;
   }
 }
 
 
-/*subブロック設定
----------------------------------------------------------------------------*/
-#sub {
-	order: 1;
-  margin-bottom: 16px;
-}
-
-/*sideブロック設定---------------------------------------------------------------------------*/
-#side {
-	order: 2;
-}
-
-/*sub,side共通---------------------------------------------------------------------------*/
-#sub, #side {
-	font-size: 0.9rem;
-}
 
 
 
-/*submenu（subとsideで使っているメニュー）
----------------------------------------------------------------------------*/
-/*メニュー全体の設定*/
-ul.submenu {
-	list-style: none;
-	padding: 0;margin: 0;
-	margin-bottom: 20px;
-	border-top: solid 1px #e4e2d7;
-}
-
-/*メニュー１個あたりの設定*/
-ul.submenu li {
-	display: block;margin: 0;
-	background: #fff;	/*背景色*/
-	border-bottom: solid 1px #e4e2d7;	/*下線の幅、線種、色*/
-}
-ul.submenu li a {
-	text-decoration: none;display: block;
-	padding: 2px 10px;	/*上下、左右へとる余白*/
-}
-
-
-/*list_base.htmlの設定
----------------------------------------------------------------------------*/
-/*メニュー全体を囲むブロック*/
-ul.menu {
-	list-style: none;padding: 0;
-}
-
-/*メニュー１個あたりの設定*/
-ul.menu li {
-	margin-bottom: 10px;	/*メニューの上下間に空けるスペース*/
-}
-
-/*リンクテキスト*/
-ul.menu a {
-	display: block;
-	padding: 10px 20px;		/*上下、左右へのメニュー内の余白*/
-	border-radius: 5px;		/*角を丸くする設定*/
-	border: 1px solid #ccc;	/*下線の幅、線種、色*/
-	background: linear-gradient(#fff, #eee);/*背景グラデーション*/
-}
-
-/*左にあるアクセントライン*/
-ul.menu a::before {
-	content: "";
-	border-left: 4px solid #1b8913;	/*テキストの左側のアクセントラインの幅、線種、色*/
-	padding: 3px 15px 3px 0px;		/*アクセントラインの余白。上、右、下、左への順番。15pxがテキストとの間の余白部分になります。*/
+.side-area {
+  font-size: 0.9rem;
 }
 
 .security-portal-btn {
@@ -389,7 +162,7 @@ ul.menu a::before {
   a {
     display: block;
     width: 100%;
-    color: white;
+    color: $color-security-button-foreground-default;
     font-size: 1.1rem;
     font-weight: bold;
     text-align: center;
@@ -404,166 +177,231 @@ ul.menu a::before {
   }
 }
 
-
-/*矢印アイコン（Font Awesome）*/
-.btn.arrow a::after {
-	font-family: "Font Awesome 5 Free";	/*Font Awesomeを使う指定*/
-	content: "\f0a9";	/*使いたいアイコン名をここで指定。Font Awesomeに記載されています。詳しくは当テンプレートのマニュアルを読んで下さい。*/
-	color: #fff;		/*アイコンの色*/
-	font-weight: bold;
-	display: inline-block;
-	padding-left: 15px;		/*テキストとの間に空けるスペース*/
-	transform: scale(1.4);	/*サイズを1.4倍にする設定*/
-	transition: 0.3s;
-}
-
-/*矢印アイコン（Font Awesome）のマウスオン時*/
-.btn.arrow a:hover::after {
-	transform: scale(1.6);	/*サイズを少し大きくする*/
-}
-
-/* 画面幅400px以下の指定 */
-@media screen and (max-width:400px) {
-
-}
-
-/* 画面幅600px以上の指定 */
-@media screen and (min-width:map-get($breakpoints, md)) {
-
-}
-
-#linkTree {
+.submenu {
   display: none;
 }
 
-@media screen and (min-width:map-get($breakpoints, lg)) {
+.sub-block {
+  margin-bottom: 16px;
+}
 
-  /* メニューバー表示 */
-  #menubar {
-    display: block;
-  }
-
-  /*３本バー（ハンバーガー）アイコン設定
----------------------------------------------------------------------------*/
-  /*ハンバーガーメニューを非表示にする*/
-  #menubar_hdr {
-    display: none;
-  }
-
-  /*contentsブロック設定（main、sub、sideを囲むブロック）
----------------------------------------------------------------------------*/
-  #contents {
-	  display: flex;	/*中身(main、sub、side)を横に並べる*/
-  }
-
-  /*mainブロック設定---------------------------------------------------------------------------*/
-  #main {
-	  flex: 1;
-	  order: 1;		/*表示させる順番。main、sub、sideそれぞれに指定しており、数字の「小さな順」に左から並びます。*/
-	  margin: 0 30px;	/*上下、左右へのマージン。両サイドのブロックとの余白になります。*/
-  }
-
-  /*subブロック設定
----------------------------------------------------------------------------*/
-  #sub {
-	  width: 200px;	/*幅*/
-	  order: 0;		/*表示させる順番。main、sub、sideそれぞれに指定しており、数字の「小さな順」に左から並びます。*/
-  }
+.hide {
+  display: none;
+}
 
 
-  /*sideブロック設定
----------------------------------------------------------------------------*/
-  #side {
-	  width: 200px;
-	  order: 2;		/*表示させる順番。main、sub、sideそれぞれに指定しており、数字の「小さな順」に左から並びます。*/
-  }
 
-  /*list_base.htmlの設定---------------------------------------------------------------------------*/
-  /*メニュー全体を囲むブロック*/
-  ul.menu {
-	  display: flex;					/*flexボックスを使う指定*/
-	  flex-wrap: wrap;				/*折り返す指定*/
-	  justify-content: space-between;	/*並びかたの種類の指定*/
-  }
 
-  /*メニュー１個あたりの設定*/
-  ul.menu li {
-	  width: 49%;		/*幅*/
-	  margin-bottom: 20px;	/*メニューの上下間に空けるスペース*/
-  }
 
-  /*リンクテキスト*/
-  ul.menu a {
-	  padding: 20px 30px;	/*上下、左右へのメニュー内の余白*/
-  }
 
-  /*その他 ---------------------------------------------------------------------------*/
-  .ws {
-    width: 48%;
-    display: inline;
-  }
-  .sn {
-    display: block;
-  }
-  .sh {
-    display: none;
-  }
+#main-area {
+	margin-bottom: 40px;
 
-  .nav-btn {
-    // height: 35px;
-    // padding: 5px;
-    // padding-top: 10px;
-    padding: 8px 10px 8px 10px;
-    text-align: center;
+  .card-title {
+    background: $color-brand-default;
+	  color: $color-foreground-contrast-default;
+	  font-size: 1.2rem;
+	  font-weight: normal;
+	  margin: 0 0 16px;
+    letter-spacing: 4px;
     font-weight: bold;
-    letter-spacing: 3px;
-    font-size: 16px;
-    cursor: pointer;
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    line-height: 30px;
-    outline: none;
-    background-color: #2C7046;
-    position: relative;
+    line-height: 48px;
+    &:hover {
+      opacity: 0.8;
+    }
+    a {
+      display: block;
+      color: $color-foreground-contrast-default;
+      text-decoration: none;
+      span {
+	      margin: 5px 20px;
+      }
+      &:hover {
+        color: $color-foreground-contrast-default;
+        text-decoration: underline;
+      }
+    }
+  }
+}
 
+#right-area {
+  h2 {
+    background: $color-brand-default;
+	  color: $color-foreground-contrast-default;
+	  font-size: 1.2rem;
+	  font-weight: normal;
+	  margin: 0 0 16px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    line-height: 48px;
+    text-align: center;
+    &:hover {
+      opacity: 0.8;
+    }
+    a {
+      display: block;
+      color: $color-foreground-contrast-default;
+      text-decoration: none;
+      span {
+	      margin: 5px 20px;
+      }
+      &:hover {
+        color: $color-foreground-contrast-default;
+        text-decoration: underline;
+      }
+    }
+  }
+  .daily-date-calendar {
+    margin-bottom: 16px;
     &:hover {
       opacity: 0.8;
     }
   }
-  .sub-nav-block {
-    margin-bottom: 10px;
+  .daily-year {
+    font-weight: bold;
+    color: $color-foreground-mute;
+    letter-spacing: 2px;
   }
-  .sub-block {
-    margin-bottom: 8px;
-  }
+  .daily-date {
+    text-align: center;
+    color: $color-foreground-mute;
+    a:hover {
+      color: $color-foreground-mute;
+      text-decoration: none;
+    }
+    .daily-day {
+      letter-spacing: 4px;
+    }
 
-  #linkTree {
+    .daily-date-num {
+      color: $color-foreground-default;
+      font-weight: bold;
+      font-size: 50px;
+      line-height: 46px;
+    }
+  }
+  .daily-weekly {
+    text-align: center;
+    font-weight: bold;
+    color: $color-foreground-mute;
+    letter-spacing: 2px;
+  }
+  .daily-today,
+  .daily-tomorrow {
+    margin-bottom: 14px;
+    .caption::before {
+      content: "";
+      border-left: 4px solid $color-brand-default;
+      padding-right: 10px;
+    }
+    .daily-label {
+      font-weight: bold;
+      // border-left: 4px solid $color-brand-default;
+      text-align: center;
+      h3 {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 2px;
+        text-decoration-color: $color-brand-default;
+      }
+    }
+  }
+  .daily-link {
+    color: $color-foreground-mute;
+    padding-left: 0.8rem;
+    text-decoration: none;
+    text-align: center;
+  }
+  .tomorrow {
+    margin-top: 36px;
+  }
+}
+
+
+/* 画面幅400px以下の指定 */
+@media screen and (max-width:400px) {
+}
+
+/* 画面幅600px以上の指定 */
+@media screen and (min-width:map-get($breakpoints, md)) {
+}
+
+@media screen and (min-width:map-get($breakpoints, lg)) {
+
+  /* メニュー表示 */
+  .menu-area {
     display: block;
-    margin-top: 16px;
   }
 
-  #linkTree a {
+  #menubar_hdr {
+    display: none;
+  }
+
+  .contents {
+	  display: flex;
+  }
+  
+  .submenu {
+    display: block;
+    
+    .menu-list > .menu-item {
+      margin-bottom: 10px;
+    }
+  }
+
+  .submenu a {
     display: block;
     padding: 4px 10px;
   }
-  #linkTree li {
-    // height: 30px;
-    // letter-spacing: 1px;
-    // background-color: #f5f5f5;
+  
+  .submenu li {
     background-color: rgba(0,0,0,0.03);
     background-image: linear-gradient(to bottom, #f5f5f5, #ededed);    
   }
-  #linkTree li:hover {
-    background-color: #E8E9E8;
+  
+  .submenu li:hover {
+    background-color: $color-select-background-default;
     background-image: linear-gradient(to bottom, #E8E9E8, #D4D6D4);    
+  }
+
+
+
+  #main-area {
+	  flex: 1;
+	  margin: 0 30px;
+  }
+
+  .side-area {
+	  width: 200px;
+  }
+
+  .submenu {
+    .menu-list > .menu-item > .menu-label {
+      padding: 8px 10px 8px 10px;
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 3px;
+      font-size: 16px;
+      cursor: pointer;
+      color: $color-foreground-contrast-default;
+      text-decoration: none;
+      display: block;
+      line-height: 30px;
+      outline: none;
+      background-color: $color-brand-default;
+      position: relative;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 }
 
 .news-item {
   
   &:hover {
-    background-color: #E8E9E8;
+    background-color: $color-select-background-default;
   }
   a {
     display: block;
@@ -581,6 +419,7 @@ ul.menu a::before {
   vertical-align: middle;
 }
 .news-date {
+  color: $color-foreground-mute;
   width: 8rem;
   font-weight: bold;
 }
@@ -608,7 +447,6 @@ ul.menu a::before {
     display: table-cell;
   }
 }
-
 
 @media screen and (min-width:map-get($breakpoints, lg)) {
   

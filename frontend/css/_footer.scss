@@ -1,14 +1,15 @@
 
 footer {
-  color: white;
+  color: $color-foreground-contrast-default;
   width: 100%;
-  background-color: $themecolor;
-  border-top: solid 10px $themecolor1;
+  background-color: $color-brand-mute;
+  border-top: solid 10px $color-brand-default;
+  margin-top: 16px;
 
   a {
-    color: white;
+    color: $color-foreground-contrast-default;
     &:hover {
-      color: white;
+      color: $color-foreground-contrast-default;
       text-decoration: underline;
     }
   }
@@ -23,7 +24,7 @@ footer {
     .aboutme {
       width: 100%;
       height: fit-content;
-      background-color: $themecolor1;
+      background-color: $color-brand-default;
       padding: 30px;
       border-radius: 0px 0px 15px 15px;
       .title {
@@ -64,11 +65,6 @@ footer {
           margin-left: 0.5rem;
           .sitemap-item {
             line-height: 1.6rem;
-            a:before {
-              content: url("arrowWhite.png");
-              position : relative;
-              bottom: -0.1em;
-            }            
           }
         }
       }
@@ -78,7 +74,7 @@ footer {
   .copyright {
     text-align: center;
     margin-top: 20px;
-    background-color: $themecolor1;
+    background-color: $color-brand-default;
   }
 }
 
