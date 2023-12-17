@@ -7,6 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="ここにサイト説明を入れます">
     <link rel="stylesheet" href="css/style.css">
+    <style media="screen">
+      .news-category-activity {
+        color:#FFFFFF;
+        background-color:#19AB40;
+      }
+      .news-category-security {
+        color:#FFFFFF;
+        background-color:#EA6E56;
+      }
+      .news-category-news {
+        color:#FFFFFF;
+        background-color:#EF8694;
+      }
+      .news-category-other {
+        color:#FFFFFF;
+        background-color: #706b6a;
+      }
+      .news-category-board {
+        color:#FFFFFF;
+        background-color:#0081CC;
+      }
+    </style>
   </head>
 
   <body>
@@ -70,16 +92,15 @@
           </ul>
         </div>
       </div>
-      
-      <div class="container contents">
-        <div class="main-contents side-area">
-          <div class="sub-block security-portal-btn">
-            <a href="/security/secportal/" title="避難の判断に有用な情報です">防災統合情報</a>
+      <div class="container main">
+        <div class="side-area">
+          <div class="side-item a23-btn security-portal">
+            <a class="a23-btn-label" href="/security/secportal/" title="避難の判断に有用な情報です">防災統合情報</a>
           </div>
-          <div class="card submenu">
-            <ul class="menu-list">
-              <li class="menu-item">
-                <h2 class="menu-label">過去のおしらせ</h2>
+          <div class="side-item submenu">
+            <ul class="submenu-list">
+              <li class="submenu-item">
+                <h2 class="submenu-label">過去のおしらせ</h2>
                 <ul class="menu-list hide">
                   <li class="memu-item">
                     <a class="menu-label" href="/news/?year=2004" title="2004年のおしらせを見る">2004年</a>
@@ -122,8 +143,8 @@
                   </li>
                 </ul>
               </li>
-              <li class="menu-item">
-                <h2 class="menu-label ">活動報告</h2>
+              <li class="submenu-item">
+                <h2 class="submenu-label ">活動報告</h2>
                 <ul class="menu-list hide">
                   <li class="memu-item">
                     <a class="menu-label" href="/activity/?year=2016" title="2016年の活動を見る">2016年</a>
@@ -136,8 +157,8 @@
                   </li>
                 </ul>
               </li>
-              <li class="menu-item">
-                <h2 class="menu-label ">防犯・防災</h2>
+              <li class="submenu-item">
+                <h2 class="submenu-label ">防犯・防災</h2>
                 <ul class="menu-list hide">
                   <li class="memu-item">
                     <a class="menu-label" href="/security/secportal/" title="防災ポータルサイトを見る">防災統合情報</a>
@@ -150,8 +171,8 @@
                   </li>
                 </ul>
               </li>
-              <li class="menu-item">
-                <h2 class="menu-label ">回覧板</h2>
+              <li class="submenu-item">
+                <h2 class="submenu-label ">回覧板</h2>
                 <ul class="menu-list hide">
                   <li class="memu-item">
                     <a class="menu-label" href="/board/?year=2004" title="2004年の回覧を表示する">2004年</a>
@@ -194,8 +215,8 @@
                   </li>
                 </ul>
               </li>
-              <li class="menu-item">
-                <h2 class="menu-label">自治会案内</h2>
+              <li class="submenu-item">
+                <h2 class="submenu-label">自治会案内</h2>
                 <ul class="menu-list hide">
                   <li class="memu-item">
                     <a class="menu-label" href="/about/rule/" title="会則を見る">会則</a>
@@ -217,54 +238,56 @@
             </ul>
           </div>
         </div>
-        <div id="main-area" class="main-contents">
-          <div class="card">
-            <div class="card-title">
-              <h2><a href="#" alt="" title="最新情報一覧"><span>最新情報</span></a></h2>
-            </div>
-            <div class="card-body">
-              <ul>
+        <div class="main-area">
+          <div class="main-item">
+            <h2 class="main-title">
+              <a class="link" href="#" alt="" title="最新情報一覧">
+                <span class="title">最新情報</span>
+              </a>
+            </h2>
+            <div class="main-body news">
+              <ul class="news-list">
                 <li class="news-item">
-                  <a href="#">
+                  <a class="news-link" href="#">
                     <span class="news-cell news-date">2022/10/07</span>
                     <p class="news-cell news-category">
-                      <span class="news-category-board" style="color:#FFFFFF;background-color:#0081CC">回覧</span>
+                      <span class="news-category-label news-category-board">回覧</span>
                     </p>
                     <span class="news-cell news-title">Windows版ChromeやFirefoxでドロップダウンを使った場合、移動先ページでドロップダウンが残ってしまう不具合があったのを改善。</span>
                   </a>
                 </li>
                 <li class="news-item">
-                  <a href="#">
+                  <a class="news-link" href="#">
                     <span class="news-cell news-date">2022/08/22</span>
                     <p class="news-cell news-category">
-                      <span class="news-category-news" style="color:#FFFFFF;background-color:#EF8694">お知らせ</span>
+                      <span class="news-category-label news-category-news">お知らせ</span>
                     </p>
                     <span class="news-cell news-title">tp_biz57_job配布開始。</span>
                   </a>
                 </li>
                 <li class="news-item">
-                  <a href="#">
+                  <a class="news-link" href="#">
                     <span class="news-cell news-date">20XX/00/00</span>
                     <p class="news-cell news-category">
-                      <span class="news-category-activity" style="color:#FFFFFF;background-color:#19AB40">ご報告</span>
+                      <span class="news-category-label news-category-activity">ご報告</span>
                     </p>
                     <span class="news-cell news-title">Windows版ChromeやFirefoxでドロップダウンを使った場合、移動先ページでドロップダウンが残ってしまう不具合があったのを改善。</span>
                   </a>
                 </li>
                 <li class="news-item">
-                  <a href="#">
+                  <a class="news-link" href="#">
                     <span class="news-cell news-date">2022/10/07</span>
                     <p class="news-cell news-category">
-                      <span class="news-category-security" style="color:#FFFFFF;background-color:#EA6E56">防犯</span>
+                      <span class="news-category-label news-category-security">防犯</span>
                     </p>
                     <span class="news-cell news-title">サンプルテキスト。サンプルテキスト。サンプルテキスト。</span>
                   </a>
                 </li>
                 <li class="news-item">
-                  <a href="#">
+                  <a class="news-link" href="#">
                     <span class="news-cell news-date">2022/10/07</span>
                     <p class="news-cell news-category">
-                      <span class="news-category-news" style="color:#FFFFFF;background-color: #706b6a">その他</span>
+                      <span class="news-category-label news-category-other">その他</span>
                     </p>
                     <span class="news-cell news-title">サンプルテキスト。サンプルテキスト。サンプルテキスト。</span>
                   </a>
@@ -272,69 +295,73 @@
               </ul>
             </div>
           </div>
-          <div class="card">
-            <div class="card-title">
-              <h2><a href="#" alt="" title="カレンダー"><span>当面の予定</span></a></h2>
-            </div>
-            <div class="card-body">
+          <div class="main-item">
+            <h2 class="main-title">
+              <a class="link" href="#" alt="" title="カレンダー">
+                <span class="title">当面の予定</span>
+              </a>
+            </h2>
+            <div class="main-body calendar">
               <iframe class="calendar" src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;showTz=0&amp;mode=MONTH&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=satotanakami%40gmail.com&amp;color=%23125A12&amp;ctz=Asia%2FTokyo" style="border-width:0;height:60vh" frameborder="0" scrolling="no" title="google calendar"></iframe>
             </div>
           </div>
         </div>
-        <div id="right-area" class="main-contents side-area">
-          <div class="card today">
-            <div class="card-title">
-              <h2><a href="#" alt="" title="今日"><span>今日</span></a></h2>
-            </div>
-            <div class="card-body">
-              <div class="daily-date-calendar">
-                <div class="daily-date daily-year daily-month"><a href="#" alt="" title="">2023年12月</a></div>
-                <div class="daily-date daily-date-day"><a href="#" alt="" title=""><span class="daily-date-num">27</span>日</a></div>
-                <div class="daily-date daily-weekly"><a href="#" alt="" title=""><span>水</span>曜日</a></div>
+        <div class="side-area">
+          <div class="side-item">
+            <h2 class="side-title">
+              <a class="link" href="#" alt="" title="今日">
+                <span class="title">今日</span>
+              </a>
+            </h2>
+            <div class="side-body daily-today">
+              <div class="daily-calendar">
+                <a href="#" alt="" title="">
+                  <div class="daily-date daily-year daily-month">
+                    <span>2023年12月</span>
+                  </div>
+                  <div class="daily-date daily-date-day">
+                    <span class="daily-date-num">27</span><span>日</span>
+                  </div>
+                  <div class="daily-date daily-weekly">
+                    <span>水曜日</span>
+                  </div>
+                </a>
               </div>
-              <div class="daily-today">
-                <div class="daily-label">
-                  <h3>今日のごみ収集</h3>
-                </div>
+              <div class="daily-item">
+                <h3 class="daily-label">今日のごみ収集</h3>
                 <div class="daily-link">
                   <a href="#">ごみ収集はありません</a>
                 </div>
               </div>
-              <div class="daily-today">
-                <div class="daily-label">
-                  <h3>今日の予定</h3>
-                </div>
+              <div class="daily-item">
+                <h3 class="daily-label">今日の予定</h3>
                 <div class="daily-link">
                   <a href="#">予定はありません</a>
                 </div>
               </div>
-              <div class="daily-today">
-                <div class="daily-label">
-                  <h3>公民館の利用</h3>
-                </div>
+              <div class="daily-item">
+                <h3 class="daily-label">公民館の利用</h3>
                 <div class="daily-link">
                   <a href="#">利用予定はありません</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="card tomorrow">
-            <div class="card-title">
-              <h2><a href="#" alt="" title="明日"><span>明日</span></a></h2>
-            </div>
-            <div class="card-body">
-              <div class="daily-tomorrow">
-                <div class="daily-label">
-                  <h3>明日のごみ収集</h3>
-                </div>
+          <div class="side-item">
+            <h2 class="side-title">
+              <a class="link" href="#" alt="" title="明日">
+                <span>明日</span>
+              </a>
+            </h2>
+            <div class="side-body daily-tomorrow">
+              <div class="daily-item">
+                <h3 class="daily-label">明日のごみ収集</h3>
                 <div class="daily-link">
                   <a href="#">ごみ収集はありません</a>
                 </div>
               </div>
-              <div class="daily-tomorrow">
-                <div class="daily-label">
-                  <h3>明日の予定</h3>
-                </div>
+              <div class="daily-item">
+                <h3 class="daily-label">明日の予定</h3>
                 <div class="daily-link">
                   <a href="#">予定はありません</a>
                 </div>
@@ -346,10 +373,12 @@
       <div class="container">
         <footer>
           <div class="footer-container">
-            <div class="sitemap">
-              <div class="sitemap-block">
-                <h3 class="sitemap-block-title"><a href="/news/">おしらせ</a></h3>
-                <ol>
+            <div class="sitemap-area">
+              <div class="sitemap sitemap-news">
+                <h3 class="sitemap-title">
+                  <a href="/news/">おしらせ</a>
+                </h3>
+                <ul class="sitemap-list">
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
@@ -365,11 +394,13 @@
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
-                </ol>
+                </ul>
               </div>
-              <div class="sitemap-block">
-                <h3 class="sitemap-block-title"><a href="/activity/">ご報告</a></h3>
-                <ol>
+              <div class="sitemap sitemap-activity">
+                <h3 class="sitemap-title">
+                  <a href="/activity/">ご報告</a>
+                </h3>
+                <ul class="sitemap-list">
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
@@ -385,11 +416,13 @@
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
-                </ol>
+                </ul>
               </div>
-              <div class="sitemap-block">
-                <h3 class="sitemap-block-title"><a href="/board/">回覧板</a></h3>
-                <ol>
+              <div class="sitemap sitemap-board">
+                <h3 class="sitemap-title">
+                  <a href="/board/">回覧板</a>
+                </h3>
+                <ul class="sitemap-list">
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
@@ -405,47 +438,55 @@
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
                   <li class="sitemap-item"><a href="/news/?year=2000"><i class="mdi mdi-menu-right"></i>2000年</a></li>
-                </ol>
+                </ul>
               </div>
-              <div class="sitemap-block">
-                <h3 class="sitemap-block-title"><a href="/security/">防犯・防災</a></h3>
-                <ol>
+              <div class="sitemap sitemap-security">
+                <h3 class="sitemap-title">
+                  <a href="/security/">防犯・防災</a>
+                </h3>
+                <ul class="sitemap-list">
                   <li class="sitemap-item"><a href="/security/secportal/"><i class="mdi mdi-menu-right"></i>統合情報</a></li>
                   <li class="sitemap-item"><a href="/security/secportal/#evacuationMapArea"><i class="mdi mdi-menu-right"></i>避難地図</a></li>
                   <li class="sitemap-item"><a href="/security/knowledge/"><i class="mdi mdi-menu-right"></i>防災予備知識</a></li>
-                </ol>
+                </ul>
               </div>
-              <div class="sitemap-block">
-                <h3 class="sitemap-block-title"><a href="/formats/">各種申請</a></h3>
-                <ol>
+              <div class="sitemap sitemap-formats">
+                <h3 class="sitemap-title">
+                  <a href="/formats/">各種申請</a>
+                </h3>
+                <ul class="sitemap-list">
                   <li class="sitemap-item"><a href="/formats/#formatSato"><i class="mdi mdi-menu-right"></i>里自治会関係書式</a></li>
                   <li class="sitemap-item"><a href="/formats/#formatETC"><i class="mdi mdi-menu-right"></i>自治体等関係書式</a></li>
-                </ol>
+                </ul>
               </div>
-              <div class="sitemap-block">
-                <h3 class="sitemap-block-title"><a href="/about/">自治会案内</a></h3>
-                <ol>
+              <div class="sitemap sitemap-about">
+                <h3 class="sitemap-title">
+                  <a href="/about/">自治会案内</a>
+                </h3>
+                <ul class="sitemap-list">
                   <li class="sitemap-item"><a href="/about/rule/"><i class="mdi mdi-menu-right"></i>会則</a></li>
                   <li class="sitemap-item"><a href="/about/hall/"><i class="mdi mdi-menu-right"></i>公民館</a></li>
                   <li class="sitemap-item"><a href="/about/group/"><i class="mdi mdi-menu-right"></i>ブロックと組</a></li>
                   <li class="sitemap-item"><a href="/about/solve/#faq"><i class="mdi mdi-menu-right"></i>よくある質問</a></li>
                   <li class="sitemap-item"><a href="/about/solve/#contact"><i class="mdi mdi-menu-right"></i>情報提供・お問い合わせ</a></li>
-                </ol>
+                </ul>
               </div>
-              <div class="sitemap-block">
-                <h3 class="sitemap-block-title">その他</h3>
-                <ol>
+              <div class="sitemap sitemap-etc">
+                <h3 class="sitemap-title">その他</h3>
+                <ul class="sitemap-list">
                   <li class="sitemap-item"><a href="/news/feed/"><i class="mdi mdi-menu-right"></i>RSS</a></li>
-                </ol>
+                </ul>
               </div>
             </div>
-            <div class="aboutme">
-              <div class="title"><a href="/" title="">里自治会</a></div>
-              <div class="detail">
-                <div class="yuubin-before">520-2276</div>
-                <div><i class="mdi mdi-map-marker"></i><a href="https://www.google.co.jp/maps/place/%E3%80%92520-2276+Shiga-ken,+%C5%8Ctsu-shi,+Sato,+5+Chome%E2%88%927%E2%88%9222+%E9%87%8C%E5%85%AC%E6%B0%91%E9%A4%A8/@34.9394985,135.9306612,17z/data=!4m2!3m1!1s0x60016cee67f7d6df:0xe8e861cb3f9f2737?hl=ja" target="_blank" title="地図を見る">滋賀県大津市里5丁目7-22</a></div>
-                <div class="phone-before">&nbsp;077-546-6905</div>
-                <div class="fax-before">&nbsp;077-546-6905</div>
+            <div class="aboutme-area">
+              <h1 class="aboutme-title">
+                <a href="/" title="">里自治会</a>
+              </h1>
+              <div class="aboutme-body">
+                <div class="aboutme-item yuubin-before">520-2276</div>
+                <div class="aboutme-item"><i class="mdi mdi-map-marker"></i><a href="https://www.google.co.jp/maps/place/%E3%80%92520-2276+Shiga-ken,+%C5%8Ctsu-shi,+Sato,+5+Chome%E2%88%927%E2%88%9222+%E9%87%8C%E5%85%AC%E6%B0%91%E9%A4%A8/@34.9394985,135.9306612,17z/data=!4m2!3m1!1s0x60016cee67f7d6df:0xe8e861cb3f9f2737?hl=ja" target="_blank" title="地図を見る">滋賀県大津市里5丁目7-22</a></div>
+                <div class="aboutme-item phone-before">&nbsp;077-546-6905</div>
+                <div class="aboutme-item fax-before">&nbsp;077-546-6905</div>
               </div>
             </div>
           </div>
@@ -458,16 +499,15 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
       <div id="menubar_hdr"></div>
-
-      <div class="pagetop">
+      <div id="pagetop">
         <a href="#" alt="pagetop" title="pagetop"><i class="mdi mdi-arrow-up-bold"></i></a>
       </div>
 
       <script>
         $(function () {
-          $('.submenu h2').click(function() {
-            $(this).next('.menu-list').slideToggle('fast');
-            $(this).toggleClass('hide');
+          $('.submenu-label').click(function() {
+            // $(this).next('.menu-list').slideToggle('fast');
+            $(this).next('.menu-list').toggleClass('hide');
           });
         });
       </script>

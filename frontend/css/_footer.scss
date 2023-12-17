@@ -15,53 +15,29 @@ footer {
   }
 
   .footer-container {
+    display: flex;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
     flex-direction: column-reverse;
-    
-    .aboutme {
-      width: 100%;
-      height: fit-content;
-      background-color: $color-brand-default;
-      padding: 30px;
-      border-radius: 0px 0px 15px 15px;
-      .title {
-        text-align: center;
-        font-size: 2rem;
-        font-weight: bold;
-        a:hover {
-          text-decoration: none;
-          opacity: 0.8;
-        }
-      }
-      .detail {
-        margin-left: 0;
-        text-align: center;
-        &> div {
-          line-height: 1.2rem;
-        }
-      }
-    }
-    
-    .sitemap {
+        
+    .sitemap-area {
       width: 100%;
       padding-top: 10px;
 
-      .sitemap-block {
+      .sitemap {
         float: left;
         margin-top: 20px;
         margin-left: 10px;
         min-width: 150px;
 
-        .sitemap-block-title {
+        .sitemap-title {
           font-size: 16px;
           letter-spacing: 2px;
           font-weight: bold;
         }
 
-        ol {
+        .sitemap-list {
           margin-left: 0.5rem;
           .sitemap-item {
             line-height: 1.6rem;
@@ -69,26 +45,49 @@ footer {
         }
       }
     }
+    .aboutme-area {
+      width: 100%;
+      height: fit-content;
+      padding: 30px;
+      background-color: $color-brand-default;
+      border-radius: 0px 0px 15px 15px;
+      
+      .aboutme-title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        
+        a:hover {
+          opacity: 0.8;
+          text-decoration: none;
+        }
+      }
+      .aboutme-body {
+        margin-left: 0;
+        text-align: center;
+        &> .aboutme-item {
+          line-height: 1.2rem;
+        }
+      }
+    }
   }
 
   .copyright {
-    text-align: center;
     margin-top: 20px;
     background-color: $color-brand-default;
+    text-align: center;
   }
 }
-
-
 
 @media screen and (min-width:map-get($breakpoints, sm)) {
   footer {
     .footer-container {
-      .aboutme {
+      .aboutme-area {
         width: 100%;
-        .title {
+        .aboutme-title {
           text-align: center;
         }
-        .detail {
+        .aboutme-body {
           margin-left: 0;
           text-align: center;
         }
@@ -102,10 +101,10 @@ footer {
     .footer-container {
       .aboutme {
         width: 100%;
-        .title {
+        .aboutme-title {
           text-align: center;
         }
-        .detail {
+        .aboutme-body {
           margin-left: 0;
           text-align: center;
         }
@@ -118,19 +117,19 @@ footer {
   footer {
     .footer-container {
       flex-direction: row;
-      .aboutme {
-        width: 30%;
-        .title {
+      .sitemap-area {
+        width: 70%;
+        padding-top: 70px;
+      }
+      .aboutme-area {
+        width: fit-content;
+        .aboutme-title {
           text-align: left;
         }
-        .detail {
+        .aboutme-body {
           margin-left: 20px;
           text-align: left;
         }
-      }
-      .sitemap {
-        width: 70%;
-        padding-top: 70px;
       }
     }
   }
