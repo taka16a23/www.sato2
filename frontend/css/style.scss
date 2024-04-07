@@ -71,7 +71,7 @@ a {
   display: none;
 }
 
-.head:hover {
+.header-image:hover {
   opacity: 0.8;
 }
 
@@ -264,85 +264,89 @@ a {
   }
 }
 
-.main {
-	margin: 2.5%;
-  
-  .main-item + .main-item {
-	  margin-top: 36px;
-  }
+#content {
 
-  .main-area {
-	  margin-bottom: 40px;
-
-    .main-title {
-      background: $color-brand-default;
-	    color: $color-foreground-contrast-default;
-	    font-size: 1.2rem;
-	    font-weight: normal;
-	    margin: 0 0 16px;
-      letter-spacing: 4px;
-      font-weight: bold;
-      line-height: 48px;
-      &:hover {
-        opacity: 0.8;
-      }
-      .link {
-        display: block;
-        color: $color-foreground-contrast-default;
-        text-decoration: none;
-        .title {
-	        margin: 5px 20px;
-        }
-        &:hover {
-          color: $color-foreground-contrast-default;
-          text-decoration: underline;
-        }
-      }
-    }
-
-    .news-item {
+  &> .content-inner {
+	  padding: 2.5%;
+    
+    &> .container {
       
-      &:hover {
-        background-color: $color-select-background-default;
+      .main-item + .main-item {
+	      margin-top: 36px;
       }
-      
-      .news-link {
-        display: block;
-        padding: 8px 0;
-        &:hover {
-          text-decoration: none;
+
+      .main-area {
+	      margin-bottom: 40px;
+        
+        .main-title {
+          background: $color-brand-default;
+	        color: $color-foreground-contrast-default;
+	        font-size: 1.2rem;
+	        font-weight: normal;
+	        margin: 0 0 16px;
+          letter-spacing: 4px;
+          font-weight: bold;
+          line-height: 48px;
+          .link {
+            display: block;
+            color: $color-foreground-contrast-default;
+            text-decoration: none;
+            &:hover {
+              opacity: 0.8;
+              color: $color-foreground-contrast-default;
+              text-decoration: underline;
+            }
+          }
+          .title {
+	          margin: 5px 20px;
+          }
         }
-      }
 
-      .news-cell {
-        padding: 4px 0;
-        display: table-cell;
-        text-align: center;
-        vertical-align: middle;
-      }
-      
-      .news-date {
-        color: $color-foreground-mute;
-        width: 8rem;
-        font-weight: bold;
-      }
+        .news-item {
+          
+          &:hover {
+            background-color: $color-select-background-default;
+          }
+          
+          .news-link {
+            display: block;
+            padding: 8px 0;
+            &:hover {
+              text-decoration: none;
+            }
+          }
 
-      .news-category {
-        display: none;
-        width: 7rem;
-        font-weight: bold;
-        letter-spacing: 0.2rem;
-        border-radius: 4px 4px 4px 4px;
-        .news-category-label {
-          display: inline-block;
-          width: 100%;
-          border-radius: 4px 4px 4px 4px;
+          .news-cell {
+            padding: 4px 0;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+          }
+          
+          .news-date {
+            color: $color-foreground-mute;
+            width: 8rem;
+            font-weight: bold;
+          }
+
+          .news-category {
+            display: none;
+            width: 7rem;
+            font-weight: bold;
+            letter-spacing: 0.2rem;
+            border-radius: 4px 4px 4px 4px;
+            .news-category-label {
+              display: inline-block;
+              width: 100%;
+              border-radius: 4px 4px 4px 4px;
+            }
+          }
+
+          .news-title {
+            padding: 0 1rem;
+            text-align: left;
+          }
         }
-      }
-
-      .news-title {
-        padding: 0 1rem;
-        text-align: left;
       }
     }
   }
@@ -369,17 +373,21 @@ a {
     display: block;
   }
 
-  .main {
+  #content > .content-inner > .container {
 	  display: flex;
 
     .main-area {
 	    flex: 1;
 	    margin: 0 30px;
+      min-height: 600px;
 
       .news-item {
         .news-category {
           display: table-cell;
         }
+      }
+
+      .main-body {
       }
     }
 
@@ -430,12 +438,169 @@ a {
       }
     }
   }
+
+  .emergency-list {
+    display: flex !important;
+    .emergency-item {
+      width: 50%;
+    }
+    .emergency-item + .emergency-item {
+      padding-left: 16px !important;
+      padding-top: 0 !important;
+    }
+  }
+}
+.weatherAlertHead:nth-child(1) {
+  font-weight: bold;
+}
+
+#weatherAlert table th {
+    padding: 2px;
+    border: 1px solid #999;
+    font-weight: normal;
+    line-height: 1.2;
+    text-align: center;
+    background-color: #E7E7E7;
+}
+
+.weatherAlertHead .specialWarning,
+#weatherAlertDetail .specialWarning {
+    background-color: black;
+    color: #FFF;
+}
+
+.weatherAlertHead .warning,
+#weatherAlertDetail .warning {
+    background-color: #F00;
+    color: #FFF;
+}
+
+.weatherAlertHead .advisories,
+#weatherAlertDetail .advisories {
+    background-color: #FF0;
+}
+
+.weatherAlertLocalEntry .specialWarning {
+  background-color: black;
+  color: #FFF;
+  font-weight: bold;
+}
+
+.weatherAlertLocalEntry .warning {
+  background-color: #FCC;
+  font-weight: bold;
+}
+
+.weatherAlertLocalEntry .advisories {
+  background-color: #FFC;
+  font-weight: bold;
+}
+
+
+#weatherAlert table td {
+    padding: 1.6px;
+    font-size: 100%;
+    line-height: 1.2;
+    text-align: center;
+}
+
+#evacuationInfoArea table td {
+    border: 1px solid #999;
+    padding-left: 5px;
+    background-color: #fff;
+}
+
+#weatherAlert table td {
+    padding: 4px;
+    font-size: 100%;
+    line-height: 1.2;
+    text-align: center;
+}
+
+#weatherAlert {
+  width: 74%;
+
+  .description {
+    font-size: 0.9rem;
+  }
+  table {
+    border-collapse: collapse;
+    border-color: gray;
+    box-sizing: border-box;
+    width: 100%;
+    td {
+      border: 1px solid #999;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 1.2;
+    }
+  }  
+  tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+  }
+  table + table {
+    margin-top: 8px;
+  }
+}
+
+#weatherAlertArea .weatherAlertEntry {
+  float: left;
+}
+
+#weatherAlertDetail {
+  display: flex;
+  align-items: flex-end;
+  width: 24%;
+  
+  table {
+    tbody {
+      td {
+        border: gray solid 1px;
+        padding: 4px;
+      }
+      td:nth-child(1) {
+        text-align: center;
+        width: 5rem;
+        vertical-align: middle;
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
+      td:nth-child(2) {
+        padding: 10px;
+        text-align: left;
+        line-height: 1.3em;
+        font-size: 0.8rem;
+        // letter-spacing: 0.5px;
+      }
+    }
+  }
+}
+
+.weather-alert-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.rivercam-container {
+  display: flex;
+}
+
+#evacuationMapArea {
+    width: 100%;
+}
+#evacuationMapArea iframe {
+    width: 100%;
+    height: 500px;
 }
 
 /*３本バーブロック*/
 #menubar_hdr {
 	display: block;
-	position: fixed;z-index: 100;
+	position: fixed;
+  z-index: 100;
 	top: 10px;	/*上からの配置場所指定*/
 	right: 3%;	/*右からの配置場所指定*/
 	width: 50px;	/*幅*/
@@ -458,4 +623,222 @@ a {
 	background: #ff0000 url(../images/ham.png) no-repeat center bottom/50px;
 }
 
+.emergency-list {
+  display: block;
+  .emergency-item {
+    width: 100%;
+    
+    .emergencyInfoBox {
+      > a {
+        display: block;        
+        width: 100%;
+      }
+      img.title_pic {
+        margin-bottom: 16px;
+      }
+      
+      a:hover {
+        opacity: 0.8;
+      }
+      .emergencyInfoBoxHead {
+        height: 58px;
+        background-color: #fff;
+        display: flex;
+        padding: 12px;
+        font-size: 24px;
+        color: red;
+        font-weight: bold;
+        vertical-align: middle;
+        line-height: 32px;
+        border: solid 1px red;
+        .icon {
+          display: none;
+        }
+        .title {
+          margin-left: 12px;
+        }
+      }
+      &:has(.hasAnnounced) {
+        .emergencyInfoBoxHead {
+          background-color: red;
+          display: flex;
+          color: #fff;
+        }
+        .icon {
+          display: block;
+        }
+      }
+      
+      h2 {
+        margin-top: 4px;
+        margin-bottom: 0;
+        padding: 4px 4px 4px 16px;
+        border-bottom: 3px solid #7AA800;
+        background-color: #F2F6E5;
+        font-weight: normal;
+
+        button {
+          background-color: #333333;
+          border-color: #333333;
+          color: #FFF;
+          text-align: center;          
+          border-width: 2px;
+          border-style: outset;
+          border-color: buttonborder;
+          border-image: initial;
+          &:hover {
+            background-color: #7AA800;
+            border-color: #7AA800;
+            color: #FFF;
+          }        
+        }
+      }
+
+      .name {
+        display: inline-block;
+        width: 60%;
+        letter-spacing: 0.4px;
+        a {
+          color: -webkit-link;
+          text-decoration: underline;
+        }
+      }
+      .state {
+        display: inline-block;
+        width: 20%;
+      }
+      button {
+        width: 16%;
+      }
+      .noAnnouncement {
+        color: #989898;
+      }
+      .hasAnnounced {
+        color: #DE0A09;
+      }
+    }
+  }
+  .emergency-item + .emergency-item {
+    padding-left: 0;
+    padding-top: 16px;
+  }
+}
+
+
+
+// .emergencyInfoWrapper {
+//   width: 50%;
+
+//   h2 {
+//     padding: 5px;
+//     position: relative;
+
+//     font-size: 20px;
+//     margin-top: 4px;
+//     margin-bottom: 4px;
+//     border-bottom: 3px solid #7AA800;
+//     background-color: #F2F6E5;
+//     font-weight: normal;
+//   }
+
+//   h2 button {
+//     background-color: #333333;
+//     border-color:     #333333;
+//     color:            #FFF;
+//     position:         absolute;
+//     right:            10px;
+//   }
+
+//   h2 button:hover {
+//     background-color: #7AA800;
+//     border-color:     #7AA800;
+//     color:            #FFF;
+//     position:         absolute;
+//     right:            10px;
+//   }
+
+//   .hasAnnounced {
+//     color: #DE0A09;
+//   }
+
+//   .noAnnouncement {
+//     color: #989898;
+//   }
+// }
+
+// .emergencyInfoBox {
+//     border: #7AA800 solid 3px;
+//     padding: 10px;/*5px;*/
+//     margin-top: 4px;
+// }
+// .emergencyInfoBoxHead {
+//     margin: 0px;
+//     padding: 5px;
+//     height: 28px;
+//     background-color: red;
+//     position: relative;
+//     border-top-left-radius: 15px;
+//     border-bottom-left-radius: 15px;
+// }
+// .emergencyInfoBoxHead .icon {
+//     top: 5px;
+//     left: 20px;
+//     height: 24px;
+//     width: 24px;
+//     position: absolute;
+// }
+// .emergencyInfoBoxHead .title {
+//     left: 50px;
+//     font-size: 20px;
+//     font-weight: bold;
+//     color: white;
+//     position: absolute;
+// }
+
+// .emergencyInfoBox h2 {
+//     margin-top: 4px;
+//     margin-bottom: 0px;
+// }
+// .emergencyInfoBox h2 span {
+//     display: inline-block;
+// }
+// .emergencyInfoBox h2 .name {
+//     width: 60%;
+// }
+
+// .emergencyInfoBox h2 .name a {
+//     font-size: 16px;
+// }
+
+// .emergencyInfoBox h2 .state {
+//     width: 30%;
+// }
+
 @import "footer";
+
+.board-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+}
+.board-item {
+}
+.board-item-container-inner {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.board-title {
+  text-align: center;
+  font-weight: bold;
+}
+.board-body {
+  &:hover {
+    margin: -3px;
+    border: 3px solid #CCC;
+  }
+}
+
+.text-mute {
+  color: #757575;
+}
