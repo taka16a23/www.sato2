@@ -6,7 +6,7 @@ r"""S30_security --
 from datetime import timedelta
 
 # カスタムユーザーモデル
-AUTH_USER_MODEL = 'account.AccountUser'
+# AUTH_USER_MODEL = 'account.AccountUser'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # generate

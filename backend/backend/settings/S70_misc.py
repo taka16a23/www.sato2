@@ -6,10 +6,6 @@ r"""S07_misc --
 
 ROOT_URLCONF = 'backend.urls'
 
-STATIC_URL = '/static/'
-
-MEDIA_URL = '/media/'
-
 
 
 # For Emacs

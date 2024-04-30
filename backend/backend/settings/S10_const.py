@@ -3,17 +3,23 @@
 r"""S10_const --
 
 """
+from urllib import parse as urlparse
+
 
 # Do not change here. change at 90_local.py.
 DEBUG = True
 
 URL_SQDN = "taka16a23.com"
 
-SYSTEM_NAME = "WebApp"
+SYSTEM_NAME = "里自治会ホームページ"
 
 PASSWORD_RESET_TIMELIMIT_MINUTS = 90
 
 COMPANY_NAME = "株式会社a23"
+
+STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
 
 
 class EventStatus(object):
@@ -39,7 +45,7 @@ class EventStatus(object):
         return (
             (EventStatus.CONFIRMED, 'confirmed'),
             (EventStatus.TENTATIVE, 'tentative'),
-            (EventStatusCANCELLED., 'cancelled'),
+            (EventStatus.CANCELLED, 'cancelled'),
         )
 
     @staticmethod
