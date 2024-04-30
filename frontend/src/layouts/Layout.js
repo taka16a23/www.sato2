@@ -1,6 +1,7 @@
 import React, { Component, lazy } from 'react';
 import { Routes, Route } from "react-router-dom";
 import Header from 'components/Header';
+import Footer from 'components/Footer';
 import Home from 'views/blog/Home';
 
 
@@ -20,15 +21,18 @@ class Layout extends Component {
 
   render() {
     return (
-      <>
-        <Header/>
-        <Routes>
-          <Route exact={true} path='/errors/403' element={<Error403/>}/>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/post/:slug" element={<PostDetail/>}/>
-          <Route path='*' element={<Error404/>}/>
-        </Routes>
-      </>
+      <div class="wrapper">
+        <div class="wrapper-inner">
+          <Header/>
+          <Routes>
+            <Route exact={true} path='/errors/403' element={<Error403/>}/>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/post/:slug" element={<PostDetail/>}/>
+            <Route path='*' element={<Error404/>}/>
+          </Routes>
+          <Footer/>
+        </div>
+      </div>
     )
   }
 }
