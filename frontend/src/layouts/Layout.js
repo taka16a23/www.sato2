@@ -2,7 +2,7 @@ import React, { Component, lazy } from 'react';
 import { Routes, Route } from "react-router-dom";
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import Home from 'views/blog/Home';
+import Home from 'views/Home';
 
 
 const PostDetail = lazy(() => new Promise((resolve) => {
