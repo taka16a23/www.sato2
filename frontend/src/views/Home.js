@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import PostList from 'components/PostList'
-import Categories from "components/Categories";
 
 
 class HomeComponent extends Component {
