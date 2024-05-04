@@ -38,7 +38,6 @@ class NewsModel(DisplayableMixin):
         _('URL'),
         max_length=200,
         blank=False,
-        help_text=_('/media/example.pdf'),
     )
 
     class Meta(object):

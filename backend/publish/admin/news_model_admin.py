@@ -16,7 +16,6 @@ class NewsModelAdmin(admin.ModelAdmin):
         'title',
         'category',
         'status',
-        'url',
         'publish_date',
         'expiry_date',
     )
