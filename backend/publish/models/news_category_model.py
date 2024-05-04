@@ -4,6 +4,8 @@ r"""お知らせカテゴリーモデル --
 
 """
 from django.db import models
+from django.utils.translation import gettext_lazy as _
+
 from colorfield.fields import ColorField
 
 
@@ -15,36 +17,36 @@ class NewsCategoryModel(models.Model):
     """
     # カテゴリー名
     name = models.CharField(
-        'カテゴリー名',
+        _('category name'),
         max_length=8,
-        help_text=u'8文字以内',
         unique=True,
         null=False,
         blank=False,
+        help_text=_('8文字以内'),
     )
     # 文字色
     fgcolor = ColorField(
-        '文字色',
+        _('foreground color'),
         default='#ffffff',
     )
     # 背景色
     bgcolor = ColorField(
-        '背景色',
+        _('background color'),
         default='#ff0000',
     )
     # 並び順
     sortid = models.IntegerField(
-        '並び順',
-        help_text=u'サイトで昇順に並びます',
+        _('sort key'),
         default=0,
         blank=False,
         null=False,
         db_index=True,
+        help_text=_('sort by ascending'),
     )
 
     class Meta:
-        verbose_name = 'お知らせカテゴリー'
-        verbose_name_plural = 'お知らせカテゴリー'
+        verbose_name = _('news category')
+        verbose_name_plural = _('news category')
         ordering = ['sortid', ]
 
     def __str__(self):

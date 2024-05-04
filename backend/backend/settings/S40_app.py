@@ -11,6 +11,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'base',
+    'db_stamp',
     'colorfield',
     'publish',
 ]

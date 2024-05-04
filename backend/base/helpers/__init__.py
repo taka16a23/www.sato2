@@ -4,13 +4,11 @@ r"""Name: __init__.py
 
 
 """
-from publish.models.news_category_model import NewsCategoryModel
-from publish.models.news_model import NewsModel
+from base.helpers.base_concrete_model import base_concrete_model
 
 
 __all__ = [
-    'NewsCategoryModel',
-    'NewsModel',
+    'base_concrete_model',
 ]
 
 
