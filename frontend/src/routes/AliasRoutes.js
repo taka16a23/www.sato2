@@ -1,6 +1,8 @@
 export default class AliasRoutes {
   static Top = "/";
-  static News = "/news";
+  static Api = "/api";
+  static API_Publish = AliasRoutes.Api + "/publish";
+  static API_News = AliasRoutes.API_Publish + "/news";
   static Info = "/info";
   static Security = "/security";
   static SecurityMap = AliasRoutes.Security + "/map";

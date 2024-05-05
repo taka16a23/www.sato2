@@ -16,9 +16,14 @@ SECRET_KEY = ''
 
 ALLOWED_HOSTS = ['*', ]
 
-# CORS_ORIGIN_ALLOW_ALL = True
-# CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+# 自身以外のオリジンのHTTPリクエスト内にクッキーを含めることを許可する
+CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = [
+    'http://127.0.0.1',
+    'http://127.0.0.1:8000',
+    'http://localhost',
+    'http://localhost:8000',
     'http://taka16a23.com',
     'https://taka16a23.com',
     'http://api.taka16a23.com',

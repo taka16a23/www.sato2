@@ -1,7 +1,5 @@
-import CategoryModel from './Category.model';
-import PostModel from './Post.model';
+import NewsModel from './News.model';
 
 export {
-  CategoryModel,
-  PostModel,
+  NewsModel,
 }

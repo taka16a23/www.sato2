@@ -1,13 +1,31 @@
 import React, { Component } from "react";
+import { NavLink } from 'react-router-dom'
+import { ServiceFactory } from 'services';
+import moment from 'moment'
 
 
 class HomeComponent extends Component {
 
   constructor(props) {
     super(props);
+    this.news_models = [];
     this.state = {
+      modelLength: this.news_models.length,
       today: new Date(),
     }
+  }
+
+  componentDidMount() {
+    var oParams = new URLSearchParams();
+    var newsService = ServiceFactory.createNewsService();
+    newsService.listNews(oParams).then(arrModels => {
+      this.news_models = arrModels;
+      this.setState({
+        modelLength: this.news_models.length,
+      });
+    }).catch(err => {
+      alert(err);
+    });
   }
 
   render() {
@@ -170,51 +188,17 @@ class HomeComponent extends Component {
                   </h2>
                   <div class="main-body news">
                     <ul class="news-list">
-                      <li class="news-item">
-                        <a class="news-link" href="#">
-                          <span class="news-cell news-date">2022/10/07</span>
-                          <p class="news-cell news-category">
-                            <span class="news-category-label news-category-board" style={{color: '#FFFFFF', backgroundColor: '#0081CC'}}>回覧</span>
-                          </p>
-                          <span class="news-cell news-title">Windows版ChromeやFirefoxでドロップダウンを使った場合、移動先ページでドロップダウンが残ってしまう不具合があったのを改善。</span>
-                        </a>
-                      </li>
-                      <li class="news-item">
-                        <a class="news-link" href="#">
-                          <span class="news-cell news-date">2022/08/22</span>
-                          <p class="news-cell news-category">
-                            <span class="news-category-label news-category-news" style={{color: '#FFFFFF', backgroundColor: '#EF8694'}}>お知らせ</span>
-                          </p>
-                          <span class="news-cell news-title">tp_biz57_job配布開始。</span>
-                        </a>
-                      </li>
-                      <li class="news-item">
-                        <a class="news-link" href="#">
-                          <span class="news-cell news-date">20XX/00/00</span>
-                          <p class="news-cell news-category">
-                            <span class="news-category-label news-category-activity" style={{color: '#FFFFFF', backgroundColor: '#19AB40'}}>ご報告</span>
-                          </p>
-                          <span class="news-cell news-title">Windows版ChromeやFirefoxでドロップダウンを使った場合、移動先ページでドロップダウンが残ってしまう不具合があったのを改善。</span>
-                        </a>
-                      </li>
-                      <li class="news-item">
-                        <a class="news-link" href="#">
-                          <span class="news-cell news-date">2022/10/07</span>
-                          <p class="news-cell news-category">
-                            <span class="news-category-label news-category-security" style={{color: '#FFFFFF', backgroundColor: '#EA6E56'}}>防犯</span>
-                          </p>
-                          <span class="news-cell news-title">サンプルテキスト。サンプルテキスト。サンプルテキスト。</span>
-                        </a>
-                      </li>
-                      <li class="news-item">
-                        <a class="news-link" href="#">
-                          <span class="news-cell news-date">2022/10/07</span>
-                          <p class="news-cell news-category">
-                            <span class="news-category-label news-category-other" style={{color: '#FFFFFF', backgroundColor: '#706b6a'}}>その他</span>
-                          </p>
-                          <span class="news-cell news-title">サンプルテキスト。サンプルテキスト。サンプルテキスト。</span>
-                        </a>
-                      </li>
+                      {this.news_models.map((oNewsModel) =>
+                        <li class="news-item">
+                          <NavLink className="news-link" to={oNewsModel.url}>
+                            <span class="news-cell news-date">{moment(oNewsModel.publish_date).format('YYYY/M/D')}</span>
+                            <p class="news-cell news-category">
+                              <span class="news-category-label news-category-board" style={{color: oNewsModel.news_category_display.fgcolor, backgroundColor: oNewsModel.news_category_display.bgcolor}}>{oNewsModel.news_category_display.name}</span>
+                            </p>
+                            <span class="news-cell news-title">{oNewsModel.title}</span>
+                          </NavLink>
+                        </li>
+                      )}
                     </ul>
                   </div>
                 </section>

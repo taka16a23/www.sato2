@@ -1,13 +1,13 @@
-export default class PostModel extends Object {
+export default class NewsModel extends Object {
   constructor() {
     super();
-    this.post_id = null;
+    this.id = null;
     this.title = "";
-    this.excerpt = "";
-    this.slug = "";
-    this.image = null;
-    this.content = "";
-    this.category = {};
+    this.url = "";
+    this.status = {};
+    this.news_category_display = {};
+    this.publish_date = null;
+    this.expiry_date = null;
     this.created_at = null;
     this.modified_at = null;
     this.created_by = null;
@@ -18,11 +18,11 @@ export default class PostModel extends Object {
    * Getter Setter method
    */
   getID() {
-    return this.post_id;
+    return this.id;
   }
 
   setID(a_iID) {
-    this.post_id = a_iID;
+    this.id = a_iID;
     return this;
   }
 
@@ -35,49 +35,34 @@ export default class PostModel extends Object {
     return this;
   }
 
-  getExcerpt() {
-    return this.excerpt;
+  getURL() {
+    return this.url;
   }
 
-  setExcerpt(a_sValue) {
-    this.excerpt = a_sValue;
+  setURL(a_sValue) {
+    this.url = a_sValue;
     return this;
   }
 
-  getSlug() {
-    return this.slug;
+  getStatus() {
+    return this.status;
   }
 
-  setSlug(a_sValue) {
-    this.slug = a_sValue;
+  setStatus(a_sValue) {
+    this.status = a_sValue;
     return this;
   }
 
-  getImage() {
-    return this.image;
+  getNewsCategoryDisplay() {
+    return this.news_category_display;
   }
 
-  setImage(a_sValue) {
-    this.image = a_sValue;
-    return this;
+  getPublishDate() {
+    return this.publish_date;
   }
 
-  getContent() {
-    return this.content;
-  }
-
-  setContent(a_sValue) {
-    this.content = a_sValue;
-    return this;
-  }
-
-  getCategories() {
-    return this.category;
-  }
-
-  setCategories(a_oValue) {
-    this.category = a_oValue;
-    return this;
+  getExpiryDate() {
+    return this.expiry_date;
   }
 
   getCreatedBy() {

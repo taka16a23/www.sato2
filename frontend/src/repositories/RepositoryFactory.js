@@ -1,22 +1,13 @@
 export default class RepositoryFactory {
   static _cache = {};
 
-  // Category
-  static createCategoryRepository() {
-    if(!RepositoryFactory._cache['CategoryRepository']) {
-      let klass = require('./Category.repository').default;
-      RepositoryFactory._cache['CategoryRepository'] = new klass();
+  // News
+  static createNewsRepository() {
+    if(!RepositoryFactory._cache['NewsRepository']) {
+      let klass = require('./News.repository').default;
+      RepositoryFactory._cache['NewsRepository'] = new klass();
     }
-    return RepositoryFactory._cache['CategoryRepository'];
-  }
-
-  // Post
-  static createPostRepository() {
-    if(!RepositoryFactory._cache['PostRepository']) {
-      let klass = require('./Post.repository').default;
-      RepositoryFactory._cache['PostRepository'] = new klass();
-    }
-    return RepositoryFactory._cache['PostRepository'];
+    return RepositoryFactory._cache['NewsRepository'];
   }
 
 }
