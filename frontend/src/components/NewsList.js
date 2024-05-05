@@ -1,0 +1,62 @@
+import React, { Component } from "react";
+import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom'
+import { ServiceFactory } from 'services';
+import moment from 'moment'
+
+
+class NewsList extends Component {
+  static propTypes = {
+    limit: PropTypes.number,
+  }
+  static defaultProps = {
+    limit: null,
+  }
+
+  constructor(props) {
+    super(props)
+    this.models = [];
+    this.state = {
+      modelLength: this.models.length,
+    }
+  }
+
+  componentDidMount() {
+    var oParams = new URLSearchParams();
+    // 最新記事(公開日時昇順)
+    oParams.append('ordering', '-publish_date');
+    // 指定件数があれば
+    if(this.props.limit !== null) {
+      oParams.append('limit', this.props.limit);
+    }
+    var newsService = ServiceFactory.createNewsService();
+    newsService.listNews(oParams).then(arrModels => {
+      this.models = arrModels;
+      this.setState({
+        modelLength: this.models.length,
+      });
+    }).catch(err => {
+      alert(err);
+    });
+  }
+
+  render() {
+    return (
+      <ul class="news-list">
+        {this.models.map((oNewsModel) =>
+          <li class="news-item">
+            <NavLink className="news-link" to={oNewsModel.url}>
+              <span class="news-cell news-date">{moment(oNewsModel.publish_date).format('YYYY/MM/DD')}</span>
+              <p class="news-cell news-category">
+                <span class="news-category-label news-category-board" style={{color: oNewsModel.news_category_display.fgcolor, backgroundColor: oNewsModel.news_category_display.bgcolor}}>{oNewsModel.news_category_display.name}</span>
+              </p>
+              <span class="news-cell news-title">{oNewsModel.title}</span>
+            </NavLink>
+          </li>
+        )}
+      </ul>
+    );
+  };
+}
+
+export default NewsList;

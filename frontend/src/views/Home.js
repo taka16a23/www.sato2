@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from 'react-router-dom'
 import { ServiceFactory } from 'services';
 import moment from 'moment'
+import PostList from 'components/NewsList'
 
 
 class HomeComponent extends Component {
@@ -191,19 +192,7 @@ class HomeComponent extends Component {
                     </a>
                   </h2>
                   <div class="main-body news">
-                    <ul class="news-list">
-                      {this.news_models.map((oNewsModel) =>
-                        <li class="news-item">
-                          <NavLink className="news-link" to={oNewsModel.url}>
-                            <span class="news-cell news-date">{moment(oNewsModel.publish_date).format('YYYY/MM/DD')}</span>
-                            <p class="news-cell news-category">
-                              <span class="news-category-label news-category-board" style={{color: oNewsModel.news_category_display.fgcolor, backgroundColor: oNewsModel.news_category_display.bgcolor}}>{oNewsModel.news_category_display.name}</span>
-                            </p>
-                            <span class="news-cell news-title">{oNewsModel.title}</span>
-                          </NavLink>
-                        </li>
-                      )}
-                    </ul>
+                    <PostList limit={process.env.REACT_APP_NEWS_LIMIT}/>
                   </div>
                 </section>
                 <section class="main-item">
