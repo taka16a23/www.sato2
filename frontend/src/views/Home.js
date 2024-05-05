@@ -1,36 +1,17 @@
 import React, { Component } from "react";
-import { NavLink } from 'react-router-dom'
-import { ServiceFactory } from 'services';
-import moment from 'moment'
-import PostList from 'components/NewsList'
+import NewsList from 'components/NewsList'
 
 
 class HomeComponent extends Component {
 
   constructor(props) {
     super(props);
-    this.news_models = [];
     this.state = {
-      modelLength: this.news_models.length,
       today: new Date(),
     }
   }
 
   componentDidMount() {
-    var oParams = new URLSearchParams();
-    // 最新記事(公開日時昇順)
-    oParams.append('ordering', '-publish_date');
-    // 設定件数のみ取得
-    oParams.append('limit', process.env.REACT_APP_NEWS_LIMIT);
-    var newsService = ServiceFactory.createNewsService();
-    newsService.listNews(oParams).then(arrModels => {
-      this.news_models = arrModels;
-      this.setState({
-        modelLength: this.news_models.length,
-      });
-    }).catch(err => {
-      alert(err);
-    });
   }
 
   render() {
@@ -192,7 +173,7 @@ class HomeComponent extends Component {
                     </a>
                   </h2>
                   <div className="main-body news">
-                    <PostList limit={process.env.REACT_APP_NEWS_LIMIT}/>
+                    <NewsList limit={Number(process.env.REACT_APP_NEWS_LIMIT)}/>
                   </div>
                 </section>
                 <section className="main-item">
@@ -202,7 +183,7 @@ class HomeComponent extends Component {
                     </a>
                   </h2>
                   <div className="main-body calendar">
-                    <iframe className="calendar" src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;showTz=0&amp;mode=MONTH&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=satotanakami%40gmail.com&amp;color=%23125A12&amp;ctz=Asia%2FTokyo" style={{borderWidth:"0", height:"60vh"}} frameborder="0" scrolling="no" title="google calendar"></iframe>
+                    <iframe className="calendar" src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;showTz=0&amp;mode=MONTH&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=satotanakami%40gmail.com&amp;color=%23125A12&amp;ctz=Asia%2FTokyo" style={{borderWidth:"0", height:"60vh"}} frameBorder="0" scrolling="no" title="google calendar"></iframe>
                   </div>
                 </section>
               </main>
