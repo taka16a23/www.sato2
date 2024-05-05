@@ -44,7 +44,7 @@ class NewsList extends Component {
     return (
       <ul className="news-list">
         {this.models.map((oNewsModel) =>
-          <li className="news-item">
+          <li className="news-item" key={oNewsModel.id}>
             <NavLink className="news-link" to={oNewsModel.url}>
               <span className="news-cell news-date">{moment(oNewsModel.publish_date).format('YYYY/MM/DD')}</span>
               <p className="news-cell news-category">
