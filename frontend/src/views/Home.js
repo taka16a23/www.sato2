@@ -1,17 +1,30 @@
 import React, { Component } from "react";
+import { NavLink } from 'react-router-dom'
 import NewsList from 'components/NewsList'
+import { ServiceFactory } from 'services';
 
 
 class HomeComponent extends Component {
 
   constructor(props) {
     super(props);
+    this.years = [];
     this.state = {
+      yearsLength: this.years.length,
       today: new Date(),
     }
   }
 
   componentDidMount() {
+    var newsService = ServiceFactory.createNewsService();
+    newsService.listYears().then(years => {
+      this.years = years;
+      this.setState({
+        yearsLength: this.years.length,
+      });
+    }).catch(err => {
+      alert(err);
+    });
   }
 
   render() {
@@ -28,45 +41,13 @@ class HomeComponent extends Component {
                   <li className="submenu-item">
                     <h2 className="submenu-label">過去のおしらせ</h2>
                     <ul className="menu-list hide">
-                      <li className="memu-item">
-                        <a className="menu-label" href="/news/?year=2004" title="2004年のおしらせを見る">2004年</a>
-                      </li>
-                      <li className="memu-item">
-                        <a className="menu-label" href="/news/?year=2005" title="2005年のおしらせを見る">2005年</a>
-                      </li>
-                      <li className="memu-item">
-                        <a className="menu-label" href="/news/?year=2007" title="2007年のおしらせを見る">2007年</a>
-                      </li>
-                      <li className="memu-item">
-                        <a className="menu-label" href="/news/?year=2008" title="2008年のおしらせを見る">2008年</a>
-                      </li>
-                      <li className="memu-item">
-                        <a className="menu-label" href="/news/?year=2010" title="2010年のおしらせを見る">2010年</a>
-                      </li>
-                      <li className="memu-item">
-                        <a className="menu-label" href="/news/?year=2012" title="2012年のおしらせを見る">2012年</a>
-                      </li>
-                      <li className="memu-item">
-                        <a className="menu-label" href="/news/?year=2013" title="2013年のおしらせを見る">2013年</a>
-                      </li>
-                      <li className="memu-item">
-                        <a className="menu-label" href="/news/?year=2014" title="2014年のおしらせを見る">2014年</a>
-                      </li>
-                      <li className="memu-item">
-                        <a className="menu-label" href="/news/?year=2015" title="2015年のおしらせを見る">2015年</a>
-                      </li>
-                      <li className="memu-item">
-                        <a className="menu-label" href="/news/?year=2016" title="2016年のおしらせを見る">2016年</a>
-                      </li>
-                      <li className="memu-item">
-                        <a className="menu-label" href="/news/?year=2017" title="2017年のおしらせを見る">2017年</a>
-                      </li>
-                      <li className="memu-item">
-                        <a className="menu-label" href="/news/?year=2018" title="2018年のおしらせを見る">2018年</a>
-                      </li>
-                      <li className="memu-item">
-                        <a className="menu-label" href="/news/?year=2023" title="2023年のおしらせを見る">2023年</a>
-                      </li>
+                      {this.years.map((year) =>
+                        <li className="memu-item" key={year}>
+                          <NavLink className="menu-label" to={"/news/?year=" + year} title={year + "年のおしらせを見る"}>
+                            {year + "年"}
+                          </NavLink>
+                        </li>
+                      )}
                     </ul>
                   </li>
                   <li className="submenu-item">
@@ -168,9 +149,9 @@ class HomeComponent extends Component {
               <main id="main">
                 <section className="main-item">
                   <h2 className="main-title">
-                    <a className="link" href="#" alt="" title="最新情報一覧">
+                    <NavLink className="link" to={"/news"} alt="" title="最新情報一覧">
                       <span className="title">最新情報</span>
-                    </a>
+                    </NavLink>
                   </h2>
                   <div className="main-body news">
                     <NewsList limit={Number(process.env.REACT_APP_NEWS_LIMIT)}/>
