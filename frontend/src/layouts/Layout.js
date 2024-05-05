@@ -16,8 +16,8 @@ class Layout extends Component {
 
   render() {
     return (
-      <div class="wrapper">
-        <div class="wrapper-inner">
+      <div className="wrapper">
+        <div className="wrapper-inner">
           <Header/>
           <Routes>
             <Route exact={true} path='/errors/403' element={<Error403/>}/>
