@@ -17,6 +17,10 @@ class HomeComponent extends Component {
 
   componentDidMount() {
     var oParams = new URLSearchParams();
+    // 最新記事(公開日時昇順)
+    oParams.append('ordering', '-publish_date');
+    // 設定件数のみ取得
+    oParams.append('limit', process.env.REACT_APP_NEWS_LIMIT);
     var newsService = ServiceFactory.createNewsService();
     newsService.listNews(oParams).then(arrModels => {
       this.news_models = arrModels;
@@ -191,7 +195,7 @@ class HomeComponent extends Component {
                       {this.news_models.map((oNewsModel) =>
                         <li class="news-item">
                           <NavLink className="news-link" to={oNewsModel.url}>
-                            <span class="news-cell news-date">{moment(oNewsModel.publish_date).format('YYYY/M/D')}</span>
+                            <span class="news-cell news-date">{moment(oNewsModel.publish_date).format('YYYY/MM/DD')}</span>
                             <p class="news-cell news-category">
                               <span class="news-category-label news-category-board" style={{color: oNewsModel.news_category_display.fgcolor, backgroundColor: oNewsModel.news_category_display.bgcolor}}>{oNewsModel.news_category_display.name}</span>
                             </p>
