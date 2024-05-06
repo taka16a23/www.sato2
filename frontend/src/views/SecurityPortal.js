@@ -1,0 +1,226 @@
+import React, { Component } from "react";
+import { NavLink } from 'react-router-dom'
+import AliasRoutes from "routes/AliasRoutes";
+import { Timeline } from 'react-twitter-widgets'
+
+
+class SecurityPortalComponent extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+  }
+
+  componentDidMount() {
+  }
+
+  render() {
+    return (
+      <div id="content">
+        <div className="content-inner">
+          <div className="container">
+            <div className="main-area">
+              <main id="main">
+                <div className="main-item">
+                  <h2 className="main-title">
+                    <span className="title">避難情報</span>
+                  </h2>
+                  <div className="main-body">
+                    <div className="emergency-list">
+                      <div className="emergency-item emergencyInfoWrapper">
+                        <div className="emergencyInfoBox">
+                          <a href="https://dis-shiga.jp/pc/topdis-shiga.html" target="_blank">
+                            <img className="title_pic" src="https://dis-shiga.jp/image/title.jpg"/>
+                          </a>
+                          <div className="emergencyInfoBoxHead">
+                            <img className="icon" src="https://dis-shiga.jp/image/exclamation2.png"/>
+                            <span className="title">緊急情報</span>
+                          </div>
+                          <div>
+                            <h2>
+                              <span className="name">本部体制設置</span>
+                              <span className="state hasAnnounced">発表あり</span>
+                              <button onClick="window.location='/pc/hq/info.html';" control-id="ControlID-11">&gt;　詳細</button>
+                            </h2>
+                          </div>
+                          <div>
+                            <h2>
+                              <span className="name">避難情報
+                                <a href="/other/避難情報.pdf" target="_blank">（避難情報とは）</a>
+                              </span>
+                              <span className="state noAnnouncement">発令なし</span>
+                              <button onClick="window.location='/pc/evacuation/info.html';" control-id="ControlID-12">&gt;　詳細</button>
+                            </h2>
+                          </div>
+                          <div>
+                            <h2>
+                              <span className="name">避難所情報</span>
+                              <span className="state noAnnouncement">発表なし</span>
+                              <button onClick="window.location='/pc/shelter/info.html';" control-id="ControlID-13">&gt;　詳細</button>
+                            </h2>
+                          </div>
+                          <div>
+                            <h2>
+                              <span className="name">国民保護情報</span>
+                              <span className="state noAnnouncement">発表なし</span>
+                              <button onClick="window.location='/pc/civil_protection/info.html';" control-id="ControlID-14">&gt;　詳細</button>
+                            </h2>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="emergency-item security-timeline">
+                        <Timeline
+                          dataSource={{
+                            sourceType: 'profile',
+                            screenName: 'otsu_kikibousai'
+                          }}
+                          options={{
+                            lang: "ja",
+                            height: '400'
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="main-item">
+                  <h2 className="main-title">
+                    <a className="link" href="http://shiga-bousai.jp/announce/weather.php" alt="" target="_blank" title="気象特別警報・警報・注意報">
+                      <span className="title">気象特別警報・警報・注意報</span>
+                      <i className="mdi mdi-open-in-new"></i>
+                    </a>
+                  </h2>
+                  <div className="weather-alert-container">
+                    <div id="weatherAlert" className="weatherAlertEntry">
+                      <p className="description"><span>大津市南部</span>12月17日00:13 現在</p>
+                      <table id="heavyRainAlert" cellSpacing="0" cellPadding="0">
+                        <tbody>
+                          <tr>
+                            <th width="200">記録的短時間大雨情報</th>
+                            <td>発表なし</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table id="mainWeatherAlert" cellPadding="0" cellSpacing="0">
+                        <tbody>
+                          <tr className="weatherAlertHead">
+                            <td colSpan="5" className="specialWarning" scope="col">特別警報</td>
+                            <td colSpan="6" className="warning" scope="col">警報</td>
+                            <td colSpan="14" className="advisories" scope="col">注意報</td>
+                          </tr>
+                          <tr className="weatherAlertHead">
+                            <td rowSpan="2" width="20" className="specialWarning">暴風雪</td>
+                            <td colSpan="2" className="specialWarning">大雨</td>
+                            <td rowSpan="2" width="20" className="specialWarning">暴風</td>
+                            <td rowSpan="2" width="20" className="specialWarning">大雪</td>
+                            <td rowSpan="2" width="20" className="warning">暴風雪</td>
+                            <td colSpan="2" className="warning">大雨</td>
+                            <td rowSpan="2" width="20" className="warning">洪水</td>
+                            <td rowSpan="2" width="20" className="warning">暴風</td>
+                            <td rowSpan="2" width="20" className="warning">大雪</td>
+                            <td rowSpan="2" width="20" className="advisories">大雨</td>
+                            <td rowSpan="2" width="20" className="advisories">大雪</td>
+                            <td rowSpan="2" width="20" className="advisories">風雪</td>
+                            <td rowSpan="2" width="20" className="advisories">雷</td>
+                            <td rowSpan="2" width="20" className="advisories">強風</td>
+                            <td rowSpan="2" width="20" className="advisories">融雪</td>
+                            <td rowSpan="2" width="20" className="advisories">洪水</td>
+                            <td rowSpan="2" width="20" className="advisories">濃霧</td>
+                            <td rowSpan="2" width="20" className="advisories">乾燥</td>
+                            <td rowSpan="2" width="20" className="advisories">なだれ</td>
+                            <td rowSpan="2" width="20" className="advisories">低温</td>
+                            <td rowSpan="2" width="20" className="advisories">霜</td>
+                            <td rowSpan="2" width="20" className="advisories">着氷</td>
+                            <td rowSpan="2" width="20" className="advisories">着雪</td>
+                          </tr>
+                          <tr className="weatherAlertHead">
+                            <td width="20" className="specialWarning">土砂災害</td>
+                            <td width="20" className="specialWarning">浸水害</td>
+
+                            <td width="20" className="warning">土砂災害</td>
+                            <td width="20" className="warning">浸水害</td>
+                          </tr>
+                          <tr className="weatherAlertLocalEntry">
+                            <td className="specialWarning">○</td>
+                            <td className="specialWarning">&nbsp;</td>
+                            <td className="specialWarning">&nbsp;</td>
+                            <td className="specialWarning">&nbsp;</td>
+                            <td className="specialWarning">&nbsp;</td>
+                            <td className="warning">&nbsp;</td>
+                            <td className="warning">&nbsp;</td>
+                            <td className="warning">&nbsp;</td>
+                            <td className="warning">&nbsp;</td>
+                            <td className="warning">&nbsp;</td>
+                            <td className="warning">&nbsp;</td>
+                            <td className="advisories">&nbsp;</td>
+                            <td className="advisories">&nbsp;</td>
+                            <td className="advisories">&nbsp;</td>
+                            <td className="advisories">&nbsp;</td>
+                            <td className="advisories">○</td>
+                            <td className="advisories">&nbsp;</td>
+                            <td className="advisories">&nbsp;</td>
+                            <td className="advisories">&nbsp;</td>
+                            <td className="advisories">&nbsp;</td>
+                            <td className="advisories">&nbsp;</td>
+                            <td className="advisories">&nbsp;</td>
+                            <td className="advisories">&nbsp;</td>
+                            <td className="advisories">&nbsp;</td>
+                            <td className="advisories">&nbsp;</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div id="weatherAlertDetail" className="weatherAlertEntry">
+                      <table cellSpacing="0" cellPadding="0">
+                        <tbody>
+                          <tr>
+                            <td className="specialWarning">特別警報</td>
+                            <td>重大な災害が起こるおそれが著しく大きいとき</td>
+                          </tr>
+                          <tr>
+                            <td className="warning">警報</td>
+                            <td>重大な災害が起こるおそれのあるとき</td>
+                          </tr>
+                          <tr>
+                            <td className="advisories">注意報</td>
+                            <td>大雨や強風などによって災害が起こるおそれのあるとき</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div className="main-item">
+                  <h2 className="main-title">
+                    <a className="link" href="http://shiga-bousai.jp/announce/weather.php" alt="" target="_blank" title="気象特別警報・警報・注意報">
+                      <span className="title">大戸川(石居橋)の様子</span>
+                      <i className="mdi mdi-open-in-new"></i>
+                    </a>
+                  </h2>
+                  <h3>
+                    <a href="http://c.shiga-bousai.jp/shigapref/pc/camDetail_6191FF05.html" target="_blank" title="滋賀県河川防災カメラのページへ移動">滋賀県 河川防災カメラ 2023年12月20日08:10 現在</a>
+                  </h3>
+                  <div className="rivercam-container">
+                    <div id="riverCam" className="riverAlertEntry">
+                      <a href="http://c.shiga-bousai.jp/shigapref/pc/camDetail_6191FF05.html" target="_blank" title="滋賀県河川防災カメラ">
+                        <img src="http://c.shiga-bousai.jp/shigapref/pc/cameraData/images/6191FF05/202312222355.jpg" alt="石居橋の現在の様子"/>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="main-item">
+                  <div id="evacuationMapArea" className="evacuationInfoEntry clearfix">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=zJXaXK9GQ-AU.kwVpZ6T_kTts"></iframe>
+                  </div>
+                </div>
+              </main>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+}
+
+export default SecurityPortalComponent;

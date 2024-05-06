@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from 'react-router-dom'
 import NewsList from 'components/NewsList'
 import { ServiceFactory } from 'services';
+import AliasRoutes from "routes/AliasRoutes";
 
 
 class HomeComponent extends Component {
@@ -34,7 +35,9 @@ class HomeComponent extends Component {
           <div className="container">
             <div className="side-area">
               <div className="side-item a23-btn security-portal">
-                <a className="a23-btn-label" href="/security_portal.html" title="避難の判断に有用な情報です">防災統合情報</a>
+                <NavLink className="a23-btn-label" to={AliasRoutes.SecurityPortal} title="避難の判断に有用な情報です">
+                  防災統合情報
+                </NavLink>
               </div>
               <div className="side-item submenu">
                 <ul className="submenu-list">
@@ -159,8 +162,9 @@ class HomeComponent extends Component {
                 </section>
                 <section className="main-item">
                   <h2 className="main-title">
-                    <a className="link" href="#" alt="" title="カレンダー">
+                    <a className="link" href="https://calendar.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;showTz=0&amp;mode=MONTH&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=satotanakami%40gmail.com&amp;color=%23125A12&amp;ctz=Asia%2FTokyo" alt="" title="カレンダー" target="_blank">
                       <span className="title">当面の予定</span>
+                      <i class="mdi mdi-open-in-new"></i>
                     </a>
                   </h2>
                   <div className="main-body calendar">
