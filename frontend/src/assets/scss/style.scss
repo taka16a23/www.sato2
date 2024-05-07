@@ -518,7 +518,8 @@ a {
 }
 
 #weatherAlert {
-  width: 74%;
+  width: 100%;
+  margin-bottom: 20px;
 
   .description {
     font-size: 0.9rem;
@@ -988,6 +989,10 @@ a {
 
 /* 1024px以上 */
 @media screen and (min-width:map-get($breakpoints, lg)) {
+  #weatherAlert {
+    width: 74%;
+    margin-bottom: 0;
+  }
   .jichikai-formats,
   .jichitai-formats {
     &> table {
