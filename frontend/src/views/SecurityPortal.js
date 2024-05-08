@@ -3,16 +3,37 @@ import { NavLink } from 'react-router-dom'
 import AliasRoutes from "routes/AliasRoutes";
 import { Timeline } from 'react-twitter-widgets'
 
+import axios from "axios";
+import moment from "moment";
+
 
 class SecurityPortalComponent extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      serverDateTime: null,
     }
   }
 
   componentDidMount() {
+    // サーバー時刻を利用
+    // TODO: (Atami) [2024/05/08] url変更
+    axios.head('http://localhost/favicon.png').then(res => {
+      let serverDateTime = new Date(res.headers.date);
+      // 5分で丸め
+      let minutes = serverDateTime.getMinutes();
+      minutes = Math.floor(minutes / 5) * 5;
+      let riverDateTime = moment(
+        new Date(serverDateTime.getFullYear(),
+                 serverDateTime.getMonth(), serverDateTime.getDate(),
+                 serverDateTime.getHours(), minutes));
+      // リンク切れ対策
+      riverDateTime = riverDateTime.subtract(5, 'minutes')
+      this.setState({
+        riverDateTime: riverDateTime,
+      });
+    })
   }
 
   render() {
@@ -193,18 +214,18 @@ class SecurityPortalComponent extends Component {
                 </div>
                 <div className="main-item">
                   <h2 className="main-title">
-                    <a className="link" href="http://shiga-bousai.jp/announce/weather.php" alt="" target="_blank" title="気象特別警報・警報・注意報">
+                    <a className="link" href="http://c.shiga-bousai.jp/shigapref/pc/camDetail_6191FF05.html" alt="" target="_blank" title="大戸川(石居橋)の様子">
                       <span className="title">大戸川(石居橋)の様子</span>
                       <i className="mdi mdi-open-in-new"></i>
                     </a>
                   </h2>
                   <h3>
-                    <a href="http://c.shiga-bousai.jp/shigapref/pc/camDetail_6191FF05.html" target="_blank" title="滋賀県河川防災カメラのページへ移動">滋賀県 河川防災カメラ 2023年12月20日08:10 現在</a>
+                    <a href="http://c.shiga-bousai.jp/shigapref/pc/camDetail_6191FF05.html" target="_blank" title="滋賀県河川防災カメラのページへ移動">滋賀県 河川防災カメラ {this.state.riverDateTime === undefined ? "" : this.state.riverDateTime.format('YYYY年M月D日 HH:mm')} 現在</a>
                   </h3>
                   <div className="rivercam-container">
                     <div id="riverCam" className="riverAlertEntry">
                       <a href="http://c.shiga-bousai.jp/shigapref/pc/camDetail_6191FF05.html" target="_blank" title="滋賀県河川防災カメラ">
-                        <img src="http://c.shiga-bousai.jp/shigapref/pc/cameraData/images/6191FF05/202312222355.jpg" alt="石居橋の現在の様子"/>
+                        <img src={this.state.riverDateTime === undefined ? "" : "http://c.shiga-bousai.jp/shigapref/pc/cameraData/images/6191FF05/" + this.state.riverDateTime.format('YYYYMMDDHHmm') + ".jpg"} alt="石居橋の現在の様子"/>
                       </a>
                     </div>
                   </div>
