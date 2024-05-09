@@ -18,18 +18,20 @@ class SecurityPortalComponent extends Component {
 
   componentDidMount() {
     // サーバー時刻を利用
-    // TODO: (Atami) [2024/05/08] url変更
-    axios.head('http://localhost/favicon.png').then(res => {
+    let serverURL = process.env.REACT_APP_URL + AliasRoutes.Favicon;
+    axios.head(serverURL).then(res => {
       let serverDateTime = new Date(res.headers.date);
+      // リンク切れ対策
+      // 30秒
+      let fixSeconds = 30000;
+      serverDateTime = new Date(serverDateTime - fixSeconds);
       // 5分で丸め
       let minutes = serverDateTime.getMinutes();
       minutes = Math.floor(minutes / 5) * 5;
-      let riverDateTime = moment(
-        new Date(serverDateTime.getFullYear(),
-                 serverDateTime.getMonth(), serverDateTime.getDate(),
-                 serverDateTime.getHours(), minutes));
-      // リンク切れ対策
-      riverDateTime = riverDateTime.subtract(5, 'minutes')
+      let fixDateTime = new Date(serverDateTime.getFullYear(),
+                                 serverDateTime.getMonth(), serverDateTime.getDate(),
+                                 serverDateTime.getHours(), minutes);
+      let riverDateTime = moment(fixDateTime);
       this.setState({
         riverDateTime: riverDateTime,
       });
