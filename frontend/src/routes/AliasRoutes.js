@@ -1,5 +1,6 @@
 export default class AliasRoutes {
   static Top = "/";
+  static Favicon = "/favicon.png";
   static Api = "/api";
   static API_Publish = AliasRoutes.Api + "/publish";
   static API_News = AliasRoutes.API_Publish + "/news";
