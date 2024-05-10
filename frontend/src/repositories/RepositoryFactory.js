@@ -10,4 +10,12 @@ export default class RepositoryFactory {
     return RepositoryFactory._cache['NewsRepository'];
   }
 
+  // WeatherWarnings
+  static createWeatherWarningsRepository() {
+    if(!RepositoryFactory._cache['WeatherWarningRepository']) {
+      let klass = require('./WeatherWarning.repository').default;
+      RepositoryFactory._cache['WeatherWarningRepository'] = new klass();
+    }
+    return RepositoryFactory._cache['WeatherWarningRepository'];
+  }
 }

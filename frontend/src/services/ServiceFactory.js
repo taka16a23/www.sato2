@@ -9,4 +9,13 @@ export default class ServiceFactory {
     }
     return ServiceFactory._cache['NewsService'];
   }
+
+  // Security
+  static createSecurityService() {
+    if(!ServiceFactory._cache['SecurityService']) {
+      let klass = require('./Security.service.js').default;
+      ServiceFactory._cache['SecurityService'] = new klass();
+    }
+    return ServiceFactory._cache['SecurityService'];
+  }
 }

@@ -50,13 +50,17 @@ class WeatherWarningsView(APIView):
         'Ad_Snow_accretion',     # 着雪注意報
     )
 
-
     def get(self, request, format=None):
         data = {}
         res = requests.get('http://shiga-bousai.jp/announce/weather.php')
         if not res.ok:
-            return JsonResponse(data, safe=False)
+            return JsonResponse([data], safe=False)
         soup = html.fromstring(res.text)
+        # 記録的短時間大雨情報
+        tds =  soup.xpath("//td")
+        for td in tds:
+            if 'class' in td.attrib and 'ooameBody' in td.attrib['class']:
+                data['heavyRainWarning'] = tds[0].text
         th_list = soup.xpath('//*[@id="mainContentsContainer"]/table[1]/tr/th')
         tr = None
         for th in th_list:
@@ -66,11 +70,11 @@ class WeatherWarningsView(APIView):
         data['date'] = soup.xpath(
             '//*[@id="mainTitleContainer"]/font')[0].text.replace(u'　', '')
         if tr is None:
-            return JsonResponse(data, safe=False, json_dumps_params={'ensure_ascii': False})
+            return JsonResponse([data], safe=False, json_dumps_params={'ensure_ascii': False})
         td_list = tr.xpath('td')
         for name, value in zip(self.WEATHER_WARNINGS, td_list):
             data[name] = value.text
-        return JsonResponse(data, safe=False, json_dumps_params={'ensure_ascii': False})
+        return JsonResponse([data], safe=False, json_dumps_params={'ensure_ascii': False})
 
 
 
