@@ -17,6 +17,7 @@ INSTALLED_APPS = [
     'db_stamp',
     'colorfield',
     'publish',
+    'security',
 ]
 
 MIDDLEWARE = [
