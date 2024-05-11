@@ -5,10 +5,11 @@ r"""Name: __init__.py
 
 """
 from formats.views.sato_format_model_viewset import SatoFormatModelViewset
-
+from formats.views.other_format_model_viewset import OtherFormatModelViewset
 
 __all__ = [
     'SatoFormatModelViewset',
+    'OtherFormatModelViewset',
 ]
 
 

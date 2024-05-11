@@ -11,6 +11,7 @@ from formats import views
 
 router = DefaultRouter()
 router.register(r'sato', views.SatoFormatModelViewset)
+router.register(r'other', views.OtherFormatModelViewset)
 
 urlpatterns = router.urls
 
