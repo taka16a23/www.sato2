@@ -18,6 +18,7 @@ class SecurityKnowledgeModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = SecurityKnowledgeModel
         fields = (
+            'id',
             'title',
             'description',
             'url',
