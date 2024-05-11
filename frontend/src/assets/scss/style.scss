@@ -624,15 +624,13 @@ a {
           margin-left: 12px;
         }
       }
-      &:has(.hasAnnounced) {
-        .emergencyInfoBoxHead {
-          background-color: red;
-          display: flex;
-          color: #fff;
-        }
-        .icon {
-          display: block;
-        }
+      .emergencyInfoBoxHead {
+        background-color: red;
+        display: flex;
+        color: #fff;
+      }
+      .icon {
+        display: block;
       }
       
       h2 {

@@ -18,4 +18,13 @@ export default class RepositoryFactory {
     }
     return RepositoryFactory._cache['WeatherWarningRepository'];
   }
+
+  // Emergency
+  static createEmergencyRepository() {
+    if(!RepositoryFactory._cache['EmergencyRepository']) {
+      let klass = require('./Emergency.repository').default;
+      RepositoryFactory._cache['EmergencyRepository'] = new klass();
+    }
+    return RepositoryFactory._cache['EmergencyRepository'];
+  }
 }

@@ -4,6 +4,7 @@ import AliasRoutes from "routes/AliasRoutes";
 import { Timeline } from 'react-twitter-widgets'
 import { ServiceFactory } from 'services';
 import WeatherAlert from 'components/WeatherAlert'
+import Emergency from 'components/Emergency'
 
 import axios from "axios";
 import moment from "moment";
@@ -54,45 +55,7 @@ class SecurityPortalComponent extends Component {
                   <div className="main-body">
                     <div className="emergency-list">
                       <div className="emergency-item emergencyInfoWrapper">
-                        <div className="emergencyInfoBox">
-                          <a href="https://dis-shiga.jp/pc/topdis-shiga.html" target="_blank">
-                            <img className="title_pic" src="https://dis-shiga.jp/image/title.jpg"/>
-                          </a>
-                          <div className="emergencyInfoBoxHead">
-                            <img className="icon" src="https://dis-shiga.jp/image/exclamation2.png"/>
-                            <span className="title">緊急情報</span>
-                          </div>
-                          <div>
-                            <h2>
-                              <span className="name">本部体制設置</span>
-                              <span className="state hasAnnounced">発表あり</span>
-                              <button onClick={()=> window.open("https://dis-shiga.jp/pc/hq/info.html", "_blank", 'noopener,noreferrer')}>&gt;　詳細</button>
-                            </h2>
-                          </div>
-                          <div>
-                            <h2>
-                              <span className="name">避難情報
-                                <a href="/other/避難情報.pdf" target="_blank">（避難情報とは）</a>
-                              </span>
-                              <span className="state noAnnouncement">発令なし</span>
-                              <button onClick={()=> window.open("https://dis-shiga.jp/pc/evacuation/info.html", "_blank", 'noopener,noreferrer')}>&gt;　詳細</button>
-                            </h2>
-                          </div>
-                          <div>
-                            <h2>
-                              <span className="name">避難所情報</span>
-                              <span className="state noAnnouncement">発表なし</span>
-                              <button onClick={()=> window.open("https://dis-shiga.jp/pc/shelter/info.html", "_blank", 'noopener,noreferrer')}>&gt;　詳細</button>
-                            </h2>
-                          </div>
-                          <div>
-                            <h2>
-                              <span className="name">国民保護情報</span>
-                              <span className="state noAnnouncement">発表なし</span>
-                              <button onClick={()=> window.open("https://dis-shiga.jp/pc/civil_protection/info.html", "_blank", 'noopener,noreferrer')}>&gt;　詳細</button>
-                            </h2>
-                          </div>
-                        </div>
+                        <Emergency/>
                       </div>
                       <div className="emergency-item security-timeline">
                         <Timeline

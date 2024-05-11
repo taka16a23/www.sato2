@@ -19,4 +19,14 @@ export default class APIFactory {
     }
     return APIFactory._cache['SecurityWeatherWarningsAPI'];
   }
+
+  // SecurityEmergency
+  static createSecurityEmergencyAPI() {
+    if(!APIFactory._cache['SecurityEmergencyAPI']) {
+      let klass = require('./SecurityEmergency.api.js').default;
+      APIFactory._cache['SecurityEmergencyAPI'] = new klass();
+    }
+    return APIFactory._cache['SecurityEmergencyAPI'];
+  }
+
 }
