@@ -27,4 +27,13 @@ export default class RepositoryFactory {
     }
     return RepositoryFactory._cache['EmergencyRepository'];
   }
+
+  // SecurityKnowledge
+  static createSecurityKnowledgeRepository() {
+    if(!RepositoryFactory._cache['SecurityKnowledge']) {
+      let klass = require('./SecurityKnowledge.repository').default;
+      RepositoryFactory._cache['SecurityKnowledge'] = new klass();
+    }
+    return RepositoryFactory._cache['SecurityKnowledge'];
+  }
 }

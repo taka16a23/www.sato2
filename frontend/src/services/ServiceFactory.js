@@ -18,4 +18,13 @@ export default class ServiceFactory {
     }
     return ServiceFactory._cache['SecurityService'];
   }
+
+  // SecurityKnowledge
+  static createSecurityKnowledgeService() {
+    if(!ServiceFactory._cache['SecurityKnowledgeService']) {
+      let klass = require('./SecurityKnowledge.service.js').default;
+      ServiceFactory._cache['SecurityKnowledgeService'] = new klass();
+    }
+    return ServiceFactory._cache['SecurityKnowledgeService'];
+  }
 }

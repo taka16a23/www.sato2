@@ -1261,7 +1261,7 @@ button:not(:disabled),
       font-size: 0.8rem;
       margin-bottom: 0.8rem;
     }
-    a {
+    > a {
       box-sizing: border-box;
       letter-spacing: .15;
       min-height: 384px;
@@ -1305,7 +1305,7 @@ button:not(:disabled),
       .tile-text {
         display: block;
       }
-      a {
+      > a {
         padding: 20px 20px 2rem 20px;
       }
     }
@@ -1320,7 +1320,7 @@ button:not(:disabled),
       .tile-text {
         display: block;
       }
-      a {
+      > a {
         padding: 20px 20px 2rem 20px;
       }
     }

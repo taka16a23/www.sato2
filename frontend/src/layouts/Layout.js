@@ -5,6 +5,7 @@ import Footer from 'components/Footer';
 import Home from 'views/Home';
 import News from 'views/News';
 import SecurityPortal from 'views/SecurityPortal';
+import SecurityKnowledge from 'views/SecurityKnowledge';
 import AliasRoutes from "routes/AliasRoutes";
 
 
@@ -24,9 +25,10 @@ class Layout extends Component {
         <div className="wrapper-inner">
           <Header/>
           <Routes>
-            <Route exact={true} path='/errors/403' element={<Error403/>}/>
-            <Route path="/news" element={<News/>}/>
+            <Route exact={true} path={AliasRoutes.Error403} element={<Error403/>}/>
+            <Route path={AliasRoutes.News} element={<News/>}/>
             <Route path={AliasRoutes.SecurityPortal} element={<SecurityPortal/>}/>
+            <Route path={AliasRoutes.SecurityKnowledge} element={<SecurityKnowledge/>}/>
             <Route path="/" element={<Home/>}/>
             <Route path='*' element={<Error404/>}/>
           </Routes>

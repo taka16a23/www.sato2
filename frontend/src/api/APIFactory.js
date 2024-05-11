@@ -29,4 +29,13 @@ export default class APIFactory {
     return APIFactory._cache['SecurityEmergencyAPI'];
   }
 
+  // SecurityKnowledge
+  static createSecurityKnowledgeAPI() {
+    if(!APIFactory._cache['SecurityKnowledgeAPI']) {
+      let klass = require('./SecurityKnowledge.api.js').default;
+      APIFactory._cache['SecurityKnowledgeAPI'] = new klass();
+    }
+    return APIFactory._cache['SecurityKnowledgeAPI'];
+  }
+
 }
