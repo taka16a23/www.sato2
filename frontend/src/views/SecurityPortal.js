@@ -66,7 +66,7 @@ class SecurityPortalComponent extends Component {
                             <h2>
                               <span className="name">本部体制設置</span>
                               <span className="state hasAnnounced">発表あり</span>
-                              <button onClick="window.location='/pc/hq/info.html';" control-id="ControlID-11">&gt;　詳細</button>
+                              <button onClick={()=> window.open("https://dis-shiga.jp/pc/hq/info.html", "_blank", 'noopener,noreferrer')}>&gt;　詳細</button>
                             </h2>
                           </div>
                           <div>
@@ -75,21 +75,21 @@ class SecurityPortalComponent extends Component {
                                 <a href="/other/避難情報.pdf" target="_blank">（避難情報とは）</a>
                               </span>
                               <span className="state noAnnouncement">発令なし</span>
-                              <button onClick="window.location='/pc/evacuation/info.html';" control-id="ControlID-12">&gt;　詳細</button>
+                              <button onClick={()=> window.open("https://dis-shiga.jp/pc/evacuation/info.html", "_blank", 'noopener,noreferrer')}>&gt;　詳細</button>
                             </h2>
                           </div>
                           <div>
                             <h2>
                               <span className="name">避難所情報</span>
                               <span className="state noAnnouncement">発表なし</span>
-                              <button onClick="window.location='/pc/shelter/info.html';" control-id="ControlID-13">&gt;　詳細</button>
+                              <button onClick={()=> window.open("https://dis-shiga.jp/pc/shelter/info.html", "_blank", 'noopener,noreferrer')}>&gt;　詳細</button>
                             </h2>
                           </div>
                           <div>
                             <h2>
                               <span className="name">国民保護情報</span>
                               <span className="state noAnnouncement">発表なし</span>
-                              <button onClick="window.location='/pc/civil_protection/info.html';" control-id="ControlID-14">&gt;　詳細</button>
+                              <button onClick={()=> window.open("https://dis-shiga.jp/pc/civil_protection/info.html", "_blank", 'noopener,noreferrer')}>&gt;　詳細</button>
                             </h2>
                           </div>
                         </div>
@@ -111,7 +111,7 @@ class SecurityPortalComponent extends Component {
                 </div>
                 <div className="main-item">
                   <h2 className="main-title">
-                    <a className="link" href="http://shiga-bousai.jp/announce/weather.php" alt="" target="_blank" title="気象特別警報・警報・注意報">
+                    <a className="link" href="http://shiga-bousai.jp/announce/weather.php" alt="気象特別警報・警報・注意報" target="_blank" title="気象特別警報・警報・注意報">
                       <span className="title">気象特別警報・警報・注意報</span>
                       <i className="mdi mdi-open-in-new"></i>
                     </a>
@@ -120,7 +120,7 @@ class SecurityPortalComponent extends Component {
                 </div>
                 <div className="main-item">
                   <h2 className="main-title">
-                    <a className="link" href="http://c.shiga-bousai.jp/shigapref/pc/camDetail_6191FF05.html" alt="" target="_blank" title="大戸川(石居橋)の様子">
+                    <a className="link" href="http://c.shiga-bousai.jp/shigapref/pc/camDetail_6191FF05.html" alt="大戸川(石居橋)の様子" target="_blank" title="大戸川(石居橋)の様子">
                       <span className="title">大戸川(石居橋)の様子</span>
                       <i className="mdi mdi-open-in-new"></i>
                     </a>
@@ -129,7 +129,7 @@ class SecurityPortalComponent extends Component {
                     <a href="http://c.shiga-bousai.jp/shigapref/pc/camDetail_6191FF05.html" target="_blank" title="滋賀県河川防災カメラのページへ移動">滋賀県 河川防災カメラ {this.state.riverDateTime === undefined ? "" : this.state.riverDateTime.format('YYYY年M月D日 HH:mm')} 現在</a>
                   </h3>
                   <div className="rivercam-container">
-                    <div id="riverCam" className="riverAlertEntry">
+                    <div className="riverAlertEntry">
                       <a href="http://c.shiga-bousai.jp/shigapref/pc/camDetail_6191FF05.html" target="_blank" title="滋賀県河川防災カメラ">
                         <img src={this.state.riverDateTime === undefined ? "" : "http://c.shiga-bousai.jp/shigapref/pc/cameraData/images/6191FF05/" + this.state.riverDateTime.format('YYYYMMDDHHmm') + ".jpg"} alt="石居橋の現在の様子"/>
                       </a>
@@ -137,7 +137,7 @@ class SecurityPortalComponent extends Component {
                   </div>
                 </div>
                 <div className="main-item">
-                  <div id="evacuationMapArea" className="evacuationInfoEntry clearfix">
+                  <div className="evacuationMapArea">
                     <iframe src="https://www.google.com/maps/d/embed?mid=zJXaXK9GQ-AU.kwVpZ6T_kTts"></iframe>
                   </div>
                 </div>
