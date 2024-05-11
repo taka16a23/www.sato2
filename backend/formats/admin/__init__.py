@@ -7,14 +7,17 @@ r"""Name: __init__.py
 from django.contrib import admin
 
 from formats.models import SatoFormatModel
+from formats.models import OtherFormatModel
 from formats.admin.sato_format_model_admin import SatoFormatModelAdmin
-
+from formats.admin.other_format_model_admin import OtherFormatModelAdmin
 
 __all__ = [
     'SatoFormatModelAdmin',
+    'OtherFormatModelAdmin',
 ]
 
 admin.site.register(SatoFormatModel, SatoFormatModelAdmin)
+admin.site.register(OtherFormatModel, OtherFormatModelAdmin)
 
 
 

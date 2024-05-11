@@ -5,10 +5,11 @@ r"""Name: __init__.py
 
 """
 from formats.models.sato_format_model import SatoFormatModel
-
+from formats.models.other_format_model import OtherFormatModel
 
 __all__ = [
     'SatoFormatModel',
+    'OtherFormatModel',
 ]
 
 
