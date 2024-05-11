@@ -27,4 +27,14 @@ export default class ServiceFactory {
     }
     return ServiceFactory._cache['SecurityKnowledgeService'];
   }
+
+  // Formats
+  static createFormatsService() {
+    if(!ServiceFactory._cache['FormatsService']) {
+      let klass = require('./Formats.service.js').default;
+      ServiceFactory._cache['FormatsService'] = new klass();
+    }
+    return ServiceFactory._cache['FormatsService'];
+  }
+
 }

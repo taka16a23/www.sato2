@@ -38,4 +38,13 @@ export default class APIFactory {
     return APIFactory._cache['SecurityKnowledgeAPI'];
   }
 
+  // SatoFormats
+  static createSatoFormatsAPI() {
+    if(!APIFactory._cache['SatoFormatsAPI']) {
+      let klass = require('./SatoFormats.api.js').default;
+      APIFactory._cache['SatoFormatsAPI'] = new klass();
+    }
+    return APIFactory._cache['SatoFormatsAPI'];
+  }
+
 }

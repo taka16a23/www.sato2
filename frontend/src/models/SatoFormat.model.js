@@ -1,11 +1,11 @@
-export default class SecurityKnowledgeModel extends Object {
+export default class SatoFormatModel extends Object {
   constructor() {
     super();
     this.id = null;
     this.title = "";
     this.description = "";
-    this.url = "";
-    this.thumbnail = "";
+    this.file = null;
+    this.form = null;
     this.sortid = null;
     this.publish_date = null;
     this.expiry_date = null;
@@ -41,21 +41,21 @@ export default class SecurityKnowledgeModel extends Object {
     return this;
   }
 
-  getURL() {
-    return this.url;
+  getFile() {
+    return this.file;
   }
 
-  setURL(a_sValue) {
-    this.url = a_sValue;
+  setFile(a_sValue) {
+    this.file = a_sValue;
     return this;
   }
 
-  getThumbnail() {
-    return this.thumbnail;
+  getForm() {
+    return this.form;
   }
 
-  setThumbnail(a_sValue) {
-    this.thumbnail = a_sValue;
+  setForm(a_sValue) {
+    this.form = a_sValue;
     return this;
   }
 

@@ -36,4 +36,13 @@ export default class RepositoryFactory {
     }
     return RepositoryFactory._cache['SecurityKnowledge'];
   }
+
+  // SatoFormats
+  static createSatoFormatsRepository() {
+    if(!RepositoryFactory._cache['SatoFormats']) {
+      let klass = require('./SatoFormats.repository').default;
+      RepositoryFactory._cache['SatoFormats'] = new klass();
+    }
+    return RepositoryFactory._cache['SatoFormats'];
+  }
 }

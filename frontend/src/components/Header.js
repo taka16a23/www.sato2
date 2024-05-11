@@ -58,7 +58,7 @@ class Header extends Component {
                     </NavLink>
                   </li>
                   <li className="menu-item">
-                    <NavLink to={`/form`} className="menu-label" alt="form">
+                    <NavLink to={AliasRoutes.Formats} className="menu-label" alt="form">
                       各種申請
                     </NavLink>
                   </li>

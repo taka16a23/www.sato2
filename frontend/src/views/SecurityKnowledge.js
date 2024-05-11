@@ -179,13 +179,13 @@ class SecurityKnowledgeComponent extends Component {
                     <span class="title">防災予備知識</span>
                   </h2>
                   <ul class="tile-list">
-                    {this.models.map((oNewsModel) =>
-                      <li class="tile-item" key={oNewsModel.id}>
-                        <a href={oNewsModel.url}>
-                          <img class="tile-image" src={oNewsModel.thumbnail} alt={oNewsModel.title}/>
-                          <h4 class="tile-title">{oNewsModel.title}</h4>
+                    {this.models.map((oModel) =>
+                      <li class="tile-item" key={oModel.id}>
+                        <a href={oModel.url}>
+                          <img class="tile-image" src={oModel.thumbnail} alt={oModel.title}/>
+                          <h4 class="tile-title">{oModel.title}</h4>
                           <div class="tile-description">
-                            <p class="tile-text" dangerouslySetInnerHTML={{ __html: oNewsModel.description }}>
+                            <p class="tile-text" dangerouslySetInnerHTML={{ __html: oModel.description }}>
                             </p>
                           </div>
                         </a>
