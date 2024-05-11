@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import AliasRoutes from "routes/AliasRoutes";
 import { Timeline } from 'react-twitter-widgets'
 import { ServiceFactory } from 'services';
+import WeatherAlert from 'components/WeatherAlert'
 
 import axios from "axios";
 import moment from "moment";
@@ -14,7 +15,6 @@ class SecurityPortalComponent extends Component {
     super(props);
     this.state = {
       serverDateTime: null,
-      WeatherWarningModel: null,
     }
   }
 
@@ -37,15 +37,6 @@ class SecurityPortalComponent extends Component {
       this.setState({
         riverDateTime: riverDateTime,
       });
-    });
-    // 気象警報を取得
-    let securityService = ServiceFactory.createSecurityService();
-    securityService.getWeatherWarning().then(model => {
-      this.setState({
-        WeatherWarningModel: model,
-      });
-    }).catch(err => {
-      alert(err);
     });
   }
 
@@ -125,105 +116,7 @@ class SecurityPortalComponent extends Component {
                       <i className="mdi mdi-open-in-new"></i>
                     </a>
                   </h2>
-                  <div className="weather-alert-container">
-                    <div id="weatherAlert" className="weatherAlertEntry">
-                      <p className="description"><span>大津市南部</span>{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.date}</p>
-                      <table id="heavyRainAlert" cellSpacing="0" cellPadding="0">
-                        <tbody>
-                          <tr>
-                            <th width="200">記録的短時間大雨情報</th>
-                            <td>{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.heavyRainWarning}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <table id="mainWeatherAlert" cellPadding="0" cellSpacing="0">
-                        <tbody>
-                          <tr className="weatherAlertHead">
-                            <td colSpan="5" className="specialWarning" scope="col">特別警報</td>
-                            <td colSpan="6" className="warning" scope="col">警報</td>
-                            <td colSpan="14" className="advisories" scope="col">注意報</td>
-                          </tr>
-                          <tr className="weatherAlertHead">
-                            <td rowSpan="2" width="20" className="specialWarning">暴風雪</td>
-                            <td colSpan="2" className="specialWarning">大雨</td>
-                            <td rowSpan="2" width="20" className="specialWarning">暴風</td>
-                            <td rowSpan="2" width="20" className="specialWarning">大雪</td>
-                            <td rowSpan="2" width="20" className="warning">暴風雪</td>
-                            <td colSpan="2" className="warning">大雨</td>
-                            <td rowSpan="2" width="20" className="warning">洪水</td>
-                            <td rowSpan="2" width="20" className="warning">暴風</td>
-                            <td rowSpan="2" width="20" className="warning">大雪</td>
-                            <td rowSpan="2" width="20" className="advisories">大雨</td>
-                            <td rowSpan="2" width="20" className="advisories">大雪</td>
-                            <td rowSpan="2" width="20" className="advisories">風雪</td>
-                            <td rowSpan="2" width="20" className="advisories">雷</td>
-                            <td rowSpan="2" width="20" className="advisories">強風</td>
-                            <td rowSpan="2" width="20" className="advisories">融雪</td>
-                            <td rowSpan="2" width="20" className="advisories">洪水</td>
-                            <td rowSpan="2" width="20" className="advisories">濃霧</td>
-                            <td rowSpan="2" width="20" className="advisories">乾燥</td>
-                            <td rowSpan="2" width="20" className="advisories">なだれ</td>
-                            <td rowSpan="2" width="20" className="advisories">低温</td>
-                            <td rowSpan="2" width="20" className="advisories">霜</td>
-                            <td rowSpan="2" width="20" className="advisories">着氷</td>
-                            <td rowSpan="2" width="20" className="advisories">着雪</td>
-                          </tr>
-                          <tr className="weatherAlertHead">
-                            <td width="20" className="specialWarning">土砂災害</td>
-                            <td width="20" className="specialWarning">浸水害</td>
-
-                            <td width="20" className="warning">土砂災害</td>
-                            <td width="20" className="warning">浸水害</td>
-                          </tr>
-                          <tr className="weatherAlertLocalEntry">
-                            <td className="specialWarning">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Em_Snow_storm}</td>
-                            <td className="specialWarning">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Em_Landslide_disaster}</td>
-                            <td className="specialWarning">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Em_Flood_damage}</td>
-                            <td className="specialWarning">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Em_Storm}</td>
-                            <td className="specialWarning">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Em_Heavy_snow}</td>
-                            <td className="warning">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Wa_Snow_storm}</td>
-                            <td className="warning">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Wa_Landslide_disaster}</td>
-                            <td className="warning">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Wa_Flood_damage}</td>
-                            <td className="warning">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Wa_Flood}</td>
-                            <td className="warning">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Wa_Storm}</td>
-                            <td className="warning">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Wa_Heavy_snow}</td>
-                            <td className="advisories">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Ad_Heavy_rain}</td>
-                            <td className="advisories">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Ad_Heavy_snow}</td>
-                            <td className="advisories">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Ad_Gale_and_snow}</td>
-                            <td className="advisories">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Ad_Thunderstorm}</td>
-                            <td className="advisories">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Ad_Galen}</td>
-                            <td className="advisories">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Ad_Snow_melting}</td>
-                            <td className="advisories">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Ad_Flood}</td>
-                            <td className="advisories">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Ad_Dense_fog}</td>
-                            <td className="advisories">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Ad_Dry_air}</td>
-                            <td className="advisories">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Ad_Avalanche}</td>
-                            <td className="advisories">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Ad_Low_temperatur}</td>
-                            <td className="advisories">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Ad_Frost}</td>
-                            <td className="advisories">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Ad_Ice_accretion}</td>
-                            <td className="advisories">{this.state.WeatherWarningModel === null ? '' : this.state.WeatherWarningModel.Ad_Snow_accretion}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div id="weatherAlertDetail" className="weatherAlertEntry">
-                      <table cellSpacing="0" cellPadding="0">
-                        <tbody>
-                          <tr>
-                            <td className="specialWarning">特別警報</td>
-                            <td>重大な災害が起こるおそれが著しく大きいとき</td>
-                          </tr>
-                          <tr>
-                            <td className="warning">警報</td>
-                            <td>重大な災害が起こるおそれのあるとき</td>
-                          </tr>
-                          <tr>
-                            <td className="advisories">注意報</td>
-                            <td>大雨や強風などによって災害が起こるおそれのあるとき</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                  <WeatherAlert/>
                 </div>
                 <div className="main-item">
                   <h2 className="main-title">
