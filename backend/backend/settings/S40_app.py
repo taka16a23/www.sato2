@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'colorfield',
     'publish',
     'security',
+    'formats',
 ]
 
 MIDDLEWARE = [

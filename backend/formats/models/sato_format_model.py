@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-r"""security_knowledge_model --
+r"""sato_format_model --
 
 """
 from django.db import models
@@ -10,36 +10,40 @@ from ckeditor.fields import RichTextField
 from base.models.displayable_mixin import DisplayableMixin
 
 
-class SecurityKnowledgeModel(DisplayableMixin):
-    """SecurityKnowledgeModel
+class SatoFormatModel(DisplayableMixin):
+    """SatoFormatModel
 
-    SecurityKnowledgeModel is a DisplayableMixin.
+    SatoFormatModel is a DisplayableMixin.
     Responsibility:
     """
     title = models.CharField(
-        _('title'),
+        _('format name'),
         max_length=255,
         null=False,
-        default='',
+        blank=False,
     )
     description = RichTextField(
         _('description'),
         config_name='simple',
+        default='',
         blank=True,
     )
-    url = models.URLField(
-        _('URL'),
-        max_length=200,
-        blank=False,
-    )
-    thumbnail = models.ImageField(
-        _('thumbnail'),
-        upload_to='knowledge/',
-        blank=True,
+    file = models.FileField(
+        'PDF',
+        upload_to='formats',
         null=True,
+        blank=True,
+        default=None,
+    )
+    form = models.URLField(
+        _('form address'),
+        max_length=200,
+        null=True,
+        blank=True,
+        default=None,
     )
     sortid = models.IntegerField(
-        ' ',
+        u' ',
         default=0,
         blank=False,
         null=False,
@@ -48,8 +52,8 @@ class SecurityKnowledgeModel(DisplayableMixin):
     )
 
     class Meta:
-        verbose_name = _('Security Knowledge')
-        verbose_name_plural = _('Security Knowledge')
+        verbose_name = _('Sato Formats')
+        verbose_name_plural = _('Sato Formats')
         ordering = ['sortid', ]
 
     def __str__(self):
@@ -61,4 +65,4 @@ class SecurityKnowledgeModel(DisplayableMixin):
 # Local Variables:
 # coding: utf-8
 # End:
-# security_knowledge_model.py ends here
+# sato_format_model.py ends here
