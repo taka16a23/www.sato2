@@ -45,4 +45,13 @@ export default class RepositoryFactory {
     }
     return RepositoryFactory._cache['SatoFormats'];
   }
+
+  // OtherFormats
+  static createOtherFormatsRepository() {
+    if(!RepositoryFactory._cache['OtherFormats']) {
+      let klass = require('./OtherFormats.repository').default;
+      RepositoryFactory._cache['OtherFormats'] = new klass();
+    }
+    return RepositoryFactory._cache['OtherFormats'];
+  }
 }

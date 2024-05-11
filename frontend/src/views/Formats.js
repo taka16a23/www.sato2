@@ -10,8 +10,10 @@ class FormatsComponent extends Component {
   constructor(props) {
     super(props);
     this.satoFormatsModels = [];
+    this.otherFormatsModels = [];
     this.state = {
       satoFormatsModelLength: this.satoFormatsModels.length,
+      otherFormatsModelLength: this.otherFormatsModels.length,
     }
   }
 
@@ -21,6 +23,14 @@ class FormatsComponent extends Component {
       this.satoFormatsModels = arrModels;
       this.setState({
         satoFormatsModelLength: this.satoFormatsModels.length,
+      });
+    }).catch(err => {
+      alert(err);
+    });
+    service.listOtherFormats().then(arrModels => {
+      this.otherFormatsModels = arrModels;
+      this.setState({
+        otherFormatsModelLength: this.otherFormatsModels.length,
       });
     }).catch(err => {
       alert(err);
@@ -250,28 +260,17 @@ class FormatsComponent extends Component {
                       </th>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td className="format-name">
-                          <a href="#" target="_blank">
-                            ごみ集積所の設置や改修に対する補助金制度
-                          </a>
-                        </td>
-                        <td className="format-description">
-                          ごみ集積所の設置、改修にかかる費用の補助を申請できます。
-                          補助金は購入前に申請が必要です。
-                          ごみ集積所の管理についてはこちら。
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="format-name">
-                          <a href="#" target="_blank">
-                            ごみ集積所用カラス対策ネットの貸与
-                          </a>
-                        </td>
-                        <td className="format-description">
-                          ごみ集積所でのカラス等の鳥獣によるごみの散乱対策としてネットを借りることができます。
-                        </td>
-                      </tr>
+                      {this.otherFormatsModels.map((oModel) =>
+                        <tr>
+                          <td className="format-name">
+                            <a href={oModel.url} target="_blank">
+                              {oModel.title}
+                            </a>
+                          </td>
+                          <td className="format-description" dangerouslySetInnerHTML={{ __html: oModel.description }}>
+                          </td>
+                        </tr>
+                      )}
                     </tbody>
                   </table>
                 </section>

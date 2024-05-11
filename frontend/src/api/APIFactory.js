@@ -47,4 +47,12 @@ export default class APIFactory {
     return APIFactory._cache['SatoFormatsAPI'];
   }
 
+  // OtherFormats
+  static createOtherFormatsAPI() {
+    if(!APIFactory._cache['OtherFormatsAPI']) {
+      let klass = require('./OtherFormats.api.js').default;
+      APIFactory._cache['OtherFormatsAPI'] = new klass();
+    }
+    return APIFactory._cache['OtherFormatsAPI'];
+  }
 }

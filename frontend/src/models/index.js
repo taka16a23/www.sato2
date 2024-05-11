@@ -3,6 +3,7 @@ import WeatherWarningModel from './WeatherWarning.model';
 import EmergencyModel from './Emergency.model';
 import SecurityKnowledgeModel from './SecurityKnowledge.model';
 import SatoFormatModel from './SatoFormat.model';
+import OtherFormatModel from './OtherFormat.model';
 
 export {
   NewsModel,
@@ -10,4 +11,5 @@ export {
   EmergencyModel,
   SecurityKnowledgeModel,
   SatoFormatModel,
+  OtherFormatModel,
 }
