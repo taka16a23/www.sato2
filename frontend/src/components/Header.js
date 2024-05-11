@@ -41,7 +41,7 @@ class Header extends Component {
                     </NavLink>
                     <ul className="dropdown-container">
                       <li className="dropdown-item">
-                        <NavLink to={AliasRoutes.Security} className="dropdown-label" alt="security">
+                        <NavLink to={AliasRoutes.SecurityPortal} className="dropdown-label" alt="security">
                           防災統合情報
                         </NavLink>
                       </li>
