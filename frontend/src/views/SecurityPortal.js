@@ -99,7 +99,7 @@ class SecurityPortalComponent extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="main-item">
+                <div id="evacuation-map" className="main-item">
                   <div className="evacuationMapArea">
                     <iframe src="https://www.google.com/maps/d/embed?mid=zJXaXK9GQ-AU.kwVpZ6T_kTts"></iframe>
                   </div>

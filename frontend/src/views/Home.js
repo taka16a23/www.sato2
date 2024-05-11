@@ -74,9 +74,6 @@ class HomeComponent extends Component {
                         <a className="menu-label" href="/security/secportal/" title="防災ポータルサイトを見る">防災統合情報</a>
                       </li>
                       <li className="memu-item">
-                        <a className="menu-label" href="/security/secportal/#evacuationMapArea" title="避難地図を見る">避難地図</a>
-                      </li>
-                      <li className="memu-item">
                         <a className="menu-label" href="/security/knowledge/" title="防災予備知識を見る">防災予備知識</a>
                       </li>
                     </ul>

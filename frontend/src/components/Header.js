@@ -46,11 +46,6 @@ class Header extends Component {
                         </NavLink>
                       </li>
                       <li className="dropdown-item">
-                        <NavLink to={`/security/map`} className="dropdown-label" alt="security">
-                          避難地図
-                        </NavLink>
-                      </li>
-                      <li className="dropdown-item">
                         <NavLink to={AliasRoutes.SecurityKnowledge} className="dropdown-label" alt="knowledge">
                           防災予備知識
                         </NavLink>
