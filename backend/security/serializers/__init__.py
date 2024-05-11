@@ -4,11 +4,10 @@ r"""Name: __init__.py
 
 
 """
-from security.views.security_knowledge_model_viewset import SecurityKnowledgeModelViewset
 
 
 __all__ = [
-    'SecurityKnowledgeModelViewset',
+
 ]
 
 

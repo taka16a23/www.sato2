@@ -16,15 +16,17 @@ class SecurityKnowledgeModelAdmin(admin.ModelAdmin):
         'title',
         'publish_date',
         'expiry_date',
+        'status',
     )
     list_editable = (
+        'status',
     )
     exclude = [
         'sortid',
     ]
     fieldsets = (
         (None, {
-            'fields': ['title', 'thumbnail', 'url', 'description', ('publish_date', 'expiry_date')],
+            'fields': ['title', 'thumbnail', 'url', 'description', ('publish_date', 'expiry_date'), 'status', ],
         }),
     )
 
