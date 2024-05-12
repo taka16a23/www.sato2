@@ -25,5 +25,6 @@ urlpatterns = [
     path('api/publish/', include('publish.urls'), name='publish'),
     path('api/security/', include('security.urls'), name='security'),
     path('api/formats/', include('formats.urls'), name='format'),
+    path('api/about/', include('about.urls'), name='about'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
