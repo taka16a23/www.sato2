@@ -54,4 +54,13 @@ export default class RepositoryFactory {
     }
     return RepositoryFactory._cache['OtherFormats'];
   }
+
+  // Rules
+  static createRulesRepository() {
+    if(!RepositoryFactory._cache['RulesRepository']) {
+      let klass = require('./Rules.repository.js').default;
+      RepositoryFactory._cache['RulesRepository'] = new klass();
+    }
+    return RepositoryFactory._cache['RulesRepository'];
+  }
 }

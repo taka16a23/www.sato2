@@ -55,4 +55,13 @@ export default class APIFactory {
     }
     return APIFactory._cache['OtherFormatsAPI'];
   }
+
+  // Rules
+  static createRulesAPI() {
+    if(!APIFactory._cache['RulesAPI']) {
+      let klass = require('./Rules.api.js').default;
+      APIFactory._cache['RulesAPI'] = new klass();
+    }
+    return APIFactory._cache['RulesAPI'];
+  }
 }

@@ -37,4 +37,12 @@ export default class ServiceFactory {
     return ServiceFactory._cache['FormatsService'];
   }
 
+  // Rules
+  static createRulesService() {
+    if(!ServiceFactory._cache['RulesService']) {
+      let klass = require('./Rules.service.js').default;
+      ServiceFactory._cache['RulesService'] = new klass();
+    }
+    return ServiceFactory._cache['RulesService'];
+  }
 }

@@ -1327,3 +1327,22 @@ button:not(:disabled),
   }
 }
 
+.rule-image {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width:map-get($breakpoints, lg)) {
+  .rule-image {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    img {
+      width: 100%;
+    }
+  }
+}

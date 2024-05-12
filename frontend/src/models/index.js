@@ -4,6 +4,7 @@ import EmergencyModel from './Emergency.model';
 import SecurityKnowledgeModel from './SecurityKnowledge.model';
 import SatoFormatModel from './SatoFormat.model';
 import OtherFormatModel from './OtherFormat.model';
+import RuleModel from './Rule.model';
 
 export {
   NewsModel,
@@ -12,4 +13,5 @@ export {
   SecurityKnowledgeModel,
   SatoFormatModel,
   OtherFormatModel,
+  RuleModel,
 }
