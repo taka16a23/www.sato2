@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'publish',
     'security',
     'formats',
+    'about',
 ]
 
 MIDDLEWARE = [

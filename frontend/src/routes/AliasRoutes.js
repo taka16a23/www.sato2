@@ -24,6 +24,7 @@ export default class AliasRoutes {
   static About = "/about";
   static AboutRule = AliasRoutes.About + "/rule";
   static AboutBook = AliasRoutes.About + "/book";
+  static AboutGroup = AliasRoutes.About + "/group";
   static AboutFAQ = AliasRoutes.About + "/faq";
   static AboutQuery = AliasRoutes.About + "/query";
   // error

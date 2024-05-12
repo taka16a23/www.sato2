@@ -7,6 +7,7 @@ import News from 'views/News';
 import SecurityPortal from 'views/SecurityPortal';
 import SecurityKnowledge from 'views/SecurityKnowledge';
 import Formats from 'views/Formats';
+import Group from 'views/Group';
 import AliasRoutes from "routes/AliasRoutes";
 
 
@@ -31,6 +32,7 @@ class Layout extends Component {
             <Route path={AliasRoutes.SecurityPortal} element={<SecurityPortal/>}/>
             <Route path={AliasRoutes.SecurityKnowledge} element={<SecurityKnowledge/>}/>
             <Route path={AliasRoutes.Formats} element={<Formats/>}/>
+            <Route path={AliasRoutes.AboutGroup} element={<Group/>}/>
             <Route path="/" element={<Home/>}/>
             <Route path='*' element={<Error404/>}/>
           </Routes>
