@@ -11,6 +11,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 画像削除用
+    'django_cleanup.apps.CleanupConfig',
     'rest_framework',
     'corsheaders',
     'ckeditor',
