@@ -160,7 +160,7 @@ class WeatherAlert extends Component {
                 </td>
                 <td className="weather-advisories">
                   {this.state.WeatherWarningModel === null ? '' :
-                   this.state.WeatherWarningModel.Ad_Galen}
+                   this.state.WeatherWarningModel.Ad_Gale}
                 </td>
                 <td className="weather-advisories">
                   {this.state.WeatherWarningModel === null ? '' :

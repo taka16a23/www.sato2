@@ -71,6 +71,7 @@ class WeatherWarningsView(APIView):
         if tr is None:
             return JsonResponse([data], safe=False, json_dumps_params={'ensure_ascii': False})
         td_list = tr.xpath('td')
+
         for name, value in zip(self.WEATHER_WARNINGS, td_list):
             data[name] = value.text
         return JsonResponse([data], safe=False, json_dumps_params={'ensure_ascii': False})
