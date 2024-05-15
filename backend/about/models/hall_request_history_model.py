@@ -97,6 +97,12 @@ class HallRequestHistoryModel(TimeStampMixin):
         blank=False,
         default='',
     )
+    is_finished = models.BooleanField(
+        _('is finished'),
+        null=False,
+        blank=False,
+        default=False,
+    )
 
     class Meta:
         verbose_name = _('Hall Request History')
