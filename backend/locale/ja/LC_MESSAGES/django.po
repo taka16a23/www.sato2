@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 13:39+0000\n"
+"POT-Creation-Date: 2024-05-15 14:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,17 +18,116 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: about/models/hall_request_history_model.py:18
+msgid "Big Room"
+msgstr "大ホール"
+
+#: about/models/hall_request_history_model.py:19
+msgid "Japanese Style Room"
+msgstr "2階和室"
+
+#: about/models/hall_request_history_model.py:20
+msgid "Neighborhood hall 2F"
+msgstr "自治会館2F"
+
+#: about/models/hall_request_history_model.py:30
+#, fuzzy
+#| msgid "category name"
+msgid "group name"
+msgstr "カテゴリー名"
+
+#: about/models/hall_request_history_model.py:37
+#: about/models/hall_request_history_model.py:44
+msgid "responsible person"
+msgstr "責任者"
+
+#: about/models/hall_request_history_model.py:51
+#: about/models/hall_request_history_model.py:58
+msgid "phone number"
+msgstr "電話番号"
+
+#: about/models/hall_request_history_model.py:65
+msgid "reson"
+msgstr "使用目的"
+
+#: about/models/hall_request_history_model.py:72
+msgid "start datetime"
+msgstr "使用開始日時"
+
+#: about/models/hall_request_history_model.py:77
+msgid "end datetime"
+msgstr "使用終了日時"
+
+#: about/models/hall_request_history_model.py:82
+msgid "room"
+msgstr "室"
+
+#: about/models/hall_request_history_model.py:88
+msgid "detail"
+msgstr "内容"
+
+#: about/models/hall_request_history_model.py:95
+msgid "note"
+msgstr "備考"
+
+#: about/models/hall_request_history_model.py:101
+msgid "is finished"
+msgstr "処理済"
+
+#: about/models/hall_request_history_model.py:108
+#: about/models/hall_request_history_model.py:109
+msgid "Hall Request History"
+msgstr "公民館申込み履歴"
+
+#: about/models/hall_request_receiver_model.py:19
+msgid "name"
+msgstr "名前"
+
+#: about/models/hall_request_receiver_model.py:26
+msgid "email"
+msgstr "メールアドレス"
+
+#: about/models/hall_request_receiver_model.py:29
+msgid "example@example.com"
+msgstr ""
+
+#: about/models/hall_request_receiver_model.py:32
+msgid "receive"
+msgstr "受信"
+
+#: about/models/hall_request_receiver_model.py:37
+#: about/models/hall_request_receiver_model.py:38
+msgid "Hall Request Reciever"
+msgstr "公民館申込み受取人"
+
+#: about/models/rule_book_model.py:27 publish/models/news_model.py:21
+#: security/models/security_knowledge_model.py:20
+msgid "title"
+msgstr "タイトル"
+
+#: about/models/rule_book_model.py:33
+msgid "PDF"
+msgstr ""
+
+#: about/models/rule_book_model.py:65 about/models/rule_book_model.py:66
+msgid "Rule Book"
+msgstr "会則"
+
+#: about/models/rule_page_model.py:25
+msgid "Page Image"
+msgstr ""
+
 #: base/admin/base_stamp_admin_mixin.py:27
 msgid "created"
-msgstr ""
+msgstr "作成日"
 
 #: base/admin/base_stamp_admin_mixin.py:39
 msgid "modified"
-msgstr ""
+msgstr "編集日"
 
 #: base/forms/fields/phone_number_jp_field.py:24
 msgid "Incorrect phone number."
-msgstr ""
+msgstr "電話番号が異なります"
 
 #: base/models/displayable_mixin.py:16
 msgid "draft"
@@ -57,6 +156,37 @@ msgstr "期限日時"
 #: base/models/displayable_mixin.py:51
 msgid "公開を選択すると、ここで設定した日時以降は公開されません"
 msgstr ""
+
+#: formats/models/other_format_model.py:20
+#: formats/models/sato_format_model.py:20
+msgid "format name"
+msgstr "書式名"
+
+#: formats/models/other_format_model.py:26
+#: formats/models/sato_format_model.py:26
+#: security/models/security_knowledge_model.py:26
+msgid "description"
+msgstr "備考"
+
+#: formats/models/other_format_model.py:32 publish/models/news_model.py:38
+#: security/models/security_knowledge_model.py:31
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2628
+msgid "URL"
+msgstr ""
+
+#: formats/models/other_format_model.py:47
+#: formats/models/other_format_model.py:48
+msgid "Other Formats"
+msgstr "自治体等関係書式"
+
+#: formats/models/sato_format_model.py:39
+msgid "form address"
+msgstr ""
+
+#: formats/models/sato_format_model.py:55
+#: formats/models/sato_format_model.py:56
+msgid "Sato Formats"
+msgstr "里自治会関係書式"
 
 #: publish/models/news_category_model.py:20
 msgid "category name"
@@ -87,10 +217,6 @@ msgstr "昇順"
 msgid "news category"
 msgstr "お知らせカテゴリー"
 
-#: publish/models/news_model.py:21
-msgid "title"
-msgstr "タイトル"
-
 #: publish/models/news_model.py:25
 msgid "news title"
 msgstr "お知らせタイトル"
@@ -99,18 +225,69 @@ msgstr "お知らせタイトル"
 msgid "category"
 msgstr "カテゴリー"
 
-#: publish/models/news_model.py:38
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2628
-msgid "URL"
-msgstr ""
-
-#: publish/models/news_model.py:41
-msgid "/media/example.pdf"
-msgstr ""
-
-#: publish/models/news_model.py:45 publish/models/news_model.py:46
+#: publish/models/news_model.py:44 publish/models/news_model.py:45
 msgid "News"
 msgstr "お知らせ"
+
+#: security/models/security_knowledge_model.py:36
+msgid "thumbnail"
+msgstr "サムネイル"
+
+#: security/models/security_knowledge_model.py:51
+#: security/models/security_knowledge_model.py:52
+msgid "Security Knowledge"
+msgstr "防災予備知識"
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/forms.py:6
+msgid "Search files"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:5
+msgid "Select an image to embed"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:27
+msgid "Browse for the image you want, then click 'Embed Image' to continue..."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:29
+msgid ""
+"No images found. Upload images using the 'Image Button' dialog's 'Upload' "
+"tab."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:50
+msgid "Images in: "
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:62
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:80
+msgid "Embed Image"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:146
+msgid "Play Slideshow"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:147
+msgid "Pause Slideshow"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:148
+msgid "&lsaquo; Previous Photo"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:149
+msgid "Next Photo &rsaquo;"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:150
+msgid "Next &rsaquo;"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:151
+msgid "&lsaquo; Prev"
+msgstr ""
 
 #: venv/lib/python3.11/site-packages/django/contrib/messages/apps.py:16
 msgid "Messages"
