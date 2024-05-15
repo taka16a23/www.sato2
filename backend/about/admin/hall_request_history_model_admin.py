@@ -20,7 +20,7 @@ class HallRequestHistoryModelAdmin(admin.ModelAdmin):
         'address',
         'phone_number',
         'room',
-        'email_adress',
+        'email_address',
         'start_datetime',
         'end_datetime',
         'reason',

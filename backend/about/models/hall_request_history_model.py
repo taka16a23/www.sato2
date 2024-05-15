@@ -41,7 +41,7 @@ class HallRequestHistoryModel(TimeStampMixin):
         default='',
     )
     address = models.CharField(
-        _('responsible person'),
+        _('address'),
         max_length=255,
         null=False,
         blank=False,
@@ -54,8 +54,8 @@ class HallRequestHistoryModel(TimeStampMixin):
         blank=False,
         default='',
     )
-    email_adress = models.CharField(
-        _('phone number'),
+    email_address = models.CharField(
+        _('email address'),
         max_length=255,
         null=False,
         blank=False,
