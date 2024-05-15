@@ -29,23 +29,6 @@ class NewsCategoreyModelAdmin(admin.ModelAdmin):
             del actions['delete_selected']
         return actions
 
-    # def has_delete_permission(self, request, obj=None):
-    #     r"""SUMMARY
-
-    #     has_delete_permission(request, obj=None)
-
-    #     @Arguments:
-    #     - `request`:
-    #     - `obj`:
-
-    #     @Return:
-
-    #     @Error:
-    #     """
-    #     if obj is not None and obj.name in PRIMARY_CATEGORIES:
-    #         return False
-    #     return super(NewsCategoryAdmin, self).has_delete_permission(request, obj=None)
-
 
 
 # For Emacs
