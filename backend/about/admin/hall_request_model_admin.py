@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-r"""hall_request_history_model_admin --
+r"""hall_request_model_admin --
 
 """
 from django.contrib import admin
 
 
-class HallRequestHistoryModelAdmin(admin.ModelAdmin):
-    """HallRequestHistoryModelAdmin
+class HallRequestModelAdmin(admin.ModelAdmin):
+    """HallRequestModelAdmin
 
-    HallRequestHistoryModelAdmin is a admin.ModelAdmin.
+    HallRequestModelAdmin is a admin.ModelAdmin.
     Responsibility:
     """
     list_display = (
@@ -37,4 +37,4 @@ class HallRequestHistoryModelAdmin(admin.ModelAdmin):
 # Local Variables:
 # coding: utf-8
 # End:
-# hall_request_history_model_admin.py ends here
+# hall_request_model_admin.py ends here

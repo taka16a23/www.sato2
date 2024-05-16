@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-r"""hall_request_history --
+r"""hall_request --
 
 """
 from django.db import models
@@ -20,10 +20,10 @@ class RoomChoices(models.TextChoices):
     NEIGHBORHOOD_HALL_2F = '3', _('Neighborhood hall 2F')
 
 
-class HallRequestHistoryModel(TimeStampMixin):
-    """HallRequestHistoryModel
+class HallRequestModel(TimeStampMixin):
+    """HallRequestModel
 
-    HallRequestHistoryModel is a models.Model.
+    HallRequestModel is a models.Model.
     Responsibility:
     """
     group_name = models.CharField(
@@ -105,8 +105,8 @@ class HallRequestHistoryModel(TimeStampMixin):
     )
 
     class Meta:
-        verbose_name = _('Hall Request History')
-        verbose_name_plural = _('Hall Request History')
+        verbose_name = _('Hall Request')
+        verbose_name_plural = _('Hall Request')
         ordering = ['created_at', ]
 
     def __str__(self):
@@ -118,4 +118,4 @@ class HallRequestHistoryModel(TimeStampMixin):
 # Local Variables:
 # coding: utf-8
 # End:
-# hall_request_history.py ends here
+# hall_request.py ends here

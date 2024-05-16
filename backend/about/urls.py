@@ -12,7 +12,7 @@ from about import views
 
 router = DefaultRouter()
 router.register(r'rules', views.RuleBookModelViewset)
-router.register(r'hall/request', views.HallRequestHistoryModelViewset)
+router.register(r'hall/request', views.HallRequestModelViewset)
 
 urlpatterns = router.urls
 

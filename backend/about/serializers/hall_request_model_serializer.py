@@ -1,22 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-r"""hall_request_history_model_serializer --
+r"""hall_request_model_serializer --
 
 """
 from rest_framework import serializers
 
-from about.models import HallRequestHistoryModel
+from about.models import HallRequestModel
 
 
-class HallRequestHistoryModelSerializer(serializers.ModelSerializer):
-    """HallRequestHistoryModelSerializer
+class HallRequestModelSerializer(serializers.ModelSerializer):
+    """HallRequestModelSerializer
 
-    HallRequestHistoryModelSerializer is a serializers.ModelSerializer.
+    HallRequestModelSerializer is a serializers.ModelSerializer.
     Responsibility:
     """
 
     class Meta:
-        model = HallRequestHistoryModel
+        model = HallRequestModel
         fields = (
             'group_name',
             'responsible_person',
@@ -38,4 +38,4 @@ class HallRequestHistoryModelSerializer(serializers.ModelSerializer):
 # Local Variables:
 # coding: utf-8
 # End:
-# hall_request_history_model_serializer.py ends here
+# hall_request_model_serializer.py ends here
