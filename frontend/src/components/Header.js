@@ -73,8 +73,8 @@ class Header extends Component {
                         </NavLink>
                       </li>
                       <li className="dropdown-item">
-                        <NavLink to={`/about/book`} className="dropdown-label" alt="book">
-                          公民館(予定・申込み)
+                        <NavLink to={`/about/hall`} className="dropdown-label" alt="hall">
+                          里公民館
                         </NavLink>
                       </li>
                       <li className="dropdown-item">
@@ -83,13 +83,8 @@ class Header extends Component {
                         </NavLink>
                       </li>
                       <li className="dropdown-item">
-                        <NavLink to={`/about/faq`} className="dropdown-label" alt="faq">
-                          よくある質問
-                        </NavLink>
-                      </li>
-                      <li className="dropdown-item">
                         <NavLink to={`/about/query`} className="dropdown-label" alt="query">
-                          情報提供・お問い合わせ
+                          お問い合わせ
                         </NavLink>
                       </li>
                     </ul>

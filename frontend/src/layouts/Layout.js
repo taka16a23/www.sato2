@@ -28,18 +28,22 @@ class Layout extends Component {
       <div className="wrapper">
         <div className="wrapper-inner">
           <Header/>
-          <Routes>
-            <Route exact={true} path={AliasRoutes.Error403} element={<Error403/>}/>
-            <Route path={AliasRoutes.News} element={<News/>}/>
-            <Route path={AliasRoutes.SecurityPortal} element={<SecurityPortal/>}/>
-            <Route path={AliasRoutes.SecurityKnowledge} element={<SecurityKnowledge/>}/>
-            <Route path={AliasRoutes.Formats} element={<Formats/>}/>
-            <Route path={AliasRoutes.AboutRule} element={<Rules/>}/>
-            <Route path={AliasRoutes.AboutGroup} element={<Group/>}/>
-            <Route path={AliasRoutes.AboutHall} element={<Hall/>}/>
-            <Route path="/" element={<Home/>}/>
-            <Route path='*' element={<Error404/>}/>
-          </Routes>
+          <div id="content">
+            <div className="content-inner">
+              <Routes>
+                <Route exact={true} path={AliasRoutes.Error403} element={<Error403/>}/>
+                <Route path={AliasRoutes.News} element={<News/>}/>
+                <Route path={AliasRoutes.SecurityPortal} element={<SecurityPortal/>}/>
+                <Route path={AliasRoutes.SecurityKnowledge} element={<SecurityKnowledge/>}/>
+                <Route path={AliasRoutes.Formats} element={<Formats/>}/>
+                <Route path={AliasRoutes.AboutRule} element={<Rules/>}/>
+                <Route path={AliasRoutes.AboutGroup} element={<Group/>}/>
+                <Route path={AliasRoutes.AboutHall} element={<Hall/>}/>
+                <Route path="/" element={<Home/>}/>
+                <Route path='*' element={<Error404/>}/>
+              </Routes>
+            </div>
+          </div>
           <Footer/>
         </div>
       </div>
