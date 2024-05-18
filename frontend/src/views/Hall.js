@@ -1,19 +1,51 @@
 import React, { Component } from "react";
 import AliasRoutes from "routes/AliasRoutes";
 import { ServiceFactory } from 'services';
+import { HallRequestConfirmModal } from 'components/modals';
+import { connect } from 'react-redux';
+import {
+  openHallRequestConfirmModal,
+  closeHallRequestConfirmModal,
+} from "redux/modals/Action";
+import { HallRequestModel } from 'models';
 
 
 class HallComponent extends Component {
 
   constructor(props) {
     super(props);
-    this.models = [];
+    this.model = new HallRequestModel();
     this.state = {
-      modelLength: this.models.length,
+      room: "1",
     }
   }
 
   componentDidMount() {
+  }
+
+  handleSubmit(ev) {
+    // prevent move other page
+    ev.preventDefault();
+    console.log(ev);
+    console.log(ev.currentTarget.checkValidity());
+    ev.currentTarget.reportValidity();
+    this.model = new HallRequestModel();
+    this.model.setGroupName(ev.currentTarget.group_name.value);
+    this.model.setResponsiblePerson(ev.currentTarget.responsible_person.value);
+    this.model.setAddress(ev.currentTarget.address.value);
+    this.model.setPhoneNumber(ev.currentTarget.phone_number.value);
+    this.model.setEmailAddress(ev.currentTarget.email_address.value);
+    this.model.setReason(ev.currentTarget.reason.value);
+    this.model.setStartDateTime(ev.currentTarget.start_datetime.value);
+    let t_sEndDateTime = ev.currentTarget.start_datetime.value.split('T')[0];
+    t_sEndDateTime = t_sEndDateTime + 'T';
+    t_sEndDateTime = t_sEndDateTime + ev.currentTarget.end_datetime.value;
+    this.model.setEndDateTime(t_sEndDateTime);
+    this.model.setRoom(this.state.room);
+    this.model.setDetail(ev.currentTarget.detail.value);
+    this.model.setNote(ev.currentTarget.note.value);
+
+    this.props.openHallRequestConfirmModal();
   }
 
   render() {
@@ -168,6 +200,7 @@ class HallComponent extends Component {
             </div>
             <div class="main-area">
               <main id="main">
+                <HallRequestConfirmModal model={this.model}/>
                 <section class="main-item">
                   <h2 class="main-title">
                     <span class="title">里公民館</span>
@@ -180,92 +213,85 @@ class HallComponent extends Component {
                   <h2 class="main-title">
                     <span class="title">里公民館使用申込</span>
                   </h2>
-                  <p>7以内にこちらから連絡がない場合は、電話番号 077-546-6905 にて、ご連絡をお願いいたします。</p>
-                  <form>
+                  <div>
+                    <p>7以内にこちらから連絡がない場合は、電話番号 077-546-6905 にて、ご連絡をお願いいたします。</p>
+                  </div>
+                  <form onSubmit={this.handleSubmit.bind(this)}>
                     <fieldset class="form-fieldset form-fieldset-name required">
                       <legend>団体名</legend>
                       <div class="form-group">
-                        <label for="field_3885034_sei" class="visually-hidden">団体名</label>
-                        <input id="field_3885034_sei" class="form-control form-name-sei" name="field_3885034_sei" type="text" value="" maxlength="2500" autocapitalize="off" placeholder="ブロック1 1-1組" required="" data-pattern="1"/>
-                        <div class="invalid-feedback" style={{display: "none"}}></div>
+                        <input class="form-control form-name-sei" name="group_name" type="text" maxlength="255" autocapitalize="off" placeholder="ブロック1 1-1組" required="true"/>
+                        <div class="invalid-feedback" >test</div>
                       </div>
                     </fieldset>
                     <fieldset class="form-fieldset form-fieldset-name required">
                       <legend>使用責任者</legend>
                       <div class="form-group">
-                        <label for="field_3885034_sei" class="visually-hidden">使用責任者</label>
-                        <input id="field_3885034_sei" class="form-control form-name-sei" name="field_3885034_sei" type="text" value="" maxlength="2500" autocapitalize="off" placeholder="田中 美里" required="" data-pattern="1"/>
+                        <input class="form-control form-name-sei" name="responsible_person" type="text" maxlength="50" autocapitalize="off" placeholder="田中 美里" required="true"/>
                         <div class="invalid-feedback" style={{display: "none"}}></div>
                       </div>
                     </fieldset>
                     <fieldset class="form-fieldset form-fieldset-name required">
                       <legend>住所</legend>
                       <div class="form-group">
-                        <label for="field_3885034_sei" class="visually-hidden">住所</label>
-                        <input id="field_3885034_sei" class="form-control form-name-sei" name="field_3885034_sei" type="text" value="" maxlength="2500" autocapitalize="off" placeholder="里5丁目7-22" required="" data-pattern="1"/>
+                        <input class="form-control form-name-sei" name="address" type="text" maxlength="255" autocapitalize="off" placeholder="里5丁目7-22" required="true"/>
                         <div class="invalid-feedback" style={{display: "none"}}></div>
                       </div>
                     </fieldset>
                     <fieldset class="form-fieldset form-fieldset-name required">
                       <legend>電話番号</legend>
                       <div class="form-group">
-                        <label for="field_3885034_sei" class="visually-hidden">電話番号</label>
-                        <input id="field_3885034_sei" class="form-control form-name-sei" name="field_3885034_sei" type="text" value="" maxlength="2500" autocapitalize="off" placeholder="077-XXX-XXXX" required="" data-pattern="1"/>
+                        <input class="form-control form-name-sei" name="phone_number" type="text" maxlength="50" autocapitalize="off" placeholder="077-XXX-XXXX" required="true"/>
                         <div class="invalid-feedback" style={{display: "none"}}></div>
                       </div>
                     </fieldset>
                     <fieldset class="form-fieldset form-fieldset-name required">
                       <legend>メールアドレス</legend>
                       <div class="form-group">
-                        <label for="field_3885034_sei" class="visually-hidden">メールアドレス</label>
-                        <input id="field_3885034_sei" class="form-control form-name-sei" name="field_3885034_sei" type="text" value="" maxlength="2500" autocapitalize="off" placeholder="example@example.com" required="" data-pattern="1"/>
+                        <input class="form-control form-name-sei" name="email_address" type="text" maxlength="255" autocapitalize="off" placeholder="example@example.com" required="true"/>
                         <div class="invalid-feedback" style={{display: "none"}}></div>
                       </div>
                     </fieldset>
                     <fieldset class="form-fieldset form-fieldset-name">
                       <legend>使用目的(会合名称)</legend>
                       <div class="form-group">
-                        <label for="field_3885034_sei" class="visually-hidden">使用目的</label>
-                        <input id="field_3885034_sei" class="form-control form-name-sei" name="field_3885034_sei" type="text" value="" maxlength="2500" autocapitalize="off" placeholder="ブロック1 1-1組の会合"/>
+                        <input class="form-control form-name-sei" name="reason" type="text" maxlength="255" autocapitalize="off" placeholder="ブロック1 1-1組の会合"/>
                         <div class="invalid-feedback" style={{display: "none"}}></div>
                       </div>
                     </fieldset>
                     <fieldset class="form-fieldset form-fieldset-name required">
                       <legend>使用日時</legend>
                       <div class="form-group">
-                        <label for="field_3885034_sei" class="visually-hidden">使用日時</label>
-                        <input class="form-control form-name-sei" name="" type="datetime-local" value="" required=""/>
+                        <input class="form-control form-name-sei" name="start_datetime" type="datetime-local" required="true"/>
                         <div class="invalid-feedback" style={{display: "none"}}></div>
                       </div>
                       から
                       <div class="form-group">
-                        <label for="field_3885034_sei" class="visually-hidden">終了時刻</label>
-                        <input class="form-control form-name-sei" type="time" name="" required="" />
+                        <input class="form-control form-name-sei" type="time" name="end_datetime" required="true"/>
                         <div class="invalid-feedback" style={{display: "none"}}></div>
                       </div>
                       まで
                     </fieldset>
-                    <fieldset data-fieldset-id="3885036" class="form-fieldset form-fieldset-radiobutton required" data-fieldset-label="性別">
-                      <legend>使用室名</legend>
+                    <fieldset class="form-fieldset form-fieldset-radiobutton required" data-fieldset-label="使用室名">
+                      <legend>使用室</legend>
                       <div>
                         <div class="form-group form-fieldgroup was-validated">
                           <div class="hall-list row g-2">
-                            <input name="" type="hidden" class="" value=""/>
-                            <div class="hall-select col-md-6 d-flex">
-                              <label for="field_3885036_0" class="form-label-radio-checkbox form-check-label d-flex align-items-center valid">
-                                <input id="field_3885036_0" class="form-check-input" name="field_3885036" type="radio" value="0"/>
+                            <div class="hall-select col-md-6">
+                              <label class="form-label-radio-checkbox form-check-label align-items-center">
+                                <input class="form-check-input" name="room[]" type="radio" value="1" onChange={() => this.setState({room: '1'})} checked={this.state.room === '1'}/>
                                 大ホール
                               </label>
                             </div>
-                            <div class="hall-select col-md-6 d-flex">
-                              <label for="field_3885036_1" class="form-label-radio-checkbox form-check-label d-flex align-items-center valid">
-                                <input id="field_3885036_1" class="form-check-input" name="field_3885036" type="radio" value="1"/>
+                            <div class="hall-select col-md-6">
+                              <label class="form-label-radio-checkbox form-check-label align-items-center">
+                                <input class="form-check-input" name="room[]" type="radio" value="2" onChange={() => this.setState({room: '2'})} checked={this.state.room === '2'}/>
                                 2階和室
                               </label>
                             </div>
-                            <div class="hall-select col-md-6 d-flex">
-                              <label for="field_3885036_2" class="form-label-radio-checkbox form-check-label d-flex align-items-center valid">
-                                <input id="field_3885036_2" class="form-check-input" name="field_3885036" type="radio" value="2"/>
+                            <div class="hall-select col-md-6">
+                              <label class="form-label-radio-checkbox form-check-label align-items-center valid">
+                                <input class="form-check-input" name="room[]" type="radio" value="3" onChange={() => this.setState({room: '3'})} checked={this.state.room === '3'}/>
                                 自治会館2F
                               </label>
                             </div>
@@ -277,21 +303,19 @@ class HallComponent extends Component {
                     <fieldset class="form-fieldset form-fieldset-name">
                       <legend>内容</legend>
                       <div class="form-group">
-                        <label for="field_3885034_sei" class="visually-hidden">内容</label>
-                        <input id="field_3885034_sei" class="form-control form-name-sei" name="field_3885034_sei" type="text" value="" maxlength="2500" autocapitalize="off" placeholder="ごみ集積所についての話し合い"/>
+                        <input class="form-control form-name-sei" name="detail" type="text" maxlength="255" autocapitalize="off" placeholder="ごみ集積所についての話し合い"/>
                         <div class="invalid-feedback" style={{display: "none"}}></div>
                       </div>
                     </fieldset>
                     <fieldset class="form-fieldset form-fieldset-name">
-                      <legend>備考欄</legend>
+                      <legend>備考</legend>
                       <div class="form-group">
-                        <label class="visually-hidden">備考欄</label>
-                        <textarea class="form-control form-name-sei" name="field_3885034_sei" type="text" value="" maxlength="2500" autocapitalize="off" placeholder=""></textarea>
+                        <textarea class="form-control form-name-sei" name="note" type="text" autocapitalize="off" placeholder=""></textarea>
                         <div class="invalid-feedback" style={{display: "none"}}></div>
                       </div>
                     </fieldset>
                     <div class="d-grid gap-2 form-buttons">
-                      <input class="btn form-btn-submit" name="submit" type="submit" id="submit" value="確認画面へ"/>
+                      <input class="btn form-btn-submit" name="submit" type="submit" value="申込内容を確認する"/>
                     </div>
                   </form>
                 </section>
@@ -304,4 +328,23 @@ class HallComponent extends Component {
   };
 }
 
-export default HallComponent;
+const mapStateToProps = (state) => {
+  return {
+    hallRequestConfirmModal: {
+      isOpen: state.modals.hallRequestConfirmModalIsOpen,
+    },
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    openHallRequestConfirmModal: function() {
+      dispatch(openHallRequestConfirmModal());
+    },
+    closeHallRequestConfirmModal: function() {
+      dispatch(closeHallRequestConfirmModal());
+    },
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HallComponent);

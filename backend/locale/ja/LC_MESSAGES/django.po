@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 14:31+0000\n"
+"POT-Creation-Date: 2024-05-17 00:29+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,65 +18,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: about/models/hall_request_history_model.py:18
+#: about/models/hall_request_model.py:18
 msgid "Big Room"
 msgstr "大ホール"
 
-#: about/models/hall_request_history_model.py:19
+#: about/models/hall_request_model.py:19
 msgid "Japanese Style Room"
 msgstr "2階和室"
 
-#: about/models/hall_request_history_model.py:20
+#: about/models/hall_request_model.py:20
 msgid "Neighborhood hall 2F"
 msgstr "自治会館2F"
 
-#: about/models/hall_request_history_model.py:30
+#: about/models/hall_request_model.py:30
 #, fuzzy
 #| msgid "category name"
 msgid "group name"
 msgstr "カテゴリー名"
 
-#: about/models/hall_request_history_model.py:37
-#: about/models/hall_request_history_model.py:44
+#: about/models/hall_request_model.py:37
 msgid "responsible person"
 msgstr "責任者"
 
-#: about/models/hall_request_history_model.py:51
-#: about/models/hall_request_history_model.py:58
+#: about/models/hall_request_model.py:44
+msgid "address"
+msgstr ""
+
+#: about/models/hall_request_model.py:51
 msgid "phone number"
 msgstr "電話番号"
 
-#: about/models/hall_request_history_model.py:65
+#: about/models/hall_request_model.py:58
+msgid "email address"
+msgstr ""
+
+#: about/models/hall_request_model.py:65
 msgid "reson"
 msgstr "使用目的"
 
-#: about/models/hall_request_history_model.py:72
+#: about/models/hall_request_model.py:72
 msgid "start datetime"
 msgstr "使用開始日時"
 
-#: about/models/hall_request_history_model.py:77
+#: about/models/hall_request_model.py:77
 msgid "end datetime"
 msgstr "使用終了日時"
 
-#: about/models/hall_request_history_model.py:82
+#: about/models/hall_request_model.py:82
 msgid "room"
 msgstr "室"
 
-#: about/models/hall_request_history_model.py:88
+#: about/models/hall_request_model.py:88
 msgid "detail"
 msgstr "内容"
 
-#: about/models/hall_request_history_model.py:95
+#: about/models/hall_request_model.py:95
 msgid "note"
 msgstr "備考"
 
-#: about/models/hall_request_history_model.py:101
+#: about/models/hall_request_model.py:101
 msgid "is finished"
 msgstr "処理済"
 
-#: about/models/hall_request_history_model.py:108
-#: about/models/hall_request_history_model.py:109
-msgid "Hall Request History"
+#: about/models/hall_request_model.py:108
+#: about/models/hall_request_model.py:109
+msgid "Hall Request"
 msgstr "公民館申込み履歴"
 
 #: about/models/hall_request_receiver_model.py:19

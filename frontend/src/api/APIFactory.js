@@ -64,4 +64,13 @@ export default class APIFactory {
     }
     return APIFactory._cache['RulesAPI'];
   }
+
+  // HallRequest
+  static createHallRequestAPI() {
+    if(!APIFactory._cache['HallRequestAPI']) {
+      let klass = require('./HallRequest.api.js').default;
+      APIFactory._cache['HallRequestAPI'] = new klass();
+    }
+    return APIFactory._cache['HallRequestAPI'];
+  }
 }

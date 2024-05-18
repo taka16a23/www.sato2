@@ -14,6 +14,8 @@ export default class AliasRoutes {
   static API_SecurityKnowledge = AliasRoutes.API_Security + "/knowledge";
   static API_About = AliasRoutes.Api + "/about";
   static API_Rules = AliasRoutes.API_About + "/rules";
+  static API_Hall = AliasRoutes.API_About + "/hall";
+  static API_HallRequest = AliasRoutes.API_HallRequest + "/request";
   // page
   static Info = "/info";
   static News = "/news";
