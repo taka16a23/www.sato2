@@ -29,29 +29,24 @@ class Rules extends Component {
 
   render() {
     return (
-      <div className="container">
-        <SideNavigations/>
-        <div className="main-area">
-          <main id="main">
-            {this.models.map((oModel) =>
-              <div className="main-item" key={oModel.id}>
-                <h2 className="main-title">
-                  <span className="title">{oModel.title}</span>
-                </h2>
-                <div className="main-content rule-content">
-                  {oModel.listImages().map((oImageModel) =>
-                    <div className="rule-image" key={oImageModel.id}>
-                      <a href={oModel.document} target="_blank" title="PDFをダウンロード">
-                        <img src={process.env.REACT_APP_API_URL + oImageModel.image}/>
-                      </a>
-                    </div>
-                  )}
+      <main id="main">
+        {this.models.map((oModel) =>
+          <div className="main-item" key={oModel.id}>
+            <h2 className="main-title">
+              <span className="title">{oModel.title}</span>
+            </h2>
+            <div className="main-content rule-content">
+              {oModel.listImages().map((oImageModel) =>
+                <div className="rule-image" key={oImageModel.id}>
+                  <a href={oModel.document} target="_blank" title="PDFをダウンロード">
+                    <img src={process.env.REACT_APP_API_URL + oImageModel.image}/>
+                  </a>
                 </div>
-              </div>
-            )}
-          </main>
-        </div>
-      </div>
+              )}
+            </div>
+          </div>
+        )}
+      </main>
     );
   };
 }
