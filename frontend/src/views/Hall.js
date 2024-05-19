@@ -140,13 +140,14 @@ class HallComponent extends Component {
           this.errorMessages[String(ev.currentTarget.end_datetime.name)] = ev.currentTarget.end_datetime.validationMessage;
         }
       }
-      this.setState({
-        errorMessages: this.errorMessages,
-      });
       // focus
       if (focusElement !== null) {
         focusElement.focus();
       }
+      // 画面更新
+      this.setState({
+        errorMessages: this.errorMessages,
+      });
       return ev.currentTarget.checkValidity();
     }
     // 標準入力検証
