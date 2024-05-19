@@ -17,20 +17,137 @@ class HallComponent extends Component {
   constructor(props) {
     super(props);
     this.model = new HallRequestModel();
+    this.errorMessages = {
+      group_name: '',
+      responsible_person: '',
+      address: '',
+      phone_number: '',
+      email_address: '',
+      reason: '',
+      start_datetime: '',
+      end_datetime: '',
+      room: '',
+      detail: '',
+      note: '',
+    };
     this.state = {
       room: "1",
+      errorMessages: this.errorMessages,
     }
   }
 
   componentDidMount() {
   }
 
+  clearErrorMessages() {
+    for (var key in this.errorMessages) {
+      this.errorMessages[key] = '';
+    }
+  }
+
   handleSubmit(ev) {
     // prevent move other page
     ev.preventDefault();
+    // clear error message
+    this.clearErrorMessages();
     // 標準入力妥当検証
     if (ev.currentTarget.checkValidity() !== true) {
-      return;
+      let focusElement = null;
+      // 団体名
+      if (ev.currentTarget.group_name.checkValidity() !== true) {
+        if (focusElement === null) {
+          focusElement = ev.currentTarget.group_name;
+        }
+        if (ev.currentTarget.group_name.validity.valueMissing === true) {
+          this.errorMessages[String(ev.currentTarget.group_name.name)] = ev.currentTarget.group_name.validationMessage;
+        }
+        if (ev.currentTarget.group_name.validity.patternMismatch === true) {
+          this.errorMessages[String(ev.currentTarget.group_name.name)] = ev.currentTarget.group_name.validationMessage;
+        }
+      }
+      // 責任者
+      if (ev.currentTarget.responsible_person.checkValidity() !== true) {
+        if (focusElement === null) {
+          focusElement = ev.currentTarget.responsible_person;
+        }
+        if (ev.currentTarget.responsible_person.validity.valueMissing === true) {
+          this.errorMessages[String(ev.currentTarget.responsible_person.name)] = ev.currentTarget.responsible_person.validationMessage;
+        }
+        if (ev.currentTarget.responsible_person.validity.patternMismatch === true) {
+          this.errorMessages[String(ev.currentTarget.responsible_person.name)] = ev.currentTarget.responsible_person.validationMessage;
+        }
+      }
+      // 住所
+      if (ev.currentTarget.address.checkValidity() !== true) {
+        if (focusElement === null) {
+          focusElement = ev.currentTarget.address;
+        }
+        if (ev.currentTarget.address.validity.valueMissing === true) {
+          this.errorMessages[String(ev.currentTarget.address.name)] = ev.currentTarget.address.validationMessage;
+        }
+        if (ev.currentTarget.address.validity.patternMismatch === true) {
+          this.errorMessages[String(ev.currentTarget.address.name)] = ev.currentTarget.address.validationMessage;
+        }
+      }
+      // 電話番号
+      if (ev.currentTarget.phone_number.checkValidity() !== true) {
+        if (focusElement === null) {
+          focusElement = ev.currentTarget.phone_number;
+        }
+        if (ev.currentTarget.phone_number.validity.valueMissing === true) {
+          this.errorMessages[String(ev.currentTarget.phone_number.name)] = ev.currentTarget.phone_number.validationMessage;
+        }
+        if (ev.currentTarget.phone_number.validity.patternMismatch === true) {
+          this.errorMessages[String(ev.currentTarget.phone_number.name)] = ev.currentTarget.phone_number.validationMessage;
+        }
+      }
+      // メールアドレス
+      if (ev.currentTarget.email_address.checkValidity() !== true) {
+        if (focusElement === null) {
+          focusElement = ev.currentTarget.email_address;
+        }
+        if (ev.currentTarget.email_address.validity.valueMissing === true) {
+          this.errorMessages[String(ev.currentTarget.email_address.name)] = ev.currentTarget.email_address.validationMessage;
+        }
+        if (ev.currentTarget.email_address.validity.patternMismatch === true) {
+          this.errorMessages[String(ev.currentTarget.email_address.name)] = ev.currentTarget.email_address.validationMessage;
+        }
+        if (ev.currentTarget.email_address.validity.typeMismatch === true) {
+          this.errorMessages[String(ev.currentTarget.email_address.name)] = ev.currentTarget.email_address.validationMessage;
+        }
+      }
+      // 使用開始日時
+      if (ev.currentTarget.start_datetime.checkValidity() !== true) {
+        if (focusElement === null) {
+          focusElement = ev.currentTarget.start_datetime;
+        }
+        if (ev.currentTarget.start_datetime.validity.valueMissing === true) {
+          this.errorMessages[String(ev.currentTarget.start_datetime.name)] = ev.currentTarget.start_datetime.validationMessage;
+        }
+        if (ev.currentTarget.start_datetime.validity.patternMismatch === true) {
+          this.errorMessages[String(ev.currentTarget.start_datetime.name)] = ev.currentTarget.start_datetime.validationMessage;
+        }
+      }
+      // 使用終了日時
+      if (ev.currentTarget.end_datetime.checkValidity() !== true) {
+        if (focusElement === null) {
+          focusElement = ev.currentTarget.end_datetime;
+        }
+        if (ev.currentTarget.end_datetime.validity.valueMissing === true) {
+          this.errorMessages[String(ev.currentTarget.end_datetime.name)] = ev.currentTarget.end_datetime.validationMessage;
+        }
+        if (ev.currentTarget.end_datetime.validity.patternMismatch === true) {
+          this.errorMessages[String(ev.currentTarget.end_datetime.name)] = ev.currentTarget.end_datetime.validationMessage;
+        }
+      }
+      this.setState({
+        errorMessages: this.errorMessages,
+      });
+      // focus
+      if (focusElement !== null) {
+        focusElement.focus();
+      }
+      return ev.currentTarget.checkValidity();
     }
     // 標準入力検証
     if (ev.currentTarget.reportValidity() !== true) {
@@ -59,121 +176,121 @@ class HallComponent extends Component {
     return (
       <main id="main">
         <HallRequestConfirmModal model={this.model}/>
-        <section class="main-item">
-          <h2 class="main-title">
-            <span class="title">里公民館</span>
+        <section className="main-item">
+          <h2 className="main-title">
+            <span className="title">里公民館</span>
           </h2>
           <p>町内団体使用の場合は無料。</p>
           <p>その他団体の貸館料金は相談の上決定する。</p>
-          <iframe src="https://calendar.google.com/calendar/embed?showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=6m5ne5kcfmkek4t0ba37o95olo%40group.calendar.google.com&amp;color=%23B1365F&amp;ctz=Asia%2FTokyo" height="600" style={{width: "100%",borderWidth: 0}} frameborder="0" scrolling="no"></iframe>
+          <iframe src="https://calendar.google.com/calendar/embed?showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=6m5ne5kcfmkek4t0ba37o95olo%40group.calendar.google.com&amp;color=%23B1365F&amp;ctz=Asia%2FTokyo" height="600" style={{width: "100%",borderWidth: 0}} frameBorder="0" scrolling="no"></iframe>
         </section>
-        <section class="main-item">
-          <h2 class="main-title">
-            <span class="title">里公民館使用申込</span>
+        <section className="main-item">
+          <h2 className="main-title">
+            <span className="title">里公民館使用申込</span>
           </h2>
           <div>
             <p>7以内にこちらから連絡がない場合は、電話番号 077-546-6905 にて、ご連絡をお願いいたします。</p>
           </div>
-          <form onSubmit={this.handleSubmit.bind(this)}>
-            <fieldset class="form-fieldset required">
+          <form onSubmit={this.handleSubmit.bind(this)} action="#">
+            <fieldset className="form-fieldset required">
               <legend>団体名</legend>
-              <div class="form-group">
-                <input class="form-control" name="group_name" type="text" maxlength="255" autocapitalize="off" placeholder="ブロック1 1-1組" required="true"/>
-                <div class="error-message" ></div>
+              <div className="form-group">
+                <input id="groupname" className="form-control" name="group_name" type="text" maxLength="255" autoCapitalize="off" placeholder="ブロック1 1-1組" required={true}/>
+                <div className="error-message" >{this.state.errorMessages.group_name}</div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset required">
+            <fieldset className="form-fieldset required">
               <legend>使用責任者</legend>
-              <div class="form-group">
-                <input class="form-control" name="responsible_person" type="text" maxlength="50" autocapitalize="off" placeholder="田中 美里" required="true"/>
-                <div class="error-message"></div>
+              <div className="form-group">
+                <input className="form-control" name="responsible_person" type="text" maxLength="50" autoCapitalize="off" placeholder="田中 美里" required={true}/>
+                <div className="error-message">{this.state.errorMessages.responsible_person}</div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset form-fieldset-name required">
+            <fieldset className="form-fieldset form-fieldset-name required">
               <legend>住所</legend>
-              <div class="form-group">
-                <input class="form-control" name="address" type="text" maxlength="255" autocapitalize="off" placeholder="里5丁目7-22" required="true"/>
-                <div class="error-message"></div>
+              <div className="form-group">
+                <input className="form-control" name="address" type="text" maxLength="255" autoCapitalize="off" placeholder="里5丁目7-22" required={true}/>
+                <div className="error-message">{this.state.errorMessages.address}</div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset required">
+            <fieldset className="form-fieldset required">
               <legend>電話番号</legend>
-              <div class="form-group">
-                <input class="form-control" name="phone_number" type="tel" maxlength="50" autocapitalize="off" placeholder="077-XXX-XXXX" required="true"/>
-                <div class="error-message"></div>
+              <div className="form-group">
+                <input className="form-control" name="phone_number" type="tel" maxLength="50" autoCapitalize="off" placeholder="077-XXX-XXXX" required={true}/>
+                <div className="error-message">{this.state.errorMessages.phone_number}</div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset required">
+            <fieldset className="form-fieldset required">
               <legend>メールアドレス</legend>
-              <div class="form-group">
-                <input class="form-control" name="email_address" type="email" maxlength="255" autocapitalize="off" placeholder="example@example.com" required="true" pattern={Patterns.EMAIL_ADDRESS}/>
-                <div class="error-message"></div>
+              <div className="form-group">
+                <input className="form-control" name="email_address" type="email" maxLength="255" autoCapitalize="off" placeholder="example@example.com" required={true}/>
+                <div className="error-message">{this.state.errorMessages.email_address}</div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset">
+            <fieldset className="form-fieldset">
               <legend>使用目的(会合名称)</legend>
-              <div class="form-group">
-                <input class="form-control" name="reason" type="text" maxlength="255" autocapitalize="off" placeholder="ブロック1 1-1組の会合"/>
-                <div class="error-message"></div>
+              <div className="form-group">
+                <input className="form-control" name="reason" type="text" maxLength="255" autoCapitalize="off" placeholder="ブロック1 1-1組の会合"/>
+                <div className="error-message">{this.state.errorMessages.reason}</div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset required">
+            <fieldset className="form-fieldset required">
               <legend>使用日時</legend>
-              <div class="form-group">
-                <input class="form-control" name="start_datetime" type="datetime-local" required="true"/>
-                <div class="error-message"></div>
+              <div className="form-group">
+                <input className="form-control" name="start_datetime" type="datetime-local" required={true}/>
+                <div className="error-message">{this.state.errorMessages.start_datetime}</div>
               </div>
               から
-              <div class="form-group">
-                <input class="form-control" type="time" name="end_datetime" required="true"/>
-                <div class="error-message"></div>
+              <div className="form-group">
+                <input className="form-control" name="end_datetime" type="time" required={true}/>
+                <div className="error-message">{this.state.errorMessages.end_datetime}</div>
               </div>
               まで
             </fieldset>
-            <fieldset class="form-fieldset form-fieldset-radiobutton required" data-fieldset-label="使用室名">
+            <fieldset className="form-fieldset form-fieldset-radiobutton required" data-fieldset-label="使用室名">
               <legend>使用室</legend>
               <div>
-                <div class="form-group">
-                  <div class="hall-list row g-2">
-                    <div class="hall-select col-md-6">
-                      <label class="form-label-radio-checkbox form-check-label align-items-center">
-                        <input class="form-check-input" name="room[]" type="radio" value="1" onChange={() => this.setState({room: '1'})} checked={this.state.room === '1'}/>
+                <div className="form-group">
+                  <div className="hall-list row g-2">
+                    <div className="hall-select col-md-6">
+                      <label className="form-label-radio-checkbox form-check-label align-items-center">
+                        <input className="form-check-input" name="room[]" type="radio" value="1" onChange={() => this.setState({room: '1'})} checked={this.state.room === '1'}/>
                         大ホール
                       </label>
                     </div>
-                    <div class="hall-select col-md-6">
-                      <label class="form-label-radio-checkbox form-check-label align-items-center">
-                        <input class="form-check-input" name="room[]" type="radio" value="2" onChange={() => this.setState({room: '2'})} checked={this.state.room === '2'}/>
+                    <div className="hall-select col-md-6">
+                      <label className="form-label-radio-checkbox form-check-label align-items-center">
+                        <input className="form-check-input" name="room[]" type="radio" value="2" onChange={() => this.setState({room: '2'})} checked={this.state.room === '2'}/>
                         2階和室
                       </label>
                     </div>
-                    <div class="hall-select col-md-6">
-                      <label class="form-label-radio-checkbox form-check-label align-items-center valid">
-                        <input class="form-check-input" name="room[]" type="radio" value="3" onChange={() => this.setState({room: '3'})} checked={this.state.room === '3'}/>
+                    <div className="hall-select col-md-6">
+                      <label className="form-label-radio-checkbox form-check-label align-items-center valid">
+                        <input className="form-check-input" name="room[]" type="radio" value="3" onChange={() => this.setState({room: '3'})} checked={this.state.room === '3'}/>
                         自治会館2F
                       </label>
                     </div>
                   </div>
-                  <div class="error-message"></div>
+                  <div className="error-message">{this.state.errorMessages.room}</div>
                 </div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset">
+            <fieldset className="form-fieldset">
               <legend>内容</legend>
-              <div class="form-group">
-                <input class="form-control" name="detail" type="text" maxlength="255" autocapitalize="off" placeholder="ごみ集積所についての話し合い"/>
-                <div class="error-message"></div>
+              <div className="form-group">
+                <input className="form-control" name="detail" type="text" maxLength="255" autoCapitalize="off" placeholder="ごみ集積所についての話し合い"/>
+                <div className="error-message">{this.state.errorMessages.detail}</div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset">
+            <fieldset className="form-fieldset">
               <legend>備考</legend>
-              <div class="form-group">
-                <textarea class="form-control" name="note" type="text" autocapitalize="off" placeholder=""></textarea>
-                <div class="error-message"></div>
+              <div className="form-group">
+                <textarea className="form-control" name="note" type="text" autoCapitalize="off" placeholder=""></textarea>
+                <div className="error-message">{this.state.errorMessages.note}</div>
               </div>
             </fieldset>
             <div>
-              <input class="btn form-btn-submit" name="submit" type="submit" value="申込内容を確認する"/>
+              <input className="btn form-btn-submit" name="submit" type="submit" value="申込内容を確認する" formNoValidate={true}/>
             </div>
           </form>
         </section>
