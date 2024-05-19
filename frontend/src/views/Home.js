@@ -35,10 +35,10 @@ class HomeComponent extends Component {
       <div className="container">
         <SideNavigations/>
         <div className="main-area">
-          <main id="main">
+          <main id="main" className="home">
             <section className="main-item">
               <h2 className="main-title">
-                <NavLink className="link" to={"/news"} alt="" title="最新情報一覧">
+                <NavLink className="link" to={AliasRoutes.News} alt="" title="最新情報一覧">
                   <span className="title">最新情報</span>
                 </NavLink>
               </h2>
