@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-17 00:29+0900\n"
+"POT-Creation-Date: 2024-05-19 20:35+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: about/admin/hall_request_model_admin.py:37
+msgid "requested at"
+msgstr "申込日時"
 
 #: about/models/hall_request_model.py:18
 msgid "Big Room"
@@ -31,10 +35,8 @@ msgid "Neighborhood hall 2F"
 msgstr "自治会館2F"
 
 #: about/models/hall_request_model.py:30
-#, fuzzy
-#| msgid "category name"
 msgid "group name"
-msgstr "カテゴリー名"
+msgstr "グループ名"
 
 #: about/models/hall_request_model.py:37
 msgid "responsible person"
@@ -42,7 +44,7 @@ msgstr "責任者"
 
 #: about/models/hall_request_model.py:44
 msgid "address"
-msgstr ""
+msgstr "住所"
 
 #: about/models/hall_request_model.py:51
 msgid "phone number"
@@ -50,7 +52,7 @@ msgstr "電話番号"
 
 #: about/models/hall_request_model.py:58
 msgid "email address"
-msgstr ""
+msgstr "メールアドレス"
 
 #: about/models/hall_request_model.py:65
 msgid "reson"

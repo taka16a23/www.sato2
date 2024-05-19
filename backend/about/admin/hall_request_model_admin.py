@@ -4,6 +4,7 @@ r"""hall_request_model_admin --
 
 """
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 
 class HallRequestModelAdmin(admin.ModelAdmin):
@@ -13,8 +14,8 @@ class HallRequestModelAdmin(admin.ModelAdmin):
     Responsibility:
     """
     list_display = (
-        'created_at',
         'is_finished',
+        'requested_at',
         'group_name',
         'responsible_person',
         'address',
@@ -28,8 +29,12 @@ class HallRequestModelAdmin(admin.ModelAdmin):
     list_editable = (
     )
     ordering = (
-        'created_at',
+        '-created_at',
     )
+
+    def requested_at(self, obj):
+        return obj.created_at
+    requested_at.short_description = _('requested at')
 
 
 
