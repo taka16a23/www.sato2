@@ -1,0 +1,22 @@
+.board-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+}
+.board-item {
+}
+.board-item-container-inner {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.board-title {
+  text-align: center;
+  font-weight: bold;
+}
+.board-body {
+  &:hover {
+    margin: -3px;
+    border: 3px solid #CCC;
+  }
+}

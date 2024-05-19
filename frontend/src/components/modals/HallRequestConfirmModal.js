@@ -170,7 +170,7 @@ class HallRequestConfirmModal extends Component {
               <label className="label">
                 備考
               </label>
-              <div className="content">
+              <div className="content" style={{whiteSpace: 'pre-line'}}>
                 {this.props.model.getNote()}
               </div>
             </div>

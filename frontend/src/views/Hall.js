@@ -9,6 +9,7 @@ import {
   closeHallRequestConfirmModal,
 } from "redux/modals/Action";
 import { HallRequestModel } from 'models';
+import Patterns from 'patterns/Patterns';
 
 
 class HallComponent extends Component {
@@ -27,6 +28,10 @@ class HallComponent extends Component {
   handleSubmit(ev) {
     // prevent move other page
     ev.preventDefault();
+    // 標準入力妥当検証
+    if (ev.currentTarget.checkValidity() !== true) {
+      return;
+    }
     // 標準入力検証
     if (ev.currentTarget.reportValidity() !== true) {
       return;
@@ -70,65 +75,65 @@ class HallComponent extends Component {
             <p>7以内にこちらから連絡がない場合は、電話番号 077-546-6905 にて、ご連絡をお願いいたします。</p>
           </div>
           <form onSubmit={this.handleSubmit.bind(this)}>
-            <fieldset class="form-fieldset form-fieldset-name required">
+            <fieldset class="form-fieldset required">
               <legend>団体名</legend>
               <div class="form-group">
-                <input class="form-control form-name-sei" name="group_name" type="text" maxlength="255" autocapitalize="off" placeholder="ブロック1 1-1組" required="true"/>
-                <div class="invalid-feedback" >test</div>
+                <input class="form-control" name="group_name" type="text" maxlength="255" autocapitalize="off" placeholder="ブロック1 1-1組" required="true"/>
+                <div class="error-message" ></div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset form-fieldset-name required">
+            <fieldset class="form-fieldset required">
               <legend>使用責任者</legend>
               <div class="form-group">
-                <input class="form-control form-name-sei" name="responsible_person" type="text" maxlength="50" autocapitalize="off" placeholder="田中 美里" required="true"/>
-                <div class="invalid-feedback" style={{display: "none"}}></div>
+                <input class="form-control" name="responsible_person" type="text" maxlength="50" autocapitalize="off" placeholder="田中 美里" required="true"/>
+                <div class="error-message"></div>
               </div>
             </fieldset>
             <fieldset class="form-fieldset form-fieldset-name required">
               <legend>住所</legend>
               <div class="form-group">
-                <input class="form-control form-name-sei" name="address" type="text" maxlength="255" autocapitalize="off" placeholder="里5丁目7-22" required="true"/>
-                <div class="invalid-feedback" style={{display: "none"}}></div>
+                <input class="form-control" name="address" type="text" maxlength="255" autocapitalize="off" placeholder="里5丁目7-22" required="true"/>
+                <div class="error-message"></div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset form-fieldset-name required">
+            <fieldset class="form-fieldset required">
               <legend>電話番号</legend>
               <div class="form-group">
-                <input class="form-control form-name-sei" name="phone_number" type="text" maxlength="50" autocapitalize="off" placeholder="077-XXX-XXXX" required="true"/>
-                <div class="invalid-feedback" style={{display: "none"}}></div>
+                <input class="form-control" name="phone_number" type="tel" maxlength="50" autocapitalize="off" placeholder="077-XXX-XXXX" required="true"/>
+                <div class="error-message"></div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset form-fieldset-name required">
+            <fieldset class="form-fieldset required">
               <legend>メールアドレス</legend>
               <div class="form-group">
-                <input class="form-control form-name-sei" name="email_address" type="text" maxlength="255" autocapitalize="off" placeholder="example@example.com" required="true"/>
-                <div class="invalid-feedback" style={{display: "none"}}></div>
+                <input class="form-control" name="email_address" type="email" maxlength="255" autocapitalize="off" placeholder="example@example.com" required="true" pattern={Patterns.EMAIL_ADDRESS}/>
+                <div class="error-message"></div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset form-fieldset-name">
+            <fieldset class="form-fieldset">
               <legend>使用目的(会合名称)</legend>
               <div class="form-group">
-                <input class="form-control form-name-sei" name="reason" type="text" maxlength="255" autocapitalize="off" placeholder="ブロック1 1-1組の会合"/>
-                <div class="invalid-feedback" style={{display: "none"}}></div>
+                <input class="form-control" name="reason" type="text" maxlength="255" autocapitalize="off" placeholder="ブロック1 1-1組の会合"/>
+                <div class="error-message"></div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset form-fieldset-name required">
+            <fieldset class="form-fieldset required">
               <legend>使用日時</legend>
               <div class="form-group">
-                <input class="form-control form-name-sei" name="start_datetime" type="datetime-local" required="true"/>
-                <div class="invalid-feedback" style={{display: "none"}}></div>
+                <input class="form-control" name="start_datetime" type="datetime-local" required="true"/>
+                <div class="error-message"></div>
               </div>
               から
               <div class="form-group">
-                <input class="form-control form-name-sei" type="time" name="end_datetime" required="true"/>
-                <div class="invalid-feedback" style={{display: "none"}}></div>
+                <input class="form-control" type="time" name="end_datetime" required="true"/>
+                <div class="error-message"></div>
               </div>
               まで
             </fieldset>
             <fieldset class="form-fieldset form-fieldset-radiobutton required" data-fieldset-label="使用室名">
               <legend>使用室</legend>
               <div>
-                <div class="form-group form-fieldgroup was-validated">
+                <div class="form-group">
                   <div class="hall-list row g-2">
                     <div class="hall-select col-md-6">
                       <label class="form-label-radio-checkbox form-check-label align-items-center">
@@ -149,25 +154,25 @@ class HallComponent extends Component {
                       </label>
                     </div>
                   </div>
-                  <div class="invalid-feedback" style={{display: "none"}}></div>
+                  <div class="error-message"></div>
                 </div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset form-fieldset-name">
+            <fieldset class="form-fieldset">
               <legend>内容</legend>
               <div class="form-group">
-                <input class="form-control form-name-sei" name="detail" type="text" maxlength="255" autocapitalize="off" placeholder="ごみ集積所についての話し合い"/>
-                <div class="invalid-feedback" style={{display: "none"}}></div>
+                <input class="form-control" name="detail" type="text" maxlength="255" autocapitalize="off" placeholder="ごみ集積所についての話し合い"/>
+                <div class="error-message"></div>
               </div>
             </fieldset>
-            <fieldset class="form-fieldset form-fieldset-name">
+            <fieldset class="form-fieldset">
               <legend>備考</legend>
               <div class="form-group">
-                <textarea class="form-control form-name-sei" name="note" type="text" autocapitalize="off" placeholder=""></textarea>
-                <div class="invalid-feedback" style={{display: "none"}}></div>
+                <textarea class="form-control" name="note" type="text" autocapitalize="off" placeholder=""></textarea>
+                <div class="error-message"></div>
               </div>
             </fieldset>
-            <div class="d-grid gap-2 form-buttons">
+            <div>
               <input class="btn form-btn-submit" name="submit" type="submit" value="申込内容を確認する"/>
             </div>
           </form>
