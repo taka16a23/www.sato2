@@ -12,6 +12,9 @@ import {
   openHallRequestConfirmModal,
   closeHallRequestConfirmModal,
 } from "redux/modals/Action";
+import { ServiceFactory } from 'services';
+import Lottie from "react-lottie";
+import animationData from "assets/lotties/success_circle.json";
 
 
 class HallRequestConfirmModal extends Component {
@@ -49,26 +52,15 @@ class HallRequestConfirmModal extends Component {
     this.props.closeHallRequestConfirmModal();
   }
 
-  handleSubmit(ev) {
+  handleSendButton(ev) {
     // prevent move other page
     ev.preventDefault();
-    // var service = ServiceFactory.createAccountService();
-    // service.create(
-    //   this.state.username, this.state.email, this.state.password, this.props.loginUser.id).then(model => {
-    //     if(this.props.onSuccess) {
-    //       this.props.onSuccess();
-    //     }
-    //     this.closeModal();
-    //     // 登録完了
-    //     // 「@1」を登録しました
-    //     let notifier = NotificationFactory.createNotificationSuccess(NotificationFactory.MESSAGE_ID.SUCCESS_SAVE);
-    //     notifier.addReplace('@1', model.username);
-    //     notifier.show();
-    //   }).catch(err => {
-    //     console.log(err);
-    //   });
-    // // prevent refresh
-    // return false;
+    var service = ServiceFactory.createHallService();
+    service.request(this.props.model).then(() => {
+      console.log('success');
+    }).catch(err => {
+      alert(err);
+    });;
   }
 
   render() {
@@ -177,7 +169,7 @@ class HallRequestConfirmModal extends Component {
           </div>
         </ModalBody>
         <ModalFooter className="hall-request-modal-footer">
-          <Button>送信</Button>
+          <Button onClick={this.handleSendButton.bind(this)}>送信</Button>
         </ModalFooter>
       </Modal>
     );

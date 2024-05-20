@@ -1,15 +1,11 @@
 import React, { Component } from "react";
-import AliasRoutes from "routes/AliasRoutes";
-import { ServiceFactory } from 'services';
 import { HallRequestConfirmModal } from 'components/modals';
-import SideNavigations from 'components/SideNavigations';
 import { connect } from 'react-redux';
 import {
   openHallRequestConfirmModal,
   closeHallRequestConfirmModal,
 } from "redux/modals/Action";
 import { HallRequestModel } from 'models';
-import Patterns from 'patterns/Patterns';
 
 
 class HallComponent extends Component {

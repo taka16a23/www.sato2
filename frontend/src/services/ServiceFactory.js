@@ -45,4 +45,13 @@ export default class ServiceFactory {
     }
     return ServiceFactory._cache['RulesService'];
   }
+
+  // Hall
+  static createHallService() {
+    if(!ServiceFactory._cache['HallService']) {
+      let klass = require('./Hall.service.js').default;
+      ServiceFactory._cache['HallService'] = new klass();
+    }
+    return ServiceFactory._cache['HallService'];
+  }
 }

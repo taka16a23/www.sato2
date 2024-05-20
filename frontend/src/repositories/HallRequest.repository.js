@@ -1,5 +1,4 @@
 import APIFactory from 'api/APIFactory';
-import { HallRequestModel } from 'models';
 
 
 export default class HallRequestRepository extends Object {
@@ -22,7 +21,7 @@ export default class HallRequestRepository extends Object {
       tData.append("end_datetime", a_oModel.getEndDateTime());
       tData.append("room", a_oModel.getRoom());
       tData.append("detail", a_oModel.getDetail());
-      tData.append("note", a_oModel.getDescription());
+      tData.append("note", a_oModel.getNote());
       tData.append("is_finished", a_oModel.isFinished());
       this.api.post(tData).then(data => {
         resolve(Object.assign(a_oModel, data));

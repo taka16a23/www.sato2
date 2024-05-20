@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import NewsList from 'components/NewsList'
 import { NavLink } from 'react-router-dom'
-import SideNavigations from 'components/SideNavigations';
 
 
 class NewsComponent extends Component {

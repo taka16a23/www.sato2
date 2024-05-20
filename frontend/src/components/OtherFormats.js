@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { ServiceFactory } from 'services';
-import downlaodImg from 'assets/images/formats_download.svg';
-import formImg from 'assets/images/formats_form.svg';
 
 
 class SatoFormats extends Component {

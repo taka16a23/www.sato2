@@ -1,25 +1,11 @@
 import React, { Component, lazy } from 'react';
 import { Routes, Route } from "react-router-dom";
+import AliasRoutes from "routes/AliasRoutes";
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Home from 'views/Home';
-import News from 'views/News';
 import SecurityPortal from 'views/SecurityPortal';
-import SecurityKnowledge from 'views/SecurityKnowledge';
-import Formats from 'views/Formats';
-import Rules from 'views/Rules';
-import Hall from 'views/Hall';
-import Group from 'views/Group';
-import AliasRoutes from "routes/AliasRoutes";
 import SideNavigationLayout from 'layouts/SideNavigationLayout';
-
-
-const Error403 = lazy(() => new Promise((resolve) => {
-  setTimeout(() => resolve(import("views/errors/Error403")), 0);
-}));
-const Error404 = lazy(() => new Promise((resolve) => {
-  setTimeout(() => resolve(import("views/errors/Error404")), 0);
-}));
 
 
 class Layout extends Component {

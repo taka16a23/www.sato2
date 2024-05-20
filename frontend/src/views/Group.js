@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { NavLink } from 'react-router-dom'
-import SideNavigations from 'components/SideNavigations';
 
 
 class GroupComponent extends Component {

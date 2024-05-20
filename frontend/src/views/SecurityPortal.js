@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { NavLink } from 'react-router-dom'
 import AliasRoutes from "routes/AliasRoutes";
 import { Timeline } from 'react-twitter-widgets'
-import { ServiceFactory } from 'services';
 import WeatherAlert from 'components/WeatherAlert'
 import Emergency from 'components/Emergency'
 

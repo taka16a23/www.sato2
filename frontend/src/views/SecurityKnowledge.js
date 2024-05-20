@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import AliasRoutes from "routes/AliasRoutes";
 import { ServiceFactory } from 'services';
-import SideNavigations from 'components/SideNavigations';
 
 
 class SecurityKnowledgeComponent extends Component {

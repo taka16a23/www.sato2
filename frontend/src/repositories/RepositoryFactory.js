@@ -63,4 +63,13 @@ export default class RepositoryFactory {
     }
     return RepositoryFactory._cache['RulesRepository'];
   }
+
+  // HallRequest
+  static createHallRequestRepository() {
+    if(!RepositoryFactory._cache['HallRequestRepository']) {
+      let klass = require('./HallRequest.repository.js').default;
+      RepositoryFactory._cache['HallRequestRepository'] = new klass();
+    }
+    return RepositoryFactory._cache['HallRequestRepository'];
+  }
 }
