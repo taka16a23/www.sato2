@@ -507,3 +507,21 @@ button:not(:disabled),
     margin: 0 4rem;
   }
 }
+
+.close-button {
+  border-color: #424242;
+  color: #424242;
+  background-color: white;
+  &:hover {
+    background-color: #424242;
+    color: white;
+  }
+}
+.modal-message {
+  margin-top: 32px;
+  color: #424242;
+  text-align: center;
+  p + p {
+    margin-top: 8px;
+  }
+}

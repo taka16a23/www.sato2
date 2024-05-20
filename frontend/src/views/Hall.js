@@ -169,10 +169,17 @@ class HallComponent extends Component {
     this.props.openHallRequestConfirmModal();
   }
 
+  handleCloseModal(isFinished) {
+    if (isFinished !== true) {
+      return;
+    }
+    window.location.reload();
+  }
+
   render() {
     return (
       <main id="main">
-        <HallRequestConfirmModal model={this.model}/>
+        <HallRequestConfirmModal model={this.model} onClosed={this.handleCloseModal.bind(this)}/>
         <section className="main-item">
           <h2 className="main-title">
             <span className="title">里公民館</span>
@@ -185,9 +192,6 @@ class HallComponent extends Component {
           <h2 className="main-title">
             <span className="title">里公民館使用申込</span>
           </h2>
-          <div>
-            <p>7以内にこちらから連絡がない場合は、電話番号 077-546-6905 にて、ご連絡をお願いいたします。</p>
-          </div>
           <form onSubmit={this.handleSubmit.bind(this)} action="#">
             <fieldset className="form-fieldset required">
               <legend>団体名</legend>

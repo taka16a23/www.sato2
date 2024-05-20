@@ -33,12 +33,11 @@ class HallRequestConfirmModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isFinished: false,
     }
   }
 
   openModal() {
-    this.setState({
-    });
     if(this.props.onOpened) {
       this.props.onOpened();
     }
@@ -46,8 +45,7 @@ class HallRequestConfirmModal extends Component {
 
   closeModal() {
     if(this.props.onClosed) {
-      this.props.onClosed();
-      return;
+      this.props.onClosed(this.state.isFinished);
     }
     this.props.closeHallRequestConfirmModal();
   }
@@ -57,10 +55,16 @@ class HallRequestConfirmModal extends Component {
     ev.preventDefault();
     var service = ServiceFactory.createHallService();
     service.request(this.props.model).then(() => {
-      console.log('success');
+      this.setState({
+        isFinished: true,
+      });
     }).catch(err => {
       alert(err);
     });;
+  }
+
+  handleCloseButton(ev) {
+    this.closeModal();
   }
 
   render() {
@@ -76,6 +80,21 @@ class HallRequestConfirmModal extends Component {
           里公民館使用申込
         </ModalHeader>
         <ModalBody className="body">
+          {this.state.isFinished === true ?
+          <div className="body-inner">
+            <Lottie options={{
+                      loop: false,
+                      autoplay: true,
+                      animationData,
+                    }}
+                    width={150} height={150}/>
+            <div className="modal-message">
+              <p>申込み確認メールを送信しました</p>
+              <p>連絡がない場合は、お電話にてお問い合わせをお願いいたします</p>
+              <p>電話番号 077-546-6905</p>
+            </div>
+          </div>
+           :
           <div className="body-inner">
             <div className="item">
               <label className="label">
@@ -167,9 +186,13 @@ class HallRequestConfirmModal extends Component {
               </div>
             </div>
           </div>
+          }
         </ModalBody>
         <ModalFooter className="hall-request-modal-footer">
-          <Button onClick={this.handleSendButton.bind(this)}>送信</Button>
+          {this.state.isFinished !== true ?
+           <Button onClick={this.handleSendButton.bind(this)}>送信</Button>
+           : <Button className="close-button" onClick={this.handleCloseButton.bind(this)}>閉じる</Button>
+          }
         </ModalFooter>
       </Modal>
     );
