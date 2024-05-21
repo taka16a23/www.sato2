@@ -9,13 +9,15 @@ from urllib import parse as urlparse
 # Do not change here. change at 90_local.py.
 DEBUG = True
 
-URL_SQDN = "taka16a23.com"
+URL_SQDN = "satojichi.ddns.net"
 
 SYSTEM_NAME = "里自治会ホームページ"
 
-PASSWORD_RESET_TIMELIMIT_MINUTS = 90
+COMPANY_NAME = "里自治会"
 
-COMPANY_NAME = "株式会社a23"
+COMPANY_TEL = "077-546-6905"
+
+COMPANY_FAX = "077-546-6905"
 
 STATIC_URL = '/static/'
 
