@@ -24,6 +24,15 @@ class HallRequestModelViewset(viewsets.ModelViewSet):
     serializer_class = HallRequestModelSerializer
     queryset = HallRequestModel.objects.all()
 
+    def post(self, request, *args, **kwargs):
+
+        t_result = super(HallRequestModelViewset, self).post(request, *args, **kwargs)
+        t_subject = _("【{}】公民館申込み受付".format(settings.SYSTEM_NAME, ))
+        t_email_address = request.data.get('email_address', '')
+        t_responsible_person = request.data.get('responsible_person', '')
+
+        return t_result
+
 
 
 # For Emacs
