@@ -32,9 +32,6 @@ class HallComponent extends Component {
     }
   }
 
-  componentDidMount() {
-  }
-
   clearErrorMessages() {
     for (var key in this.errorMessages) {
       this.errorMessages[key] = '';
@@ -136,6 +133,7 @@ class HallComponent extends Component {
           this.errorMessages[String(ev.currentTarget.end_datetime.name)] = ev.currentTarget.end_datetime.validationMessage;
         }
       }
+      // if (ev.currentTarget.start_datetime.value)
       // focus
       if (focusElement !== null) {
         focusElement.focus();
@@ -148,6 +146,18 @@ class HallComponent extends Component {
     }
     // 標準入力検証
     if (ev.currentTarget.reportValidity() !== true) {
+      return;
+    }
+    // からまで正常値チェック
+    let t_dtStartDate = new Date(ev.currentTarget.start_datetime.value);
+    let t_dtEndDate = new Date(ev.currentTarget.start_datetime.value.split('T')[0] + 'T' + ev.currentTarget.end_datetime.value);
+    if (t_dtEndDate < t_dtStartDate) {
+      this.errorMessages[String(ev.currentTarget.end_datetime.name)] = '使用時刻以降を指定してください';
+      // 画面更新
+      this.setState({
+        errorMessages: this.errorMessages,
+      });
+      ev.currentTarget.end_datetime.focus();
       return;
     }
     this.model = new HallRequestModel();
