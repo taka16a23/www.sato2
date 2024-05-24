@@ -4,12 +4,14 @@ r"""Name: __init__.py
 
 
 """
-from about.views.rule_book_model_viewset import RuleBookModelViewset
+from about.views.frequently_quetion_answer_model_viewset import FrequentlyQuetionAnswerModelViewset
 from about.views.hall_receive_model_viewset import HallRequestModelViewset
+from about.views.rule_book_model_viewset import RuleBookModelViewset
 
 __all__ = [
-    'RuleBookModelViewset',
+    'FrequentlyQuetionAnswerModelViewset',
     'HallRequestModelViewset',
+    'RuleBookModelViewset',
 ]
 
 
