@@ -9,9 +9,9 @@ import Formats from 'views/Formats';
 import Rules from 'views/Rules';
 import Hall from 'views/Hall';
 import Group from 'views/Group';
+import Query from 'views/Query';
 import AliasRoutes from "routes/AliasRoutes";
 import SideNavigations from 'components/SideNavigations';
-
 
 const Error403 = lazy(() => new Promise((resolve) => {
   setTimeout(() => resolve(import("views/errors/Error403")), 0);
@@ -36,6 +36,7 @@ class Layout extends Component {
             <Route exact={true} path={AliasRoutes.AboutRule} element={<Rules/>}/>
             <Route exact={true} path={AliasRoutes.AboutGroup} element={<Group/>}/>
             <Route exact={true} path={AliasRoutes.AboutHall} element={<Hall/>}/>
+            <Route exact={true} path={AliasRoutes.AboutQuery} element={<Query/>}/>
             <Route path='*' element={<Error404/>}/>
           </Routes>
         </div>

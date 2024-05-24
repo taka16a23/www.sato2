@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-19 20:35+0900\n"
+"POT-Creation-Date: 2024-05-24 19:34+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,27 @@ msgstr ""
 #: about/admin/hall_request_model_admin.py:37
 msgid "requested at"
 msgstr "申込日時"
+
+#: about/models/frequently_quetion_answer_model.py:20
+#, fuzzy
+#| msgid "description"
+msgid "question"
+msgstr "備考"
+
+#: about/models/frequently_quetion_answer_model.py:25
+msgid "answer"
+msgstr "回答"
+
+#: about/models/frequently_quetion_answer_model.py:29
+#, fuzzy
+#| msgid "sort key"
+msgid "sort"
+msgstr "並び替えキー"
+
+#: about/models/frequently_quetion_answer_model.py:38
+#: about/models/frequently_quetion_answer_model.py:39
+msgid "Frequently Quetion Answer"
+msgstr "よくある質問"
 
 #: about/models/hall_request_model.py:18
 msgid "Big Room"
@@ -123,6 +144,10 @@ msgstr "会則"
 
 #: about/models/rule_page_model.py:25
 msgid "Page Image"
+msgstr ""
+
+#: about/views/hall_receive_model_viewset.py:36
+msgid "【{}】公民館申込み受付"
 msgstr ""
 
 #: base/admin/base_stamp_admin_mixin.py:27
@@ -600,7 +625,7 @@ msgstr ""
 
 #: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1909
 msgid "Email address"
-msgstr ""
+msgstr "メールアドレス"
 
 #: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1934
 msgid "File path"
