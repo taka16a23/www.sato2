@@ -15,6 +15,7 @@ export default class AliasRoutes {
   static API_About = AliasRoutes.Api + "/about";
   static API_Rules = AliasRoutes.API_About + "/rules";
   static API_Hall = AliasRoutes.API_About + "/hall";
+  static API_FAQ = AliasRoutes.API_About + "/faq";
   static API_HallRequest = AliasRoutes.API_Hall + "/request/";
   // page
   static Info = "/info";

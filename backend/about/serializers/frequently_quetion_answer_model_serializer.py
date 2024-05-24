@@ -17,6 +17,7 @@ class FrequentlyQuetionAnswerModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = FrequentlyQuetionAnswerModel
         fields = (
+            'id',
             'question',
             'answer',
             'sortid',

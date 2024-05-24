@@ -54,4 +54,13 @@ export default class ServiceFactory {
     }
     return ServiceFactory._cache['HallService'];
   }
+
+  // FrequentlyQuetionAnswer
+  static createFrequentlyQuetionAnswerService() {
+    if(!ServiceFactory._cache['FrequentlyQuetionAnswerService']) {
+      let klass = require('./FrequentlyQuetionAnswer.service.js').default;
+      ServiceFactory._cache['FrequentlyQuetionAnswerService'] = new klass();
+    }
+    return ServiceFactory._cache['FrequentlyQuetionAnswerService'];
+  }
 }

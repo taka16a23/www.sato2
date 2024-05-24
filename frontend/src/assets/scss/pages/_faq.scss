@@ -1,69 +1,69 @@
 .faq-item {
   margin-bottom: 24px;
-}
-.faq-question,
-.faq-answer {
-  min-height: 70px;
-  padding: 15px 70px 15px 90px;
-  line-height: calc(28 / 18);
-}
-.faq-question {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #e3f5e8;
-  transition: background-color 0.25s ease;
-  font-weight: 700;
-  cursor: pointer;
-  position: relative;
-}
 
-.faq-question::before {
-  content: "Q";
-  color: #074f90;
-}
-.faq-question::before,
-.faq-answer::before {
-  top: 18px;
-  left: 30px;
-  font-size: 34px;
-}
-.faq-question.is-active::after {
-  background-image: url(../images/faq_minus_icn.svg);
-}
-.faq-question::after {
-  width: 28px;
-  height: 28px;
-  background-image: url(../images/faq_plus_icn.svg);
-  top: 50%;
-  right: 25px;
-}
-.faq-question::after {
-  content: "";
-  background: center / 100% auto no-repeat;
-  position: absolute;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-.faq-answer {
-  background-color: #f7f7f7;
-}
-.faq-answer {
-  position: relative;
-}
-.faq-answer::before {
-  top: 18px;
-  left: 30px;
-  font-size: 34px;
-}
-.faq-answer::before {
-  content: "A";
-  color: #ef8318;
-}
-.faq-question::before,
-.faq-answer::before {
-  position: absolute;
-  font-weight: 700;
-  line-height: 1;
+  .faq-question {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #e3f5e8;
+    transition: background-color 0.25s ease;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    min-height: 70px;
+    padding: 15px 70px 15px 90px;
+    line-height: calc(28 / 18);
+
+    &::before {
+      top: 18px;
+      left: 30px;
+      font-size: 34px;
+      position: absolute;
+      font-weight: 700;
+      line-height: 1;
+      content: "Q";
+      color: #074f90;
+    }
+    &::after {
+      position: absolute;
+      top: 16px;
+      right: 30px;
+      content: "+";
+      font-size: 28px;
+    }
+  }
+  .faq-answer {
+    background-color: #f7f7f7;
+    position: relative;
+    min-height: 70px;
+    padding: 15px 70px 15px 90px;
+    line-height: calc(28 / 18);
+
+    &::before {
+      position: absolute;
+      font-weight: 700;
+      line-height: 1;
+      top: 18px;
+      left: 30px;
+      font-size: 34px;
+      content: "A";
+      color: #ef8318;
+    }
+  }
+  .accordion-content {
+    display: none;
+  }
+  &.active {
+    .faq-question {
+      &::after {
+        font-size: 28px;
+        top: 14px;
+        content: "-";
+      }
+    }
+    .accordion-content {
+      display: block;
+    }
+  }
 }

@@ -72,4 +72,13 @@ export default class RepositoryFactory {
     }
     return RepositoryFactory._cache['HallRequestRepository'];
   }
+
+  // FrequentlyQuetionAnswer
+  static createFrequentlyQuetionAnswerRepository() {
+    if(!RepositoryFactory._cache['FrequentlyQuetionAnswerRepository']) {
+      let klass = require('./FrequentlyQuetionAnswer.repository.js').default;
+      RepositoryFactory._cache['FrequentlyQuetionAnswerRepository'] = new klass();
+    }
+    return RepositoryFactory._cache['FrequentlyQuetionAnswerRepository'];
+  }
 }

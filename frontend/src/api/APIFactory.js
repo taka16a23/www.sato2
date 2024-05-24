@@ -73,4 +73,14 @@ export default class APIFactory {
     }
     return APIFactory._cache['HallRequestAPI'];
   }
+
+  // FrequentlyQuetionAnswer
+  static createFrequentlyQuetionAnswerAPI() {
+    if(!APIFactory._cache['FrequentlyQuetionAnswerAPI']) {
+      let klass = require('./FrequentlyQuetionAnswer.api.js').default;
+      APIFactory._cache['FrequentlyQuetionAnswerAPI'] = new klass();
+    }
+    return APIFactory._cache['FrequentlyQuetionAnswerAPI'];
+  }
+
 }
