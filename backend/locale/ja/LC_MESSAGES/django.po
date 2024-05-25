@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 19:34+0900\n"
+"POT-Creation-Date: 2024-05-25 08:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: about/admin/hall_request_model_admin.py:37
+#: about/admin/query_model_admin.py:32
 msgid "requested at"
 msgstr "申込日時"
 
@@ -109,6 +110,7 @@ msgid "Hall Request"
 msgstr "公民館申込み履歴"
 
 #: about/models/hall_request_receiver_model.py:19
+#: about/models/query_model.py:35
 msgid "name"
 msgstr "名前"
 
@@ -129,6 +131,36 @@ msgstr "受信"
 msgid "Hall Request Reciever"
 msgstr "公民館申込み受取人"
 
+#: about/models/query_model.py:18
+msgid "untreated"
+msgstr "未処理"
+
+#: about/models/query_model.py:19
+msgid "confirmed"
+msgstr "確認済"
+
+#: about/models/query_model.py:20
+#, fuzzy
+#| msgid "is finished"
+msgid "finished"
+msgstr "処理済"
+
+#: about/models/query_model.py:30
+msgid "query status"
+msgstr "ステータス"
+
+#: about/models/query_model.py:41
+msgid "mail address"
+msgstr "メールアドレス"
+
+#: about/models/query_model.py:46
+msgid "body"
+msgstr "内容"
+
+#: about/models/query_model.py:52 about/models/query_model.py:53
+msgid "inquiries"
+msgstr "お問い合わせ"
+
 #: about/models/rule_book_model.py:27 publish/models/news_model.py:21
 #: security/models/security_knowledge_model.py:20
 msgid "title"
@@ -144,6 +176,10 @@ msgstr "会則"
 
 #: about/models/rule_page_model.py:25
 msgid "Page Image"
+msgstr ""
+
+#: about/models/rule_page_model.py:44 about/models/rule_page_model.py:45
+msgid "Rule page"
 msgstr ""
 
 #: about/views/hall_receive_model_viewset.py:36

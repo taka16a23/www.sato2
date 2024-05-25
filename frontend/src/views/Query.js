@@ -14,32 +14,9 @@ class QueryComponent extends Component {
     super(props);
     this.errorMessages = {
     };
-    this.models = [];
-    this.activeStates = {};
     this.state = {
-      modelLength: this.models.length,
-      activeStatesLength: this.activeStates.length,
       errorMessages: this.errorMessages,
     }
-  }
-
-  componentDidMount() {
-    var oParams = new URLSearchParams();
-    var service = ServiceFactory.createFrequentlyQuetionAnswerService();
-    service.listFAQ(oParams).then(arrModels => {
-      this.models = arrModels;
-      var isActive = true;
-      this.models.map((oModel) => {
-        this.activeStates[oModel.id] = isActive;
-        isActive = false;
-      });
-      this.setState({
-        modelLength: this.models.length,
-        activeStates: this.activeStates.length,
-      });
-    }).catch(err => {
-      alert(err);
-    });
   }
 
   clearErrorMessages() {
@@ -60,13 +37,6 @@ class QueryComponent extends Component {
     window.location.reload();
   }
 
-  handleOnClickFAQ(oModel) {
-    this.activeStates[oModel.id] = !this.activeStates[oModel.id];
-      this.setState({
-        activeStates: this.activeStates.length,
-      });
-  }
-
   render() {
     return (
       <main id="main">
@@ -75,31 +45,30 @@ class QueryComponent extends Component {
           <h2 className="main-title">
             <span className="title">情報提供・お問い合わせ</span>
           </h2>
-          <p>7以内にこちらから連絡がない場合は、電話番号 077-546-6905 にて、ご連絡をお願いいたします。</p>
-          <form>
-            <fieldset className="form-fieldset form-fieldset-name required">
+          <form onSubmit={this.handleSubmit.bind(this)} action="#">
+            <fieldset className="form-fieldset required">
               <legend>名前</legend>
               <div className="form-group">
-                <input id="field_3885034_sei" className="form-control form-name-sei" name="field_3885034_sei" type="text" value="" maxLength="2500" autoCapitalize="off" placeholder="田中 美里" required="" data-pattern="1"/>
-                <div className="invalid-feedback" style={{display: "none"}}></div>
+                <input className="form-control" name="name" type="text" value="" maxLength="50" autoCapitalize="off" placeholder="田中 美里" required={true}/>
+                <div className="error-message"></div>
               </div>
             </fieldset>
-            <fieldset className="form-fieldset form-fieldset-name required">
+            <fieldset className="form-fieldset required">
               <legend>メールアドレス</legend>
               <div className="form-group">
-                <input id="field_3885034_sei" className="form-control form-name-sei" name="field_3885034_sei" type="text" value="" maxLength="2500" autoCapitalize="off" placeholder="example@example.com" required="" data-pattern="1"/>
-                <div className="invalid-feedback" style={{display: "none"}}></div>
+                <input className="form-control" name="mail_address" type="text" value="" maxLength="254" autoCapitalize="off" placeholder="example@example.com" required={true}/>
+                <div className="error-message"></div>
               </div>
             </fieldset>
-            <fieldset className="form-fieldset form-fieldset-name">
+            <fieldset className="form-fieldset">
               <legend>内容</legend>
               <div className="form-group">
-                <textarea className="form-control form-name-sei" name="field_3885034_sei" type="text" value="" maxLength="2500" autoCapitalize="off" placeholder=""></textarea>
-                <div className="invalid-feedback" style={{display: "none"}}></div>
+                <textarea className="form-control" name="body" type="text" value="" autoCapitalize="off" placeholder=""></textarea>
+                <div className="error-message"></div>
               </div>
             </fieldset>
             <div className="d-grid gap-2 form-buttons">
-              <input className="btn form-btn-submit" name="submit" type="submit" id="submit" value="確認画面へ"/>
+              <input className="btn form-btn-submit" name="submit" type="submit" value="確認画面へ"/>
             </div>
           </form>
         </section>

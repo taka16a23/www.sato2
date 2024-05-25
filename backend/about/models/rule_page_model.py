@@ -40,6 +40,10 @@ class RulePageModel(models.Model):
         self.image.delete()
         super().delete()
 
+    class Meta(object):
+        verbose_name = _('Rule page')
+        verbose_name_plural = _('Rule page')
+
 
 
 # For Emacs

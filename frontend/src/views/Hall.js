@@ -206,7 +206,7 @@ class HallComponent extends Component {
             <fieldset className="form-fieldset required">
               <legend>団体名</legend>
               <div className="form-group">
-                <input id="groupname" className="form-control" name="group_name" type="text" maxLength="255" autoCapitalize="off" placeholder="ブロック1 1-1組" required={true}/>
+                <input className="form-control" name="group_name" type="text" maxLength="255" autoCapitalize="off" placeholder="ブロック1 1-1組" required={true}/>
                 <div className="error-message" >{this.state.errorMessages.group_name}</div>
               </div>
             </fieldset>
