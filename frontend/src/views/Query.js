@@ -36,7 +36,6 @@ class QueryComponent extends Component {
     ev.preventDefault();
     // clear error message
     this.clearErrorMessages();
-    console.log("DEBUG-1-Query.js")
     // 標準入力妥当検証
     if (ev.currentTarget.checkValidity() !== true) {
       let focusElement = null;
@@ -84,7 +83,6 @@ class QueryComponent extends Component {
       this.setState({
         errorMessages: this.errorMessages,
       });
-      console.log(this.state.errorMessages);
       return ev.currentTarget.checkValidity();
     }
     // 標準入力検証
