@@ -29,8 +29,18 @@ class BoardModelAdmin(admin.ModelAdmin):
     }
     fieldsets = (
         (None, {
-            'fields': ['title', 'file',  'thumbnail', ('publish_date', 'expiry_date'), 'status', 'news',],
+            'fields': ['title', 'file', 'status'],
+
         }),
+        (u'公開日/有効期限の設定',
+         {'classes': ('collapse', ),
+          'fields': [('publish_date', 'expiry_date'), ],}),
+        (u'サムネイル',
+         {'classes': ('collapse', ),
+          'fields': ['thumbnail', ],}),
+        (u'お知らせ',
+         {'classes': ('collapse', ),
+          'fields': ['news', ],}),
     )
 
 
