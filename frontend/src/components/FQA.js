@@ -1,13 +1,8 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
 import { ServiceFactory } from 'services';
 
 
 class FQA extends Component {
-  static propTypes = {
-  }
-  static defaultProps = {
-  }
 
   constructor(props) {
     super(props)

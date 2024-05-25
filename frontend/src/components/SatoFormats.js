@@ -1,15 +1,10 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
 import { ServiceFactory } from 'services';
 import downlaodImg from 'assets/images/formats_download.svg';
 import formImg from 'assets/images/formats_form.svg';
 
 
 class SatoFormats extends Component {
-  static propTypes = {
-  }
-  static defaultProps = {
-  }
 
   constructor(props) {
     super(props)
@@ -65,9 +60,9 @@ class SatoFormats extends Component {
                 </td>
                 <td className="format-download">
                   {oModel.file === null ? undefined :
-                   <a href={oModel.file} target="_blank">
+                   <a href={oModel.file} target="_blank" rel="noreferrer">
                      <div>
-                       <img src={downlaodImg} width="24" height="32"/>
+                       <img src={downlaodImg} width="24" height="32" alt="ダウンロード"/>
                      </div>
                      <div>
                        ダウンロード
@@ -77,9 +72,9 @@ class SatoFormats extends Component {
                 </td>
                 <td className="format-form">
                   {oModel.form === null ? undefined :
-                   <a href={oModel.form} target="_blank">
+                   <a href={oModel.form} target="_blank" rel="noreferrer">
                      <div>
-                       <img src={formImg} width="24" height="32"/>
+                       <img src={formImg} width="24" height="32" alt="Web申請"/>
                      </div>
                      <div>
                        Web申請

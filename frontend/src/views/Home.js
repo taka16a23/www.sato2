@@ -48,7 +48,7 @@ class HomeComponent extends Component {
             </section>
             <section className="main-item">
               <h2 className="main-title">
-                <a className="link" href="https://calendar.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;showTz=0&amp;mode=MONTH&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=satotanakami%40gmail.com&amp;color=%23125A12&amp;ctz=Asia%2FTokyo" alt="" title="カレンダー" target="_blank">
+                <a className="link" href="https://calendar.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;showTz=0&amp;mode=MONTH&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=satotanakami%40gmail.com&amp;color=%23125A12&amp;ctz=Asia%2FTokyo" alt="" title="カレンダー" target="_blank" rel="noreferrer">
                   <span className="title">当面の予定</span>
                   <i className="mdi mdi-open-in-new"></i>
                 </a>

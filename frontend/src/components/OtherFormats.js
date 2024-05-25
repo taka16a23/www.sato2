@@ -1,13 +1,8 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
 import { ServiceFactory } from 'services';
 
 
 class SatoFormats extends Component {
-  static propTypes = {
-  }
-  static defaultProps = {
-  }
 
   constructor(props) {
     super(props)
@@ -50,7 +45,7 @@ class SatoFormats extends Component {
             {this.models.map((oModel) =>
               <tr key={oModel.id}>
                 <td className="format-name">
-                  <a href={oModel.url} target="_blank">
+                  <a href={oModel.url} target="_blank" rel="noreferrer">
                     {oModel.title}
                   </a>
                 </td>

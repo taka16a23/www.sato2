@@ -10,7 +10,6 @@ export default class QueryService extends Object {
 
   inquery(oModel) {
     return new Promise((resolve, reject) => {
-      var tData = {'params': {}};
       this.repository.insert(oModel).then(models => {
         resolve(true);
       }).catch(err => {

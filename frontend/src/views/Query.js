@@ -4,7 +4,6 @@ import {
   openQueryConfirmModal,
   closeQueryConfirmModal,
 } from "redux/modals/Action";
-import { ServiceFactory } from 'services';
 import FQA from 'components/FQA'
 import { QueryModel } from "models";
 import { QueryConfirmModal } from 'components/modals';
