@@ -128,15 +128,17 @@ CORS_ORIGIN_WHITELIST = [
 + スタンダードライブラリ、サードパーティー、アプリ内、毎でまとめること
 ```python
 # スタンダードライブラリ
-import sys
 import csv
+import sys
 import time
 # サードパーティー
 import django
 # アプリ内
-import const
 from models import ExecutionLogModel
+import const
 ```
++ 各セクション毎でアルファベット順にソートすること ※優先度低
+
 
 #####	■ モデル
 + 1ファイル1モデルクラスとする。
