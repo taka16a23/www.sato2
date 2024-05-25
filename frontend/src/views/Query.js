@@ -36,6 +36,7 @@ class QueryComponent extends Component {
     ev.preventDefault();
     // clear error message
     this.clearErrorMessages();
+    console.log("DEBUG-1-Query.js")
     // 標準入力妥当検証
     if (ev.currentTarget.checkValidity() !== true) {
       let focusElement = null;
@@ -83,6 +84,7 @@ class QueryComponent extends Component {
       this.setState({
         errorMessages: this.errorMessages,
       });
+      console.log(this.state.errorMessages);
       return ev.currentTarget.checkValidity();
     }
     // 標準入力検証
@@ -136,8 +138,8 @@ class QueryComponent extends Component {
                 <div className="error-message">{this.state.errorMessages.body}</div>
               </div>
             </fieldset>
-            <div className="d-grid gap-2 form-buttons">
-              <input className="btn form-btn-submit" name="submit" type="submit" value="確認画面へ"/>
+            <div>
+              <input className="btn form-btn-submit" name="submit" type="submit" value="確認画面へ" formNoValidate={true}/>
             </div>
           </form>
         </section>

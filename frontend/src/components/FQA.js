@@ -53,7 +53,7 @@ class FQA extends Component {
         </h2>
         <ul className="accordion-wrapper">
           {this.models.map((oModel) =>
-            <li className={"faq-item " + (this.activeStates[oModel.id] === true ? "active" : "")}>
+            <li className={"faq-item " + (this.activeStates[oModel.id] === true ? "active" : "")} key={oModel.id}>
               <h3 className="faq-question" onClick={() => {this.handleOnClickFAQ(oModel)}}>{oModel.question}</h3>
               <div className="accordion-content">
                 <div className="faq-answer" dangerouslySetInnerHTML={{__html: oModel.answer}}>
