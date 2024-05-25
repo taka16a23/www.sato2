@@ -7,12 +7,12 @@ import tempfile
 import pathlib
 from time import sleep
 
-from pdf2image import convert_from_path
 from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import FileExtensionValidator
 from django.core.files import File
+from pdf2image import convert_from_path
 
 from base.models.displayable_mixin import DisplayableMixin
 
