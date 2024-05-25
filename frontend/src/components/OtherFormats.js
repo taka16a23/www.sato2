@@ -37,16 +37,18 @@ class SatoFormats extends Component {
         </h2>
         <table>
           <thead>
-            <th className="format-name">
-              書式名
-            </th>
-            <th className="format-description">
-              概要
-            </th>
+            <tr>
+              <th className="format-name">
+                書式名
+              </th>
+              <th className="format-description">
+                概要
+              </th>
+            </tr>
           </thead>
           <tbody>
             {this.models.map((oModel) =>
-              <tr>
+              <tr key={oModel.id}>
                 <td className="format-name">
                   <a href={oModel.url} target="_blank">
                     {oModel.title}

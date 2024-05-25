@@ -27,18 +27,18 @@ class SecurityKnowledgeComponent extends Component {
   render() {
     return (
       <main id="main">
-        <section class="main-item faq-wrapper">
-          <h2 class="main-title faq-title">
-            <span class="title">防災予備知識</span>
+        <section className="main-item faq-wrapper">
+          <h2 className="main-title faq-title">
+            <span className="title">防災予備知識</span>
           </h2>
-          <ul class="tile-list">
+          <ul className="tile-list">
             {this.models.map((oModel) =>
-              <li class="tile-item" key={oModel.id}>
+              <li className="tile-item" key={oModel.id}>
                 <a href={oModel.url}>
-                  <img class="tile-image" src={oModel.thumbnail} alt={oModel.title}/>
-                  <h4 class="tile-title">{oModel.title}</h4>
-                  <div class="tile-description">
-                    <p class="tile-text" dangerouslySetInnerHTML={{ __html: oModel.description }}>
+                  <img className="tile-image" src={oModel.thumbnail} alt={oModel.title}/>
+                  <h4 className="tile-title">{oModel.title}</h4>
+                  <div className="tile-description">
+                    <p className="tile-text" dangerouslySetInnerHTML={{ __html: oModel.description }}>
                     </p>
                   </div>
                 </a>

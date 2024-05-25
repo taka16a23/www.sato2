@@ -39,15 +39,17 @@ class SatoFormats extends Component {
         </h2>
         <table>
           <thead>
-            <th className="format-name">
-              書式名
-            </th>
-            <th className="format-description">
-              概要
-            </th>
-            <th className="format-forms" colspan="2">
-              申込み方法
-            </th>
+            <tr>
+              <th className="format-name">
+                書式名
+              </th>
+              <th className="format-description">
+                概要
+              </th>
+              <th className="format-forms" colSpan="2">
+                申込み方法
+              </th>
+            </tr>
           </thead>
           <tbody>
             {this.models.map((oModel) =>
