@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-25 09:19+0900\n"
+"POT-Creation-Date: 2024-05-25 10:06+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: about/admin/hall_request_model_admin.py:37
-#: about/admin/query_model_admin.py:32
+#: about/admin/hall_request_model_admin.py:39
+msgid "hall request id"
+msgstr "受付け番号"
+
+#: about/admin/hall_request_model_admin.py:43
+#: about/admin/query_model_admin.py:38
 msgid "requested at"
 msgstr "申込日時"
+
+#: about/admin/query_model_admin.py:33
+msgid "query id"
+msgstr "受付番号"
 
 #: about/models/frequently_quetion_answer_model.py:20
 #, fuzzy
@@ -110,7 +118,7 @@ msgid "Hall Request"
 msgstr "公民館申込み履歴"
 
 #: about/models/hall_request_receiver_model.py:19
-#: about/models/query_model.py:35 about/models/query_receiver_model.py:19
+#: about/models/query_model.py:36 about/models/query_receiver_model.py:19
 msgid "name"
 msgstr "名前"
 
@@ -152,15 +160,15 @@ msgstr "処理済"
 msgid "query status"
 msgstr "ステータス"
 
-#: about/models/query_model.py:41
+#: about/models/query_model.py:42
 msgid "mail address"
 msgstr "メールアドレス"
 
-#: about/models/query_model.py:46
+#: about/models/query_model.py:47
 msgid "body"
 msgstr "内容"
 
-#: about/models/query_model.py:52 about/models/query_model.py:53
+#: about/models/query_model.py:53 about/models/query_model.py:54
 msgid "inquiries"
 msgstr "お問い合わせ"
 
@@ -192,6 +200,10 @@ msgstr ""
 
 #: about/views/hall_receive_model_viewset.py:36
 msgid "【{}】公民館申込み受付"
+msgstr ""
+
+#: about/views/query_model_viewset.py:36
+msgid "【{}】お問い合わせ受付"
 msgstr ""
 
 #: base/admin/base_stamp_admin_mixin.py:27

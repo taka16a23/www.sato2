@@ -14,6 +14,7 @@ class QueryModelAdmin(admin.ModelAdmin):
     Responsibility:
     """
     list_display = (
+        'query_id',
         'status',
         'requested_at',
         'name',
@@ -25,6 +26,11 @@ class QueryModelAdmin(admin.ModelAdmin):
     ordering = (
         '-created_at',
     )
+
+    def query_id(self, obj):
+        return obj.id
+
+    query_id.short_description = _('query id')
 
     def requested_at(self, obj):
         return obj.created_at

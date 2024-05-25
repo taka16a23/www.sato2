@@ -26,8 +26,9 @@ class QueryModel(TimeStampMixin):
     QueryModel is a TimeStampMixin.
     Responsibility:
     """
-    status = models.IntegerField(
+    status = models.CharField(
         _('query status'),
+        max_length=1,
         choices=QueryStatusChoices,
         default=QueryStatusChoices.UNTREATED,
     )

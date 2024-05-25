@@ -14,6 +14,7 @@ router = DefaultRouter()
 router.register(r'rules', views.RuleBookModelViewset)
 router.register(r'hall/request', views.HallRequestModelViewset)
 router.register(r'faq', views.FrequentlyQuetionAnswerModelViewset)
+router.register(r'query', views.QueryModelViewset)
 
 urlpatterns = router.urls
 

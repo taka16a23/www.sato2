@@ -14,6 +14,7 @@ class HallRequestModelAdmin(admin.ModelAdmin):
     Responsibility:
     """
     list_display = (
+        'hall_request_id',
         'is_finished',
         'requested_at',
         'group_name',
@@ -31,6 +32,11 @@ class HallRequestModelAdmin(admin.ModelAdmin):
     ordering = (
         '-created_at',
     )
+
+    def hall_request_id(self, obj):
+        return obj.id
+
+    hall_request_id.short_description = _('hall request id')
 
     def requested_at(self, obj):
         return obj.created_at
