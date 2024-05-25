@@ -65,17 +65,20 @@ class BoardModel(DisplayableMixin):
             self.thumbnail.save(file_name, File(open(image_path, 'rb')), save=False)
 
     def _save_news(self, ):
-        news_category = NewsCategoryModel.objects.get(name='回覧').first()
+        news_category = NewsCategoryModel.objects.filter(name='回覧').first()
         news_model = NewsModel.objects.create(title=self.title, category=news_category, url="https://localhost.com")
         news_model.save()
+        self.news = news_model
 
     def save(self, *args, **kwargs):
+        is_adding = self._state.adding
         super(BoardModel, self).save(*args, **kwargs)
         self._save_thumnail(*args, **kwargs)
-        if self._state.adding != True:
+        if is_adding != True:
             super(BoardModel, self).save(*args, **kwargs)
             return
         self._save_news()
+        super(BoardModel, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = _('Board')
