@@ -11,4 +11,4 @@
 {{body}}
 
 ―――――――――――――――――――――――
-お問い合わせ履歴: {{url.scheme}}{{url.fqdn}}/admin/about/querymodel/
+お問い合わせ履歴確認: {{url.scheme}}{{url.fqdn}}/admin/about/querymodel/

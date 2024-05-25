@@ -18,6 +18,7 @@ class QueryModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = QueryModel
         fields = (
+            'id',
             'name',
             'email',
             'body',

@@ -74,7 +74,7 @@ class HallRequestConfirmModal extends Component {
         toggle={this.closeModal.bind(this)}
         onOpened={this.openModal.bind(this)}
         scrollable
-        className="hall-request-modal"
+        className="confirm-modal"
       >
         <ModalHeader className="header" toggle={this.closeModal.bind(this)}>
           里公民館使用申込
@@ -90,7 +90,7 @@ class HallRequestConfirmModal extends Component {
                     width={150} height={150}/>
             <div className="modal-message">
               <p>申込み確認メールを送信しました</p>
-              <p>連絡がない場合は、お電話にてお問い合わせをお願いいたします</p>
+              <p>もし連絡がない場合は、お電話にてお問い合わせをお願いいたします</p>
               <p>電話番号 077-546-6905</p>
             </div>
           </div>
@@ -188,7 +188,7 @@ class HallRequestConfirmModal extends Component {
           </div>
           }
         </ModalBody>
-        <ModalFooter className="hall-request-modal-footer">
+        <ModalFooter className="confirm-modal-footer">
           {this.state.isFinished !== true ?
            <Button onClick={this.handleSendButton.bind(this)}>送信</Button>
            : <Button className="close-button" onClick={this.handleCloseButton.bind(this)}>閉じる</Button>

@@ -81,4 +81,13 @@ export default class RepositoryFactory {
     }
     return RepositoryFactory._cache['FrequentlyQuetionAnswerRepository'];
   }
+
+  // Query
+  static createQueryRepository() {
+    if(!RepositoryFactory._cache['QueryRepository']) {
+      let klass = require('./Query.repository.js').default;
+      RepositoryFactory._cache['QueryRepository'] = new klass();
+    }
+    return RepositoryFactory._cache['QueryRepository'];
+  }
 }

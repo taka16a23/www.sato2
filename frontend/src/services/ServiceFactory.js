@@ -63,4 +63,13 @@ export default class ServiceFactory {
     }
     return ServiceFactory._cache['FrequentlyQuetionAnswerService'];
   }
+
+  // Query
+  static createQueryService() {
+    if(!ServiceFactory._cache['QueryService']) {
+      let klass = require('./Query.service.js').default;
+      ServiceFactory._cache['QueryService'] = new klass();
+    }
+    return ServiceFactory._cache['QueryService'];
+  }
 }

@@ -133,7 +133,6 @@ class HallComponent extends Component {
           this.errorMessages[String(ev.currentTarget.end_datetime.name)] = ev.currentTarget.end_datetime.validationMessage;
         }
       }
-      // if (ev.currentTarget.start_datetime.value)
       // focus
       if (focusElement !== null) {
         focusElement.focus();

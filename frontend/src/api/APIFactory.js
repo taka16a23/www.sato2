@@ -83,4 +83,12 @@ export default class APIFactory {
     return APIFactory._cache['FrequentlyQuetionAnswerAPI'];
   }
 
+  // Query
+  static createQueryAPI() {
+    if(!APIFactory._cache['QueryAPI']) {
+      let klass = require('./Query.api.js').default;
+      APIFactory._cache['QueryAPI'] = new klass();
+    }
+    return APIFactory._cache['QueryAPI'];
+  }
 }

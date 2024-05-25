@@ -18,4 +18,4 @@
 {{note}}
 
 ―――――――――――――――――――――――
-申込履歴: {{url.scheme}}{{url.fqdn}}/admin/about/hallrequestmodel/
+申込履歴確認: {{url.scheme}}{{url.fqdn}}/admin/about/hallrequestmodel/
