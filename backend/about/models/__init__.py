@@ -8,6 +8,7 @@ from about.models.frequently_quetion_answer_model import FrequentlyQuetionAnswer
 from about.models.hall_request_model import HallRequestModel
 from about.models.hall_request_receiver_model import HallRequestReceiverModel
 from about.models.query_model import QueryModel
+from about.models.query_receiver_model import QueryReceiverModel
 from about.models.rule_book_model import RuleBookModel
 from about.models.rule_page_model import RulePageModel
 
@@ -16,6 +17,7 @@ __all__ = [
     'HallRequestModel',
     'HallRequestReceiverModel',
     'QueryModel',
+    'QueryReceiverModel',
     'RuleBookModel',
     'RulePageModel',
 ]

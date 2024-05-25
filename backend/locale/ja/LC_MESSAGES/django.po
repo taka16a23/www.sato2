@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-25 08:54+0900\n"
+"POT-Creation-Date: 2024-05-25 09:19+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,19 +110,22 @@ msgid "Hall Request"
 msgstr "公民館申込み履歴"
 
 #: about/models/hall_request_receiver_model.py:19
-#: about/models/query_model.py:35
+#: about/models/query_model.py:35 about/models/query_receiver_model.py:19
 msgid "name"
 msgstr "名前"
 
 #: about/models/hall_request_receiver_model.py:26
+#: about/models/query_receiver_model.py:26
 msgid "email"
 msgstr "メールアドレス"
 
 #: about/models/hall_request_receiver_model.py:29
+#: about/models/query_receiver_model.py:29
 msgid "example@example.com"
 msgstr ""
 
 #: about/models/hall_request_receiver_model.py:32
+#: about/models/query_receiver_model.py:32
 msgid "receive"
 msgstr "受信"
 
@@ -160,6 +163,11 @@ msgstr "内容"
 #: about/models/query_model.py:52 about/models/query_model.py:53
 msgid "inquiries"
 msgstr "お問い合わせ"
+
+#: about/models/query_receiver_model.py:37
+#: about/models/query_receiver_model.py:38
+msgid "Query Reciever"
+msgstr "お問い合わせ受取人"
 
 #: about/models/rule_book_model.py:27 publish/models/news_model.py:21
 #: security/models/security_knowledge_model.py:20
