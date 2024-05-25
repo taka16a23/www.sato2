@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-25 10:06+0900\n"
+"POT-Creation-Date: 2024-05-26 05:13+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -177,12 +177,13 @@ msgstr "お問い合わせ"
 msgid "Query Reciever"
 msgstr "お問い合わせ受取人"
 
-#: about/models/rule_book_model.py:27 publish/models/news_model.py:21
+#: about/models/rule_book_model.py:27 publish/models/board_model.py:26
+#: publish/models/news_model.py:21
 #: security/models/security_knowledge_model.py:20
 msgid "title"
 msgstr "タイトル"
 
-#: about/models/rule_book_model.py:33
+#: about/models/rule_book_model.py:33 publish/models/board_model.py:33
 msgid "PDF"
 msgstr ""
 
@@ -277,6 +278,19 @@ msgstr ""
 msgid "Sato Formats"
 msgstr "里自治会関係書式"
 
+#: publish/models/board_model.py:40
+#: security/models/security_knowledge_model.py:36
+msgid "thumbnail"
+msgstr "サムネイル"
+
+#: publish/models/board_model.py:50
+msgid "create news if blank when first time"
+msgstr "空欄を選ぶと初回作成時に自動で登録されます"
+
+#: publish/models/board_model.py:79 publish/models/board_model.py:80
+msgid "Board"
+msgstr "回覧板"
+
 #: publish/models/news_category_model.py:20
 msgid "category name"
 msgstr "カテゴリー名"
@@ -317,10 +331,6 @@ msgstr "カテゴリー"
 #: publish/models/news_model.py:44 publish/models/news_model.py:45
 msgid "News"
 msgstr "お知らせ"
-
-#: security/models/security_knowledge_model.py:36
-msgid "thumbnail"
-msgstr "サムネイル"
 
 #: security/models/security_knowledge_model.py:51
 #: security/models/security_knowledge_model.py:52

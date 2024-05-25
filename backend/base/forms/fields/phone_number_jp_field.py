@@ -4,7 +4,7 @@ r"""phone_number_jp_field -- phone number jp form field
 
 """
 from django.core.validators import RegexValidator
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .custom_charfield import CustomCharField
 from base.forms.widgets.tel_input import TelInput
