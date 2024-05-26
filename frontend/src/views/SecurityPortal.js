@@ -63,7 +63,7 @@ class SecurityPortalComponent extends Component {
                     <Emergency/>
                   </div>
                   <div className="emergency-item security-timeline">
-                    <Skeleton style={{marginTop: "30px", height: "400px", display: this.state.isLoadedTimeline !== true ? "block" : "none"}}/>
+                    <Skeleton height={400} style={{marginTop: "30px", display: this.state.isLoadedTimeline !== true ? "block" : "none"}}/>
                     <Timeline
                       style={{display: this.state.isLoadedTimeline !== true ? "none" : "block"}}
                       dataSource={{
@@ -76,7 +76,6 @@ class SecurityPortalComponent extends Component {
                       }}
                       onLoad={this.onLoadTimeline.bind(this)}
                     />
-
                   </div>
                 </div>
               </div>
