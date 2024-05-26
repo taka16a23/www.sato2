@@ -3,6 +3,8 @@ import AliasRoutes from "routes/AliasRoutes";
 import { Timeline } from 'react-twitter-widgets'
 import WeatherAlert from 'components/WeatherAlert'
 import Emergency from 'components/Emergency'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 import axios from "axios";
 import moment from "moment";
@@ -13,6 +15,7 @@ class SecurityPortalComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoadedTimeline: false,
       serverDateTime: null,
     }
   }
@@ -39,6 +42,12 @@ class SecurityPortalComponent extends Component {
     });
   }
 
+  onLoadTimeline() {
+    this.setState({
+      isLoadedTimeline: true,
+    });
+  }
+
   render() {
     return (
       <div className="container">
@@ -54,7 +63,9 @@ class SecurityPortalComponent extends Component {
                     <Emergency/>
                   </div>
                   <div className="emergency-item security-timeline">
+                    <Skeleton style={{marginTop: "30px", height: "400px", display: this.state.isLoadedTimeline !== true ? "block" : "none"}}/>
                     <Timeline
+                      style={{display: this.state.isLoadedTimeline !== true ? "none" : "block"}}
                       dataSource={{
                         sourceType: 'profile',
                         screenName: 'otsu_kikibousai'
@@ -63,7 +74,9 @@ class SecurityPortalComponent extends Component {
                         lang: "ja",
                         height: '400'
                       }}
+                      onLoad={this.onLoadTimeline.bind(this)}
                     />
+
                   </div>
                 </div>
               </div>
@@ -97,7 +110,7 @@ class SecurityPortalComponent extends Component {
             </div>
             <div id="evacuation-map" className="main-item">
               <div className="evacuationMapArea">
-                <iframe src="https://www.google.com/maps/d/embed?mid=zJXaXK9GQ-AU.kwVpZ6T_kTts"></iframe>
+                <iframe src="https://www.google.com/maps/d/embed?mid=zJXaXK9GQ-AU.kwVpZ6T_kTts" sandbox='allow-scripts allow-modal' loading='lazy'></iframe>
               </div>
             </div>
           </main>
