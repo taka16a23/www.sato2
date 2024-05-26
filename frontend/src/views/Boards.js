@@ -10,6 +10,7 @@ class Boards extends Component {
     super(props);
     this.models = [];
     this.state = {
+      year: '',
       modelLength: this.models.length,
     }
   }
@@ -22,6 +23,7 @@ class Boards extends Component {
     service.listBoards(year).then(arrModels => {
       this.models = arrModels;
       this.setState({
+        year: year === undefined ? '' : year,
         modelLength: this.models.length,
       });
     }).catch(err => {
@@ -34,7 +36,7 @@ class Boards extends Component {
       <main id="main">
         <div className={1 <= this.state.modelLength ? "main-item board" : "main-item"}>
           <h2 className="main-title">
-            <span className="title">回覧板</span>
+            <span className="title">{this.state.year !== '' ? this.state.year + '年 ' : ''}回覧板</span>
           </h2>
           <div className="main-body">
             <div className="board-container">
