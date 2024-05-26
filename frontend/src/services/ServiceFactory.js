@@ -72,4 +72,13 @@ export default class ServiceFactory {
     }
     return ServiceFactory._cache['QueryService'];
   }
+
+  // Boards
+  static createBoardsService() {
+    if(!ServiceFactory._cache['BoardsService']) {
+      let klass = require('./Boards.service.js').default;
+      ServiceFactory._cache['BoardsService'] = new klass();
+    }
+    return ServiceFactory._cache['BoardsService'];
+  }
 }

@@ -14,6 +14,7 @@ INSTALLED_APPS = [
     # 画像削除用
     'django_cleanup.apps.CleanupConfig',
     'rest_framework',
+    'django_filters',
     'corsheaders',
     'ckeditor',
     'base',
@@ -51,9 +52,9 @@ REST_FRAMEWORK = {
         # 'rest_framework.authentication.BasicAuthentication',
     ),
     'DEFAULT_FILTER_BACKENDS': (
-      'django_filters.rest_framework.DjangoFilterBackend',
-      'rest_framework.filters.OrderingFilter',
-      'rest_framework.filters.SearchFilter',
+        # 'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.OrderingFilter',
+        'rest_framework.filters.SearchFilter',
     ),
 }
 

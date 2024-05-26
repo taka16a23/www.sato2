@@ -91,4 +91,13 @@ export default class APIFactory {
     }
     return APIFactory._cache['QueryAPI'];
   }
+
+  // Boards
+  static createBoardsAPI() {
+    if(!APIFactory._cache['BoardsAPI']) {
+      let klass = require('./Boards.api.js').default;
+      APIFactory._cache['BoardsAPI'] = new klass();
+    }
+    return APIFactory._cache['BoardsAPI'];
+  }
 }

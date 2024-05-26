@@ -4,10 +4,11 @@ r"""Name: __init__.py
 
 
 """
+from publish.views.board_model_viewset import BoardModelViewset
 from publish.views.news_model_viewset import NewsModelViewset
 
-
 __all__ = [
+    'BoardModelViewset',
     'NewsModelViewset',
 ]
 

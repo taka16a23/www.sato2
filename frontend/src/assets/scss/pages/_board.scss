@@ -4,7 +4,11 @@
   justify-content: space-around;
   
 }
+.board .main-body {
+  padding-top: 32px;
+}
 .board-item {
+  padding-bottom: 32px;
 }
 .board-item-container-inner {
   display: flex;
@@ -19,4 +23,7 @@
     margin: -3px;
     border: 3px solid #CCC;
   }
+}
+.main-item.board {
+  background-color: #E6F3EC;
 }

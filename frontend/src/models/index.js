@@ -1,3 +1,4 @@
+import BoardModel from './Board.model';
 import EmergencyModel from './Emergency.model';
 import FrequentlyQuetionAnswerModel from './FrequentryQuetionAnswer.model';
 import HallRequestModel from './HallRequest.model';
@@ -10,6 +11,7 @@ import SecurityKnowledgeModel from './SecurityKnowledge.model';
 import WeatherWarningModel from './WeatherWarning.model';
 
 export {
+  BoardModel,
   EmergencyModel,
   FrequentlyQuetionAnswerModel,
   HallRequestModel,

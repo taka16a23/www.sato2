@@ -5,6 +5,7 @@ export default class AliasRoutes {
   static Api = "/api";
   static API_Publish = AliasRoutes.Api + "/publish";
   static API_News = AliasRoutes.API_Publish + "/news";
+  static API_Boards = AliasRoutes.API_Publish + "/boards";
   static API_Formats = AliasRoutes.Api + "/formats";
   static API_SatoFormats = AliasRoutes.API_Formats + "/sato";
   static API_OtherFormats = AliasRoutes.API_Formats + "/other";

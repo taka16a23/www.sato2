@@ -90,4 +90,13 @@ export default class RepositoryFactory {
     }
     return RepositoryFactory._cache['QueryRepository'];
   }
+
+  // Boards
+  static createBoardsRepository() {
+    if(!RepositoryFactory._cache['BoardsRepository']) {
+      let klass = require('./Boards.repository.js').default;
+      RepositoryFactory._cache['BoardsRepository'] = new klass();
+    }
+    return RepositoryFactory._cache['BoardsRepository'];
+  }
 }

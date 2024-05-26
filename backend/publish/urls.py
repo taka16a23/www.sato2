@@ -11,6 +11,7 @@ from publish import views
 
 router = DefaultRouter()
 router.register(r'news', views.NewsModelViewset)
+router.register(r'boards', views.BoardModelViewset)
 
 urlpatterns = router.urls
 
