@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { NavLink } from 'react-router-dom'
 import { ServiceFactory } from 'services';
+import NewsNavigation from 'components/NewsNavigation';
 
 import AliasRoutes from "routes/AliasRoutes";
+
 
 class SideNavigations extends Component {
 
@@ -37,18 +39,7 @@ class SideNavigations extends Component {
         </div>
         <div className="side-item submenu">
           <ul className="submenu-list">
-            <li className="submenu-item">
-              <h2 className="submenu-label">過去のおしらせ</h2>
-              <ul className="menu-list hide">
-                {this.years.map((year) =>
-                  <li className="memu-item" key={year}>
-                    <NavLink className="menu-label" to={"/news/?year=" + year} title={year + "年のおしらせを見る"}>
-                      {year + "年"}
-                    </NavLink>
-                  </li>
-                )}
-              </ul>
-            </li>
+            <NewsNavigation/>
             <li className="submenu-item">
               <h2 className="submenu-label ">活動報告</h2>
               <ul className="menu-list hide">
