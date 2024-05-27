@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom'
-import { ServiceFactory } from 'services';
+import queryString from 'query-string';
+import { withRouter } from "helpers/withRouter";
 import moment from 'moment'
+
+import { ServiceFactory } from 'services';
 
 
 class NewsList extends Component {
@@ -25,6 +28,11 @@ class NewsList extends Component {
     var oParams = new URLSearchParams();
     // 最新記事(公開日時昇順)
     oParams.append('ordering', '-publish_date');
+    let query = queryString.parse(this.props.router.location.search);
+    let year = query['year'];
+    if (year) {
+      oParams.append('year', year);
+    }
     // 指定件数があれば
     if(this.props.limit !== null) {
       oParams.append('limit', this.props.limit);
@@ -59,4 +67,4 @@ class NewsList extends Component {
   };
 }
 
-export default NewsList;
+export default withRouter(NewsList);

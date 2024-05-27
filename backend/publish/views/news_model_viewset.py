@@ -36,6 +36,10 @@ class NewsModelViewset(viewsets.ModelViewSet):
         最大件数(limit)を拡張
         """
         queryset = super(NewsModelViewset, self).filter_queryset(queryset)
+        year = self.request.GET.get('year', None)
+        print(year)
+        if year is not None and year.isdigit() == True:
+            queryset = queryset.filter(publish_date__year=year)
         limit = self.request.GET.get('limit', None)
         if limit is not None and limit.isdigit() == True:
             queryset = queryset[:int(limit)]
