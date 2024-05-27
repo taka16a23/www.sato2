@@ -37,7 +37,6 @@ class NewsModelViewset(viewsets.ModelViewSet):
         """
         queryset = super(NewsModelViewset, self).filter_queryset(queryset)
         year = self.request.GET.get('year', None)
-        print(year)
         if year is not None and year.isdigit() == True:
             queryset = queryset.filter(publish_date__year=year)
         limit = self.request.GET.get('limit', None)
