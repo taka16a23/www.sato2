@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import NewsList from 'components/NewsList'
 import { NavLink } from 'react-router-dom'
 
+import AliasRoutes from "routes/AliasRoutes";
+
 
 class NewsComponent extends Component {
 
@@ -10,7 +12,7 @@ class NewsComponent extends Component {
       <main id="main">
         <section className="main-item">
           <h2 className="main-title">
-            <NavLink className="link" to={"/news"} alt="" title="最新情報一覧">
+            <NavLink className="link" to={AliasRoutes.News} alt="" title="最新情報一覧">
               <span className="title">最新情報</span>
             </NavLink>
           </h2>
