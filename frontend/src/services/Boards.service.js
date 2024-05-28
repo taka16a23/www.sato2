@@ -1,5 +1,7 @@
 import { RepositoryFactory } from 'repositories';
 
+import moment from 'moment'
+
 
 export default class BoardsService extends Object {
 
@@ -25,6 +27,30 @@ export default class BoardsService extends Object {
           return this._cache[model.id];
         })
         resolve(result);
+      }).catch(err => {
+        reject(err);
+      });
+    });
+  }
+
+  listYears() {
+    return new Promise((resolve, reject) => {
+      var oParams = new URLSearchParams();
+      // 最古記事(公開日時降順)
+      oParams.append('ordering', 'publish_date');
+      oParams.append('limit', 1);
+      var tData = {'params': oParams};
+      this.repository.get(tData).then(models => {
+        var tYears = [];
+        if(models.length <= 0) {
+          resolve(tYears);
+          return;
+        }
+        var tCurrentYear = (new Date()).getFullYear();
+        for(let year = moment(models[0].publish_date).year(); year <= tCurrentYear; year++) {
+          tYears.push(year);
+        }
+        resolve(tYears);
       }).catch(err => {
         reject(err);
       });

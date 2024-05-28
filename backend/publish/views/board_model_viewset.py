@@ -39,8 +39,12 @@ class BoardModelViewset(viewsets.ModelViewSet):
         公開年指定(year)
         """
         queryset = super(BoardModelViewset, self).filter_queryset(queryset)
-        year = self.request.GET.get('year', datetime.now().year)
-        queryset = queryset.filter(publish_date__year=year)
+        year = self.request.GET.get('year', str(datetime.now().year))
+        if year is not None and year.isdigit() == True:
+            queryset = queryset.filter(publish_date__year=year)
+        limit = self.request.GET.get('limit', None)
+        if limit is not None and limit.isdigit() == True:
+            queryset = queryset[:int(limit)]
         return queryset
 
 
