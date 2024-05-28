@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { ServiceFactory } from 'services';
 import NewsNavigation from 'components/NewsNavigation';
 import SecurityNavigation from 'components/SecurityNavigatoin';
+import AboutNavigation from 'components/AboutNavitaion';
 
 import AliasRoutes from "routes/AliasRoutes";
 
@@ -11,23 +12,9 @@ class SideNavigations extends Component {
 
   constructor(props) {
     super(props);
-    this.years = [];
     this.state = {
-      yearsLength: this.years.length,
       today: new Date(),
     }
-  }
-
-  componentDidMount() {
-    var newsService = ServiceFactory.createNewsService();
-    newsService.listYears().then(years => {
-      this.years = years;
-      this.setState({
-        yearsLength: this.years.length,
-      });
-    }).catch(err => {
-      alert(err);
-    });
   }
 
   render() {
@@ -100,26 +87,7 @@ class SideNavigations extends Component {
                 </li>
               </ul>
             </li>
-            <li className="submenu-item">
-              <h2 className="submenu-label">自治会案内</h2>
-              <ul className="menu-list hide">
-                <li className="memu-item">
-                  <a className="menu-label" href="/about/rule/" title="会則を見る">会則</a>
-                </li>
-                <li className="memu-item">
-                  <a className="menu-label" href="/about/hall/" title="里公民館のページを見る">公民館(予定・申込み)</a>
-                </li>
-                <li className="memu-item">
-                  <a className="menu-label" href="/about/group/" title="ブロックと組の地図を見る">ブロックと組</a>
-                </li>
-                <li className="memu-item">
-                  <a className="menu-label" href="/about/solve/#faq" title="QAを見る">よくある質問</a>
-                </li>
-                <li className="memu-item">
-                  <a className="menu-label" href="/about/solve/#contact" title="情報提供・問い合わせをする">情報提供・お問い合わせ</a>
-                </li>
-              </ul>
-            </li>
+            <AboutNavigation/>
           </ul>
         </div>
       </div>
