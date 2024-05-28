@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from 'react-router-dom'
 import { ServiceFactory } from 'services';
 import NewsNavigation from 'components/NewsNavigation';
+import SecurityNavigation from 'components/SecurityNavigatoin';
 
 import AliasRoutes from "routes/AliasRoutes";
 
@@ -54,17 +55,7 @@ class SideNavigations extends Component {
                 </li>
               </ul>
             </li>
-            <li className="submenu-item">
-              <h2 className="submenu-label ">防犯・防災</h2>
-              <ul className="menu-list hide">
-                <li className="memu-item">
-                  <a className="menu-label" href="/security/secportal/" title="防災ポータルサイトを見る">防災統合情報</a>
-                </li>
-                <li className="memu-item">
-                  <a className="menu-label" href="/security/knowledge/" title="防災予備知識を見る">防災予備知識</a>
-                </li>
-              </ul>
-            </li>
+            <SecurityNavigation/>
             <li className="submenu-item">
               <h2 className="submenu-label ">回覧板</h2>
               <ul className="menu-list hide">

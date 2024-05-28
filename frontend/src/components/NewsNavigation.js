@@ -12,7 +12,7 @@ class NewsNavigation extends Component {
     this.years = [];
     this.state = {
       isActive: false,
-      modelLength: this.years.length,
+      yearsLength: this.years.length,
     }
   }
 
@@ -28,7 +28,7 @@ class NewsNavigation extends Component {
     });
   }
 
-  handleOnClick(year) {
+  handleOnClick(ev) {
     this.setState({
       isActive: !this.state.isActive
     });
@@ -41,7 +41,7 @@ class NewsNavigation extends Component {
         <ul className={this.state.isActive === true ? "menu-list" : "menu-list hide"}>
           {this.years.map((year) =>
             <li className="memu-item" key={year}>
-              <NavLink className="menu-label" to={AliasRoutes.News + "?year=" + year} title={year + "年のおしらせを見る"}>
+              <NavLink className="menu-label" to={AliasRoutes.News + "/year/" + year} title={year + "年のおしらせを見る"}>
                 {year + "年"}
               </NavLink>
             </li>

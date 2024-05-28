@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Home from 'views/Home';
-import News from 'views/News';
+import NewsPage from 'views/NewsPage';
 import SecurityKnowledge from 'views/SecurityKnowledge';
 import Formats from 'views/Formats';
 import Rules from 'views/Rules';
@@ -31,7 +31,7 @@ class Layout extends Component {
         <div className="main-area">
           <Routes>
             <Route exact={true} path={AliasRoutes.Error403} element={<Error403/>}/>
-            <Route exact={true} path={AliasRoutes.News} element={<News/>}/>
+            <Route exact={false} path={AliasRoutes.News + '/*'} element={<NewsPage/>}/>
             <Route exact={true} path={AliasRoutes.SecurityKnowledge} element={<SecurityKnowledge/>}/>
             <Route exact={true} path={AliasRoutes.Formats} element={<Formats/>}/>
             <Route exact={true} path={AliasRoutes.AboutRule} element={<Rules/>}/>

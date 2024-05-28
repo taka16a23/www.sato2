@@ -42,7 +42,7 @@ export default class NewsService extends Object {
           return;
         }
         var tCurrentYear = (new Date()).getFullYear();
-        for(let year = moment(models[0].publish_date).year(); year < tCurrentYear; year++) {
+        for(let year = moment(models[0].publish_date).year(); year <= tCurrentYear; year++) {
           tYears.push(year);
         }
         resolve(tYears);

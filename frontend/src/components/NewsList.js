@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom'
-import queryString from 'query-string';
-import { withRouter } from "helpers/withRouter";
 import moment from 'moment'
 
 import { ServiceFactory } from 'services';
@@ -11,9 +9,11 @@ import { ServiceFactory } from 'services';
 class NewsList extends Component {
   static propTypes = {
     limit: PropTypes.number,
+    year: PropTypes.string,
   }
   static defaultProps = {
     limit: null,
+    year: null,
   }
 
   constructor(props) {
@@ -24,18 +24,17 @@ class NewsList extends Component {
     }
   }
 
-  componentDidMount() {
+  UNSAFE_componentWillReceiveProps (nextProps) {
     var oParams = new URLSearchParams();
     // 最新記事(公開日時昇順)
     oParams.append('ordering', '-publish_date');
-    let query = queryString.parse(this.props.router.location.search);
-    let year = query['year'];
-    if (year) {
-      oParams.append('year', year);
+    console.log(nextProps.year);
+    if (nextProps.year) {
+      oParams.append('year', nextProps.year);
     }
     // 指定件数があれば
-    if(this.props.limit !== null) {
-      oParams.append('limit', this.props.limit);
+    if(nextProps.limit !== null) {
+      oParams.append('limit', nextProps.limit);
     }
     var newsService = ServiceFactory.createNewsService();
     newsService.listNews(oParams).then(arrModels => {
@@ -67,4 +66,4 @@ class NewsList extends Component {
   };
 }
 
-export default withRouter(NewsList);
+export default NewsList;
