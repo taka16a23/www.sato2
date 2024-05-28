@@ -4,7 +4,7 @@ import { withRouter } from "helpers/withRouter";
 import { ServiceFactory } from 'services';
 
 
-class Boards extends Component {
+class BoardsPage extends Component {
 
   constructor(props) {
     super(props);
@@ -68,4 +68,4 @@ class Boards extends Component {
   };
 }
 
-export default withRouter(Boards);
+export default withRouter(BoardsPage);

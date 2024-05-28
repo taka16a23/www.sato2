@@ -10,7 +10,7 @@ import Rules from 'views/Rules';
 import Hall from 'views/Hall';
 import Group from 'views/Group';
 import Query from 'views/Query';
-import Boards from 'views/Boards';
+import BoardsPage from 'views/BoardsPage';
 import AliasRoutes from "routes/AliasRoutes";
 import SideNavigations from 'components/SideNavigations';
 
@@ -38,7 +38,7 @@ class Layout extends Component {
             <Route exact={true} path={AliasRoutes.AboutGroup} element={<Group/>}/>
             <Route exact={true} path={AliasRoutes.AboutHall} element={<Hall/>}/>
             <Route exact={true} path={AliasRoutes.AboutQuery} element={<Query/>}/>
-            <Route exact={true} path={AliasRoutes.Board} element={<Boards/>}/>
+            <Route exact={false} path={AliasRoutes.Board + '/*'} element={<BoardsPage/>}/>
             <Route path='*' element={<Error404/>}/>
           </Routes>
         </div>
