@@ -20,9 +20,7 @@ class NewsComponent extends Component {
       <main id="main">
         <section className="main-item">
           <h2 className="main-title">
-            <NavLink className="link" to={AliasRoutes.News} alt="" title="最新情報一覧">
-              <span className="title">{this.props.year ? this.props.year + "年 お知らせ一覧" : "最新情報"}</span>
-            </NavLink>
+            <span className="title">{this.props.year ? this.props.year + "年 お知らせ一覧" : "最新のお知らせ"}</span>
           </h2>
           <div className="main-body news">
             <NewsList year={this.props.year}/>
