@@ -20,8 +20,8 @@ export default class AliasRoutes {
   static API_Query = AliasRoutes.API_About + "/query/";
   static API_HallRequest = AliasRoutes.API_Hall + "/request/";
   // page
-  static Info = "/info";
   static News = "/news";
+  static Activities = "/activities";
   static Security = "/security";
   static SecurityPortal = AliasRoutes.Security + "/portal";
   static SecurityMap = AliasRoutes.Security + "/map";

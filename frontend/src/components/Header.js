@@ -31,7 +31,7 @@ class Header extends Component {
                     </NavLink>
                   </li>
                   <li className="menu-item">
-                    <NavLink to={AliasRoutes.Info} className="menu-label" alt="info">
+                    <NavLink to={AliasRoutes.Activities} className="menu-label" alt="activity">
                       活動報告
                     </NavLink>
                   </li>
