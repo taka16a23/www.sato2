@@ -25,6 +25,8 @@ STATIC_ROOT = os.path.join(DATA_DIR, '/var/www/static')
 # media root path
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 
+CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
+
 
 
 # For Emacs
