@@ -99,4 +99,13 @@ export default class RepositoryFactory {
     }
     return RepositoryFactory._cache['BoardsRepository'];
   }
+
+  // Activities
+  static createActivitiesRepository() {
+    if(!RepositoryFactory._cache['ActivitiesRepository']) {
+      let klass = require('./Activities.repository.js').default;
+      RepositoryFactory._cache['ActivitiesRepository'] = new klass();
+    }
+    return RepositoryFactory._cache['ActivitiesRepository'];
+  }
 }

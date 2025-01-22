@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'security',
     'formats',
     'about',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [

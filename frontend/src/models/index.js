@@ -1,3 +1,4 @@
+import ActivityModel from './Activity.model';
 import BoardModel from './Board.model';
 import EmergencyModel from './Emergency.model';
 import FrequentlyQuetionAnswerModel from './FrequentryQuetionAnswer.model';
@@ -11,6 +12,7 @@ import SecurityKnowledgeModel from './SecurityKnowledge.model';
 import WeatherWarningModel from './WeatherWarning.model';
 
 export {
+  ActivityModel,
   BoardModel,
   EmergencyModel,
   FrequentlyQuetionAnswerModel,

@@ -6,6 +6,7 @@ export default class AliasRoutes {
   static API_Publish = AliasRoutes.Api + "/publish";
   static API_News = AliasRoutes.API_Publish + "/news";
   static API_Boards = AliasRoutes.API_Publish + "/boards";
+  static API_Activities = AliasRoutes.API_Publish + "/activities";
   static API_Formats = AliasRoutes.Api + "/formats";
   static API_SatoFormats = AliasRoutes.API_Formats + "/sato";
   static API_OtherFormats = AliasRoutes.API_Formats + "/other";
@@ -23,6 +24,7 @@ export default class AliasRoutes {
   static News = "/news";
   static Activities = "/activities";
   static ActivitiesYear = AliasRoutes.Activities + "/year";
+  static Activity = "/activity/:id";
   static Security = "/security";
   static SecurityPortal = AliasRoutes.Security + "/portal";
   static SecurityMap = AliasRoutes.Security + "/map";

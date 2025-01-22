@@ -6,7 +6,6 @@ r"""activity_model --
 
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from ckeditor_uploader.fields import RichTextUploadingField
 
 from base.models.displayable_mixin import DisplayableMixin
 from publish.models.news_model import NewsModel
@@ -32,9 +31,8 @@ class ActivityModel(DisplayableMixin):
         blank=True,
         null=True,
     )
-    body = RichTextUploadingField(
+    body = models.TextField(
         _('body'),
-        config_name='activity',
         blank=True,
         null=True,
     )

@@ -5,6 +5,7 @@ import Footer from 'components/Footer';
 import Home from 'views/Home';
 import NewsPage from 'views/NewsPage';
 import Activities from 'views/Activities';
+import ActivityPage from 'views/ActivityPage';
 import SecurityKnowledge from 'views/SecurityKnowledge';
 import Formats from 'views/Formats';
 import Rules from 'views/Rules';
@@ -34,6 +35,7 @@ class Layout extends Component {
             <Route exact={true} path={AliasRoutes.Error403} element={<Error403/>}/>
             <Route exact={false} path={AliasRoutes.News + '/*'} element={<NewsPage/>}/>
             <Route exact={true} path={AliasRoutes.Activities} element={<Activities/>}/>
+            <Route path={AliasRoutes.Activity} element={<ActivityPage/>}/>
             <Route exact={true} path={AliasRoutes.SecurityKnowledge} element={<SecurityKnowledge/>}/>
             <Route exact={true} path={AliasRoutes.Formats} element={<Formats/>}/>
             <Route exact={true} path={AliasRoutes.AboutRule} element={<Rules/>}/>

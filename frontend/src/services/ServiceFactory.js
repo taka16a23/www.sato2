@@ -81,4 +81,13 @@ export default class ServiceFactory {
     }
     return ServiceFactory._cache['BoardsService'];
   }
+
+  // Activities
+  static createActivitiesService() {
+    if(!ServiceFactory._cache['ActivitiesService']) {
+      let klass = require('./Activities.service.js').default;
+      ServiceFactory._cache['ActivitiesService'] = new klass();
+    }
+    return ServiceFactory._cache['ActivitiesService'];
+  }
 }

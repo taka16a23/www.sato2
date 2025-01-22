@@ -10,8 +10,9 @@ from publish import views
 
 
 router = DefaultRouter()
-router.register(r'news', views.NewsModelViewset)
+router.register(r'activities', views.ActivityModelViewset)
 router.register(r'boards', views.BoardModelViewset)
+router.register(r'news', views.NewsModelViewset)
 
 urlpatterns = router.urls
 

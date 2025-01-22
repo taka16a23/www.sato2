@@ -100,4 +100,14 @@ export default class APIFactory {
     }
     return APIFactory._cache['BoardsAPI'];
   }
+
+  // Activity
+  static createActivitiesAPI() {
+    if(!APIFactory._cache['ActivitiesAPI']) {
+      let klass = require('./Activities.api.js').default;
+      APIFactory._cache['ActivitiesAPI'] = new klass();
+    }
+    return APIFactory._cache['ActivitiesAPI'];
+  }
+
 }
