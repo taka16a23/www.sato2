@@ -16,16 +16,7 @@ class ActivityModelSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = ActivityModel
-        fields = (
-            'id',
-            'title',
-            'image',
-            'body',
-            'excerpt',
-            'news',
-            'publish_date',
-            'expiry_date',
-        )
+        fields = '__all__'
 
 
 

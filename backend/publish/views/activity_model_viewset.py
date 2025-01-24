@@ -32,6 +32,7 @@ class ActivityModelViewset(viewsets.ModelViewSet):
             publish_date__lte=datetime.now()).filter(
                 Q(expiry_date__gte=datetime.now())|Q(expiry_date__isnull=True))
     serializer_class = ActivityModelSerializer
+    filterset_fields = ['id', ]
 
     def filter_queryset(self, queryset):
         """一覧絞り込みクエリを取得
@@ -39,6 +40,9 @@ class ActivityModelViewset(viewsets.ModelViewSet):
         公開年指定(year)
         """
         queryset = super(ActivityModelViewset, self).filter_queryset(queryset)
+        id_ = self.request.GET.get('id', None)
+        if id_ is not None and id_.isdigit() == True:
+            queryset = queryset.filter(id=id_)
         year = self.request.GET.get('year', None)
         if year is not None and year.isdigit() == True:
             queryset = queryset.filter(publish_date__year=year)
