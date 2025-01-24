@@ -6,6 +6,7 @@ r"""activity_model --
 
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse
 
 from base.models.displayable_mixin import DisplayableMixin
 from publish.models.news_model import NewsModel
@@ -53,6 +54,9 @@ class ActivityModel(DisplayableMixin):
     class Meta:
         verbose_name = _('activities')
         verbose_name_plural = _('activities')
+
+    def get_absolute_url(self, ):
+        return '/activity/{}'.format(str(self.id))
 
 
 
