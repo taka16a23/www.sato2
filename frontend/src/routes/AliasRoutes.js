@@ -22,6 +22,7 @@ export default class AliasRoutes {
   static API_HallRequest = AliasRoutes.API_Hall + "/request/";
   // page
   static News = "/news";
+  static NewsYear = AliasRoutes.News + "/year";
   static Activities = "/activities";
   static ActivitiesYear = AliasRoutes.Activities + "/year";
   static Activity = "/activity/:id";
@@ -30,6 +31,7 @@ export default class AliasRoutes {
   static SecurityMap = AliasRoutes.Security + "/map";
   static SecurityKnowledge = AliasRoutes.Security + "/knowledge";
   static Board = "/board";
+  static BoardsYear = AliasRoutes.Board + "/year";
   static Formats = "/formats";
   static About = "/about";
   static AboutRule = AliasRoutes.About + "/rule";

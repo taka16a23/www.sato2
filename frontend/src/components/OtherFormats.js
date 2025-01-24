@@ -26,7 +26,7 @@ class SatoFormats extends Component {
 
   render() {
     return (
-      <section className="main-item jichitai-formats">
+      <section className="main-item jichitai-formats" id="other">
         <h2 className="main-title">
           <span className="title">自治体等関係書式</span>
         </h2>

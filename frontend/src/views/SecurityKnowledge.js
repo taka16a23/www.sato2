@@ -34,7 +34,7 @@ class SecurityKnowledgeComponent extends Component {
           <ul className="tile-list">
             {this.models.map((oModel) =>
               <li className="tile-item" key={oModel.id}>
-                <a href={oModel.url}>
+                <a href={oModel.url} target="_blank" rel="noreferrer">
                   <img className="tile-image" src={oModel.thumbnail} alt={oModel.title}/>
                   <h4 className="tile-title">{oModel.title}</h4>
                   <div className="tile-description">

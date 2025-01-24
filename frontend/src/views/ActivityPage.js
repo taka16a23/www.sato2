@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import withRouter from "helpers/WithRouter";
+import { withRouter } from "helpers/withRouter";
 import { ServiceFactory } from 'services';
 import Spinner from "views/spinner/Spinner";
 
@@ -16,7 +16,7 @@ class ActivityPage extends Component {
 
   componentDidMount() {
     var service = ServiceFactory.createActivitiesService();
-    service.getActivity(this.props.params.id).then(models => {
+    service.getActivity(this.props.router.params.id).then(models => {
       if (models.length <= 0) {
         this.setState({
           isLoaded: true,

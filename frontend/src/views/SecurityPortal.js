@@ -76,6 +76,7 @@ class SecurityPortalComponent extends Component {
                       }}
                       onLoad={this.onLoadTimeline.bind(this)}
                     />
+                    <div>※表示にはX(twitter)のログインが必要です</div>
                   </div>
                 </div>
               </div>

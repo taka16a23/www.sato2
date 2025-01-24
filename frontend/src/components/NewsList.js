@@ -28,7 +28,6 @@ class NewsList extends Component {
     var oParams = new URLSearchParams();
     // 最新記事(公開日時昇順)
     oParams.append('ordering', '-publish_date');
-    console.log(nextProps.year);
     if (nextProps.year) {
       oParams.append('year', nextProps.year);
     }
