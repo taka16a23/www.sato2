@@ -4,9 +4,10 @@ r"""Name: __init__.py
 
 
 """
+from home.models.hall_event_model import HallEventModel
 
 __all__ = [
-
+    'HallEventModel',
 ]
 
 

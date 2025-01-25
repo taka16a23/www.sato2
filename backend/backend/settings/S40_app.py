@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',
     'rest_framework',
     'django_filters',
+    'django_summernote',
     'corsheaders',
     'ckeditor',
     'base',
@@ -24,7 +25,7 @@ INSTALLED_APPS = [
     'security',
     'formats',
     'about',
-    'django_summernote',
+    'home',
 ]
 
 MIDDLEWARE = [
