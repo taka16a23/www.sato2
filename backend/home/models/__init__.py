@@ -4,10 +4,14 @@ r"""Name: __init__.py
 
 
 """
+from home.models.garbage_event_model import GarbageEventModel
 from home.models.hall_event_model import HallEventModel
+from home.models.main_event_model import MainEventManager
 
 __all__ = [
+    'GarbageEventModel',
     'HallEventModel',
+    'MainEventManager',
 ]
 
 

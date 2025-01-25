@@ -3,12 +3,29 @@
 r"""garbage_event_model --
 
 """
-import urlparse
+import urllib
 
 from django.db import models
 
-from backend.settings import STATIC_URL, EventStatus, EVENT_STATUS, GARBAGE_IMGS
+from backend.settings import STATIC_URL
 
+
+GARBAGE_IMGS = {u'紙ごみ': urllib.parse.urljoin(STATIC_URL, 'images/paper.jpg'),
+                u'燃やせるごみ': urllib.parse.urljoin(STATIC_URL, 'images/combustibles.jpg'),
+                u'透明びん、茶色びん': urllib.parse.urljoin(STATIC_URL, 'images/bottles.jpg'),
+                u'プラ容器包装': urllib.parse.urljoin(STATIC_URL, 'images/plastics.jpg'),
+                u'ペットボトル': urllib.parse.urljoin(STATIC_URL, 'images/PET.jpg'),
+                u'燃やせないごみ': urllib.parse.urljoin(STATIC_URL, 'images/incombustibles.jpg'),
+                u'かん': urllib.parse.urljoin(STATIC_URL, 'images/cans.jpg'),
+}
+
+EVENT_CONFIRMED_STATUS = 1
+EVENT_TENTATIVE_STATUS = 2
+EVENT_CANCELLED_STATUS = 3
+
+EVENT_STATUS = ((EVENT_CONFIRMED_STATUS, 'confirmed'),
+                (EVENT_TENTATIVE_STATUS, 'tentative'),
+                (EVENT_CANCELLED_STATUS, 'cancelled'), )
 
 
 class GarbageEventModel(models.Model):
@@ -32,8 +49,8 @@ class GarbageEventModel(models.Model):
         blank=True,
     )
     status = models.IntegerField(
-        choices=EventStatus.as_tuple(),
-        default=EventStatus.EVENT_CONFIRMED_STATUS,
+        choices=EVENT_STATUS,
+        default=EVENT_CONFIRMED_STATUS,
     )
 
     def __str__(self):
