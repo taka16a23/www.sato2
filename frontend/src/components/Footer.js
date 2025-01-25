@@ -38,7 +38,7 @@ class Footer extends Component {
     }).catch(err => {
       alert(err);
     });
-    var service = ServiceFactory.createActivitiesService();
+    service = ServiceFactory.createActivitiesService();
     service.listYears().then(years => {
       this.activityYears = years;
       this.setState({
@@ -47,7 +47,7 @@ class Footer extends Component {
     }).catch(err => {
       alert(err);
     });
-    var service = ServiceFactory.createBoardsService();
+    service = ServiceFactory.createBoardsService();
     service.listYears().then(years => {
       this.boardYears = years;
       this.setState({
@@ -225,21 +225,21 @@ class Footer extends Component {
                 </h1>
                 <div className="aboutme-body">
                   <div className="aboutme-item yuubin-before">520-2276</div>
-                  <div className="aboutme-item"><i className="mdi mdi-map-marker"></i><a href="https://www.google.co.jp/maps/place/%E3%80%92520-2276+Shiga-ken,+%C5%8Ctsu-shi,+Sato,+5+Chome%E2%88%927%E2%88%9222+%E9%87%8C%E5%85%AC%E6%B0%91%E9%A4%A8/@34.9394985,135.9306612,17z/data=!4m2!3m1!1s0x60016cee67f7d6df:0xe8e861cb3f9f2737?hl=ja" target="_blank" title="地図を見る">滋賀県大津市里5丁目7-22</a></div>
+                  <div className="aboutme-item"><i className="mdi mdi-map-marker"></i><a href="https://www.google.co.jp/maps/place/%E3%80%92520-2276+Shiga-ken,+%C5%8Ctsu-shi,+Sato,+5+Chome%E2%88%927%E2%88%9222+%E9%87%8C%E5%85%AC%E6%B0%91%E9%A4%A8/@34.9394985,135.9306612,17z/data=!4m2!3m1!1s0x60016cee67f7d6df:0xe8e861cb3f9f2737?hl=ja" target="_blank" title="地図を見る" rel="noreferrer">滋賀県大津市里5丁目7-22</a></div>
                   <div className="aboutme-item phone-before">&nbsp;077-546-6905</div>
                   <div className="aboutme-item fax-before">&nbsp;077-546-6905</div>
                 </div>
               </div>
             </div>
             <div className="copyright">
-              <small>Copyright&copy; 2016 <a href="https://taka16a23.com" ref="noreferrer" target="_blank">taka16a23</a> All Rights Reserved.</small>
+              <small>Copyright&copy; 2016 <a href="https://taka16a23.com" rel="noreferrer" target="_blank">taka16a23</a> All Rights Reserved.</small>
             </div>
           </div>
         </footer>
         <div id="menubar_hdr">
         </div>
         <div id="pagetop">
-          <a href="#" alt="先頭へ移動" title="先頭へ移動"><i className="mdi mdi-arrow-up-bold"></i></a>
+          <a href="#" alt="先頭へ移動" title="先頭へ移動" rel="noreferrer"><i className="mdi mdi-arrow-up-bold"></i></a>
         </div>
       </>
     );
