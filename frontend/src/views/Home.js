@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from 'react-router-dom'
 import NewsList from 'components/NewsList'
 import SideNavigations from 'components/SideNavigations';
+import TodayEvents from 'components/TodayEvents';
 
 import { ServiceFactory } from 'services';
 import AliasRoutes from "routes/AliasRoutes";
@@ -80,24 +81,7 @@ class HomeComponent extends Component {
                   </div>
                 </a>
               </div>
-              <div className="daily-item">
-                <h3 className="daily-label">今日のごみ収集</h3>
-                <div className="daily-link">
-                  <a href="#">ごみ収集はありません</a>
-                </div>
-              </div>
-              <div className="daily-item">
-                <h3 className="daily-label">今日の予定</h3>
-                <div className="daily-link">
-                  <a href="#">予定はありません</a>
-                </div>
-              </div>
-              <div className="daily-item">
-                <h3 className="daily-label">公民館の利用</h3>
-                <div className="daily-link">
-                  <a href="#">利用予定はありません</a>
-                </div>
-              </div>
+              <TodayEvents/>
             </div>
           </div>
           <div className="side-item">

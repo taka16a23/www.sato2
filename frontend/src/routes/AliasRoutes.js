@@ -20,6 +20,10 @@ export default class AliasRoutes {
   static API_FAQ = AliasRoutes.API_About + "/faq";
   static API_Query = AliasRoutes.API_About + "/query/";
   static API_HallRequest = AliasRoutes.API_Hall + "/request/";
+  static API_Calendar = AliasRoutes.Api + "/calendar";
+  static API_Calendar_HallEvent = AliasRoutes.API_Calendar + "/halls/";
+  static API_Calendar_MainEvent = AliasRoutes.API_Calendar + "/mains/";
+  static API_Calendar_GarbagesEvent = AliasRoutes.API_Calendar + "/garbages/";
   // page
   static News = "/news";
   static NewsYear = AliasRoutes.News + "/year";

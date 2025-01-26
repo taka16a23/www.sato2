@@ -18,4 +18,17 @@ export default class HallService extends Object {
       });
     });
   }
+
+  listEvents(start, end) {
+    return new Promise((resolve, reject) => {
+      var repository = RepositoryFactory.createHallEventsRepository();
+      var tData = {'params': {'start': start, 'end': end}};
+      repository.get(tData).then(models => {
+        resolve(models);
+      }).catch(err => {
+        reject(err);
+      });
+    });
+
+  }
 }

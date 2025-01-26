@@ -108,4 +108,14 @@ export default class RepositoryFactory {
     }
     return RepositoryFactory._cache['ActivitiesRepository'];
   }
+
+  // HallEvents
+  static createHallEventsRepository() {
+    if(!RepositoryFactory._cache['HallEventsRepository']) {
+      let klass = require('./HallEvents.repository.js').default;
+      RepositoryFactory._cache['HallEventsRepository'] = new klass();
+    }
+    return RepositoryFactory._cache['HallEventsRepository'];
+  }
+
 }
