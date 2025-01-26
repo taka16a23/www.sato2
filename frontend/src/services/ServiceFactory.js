@@ -90,4 +90,13 @@ export default class ServiceFactory {
     }
     return ServiceFactory._cache['ActivitiesService'];
   }
+
+  // MainEvents
+  static createMainEventsService() {
+    if(!ServiceFactory._cache['MainEventsService']) {
+      let klass = require('./MainEvents.service.js').default;
+      ServiceFactory._cache['MainEventsService'] = new klass();
+    }
+    return ServiceFactory._cache['MainEventsService'];
+  }
 }

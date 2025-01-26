@@ -11,6 +11,7 @@ from home import views
 
 router = DefaultRouter()
 router.register(r'halls', views.HallEventModelViewset)
+router.register(r'main', views.MainEventModelViewset)
 
 urlpatterns = router.urls
 

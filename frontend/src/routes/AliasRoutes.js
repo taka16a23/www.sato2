@@ -22,7 +22,7 @@ export default class AliasRoutes {
   static API_HallRequest = AliasRoutes.API_Hall + "/request/";
   static API_Calendar = AliasRoutes.Api + "/calendar";
   static API_Calendar_HallEvent = AliasRoutes.API_Calendar + "/halls/";
-  static API_Calendar_MainEvent = AliasRoutes.API_Calendar + "/mains/";
+  static API_Calendar_MainEvent = AliasRoutes.API_Calendar + "/main/";
   static API_Calendar_GarbagesEvent = AliasRoutes.API_Calendar + "/garbages/";
   // page
   static News = "/news";

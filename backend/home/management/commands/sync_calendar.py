@@ -10,7 +10,7 @@ from django.core.management import BaseCommand
 from simple_google_calendar_reader import SimpleGoogleCalendarReader
 from home.models.hall_event_model import HallEventModel
 from home.models.garbage_event_model import GarbageEventModel
-from home.models.main_event_model import MainEventManager
+from home.models.main_event_model import MainEventModel
 
 
 EVENT_CONFIRMED_STATUS = 1
@@ -85,7 +85,7 @@ class Command(BaseCommand):
 
         @Error:
         """
-        calendar_reader = SimpleGoogleCalendarReader(self.TOKEN_PATH, self.SECRET_PATH, self.CalendarID.HALL)
+        calendar_reader = SimpleGoogleCalendarReader(self.TOKEN_PATH, self.SECRET_PATH, self.CalendarID.MAIN)
         now = datetime.datetime.now(datetime.timezone.utc)
         # タイムゾーンフォーマットを削除 2025-01-25T11:27:12.772273+00:00Z => 2025-01-25T11:27:12.772343Z
         now = now.replace(tzinfo=None)

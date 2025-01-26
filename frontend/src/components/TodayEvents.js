@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import { ServiceFactory } from 'services';
 import TodayHallEvents from 'components/TodayHallEvents';
+import TodayMainEvents from 'components/TodayMainEvents';
 
 
 export default class TodayEvents extends Component {
@@ -15,12 +16,7 @@ export default class TodayEvents extends Component {
             <a href="#">ごみ収集はありません</a>
           </div>
         </div>
-        <div className="daily-item">
-          <h3 className="daily-label">今日の予定</h3>
-          <div className="daily-link">
-            <a href="#">予定はありません</a>
-          </div>
-        </div>
+        <TodayMainEvents/>
         <TodayHallEvents/>
       </>
     )

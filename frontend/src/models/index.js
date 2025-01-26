@@ -4,6 +4,7 @@ import EmergencyModel from './Emergency.model';
 import FrequentlyQuetionAnswerModel from './FrequentryQuetionAnswer.model';
 import HallEventModel from './HallEvent.model';
 import HallRequestModel from './HallRequest.model';
+import MainEventModel from './MainEvent.model';
 import NewsModel from './News.model';
 import OtherFormatModel from './OtherFormat.model';
 import QueryModel from './Query.model';
@@ -21,6 +22,7 @@ export {
   HallEventModel,
   HallRequestModel,
   NewsModel,
+  MainEventModel,
   OtherFormatModel,
   QueryModel,
   RuleModel,

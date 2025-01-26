@@ -119,5 +119,13 @@ export default class APIFactory {
     return APIFactory._cache['HallEventCalendarAPI'];
   }
 
+  // MainEventCalendar
+  static createMainEventCalendarAPI() {
+    if(!APIFactory._cache['MainEventCalendarAPI']) {
+      let klass = require('./MainEventCalendar.api.js').default;
+      APIFactory._cache['MainEventCalendarAPI'] = new klass();
+    }
+    return APIFactory._cache['MainEventCalendarAPI'];
+  }
 
 }

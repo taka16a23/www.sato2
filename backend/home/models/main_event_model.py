@@ -15,10 +15,10 @@ EVENT_STATUS = ((EVENT_CONFIRMED_STATUS, 'confirmed'),
                 (EVENT_CANCELLED_STATUS, 'cancelled'), )
 
 
-class MainEventManager(models.Model):
-    """MainEventManager
+class MainEventModel(models.Model):
+    """MainEventModel
 
-    MainEventManager is a models.Model.
+    MainEventModel is a models.Model.
     Responsibility:
     """
     gid = models.TextField()
