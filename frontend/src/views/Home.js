@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import NewsList from 'components/NewsList'
 import SideNavigations from 'components/SideNavigations';
 import TodayEvents from 'components/TodayEvents';
+import TomorrowEvents from 'components/TomorrowEvents';
 
 import { ServiceFactory } from 'services';
 import AliasRoutes from "routes/AliasRoutes";
@@ -91,18 +92,7 @@ class HomeComponent extends Component {
               </a>
             </h2>
             <div className="side-body daily-tomorrow">
-              <div className="daily-item">
-                <h3 className="daily-label">明日のごみ収集</h3>
-                <div className="daily-link">
-                  <a href="#">ごみ収集はありません</a>
-                </div>
-              </div>
-              <div className="daily-item">
-                <h3 className="daily-label">明日の予定</h3>
-                <div className="daily-link">
-                  <a href="#">予定はありません</a>
-                </div>
-              </div>
+              <TomorrowEvents/>
             </div>
           </div>
         </div>
