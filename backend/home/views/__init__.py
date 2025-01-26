@@ -4,10 +4,12 @@ r"""Name: __init__.py
 
 
 """
+from home.views.garbage_event_model_viewset import GarbageEventModelViewset
 from home.views.hall_event_model_viewset import HallEventModelViewset
 from home.views.main_event_model_viewset import MainEventModelViewset
 
 __all__ = [
+    'GarbageEventModelViewset',
     'HallEventModelViewset',
     'MainEventModelViewset',
 ]

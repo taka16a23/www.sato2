@@ -12,6 +12,7 @@ from home import views
 router = DefaultRouter()
 router.register(r'halls', views.HallEventModelViewset)
 router.register(r'main', views.MainEventModelViewset)
+router.register(r'garbages', views.GarbageEventModelViewset)
 
 urlpatterns = router.urls
 

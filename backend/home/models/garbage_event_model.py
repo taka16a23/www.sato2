@@ -57,14 +57,6 @@ class GarbageEventModel(models.Model):
         return self.summary
 
     def url_of_image(self, ):
-        r"""SUMMARY
-
-        url_of_image()
-
-        @Return:
-
-        @Error:
-        """
         return GARBAGE_IMGS.get(self.summary, '')
 
 

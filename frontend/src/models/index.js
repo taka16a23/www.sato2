@@ -2,6 +2,7 @@ import ActivityModel from './Activity.model';
 import BoardModel from './Board.model';
 import EmergencyModel from './Emergency.model';
 import FrequentlyQuetionAnswerModel from './FrequentryQuetionAnswer.model';
+import GarbageEventModel from './GarbageEvent.model';
 import HallEventModel from './HallEvent.model';
 import HallRequestModel from './HallRequest.model';
 import MainEventModel from './MainEvent.model';
@@ -19,6 +20,7 @@ export {
   BoardModel,
   EmergencyModel,
   FrequentlyQuetionAnswerModel,
+  GarbageEventModel,
   HallEventModel,
   HallRequestModel,
   NewsModel,

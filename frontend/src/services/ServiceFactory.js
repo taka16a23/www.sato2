@@ -99,4 +99,13 @@ export default class ServiceFactory {
     }
     return ServiceFactory._cache['MainEventsService'];
   }
+
+  // GarbageEvents
+  static createGarbageEventsService() {
+    if(!ServiceFactory._cache['GarbageEventsService']) {
+      let klass = require('./GarbageEvents.service.js').default;
+      ServiceFactory._cache['GarbageEventsService'] = new klass();
+    }
+    return ServiceFactory._cache['GarbageEventsService'];
+  }
 }

@@ -128,4 +128,12 @@ export default class APIFactory {
     return APIFactory._cache['MainEventCalendarAPI'];
   }
 
+  // GarbageEventCalendar
+  static createGarbageEventCalendarAPI() {
+    if(!APIFactory._cache['GarbageEventCalendarAPI']) {
+      let klass = require('./GarbageEventCalendar.api.js').default;
+      APIFactory._cache['GarbageEventCalendarAPI'] = new klass();
+    }
+    return APIFactory._cache['GarbageEventCalendarAPI'];
+  }
 }

@@ -127,4 +127,12 @@ export default class RepositoryFactory {
     return RepositoryFactory._cache['MainEventsRepository'];
   }
 
+  // GarbageEvents
+  static createGarbageEventsRepository() {
+    if(!RepositoryFactory._cache['GarbageEventsRepository']) {
+      let klass = require('./GarbageEvents.repository.js').default;
+      RepositoryFactory._cache['GarbageEventsRepository'] = new klass();
+    }
+    return RepositoryFactory._cache['GarbageEventsRepository'];
+  }
 }

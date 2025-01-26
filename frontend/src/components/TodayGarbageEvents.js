@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 
 import { ServiceFactory } from 'services';
-import moment from 'moment'
 
 
-export default class TodayMainEvents extends Component {
+export default class TodayGarbageEvents extends Component {
 
   constructor(props) {
     super(props)
@@ -15,12 +14,10 @@ export default class TodayMainEvents extends Component {
   }
 
   componentDidMount() {
-    var service = ServiceFactory.createMainEventsService();
+    var service = ServiceFactory.createGarbageEventsService();
     // yyyy-mm-dd
     let todayString = (new Date()).toISOString().slice(0,10);
-    let startTodayString = todayString + ' 00:00:00';
-    let endTodayString = todayString + ' 23:59:59';
-    service.listEvents(startTodayString, endTodayString).then(models => {
+    service.listEvents(todayString).then(models => {
       this.todayEvents = models;
       this.setState({
         todayEventsLength: this.todayEvents.length,
@@ -34,9 +31,9 @@ export default class TodayMainEvents extends Component {
     if (this.todayEvents.length <= 0) {
       return (
         <div className="daily-item">
-          <h3 className="daily-label">今日の予定</h3>
+          <h3 className="daily-label">今日のごみ収集</h3>
           <div className="daily-link">
-            <a href="#">予定はありません</a>
+            <a href="#">ごみ収集はありません</a>
           </div>
         </div>
       )
@@ -44,10 +41,10 @@ export default class TodayMainEvents extends Component {
     if (1 <= this.todayEvents.length) {
       return (
         <div className="daily-item">
-          <h3 className="daily-label">今日の予定</h3>
+          <h3 className="daily-label">今日のごみ収集</h3>
           {this.todayEvents.map((oModel) =>
             <div className="daily-link">
-              <a href="{oModel.url}">moment(oModel.start).format('HH:mm') + " " + {oModel.summary}</a>
+              <img src="{oModel.url_of_image}" alt="{oModel.summary}"/>
             </div>
           )}
         </div>
