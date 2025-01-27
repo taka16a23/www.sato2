@@ -47,7 +47,7 @@ export default class TodayMainEvents extends Component {
           <h3 className="daily-label">今日の予定</h3>
           {this.todayEvents.map((oModel) =>
             <div className="daily-link" key={oModel.gid}>
-              <a href="{oModel.url}">moment(oModel.start).format('HH:mm') + " " + oModel.summary</a>
+              <a href={oModel.url}>{moment(oModel.start).format('HH:mm') + " " + oModel.summary}</a>
             </div>
           )}
         </div>

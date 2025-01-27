@@ -44,7 +44,7 @@ export default class TodayGarbageEvents extends Component {
           <h3 className="daily-label">今日のごみ収集</h3>
           {this.todayEvents.map((oModel) =>
             <div className="daily-link">
-              <img src="{oModel.url_of_image}" alt="{oModel.summary}"/>
+              <img src={oModel.url_of_image} alt={oModel.summary}/>
             </div>
           )}
         </div>
