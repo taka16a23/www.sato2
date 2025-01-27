@@ -37,6 +37,7 @@ class NewsList extends Component {
     }
     var newsService = ServiceFactory.createNewsService();
     newsService.listNews(oParams).then(arrModels => {
+      console.log(arrModels);
       this.models = arrModels;
       this.setState({
         modelLength: this.models.length,
@@ -51,7 +52,7 @@ class NewsList extends Component {
       <ul className="news-list">
         {this.models.map((oNewsModel) =>
           <li className="news-item" key={oNewsModel.id}>
-            <NavLink className="news-link" to={oNewsModel.url}>
+            <NavLink className="news-link" to={oNewsModel.url} target={oNewsModel.news_category_display.name == "回覧" ? "_blank" : ""}>
               <span className="news-cell news-date">{moment(oNewsModel.publish_date).format('YYYY/MM/DD')}</span>
               <p className="news-cell news-category">
                 <span className="news-category-label news-category-board" style={{color: oNewsModel.news_category_display.fgcolor, backgroundColor: oNewsModel.news_category_display.bgcolor}}>{oNewsModel.news_category_display.name}</span>
