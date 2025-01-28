@@ -66,7 +66,9 @@ class BoardModel(DisplayableMixin):
 
     def _save_news(self, ):
         news_category = NewsCategoryModel.objects.filter(name='回覧').first()
-        news_model = NewsModel.objects.create(title=self.title, category=news_category, url="https://localhost.com")
+        news_model = NewsModel.objects.create(
+            title=self.title, category=news_category, url=self.file.url,
+            status=self.status, publish_date=self.publish_date)
         news_model.save()
         self.news = news_model
 
