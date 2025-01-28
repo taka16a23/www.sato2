@@ -17,7 +17,8 @@ export default class TomorrowMainEvents extends Component {
   componentDidMount() {
     var service = ServiceFactory.createMainEventsService();
     // yyyy-mm-dd
-    let tomorrowString = (new Date(new Date().getTime() + 24 * 60 * 60 * 1000)).toISOString().slice(0,10);
+    // sv-SEロケールはYYYY-MM-DD形式の日付文字列を戻す
+    let tomorrowString = (new Date(new Date().getTime() + 24 * 60 * 60 * 1000)).toLocaleDateString('sv-SE');
     let startTomorrowString = tomorrowString + ' 00:00:00';
     let endTomorrowString = tomorrowString + ' 23:59:59';
     service.listEvents(startTomorrowString, endTomorrowString).then(models => {
@@ -36,7 +37,7 @@ export default class TomorrowMainEvents extends Component {
         <div className="daily-item">
           <h3 className="daily-label">明日の予定</h3>
           <div className="daily-link">
-            <a href="#">予定はありません</a>
+            <p>予定はありません</p>
           </div>
         </div>
       )

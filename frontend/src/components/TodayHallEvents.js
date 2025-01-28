@@ -17,7 +17,8 @@ export default class TodayHallEvents extends Component {
   componentDidMount() {
     var hallService = ServiceFactory.createHallService();
     // yyyy-mm-dd
-    let todayString = (new Date()).toISOString().slice(0,10);
+    // sv-SEロケールはYYYY-MM-DD形式の日付文字列を戻す
+    let todayString = (new Date()).toLocaleDateString('sv-SE');
     let startTodayString = todayString + ' 00:00:00';
     let endTodayString = todayString + ' 23:59:59';
     hallService.listEvents(startTodayString, endTodayString).then(models => {
@@ -36,7 +37,7 @@ export default class TodayHallEvents extends Component {
         <div className="daily-item">
           <h3 className="daily-label">公民館の利用</h3>
           <div className="daily-link">
-            <a href="#">利用予定はありません</a>
+            <p>予定はありません</p>
           </div>
         </div>
       )

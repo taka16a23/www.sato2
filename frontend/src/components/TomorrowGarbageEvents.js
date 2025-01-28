@@ -16,8 +16,8 @@ export default class TomorrowGarbageEvents extends Component {
   componentDidMount() {
     var service = ServiceFactory.createGarbageEventsService();
     // yyyy-mm-dd
-    //
-    let tomorrowString = (new Date(new Date().getTime() + 24 * 60 * 60 * 1000)).toISOString().slice(0,10);
+    // sv-SEロケールはYYYY-MM-DD形式の日付文字列を戻す
+    let tomorrowString = (new Date(new Date().getTime() + 24 * 60 * 60 * 1000)).toLocaleDateString('sv-SE');
     service.listEvents(tomorrowString).then(models => {
       this.events = models;
       this.setState({
@@ -34,7 +34,7 @@ export default class TomorrowGarbageEvents extends Component {
         <div className="daily-item">
           <h3 className="daily-label">明日のごみ収集</h3>
           <div className="daily-link">
-            <a href="#">ごみ収集はありません</a>
+            <p>ごみ収集はありません</p>
           </div>
         </div>
       )
@@ -44,7 +44,7 @@ export default class TomorrowGarbageEvents extends Component {
         <div className="daily-item">
           <h3 className="daily-label">明日のごみ収集</h3>
           {this.events.map((oModel) =>
-            <div className="daily-link">
+            <div className="daily-link" key={oModel.gid}>
               <img src={oModel.url_of_image} alt={oModel.summary}/>
             </div>
           )}

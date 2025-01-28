@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import NewsList from 'components/NewsList'
-import { NavLink } from 'react-router-dom'
-
-import AliasRoutes from "routes/AliasRoutes";
 
 
 class NewsComponent extends Component {
