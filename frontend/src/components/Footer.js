@@ -132,7 +132,7 @@ class Footer extends Component {
                     <NavLink to={AliasRoutes.Board}>回覧板</NavLink>
                   </h3>
                   <ul className="sitemap-list">
-                    {this.activityYears.map((year) =>
+                    {this.boardYears.map((year) =>
                       <li key={year} className="sitemap-item">
                         <NavLink to={AliasRoutes.BoardsYear + "/" + year} title={year + "年の回覧を見る"} onClick={() => this.handleBoardOnClick(year)}>
                           <i className="mdi mdi-menu-right"></i>
