@@ -20,7 +20,7 @@ class NewsComponent extends Component {
             <span className="title">{this.props.year ? this.props.year + "年 お知らせ一覧" : "最新のお知らせ"}</span>
           </h2>
           <div className="main-body news">
-            <NewsList year={this.props.year}/>
+            <NewsList year={this.props.year} limit={this.props.year ? 100 : 20}/>
           </div>
         </section>
       </main>
