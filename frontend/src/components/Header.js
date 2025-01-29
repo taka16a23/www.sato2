@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 import AliasRoutes from "routes/AliasRoutes";
 
-import header_img from 'assets/images/header.jpg';
+import header_img from 'assets/images/header.webp';
 
 
 class Header extends Component {
