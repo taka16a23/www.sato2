@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from 'react-router-dom'
+import { slide as BurgerMenu } from 'react-burger-menu'
+import SideNavigations from 'components/SideNavigations';
 
 import AliasRoutes from "routes/AliasRoutes";
 
@@ -18,6 +20,11 @@ class Header extends Component {
                 <NavLink to={AliasRoutes.Top} className="menu-label" alt="home" title="トップページへ">
                   <img src={header_img} alt="笹間山の頂上八畳岩から撮影された里自治会町内" style={{width: "100%", height: "100%"}}/>
                 </NavLink>
+                <BurgerMenu pageWrapId={ "page-wrap" } outerContainerId={ "outer-container"} width={'100%'}>
+                  <main id="page-wrap">
+                    <SideNavigations/>
+                  </main>
+                </BurgerMenu>
               </div>
             </div>
           </div>
