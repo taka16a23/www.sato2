@@ -1,4 +1,4 @@
-.header-image:hover {
+.header-image > .menu-label:hover {
   opacity: 0.8;
 }
 /* Position and sizing of burger button */
@@ -65,7 +65,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* Styling of overlay */
 .bm-overlay {
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 1) !important;
 }
 /* 1024px以上 */
 @media screen and (min-width:map-get($breakpoints, lg)) {
