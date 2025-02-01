@@ -5,11 +5,6 @@ import { ServiceFactory } from 'services';
 
 class WeatherAlert extends Component {
 
-  static propTypes = {
-  }
-  static defaultProps = {
-  }
-
   constructor(props) {
     super(props)
     this.state = {

@@ -26,7 +26,7 @@ class GroupComponent extends Component {
             <span className="title">ブロックと組割の地図</span>
           </h2>
           <Skeleton height={520} style={{marginTop: "50px", display: this.state.isLoaded !== true ? "block" : "none"}}/>
-          <iframe src="https://www.google.com/maps/d/u/1/embed?mid=zJXaXK9GQ-AU.kCiGt_OQoawU" height="520" onLoad={this.onLoaded.bind(this)} style={{width: "100%", display: this.state.isLoaded !== true ? "none" : "block"}}></iframe>
+          <iframe src="https://www.google.com/maps/d/u/1/embed?mid=zJXaXK9GQ-AU.kCiGt_OQoawU" height="520" onLoad={this.onLoaded.bind(this)} style={{width: "100%", display: this.state.isLoaded !== true ? "none" : "block"}} title="calendar"></iframe>
         </section>
       </main>
     );

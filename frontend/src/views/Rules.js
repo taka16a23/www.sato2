@@ -36,7 +36,7 @@ class Rules extends Component {
             <div className="main-content rule-content">
               {oModel.listImages().map((oImageModel) =>
                 <div className="rule-image" key={oImageModel.id}>
-                  <a href={oModel.document} target="_blank" title="PDFをダウンロード">
+                  <a href={oModel.document} target="_blank" rel="noreferrer noopener" title="PDFをダウンロード">
                     <img src={process.env.REACT_APP_API_URL + oImageModel.image}/>
                   </a>
                 </div>

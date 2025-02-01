@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { NavLink } from 'react-router-dom'
-import { ServiceFactory } from 'services';
 import NewsNavigation from 'components/NewsNavigation';
 import ActivityNavigation from 'components/ActivityNavigation';
 import SecurityNavigation from 'components/SecurityNavigatoin';
