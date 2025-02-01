@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import { ServiceFactory } from 'services';
 import TomorrowGarbageEvents from 'components/TomorrowGarbageEvents';
 import TomorrowMainEvents from 'components/TomorrowMainEvents';
 

@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
 import { ServiceFactory } from 'services';
 
 
 class Emergency extends Component {
 
-  static propTypes = {
-  }
   static defaultProps = {
   }
 
@@ -32,11 +29,11 @@ class Emergency extends Component {
   render() {
     return (
       <div className="emergencyInfoBox">
-        <a href="https://dis-shiga.jp/pc/topdis-shiga.html" target="_blank">
-          <img className="title_pic" src="https://dis-shiga.jp/image/title.jpg"/>
+        <a href="https://dis-shiga.jp/pc/topdis-shiga.html" target="_blank" rel="noreferrer">
+          <img className="title_pic" src="https://dis-shiga.jp/image/title.jpg" alt="dis-shiga"/>
         </a>
         <div className="emergencyInfoBoxHead">
-          <img className="icon" src="https://dis-shiga.jp/image/exclamation2.png"/>
+          <img className="icon" src="https://dis-shiga.jp/image/exclamation2.png" alt="exclamation2"/>
           <span className="title">緊急情報</span>
         </div>
         <div>
@@ -53,7 +50,7 @@ class Emergency extends Component {
         <div>
           <h2>
             <span className="name">避難情報
-              <a href="/other/避難情報.pdf" target="_blank">（避難情報とは）</a>
+              <a href="/other/避難情報.pdf" target="_blank" rel="noreferror">（避難情報とは）</a>
             </span>
             {
               this.state.model === null || this.state.model.hinanjouhou !== true ?

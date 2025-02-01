@@ -1,4 +1,4 @@
-import React, { Component, lazy } from 'react';
+import React, { Component } from 'react';
 import { Routes, Route } from "react-router-dom";
 import AliasRoutes from "routes/AliasRoutes";
 import Header from 'components/Header';

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import { ServiceFactory } from 'services';
 import TodayHallEvents from 'components/TodayHallEvents';
 import TodayMainEvents from 'components/TodayMainEvents';
 import TodayGarbageEvents from 'components/TodayGarbageEvents';
