@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { ServiceFactory } from 'services';
 import downlaodImg from 'assets/images/formats_download.svg';
 import formImg from 'assets/images/formats_form.svg';
+import Spinner from "views/spinner/Spinner";
 
 
 class SatoFormats extends Component {
@@ -27,66 +28,66 @@ class SatoFormats extends Component {
   }
 
   render() {
+    if(this.state.modelLength <= 0) {
+      return (
+        <Spinner/>
+      )
+    }
     return (
-      <section className="main-item jichikai-formats" id="sato">
-        <h2 className="main-title">
-          <span className="title">里自治会関係書式</span>
-        </h2>
-        <table>
-          <thead>
-            <tr>
-              <th className="format-name">
-                書式名
-              </th>
-              <th className="format-description">
-                概要
-              </th>
-              <th className="format-forms" colSpan="2">
-                申込み方法
-              </th>
+      <table>
+        <thead>
+          <tr>
+            <th className="format-name">
+              書式名
+            </th>
+            <th className="format-description">
+              概要
+            </th>
+            <th className="format-forms" colSpan="2">
+              申込み方法
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.models.map((oModel) =>
+            <tr key={oModel.id}>
+              <td className="format-name">
+                <div>
+                  {oModel.title}
+                </div>
+              </td>
+              <td className="format-description">
+                <div dangerouslySetInnerHTML={{ __html: oModel.description }}>
+                </div>
+              </td>
+              <td className="format-download">
+                {oModel.file === null ? undefined :
+                 <a href={oModel.file} target="_blank" rel="noreferrer">
+                   <div>
+                     <img src={downlaodImg} width="24" height="32" alt="ダウンロード"/>
+                   </div>
+                   <div>
+                     ダウンロード
+                   </div>
+                 </a>
+                }
+              </td>
+              <td className="format-form">
+                {oModel.form === null ? undefined :
+                 <a href={oModel.form} target="_blank" rel="noreferrer">
+                   <div>
+                     <img src={formImg} width="24" height="32" alt="Web申請"/>
+                   </div>
+                   <div>
+                     Web申請
+                   </div>
+                 </a>
+                }
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {this.models.map((oModel) =>
-              <tr key={oModel.id}>
-                <td className="format-name">
-                  <div>
-                    {oModel.title}
-                  </div>
-                </td>
-                <td className="format-description">
-                  <div dangerouslySetInnerHTML={{ __html: oModel.description }}>
-                  </div>
-                </td>
-                <td className="format-download">
-                  {oModel.file === null ? undefined :
-                   <a href={oModel.file} target="_blank" rel="noreferrer">
-                     <div>
-                       <img src={downlaodImg} width="24" height="32" alt="ダウンロード"/>
-                     </div>
-                     <div>
-                       ダウンロード
-                     </div>
-                   </a>
-                  }
-                </td>
-                <td className="format-form">
-                  {oModel.form === null ? undefined :
-                   <a href={oModel.form} target="_blank" rel="noreferrer">
-                     <div>
-                       <img src={formImg} width="24" height="32" alt="Web申請"/>
-                     </div>
-                     <div>
-                       Web申請
-                     </div>
-                   </a>
-                  }
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </section>
+          )}
+        </tbody>
+      </table>
     );
   };
 }

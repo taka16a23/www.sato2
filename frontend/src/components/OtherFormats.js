@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { ServiceFactory } from 'services';
+import Spinner from "views/spinner/Spinner";
 
 
 class SatoFormats extends Component {
@@ -25,37 +26,37 @@ class SatoFormats extends Component {
   }
 
   render() {
+    if(this.state.modelLength <= 0) {
+      return (
+        <Spinner/>
+      )
+    }
     return (
-      <section className="main-item jichitai-formats" id="other">
-        <h2 className="main-title">
-          <span className="title">自治体等関係書式</span>
-        </h2>
-        <table>
-          <thead>
-            <tr>
-              <th className="format-name">
-                書式名
-              </th>
-              <th className="format-description">
-                概要
-              </th>
+      <table>
+        <thead>
+          <tr>
+            <th className="format-name">
+              書式名
+            </th>
+            <th className="format-description">
+              概要
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.models.map((oModel) =>
+            <tr key={oModel.id}>
+              <td className="format-name">
+                <a href={oModel.url} target="_blank" rel="noreferrer">
+                  {oModel.title}
+                </a>
+              </td>
+              <td className="format-description" dangerouslySetInnerHTML={{ __html: oModel.description }}>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {this.models.map((oModel) =>
-              <tr key={oModel.id}>
-                <td className="format-name">
-                  <a href={oModel.url} target="_blank" rel="noreferrer">
-                    {oModel.title}
-                  </a>
-                </td>
-                <td className="format-description" dangerouslySetInnerHTML={{ __html: oModel.description }}>
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </section>
+          )}
+        </tbody>
+      </table>
     );
   };
 }
