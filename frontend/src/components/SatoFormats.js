@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { ServiceFactory } from 'services';
 import downlaodImg from 'assets/images/formats_download.svg';
 import formImg from 'assets/images/formats_form.svg';
-import Spinner from "views/spinner/Spinner";
+import Spinner from "components/spinner/Spinner";
 
 
 class SatoFormats extends Component {

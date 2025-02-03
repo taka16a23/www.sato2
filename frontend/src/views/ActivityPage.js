@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "helpers/withRouter";
 import { ServiceFactory } from 'services';
-import Spinner from "views/spinner/Spinner";
+import Spinner from "components/spinner/Spinner";
 
 
 class ActivityPage extends Component {

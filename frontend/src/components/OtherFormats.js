@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ServiceFactory } from 'services';
-import Spinner from "views/spinner/Spinner";
+import Spinner from "components/spinner/Spinner";
 
 
 class SatoFormats extends Component {
@@ -18,7 +18,7 @@ class SatoFormats extends Component {
     service.listOtherFormats().then(arrModels => {
       this.models = arrModels;
       this.setState({
-        models: this.models.length,
+        modelLength: this.models.length,
       });
     }).catch(err => {
       alert(err);

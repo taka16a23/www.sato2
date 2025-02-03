@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
-import Spinner from "views/spinner/Spinner";
+import Spinner from "components/spinner/Spinner";
 import "assets/scss/style.min.css";
 import axiosSetup from "helpers/interceptors";
 
