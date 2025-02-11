@@ -144,7 +144,7 @@ class Footer extends Component {
                 </div>
                 <div className="sitemap sitemap-security">
                   <h3 className="sitemap-title">
-                    <NavLink to={AliasRoutes.Security} onClick={() => this.handleOnClick()}>防犯・防災</NavLink>
+                    <NavLink to={AliasRoutes.SecurityPortal} onClick={() => this.handleOnClick()}>防犯・防災</NavLink>
                   </h3>
                   <ul className="sitemap-list">
                     <li className="sitemap-item">
