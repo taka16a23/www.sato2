@@ -182,7 +182,7 @@ class Footer extends Component {
                 </div>
                 <div className="sitemap sitemap-about">
                   <h3 className="sitemap-title">
-                    <NavLink to={AliasRoutes.About} onClick={() => this.handleOnClick()}>自治会案内</NavLink>
+                    <NavLink to={AliasRoutes.AboutRule} onClick={() => this.handleOnClick()}>自治会案内</NavLink>
                   </h3>
                   <ul className="sitemap-list">
                     <li className="sitemap-item">
