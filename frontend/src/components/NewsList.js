@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import moment from 'moment'
 
 import { ServiceFactory } from 'services';
+import ContentLoader from "react-content-loader"
 
 
 class NewsList extends Component {
@@ -12,7 +13,7 @@ class NewsList extends Component {
     year: PropTypes.string,
   }
   static defaultProps = {
-    limit: null,
+    limit: 5,
     year: null,
   }
 
@@ -21,6 +22,7 @@ class NewsList extends Component {
     this.models = [];
     this.state = {
       modelLength: this.models.length,
+      isLoading: true,
     }
   }
 
@@ -40,13 +42,37 @@ class NewsList extends Component {
       this.models = arrModels;
       this.setState({
         modelLength: this.models.length,
+        isLoading: false,
       });
     }).catch(err => {
       alert(err);
     });
   }
 
+  getRects() {
+    var elements = [];
+    elements.push(<rect x="0" y="0" rx="0" ry="0" height="54" style={{ width: '100%' }}/>);
+    for (var i = 0; i < this.props.limit; i++) {
+      elements.push(<rect x="0" y={i * 56} rx="0" ry="0" height="54" style={{ width: '100%' }}/>);
+    }
+    return elements;
+  }
+
   render() {
+    console.log(this.props.limit);
+    if(this.state.isLoading === true) {
+      return (
+        <ContentLoader
+          speed={2}
+          height={56 * this.props.limit}
+          backgroundColor="#f3f3f3"
+          foregroundColor="#ecebeb"
+          style={{ width: '100%' }}
+        >
+          {this.getRects()}
+        </ContentLoader>
+      )
+    }
     return (
       <ul className="news-list">
         {this.models.map((oNewsModel) =>
