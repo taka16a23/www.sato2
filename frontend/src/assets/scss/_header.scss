@@ -1,5 +1,11 @@
-.header-image > .menu-label:hover {
-  opacity: 0.8;
+.header-image {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  > .menu-label:hover {
+    opacity: 0.8;
+  }
 }
 /* Position and sizing of burger button */
 .bm-burger-button {

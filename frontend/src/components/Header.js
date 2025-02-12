@@ -18,7 +18,7 @@ class Header extends Component {
             <div className="container-inner">
               <div className="header-image">
                 <NavLink to={AliasRoutes.Top} className="menu-label" alt="home" title="トップページへ">
-                  <img src={header_img} alt="笹間山の頂上八畳岩から撮影された里自治会町内" style={{width: "100%", height: "100%"}}/>
+                  <img src={header_img} alt="笹間山の頂上八畳岩から撮影された里自治会町内" height="236" width="944"/>
                 </NavLink>
                 <BurgerMenu pageWrapId={ "page-wrap" } outerContainerId={ "outer-container"} width={'100%'}>
                   <main id="page-wrap">
