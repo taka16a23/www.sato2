@@ -12,6 +12,17 @@ import {
 
 class BoardsPage extends Component {
 
+  constructor(props) {
+    super(props);
+    let isLoading = true;
+    if(0 < this.props.boards.models.length) {
+      isLoading = false;
+    }
+    this.state = {
+      isLoading: isLoading,
+    }
+  }
+
   componentDidMount() {
     // 年の指定がなければ、現在の年
     let year = this.props.boards.year;
@@ -22,6 +33,9 @@ class BoardsPage extends Component {
       let service = ServiceFactory.createBoardsService();
       service.listBoards(year).then(arrModels => {
         this.props.setBoardModels(arrModels);
+        this.setState({
+          isLoading: false,
+        });
       }).catch(err => {
         alert(err);
       });
@@ -29,6 +43,193 @@ class BoardsPage extends Component {
   }
 
   render() {
+    if(this.state.isLoading === true) {
+      return (
+        <main id="main">
+          <div className="main-item board">
+            <h2 className="main-title">
+              <span className="title">{this.props.boards.year + '年 '}回覧板</span>
+            </h2>
+            <div className="main-body">
+              <div className="board-container">
+                <div className="board-container-inner">
+                  <div className="board-list">
+                    <div className="board-item">
+                      <div className="board-item-container">
+                        <div className="board-item-container-inner">
+                          <div className="board-title text-mute">
+                            <ContentLoader
+                              speed={2}
+                              width={140}
+                              height={24}
+                              backgroundColor="#f3f3f3"
+                              foregroundColor="#ecebeb"
+                            >
+                              <rect x="0" y="0" rx="0" ry="0" width="140" height="24"/>
+                            </ContentLoader>
+                          </div>
+                          <div className="board-body">
+                            <ContentLoader
+                              speed={2}
+                              width={280}
+                              height={360}
+                              backgroundColor="#f3f3f3"
+                              foregroundColor="#ecebeb"
+                            >
+                              <rect x="0" y="0" rx="0" ry="0" width="280" height="360"/>
+                            </ContentLoader>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="board-item">
+                      <div className="board-item-container">
+                        <div className="board-item-container-inner">
+                          <div className="board-title text-mute">
+                            <ContentLoader
+                              speed={2}
+                              width={140}
+                              height={24}
+                              backgroundColor="#f3f3f3"
+                              foregroundColor="#ecebeb"
+                            >
+                              <rect x="0" y="0" rx="0" ry="0" width="140" height="24"/>
+                            </ContentLoader>
+                          </div>
+                          <div className="board-body">
+                            <ContentLoader
+                              speed={2}
+                              width={280}
+                              height={360}
+                              backgroundColor="#f3f3f3"
+                              foregroundColor="#ecebeb"
+                            >
+                              <rect x="0" y="0" rx="0" ry="0" width="280" height="360"/>
+                            </ContentLoader>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="board-item">
+                      <div className="board-item-container">
+                        <div className="board-item-container-inner">
+                          <div className="board-title text-mute">
+                            <ContentLoader
+                              speed={2}
+                              width={140}
+                              height={24}
+                              backgroundColor="#f3f3f3"
+                              foregroundColor="#ecebeb"
+                            >
+                              <rect x="0" y="0" rx="0" ry="0" width="140" height="24"/>
+                            </ContentLoader>
+                          </div>
+                          <div className="board-body">
+                            <ContentLoader
+                              speed={2}
+                              width={280}
+                              height={360}
+                              backgroundColor="#f3f3f3"
+                              foregroundColor="#ecebeb"
+                            >
+                              <rect x="0" y="0" rx="0" ry="0" width="280" height="360"/>
+                            </ContentLoader>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="board-item">
+                      <div className="board-item-container">
+                        <div className="board-item-container-inner">
+                          <div className="board-title text-mute">
+                            <ContentLoader
+                              speed={2}
+                              width={140}
+                              height={24}
+                              backgroundColor="#f3f3f3"
+                              foregroundColor="#ecebeb"
+                            >
+                              <rect x="0" y="0" rx="0" ry="0" width="140" height="24"/>
+                            </ContentLoader>
+                          </div>
+                          <div className="board-body">
+                            <ContentLoader
+                              speed={2}
+                              width={280}
+                              height={360}
+                              backgroundColor="#f3f3f3"
+                              foregroundColor="#ecebeb"
+                            >
+                              <rect x="0" y="0" rx="0" ry="0" width="280" height="360"/>
+                            </ContentLoader>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="board-item">
+                      <div className="board-item-container">
+                        <div className="board-item-container-inner">
+                          <div className="board-title text-mute">
+                            <ContentLoader
+                              speed={2}
+                              width={140}
+                              height={24}
+                              backgroundColor="#f3f3f3"
+                              foregroundColor="#ecebeb"
+                            >
+                              <rect x="0" y="0" rx="0" ry="0" width="140" height="24"/>
+                            </ContentLoader>
+                          </div>
+                          <div className="board-body">
+                            <ContentLoader
+                              speed={2}
+                              width={280}
+                              height={360}
+                              backgroundColor="#f3f3f3"
+                              foregroundColor="#ecebeb"
+                            >
+                              <rect x="0" y="0" rx="0" ry="0" width="280" height="360"/>
+                            </ContentLoader>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="board-item">
+                      <div className="board-item-container">
+                        <div className="board-item-container-inner">
+                          <div className="board-title text-mute">
+                            <ContentLoader
+                              speed={2}
+                              width={140}
+                              height={24}
+                              backgroundColor="#f3f3f3"
+                              foregroundColor="#ecebeb"
+                            >
+                              <rect x="0" y="0" rx="0" ry="0" width="140" height="24"/>
+                            </ContentLoader>
+                          </div>
+                          <div className="board-body">
+                            <ContentLoader
+                              speed={2}
+                              width={280}
+                              height={360}
+                              backgroundColor="#f3f3f3"
+                              foregroundColor="#ecebeb"
+                            >
+                              <rect x="0" y="0" rx="0" ry="0" width="280" height="360"/>
+                            </ContentLoader>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      )
+    }
     return (
       <main id="main">
         <div className={1 <= this.props.boards.models.length ? "main-item board" : "main-item"}>
@@ -48,7 +249,7 @@ class BoardsPage extends Component {
                           </div>
                           <div className="board-body">
                             <a href={oModel.getFile()} target="_blank" rel="noreferrer">
-                              <img src={oModel.getThumbnail()} width="280px" height="360px" alt="board"/>
+                              <img src={oModel.getThumbnail()} width="280" height="360" alt="board"/>
                             </a>
                           </div>
                         </div>
