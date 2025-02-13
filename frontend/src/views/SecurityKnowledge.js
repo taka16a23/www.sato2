@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ContentLoader from "react-content-loader"
+
 import { ServiceFactory } from 'services';
 
 
@@ -9,6 +11,7 @@ class SecurityKnowledgeComponent extends Component {
     this.models = [];
     this.state = {
       modelLength: this.models.length,
+      isLoading: true,
     }
   }
 
@@ -18,13 +21,53 @@ class SecurityKnowledgeComponent extends Component {
       this.models = arrModels;
       this.setState({
         modelLength: this.models.length,
+        isLoading: false,
       });
     }).catch(err => {
       alert(err);
     });
   }
 
+  getSkeltons() {
+    var elements = [];
+    for (var i = 0; i < 6; i++) {
+      elements.push(
+        <li className="tile-item">
+          <ContentLoader
+            speed={2}
+            width="100%"
+            height={430}
+            backgroundColor="#f3f3f3"
+            foregroundColor="#ecebeb"
+          >
+            <rect x="20" y="22" rx="0" ry="0" width="90%" height="204"/>
+            <rect x="10%" y="242" rx="0" ry="0" width="80%" height="20"/>
+            <rect x="40%" y="280" rx="0" ry="0" width="20%" height="12"/>
+            <rect x="10%" y="304" rx="0" ry="0" width="80%" height="20"/>
+            <rect x="10%" y="332" rx="0" ry="0" width="80%" height="20"/>
+            <rect x="10%" y="360" rx="0" ry="0" width="80%" height="20"/>
+          </ContentLoader>
+        </li>
+      );
+    }
+    return elements;
+  }
+
   render() {
+    if(this.state.isLoading === true) {
+      return (
+        <main id="main">
+          <section className="main-item faq-wrapper">
+            <h2 className="main-title faq-title">
+              <span className="title">防災予備知識</span>
+            </h2>
+            <ul className="tile-list">
+              {this.getSkeltons()}
+            </ul>
+          </section>
+        </main>
+      )
+    }
     return (
       <main id="main">
         <section className="main-item faq-wrapper">
