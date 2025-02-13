@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom'
 import moment from 'moment'
+import ContentLoader from "react-content-loader"
 
 import { ServiceFactory } from 'services';
-import ContentLoader from "react-content-loader"
 
 
 class NewsList extends Component {
