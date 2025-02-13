@@ -27,7 +27,7 @@
         line-height: 32px;
         border: solid 1px red;
         .icon {
-          display: none;
+          display: block;
         }
         .title {
           margin-left: 12px;
@@ -38,10 +38,6 @@
         display: flex;
         color: #fff;
       }
-      .icon {
-        display: block;
-      }
-      
       h2 {
         margin-top: 4px;
         margin-bottom: 0;
