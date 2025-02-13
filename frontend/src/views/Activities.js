@@ -9,9 +9,21 @@ import {
   setActivityYear,
   setActivityModels,
 } from 'redux/activity/Action';
+import ContentLoader from "react-content-loader"
 
 
 class ActivitiesComponent extends Component {
+
+  constructor(props) {
+    super(props)
+    let isLoading = true;
+    if(0 < this.props.activity.models.length) {
+      isLoading = false;
+    }
+    this.state = {
+      isLoading: isLoading,
+    }
+  }
 
   componentDidMount() {
     let year = this.props.activity.year;
@@ -22,13 +34,56 @@ class ActivitiesComponent extends Component {
       var service = ServiceFactory.createActivitiesService();
       service.listActivities(year).then(arrModels => {
         this.props.setActivityModels(arrModels);
+        this.setState({
+          isLoading: false,
+        });
       }).catch(err => {
         alert(err);
       });
+      return;
     }
   }
 
+  getSkeltons() {
+    var elements = [];
+    for (var i = 0; i < 6; i++) {
+      elements.push(
+        <li className="tile-item">
+          <ContentLoader
+            speed={2}
+            width="100%"
+            height={430}
+            backgroundColor="#f3f3f3"
+            foregroundColor="#ecebeb"
+          >
+            <rect x="20" y="22" rx="0" ry="0" width="90%" height="204"/>
+            <rect x="10%" y="242" rx="0" ry="0" width="80%" height="20"/>
+            <rect x="40%" y="280" rx="0" ry="0" width="20%" height="12"/>
+            <rect x="10%" y="304" rx="0" ry="0" width="80%" height="20"/>
+            <rect x="10%" y="332" rx="0" ry="0" width="80%" height="20"/>
+            <rect x="10%" y="360" rx="0" ry="0" width="80%" height="20"/>
+          </ContentLoader>
+        </li>
+      );
+    }
+    return elements;
+  }
+
   render() {
+    if(this.state.isLoading === true) {
+      return (
+        <main id="main">
+          <section className="main-item faq-wrapper">
+            <h2 className="main-title faq-title">
+              <span className="title">{this.props.activity.year + '年 '} 活動報告</span>
+            </h2>
+            <ul className="tile-list">
+              {this.getSkeltons()}
+            </ul>
+          </section>
+        </main>
+      )
+    }
     return (
       <main id="main">
         <section className="main-item faq-wrapper">
