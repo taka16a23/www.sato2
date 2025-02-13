@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { withRouter } from "helpers/withRouter";
 import moment from 'moment'
+import ContentLoader from "react-content-loader"
 import { ServiceFactory } from 'services';
 import {
   setBoardYear,
