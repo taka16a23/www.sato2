@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ServiceFactory } from 'services';
-import Spinner from "components/spinner/Spinner";
+import ContentLoader from "react-content-loader"
 
 
 class SatoFormats extends Component {
@@ -10,6 +10,7 @@ class SatoFormats extends Component {
     this.models = [];
     this.state = {
       modelLength: this.models.length,
+      isLoading: true,
     }
   }
 
@@ -19,6 +20,7 @@ class SatoFormats extends Component {
       this.models = arrModels;
       this.setState({
         modelLength: this.models.length,
+        isLoading: false,
       });
     }).catch(err => {
       alert(err);
@@ -26,9 +28,74 @@ class SatoFormats extends Component {
   }
 
   render() {
-    if(this.state.modelLength <= 0) {
+    if(this.state.isLoading === true) {
       return (
-        <Spinner/>
+        <table style={{ width: '100%' }}>
+          <thead>
+            <tr>
+              <th className="format-name">
+                書式名
+              </th>
+              <th className="format-description">
+                概要
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="format-name">
+                <ContentLoader
+                  speed={2}
+                  height={24}
+                  backgroundColor="#f3f3f3"
+                  foregroundColor="#ecebeb"
+                  style={{ width: '100%' }}
+                >
+                  <rect x="0" y="0" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                </ContentLoader>
+              </td>
+              <td className="format-description">
+                <ContentLoader
+                  speed={2}
+                  height={78}
+                  backgroundColor="#f3f3f3"
+                  foregroundColor="#ecebeb"
+                  style={{ width: '100%' }}
+                >
+                  <rect x="0" y="0" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                  <rect x="0" y="26" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                  <rect x="0" y="52" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                </ContentLoader>
+              </td>
+            </tr>
+            <tr>
+              <td className="format-name">
+                <ContentLoader
+                  speed={2}
+                  height={24}
+                  backgroundColor="#f3f3f3"
+                  foregroundColor="#ecebeb"
+                  style={{ width: '100%' }}
+                >
+                  <rect x="0" y="0" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                </ContentLoader>
+              </td>
+              <td className="format-description">
+                <ContentLoader
+                  speed={2}
+                  height={78}
+                  backgroundColor="#f3f3f3"
+                  foregroundColor="#ecebeb"
+                  style={{ width: '100%' }}
+                >
+                  <rect x="0" y="0" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                  <rect x="0" y="26" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                  <rect x="0" y="52" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                </ContentLoader>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       )
     }
     return (
