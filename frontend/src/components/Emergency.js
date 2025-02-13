@@ -30,10 +30,10 @@ class Emergency extends Component {
     return (
       <div className="emergencyInfoBox">
         <a href="https://dis-shiga.jp/pc/topdis-shiga.html" target="_blank" rel="noreferrer">
-          <img className="title_pic" src="https://dis-shiga.jp/image/title.jpg" alt="dis-shiga"/>
+          <img className="title_pic" src="https://dis-shiga.jp/image/title.jpg" alt="dis-shiga" width="370" height="85"/>
         </a>
         <div className="emergencyInfoBoxHead">
-          <img className="icon" src="https://dis-shiga.jp/image/exclamation2.png" alt="exclamation2"/>
+          <img className="icon" src="https://dis-shiga.jp/image/exclamation2.png" alt="exclamation2" width="32" height="32"/>
           <span className="title">緊急情報</span>
         </div>
         <div>
