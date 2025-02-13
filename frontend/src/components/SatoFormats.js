@@ -12,6 +12,7 @@ class SatoFormats extends Component {
     this.models = [];
     this.state = {
       modelLength: this.models.length,
+      isLoading: true,
     }
   }
 
@@ -21,6 +22,7 @@ class SatoFormats extends Component {
       this.models = arrModels;
       this.setState({
         modelLength: this.models.length,
+        isLoading: false,
       });
     }).catch(err => {
       alert(err);
@@ -28,9 +30,129 @@ class SatoFormats extends Component {
   }
 
   render() {
-    if(this.state.modelLength <= 0) {
+    if(this.state.isLoading === true) {
       return (
-        <Spinner/>
+        <table>
+          <thead>
+            <tr>
+              <th className="format-name">
+                書式名
+              </th>
+              <th className="format-description">
+                概要
+              </th>
+              <th className="format-forms" colSpan="2">
+                申込み方法
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="format-name">
+                <div>
+                  <ContentLoader
+                    speed={2}
+                    height={24}
+                    backgroundColor="#f3f3f3"
+                    foregroundColor="#ecebeb"
+                    style={{ width: '100%' }}
+                  >
+                    <rect x="0" y="0" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                  </ContentLoader>
+                </div>
+              </td>
+              <td className="format-description">
+                <ContentLoader
+                  speed={2}
+                  height={132}
+                  backgroundColor="#f3f3f3"
+                  foregroundColor="#ecebeb"
+                  style={{ width: '100%' }}
+                >
+                  <rect x="0" y="0" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                  <rect x="0" y="26" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                  <rect x="0" y="52" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                  <rect x="0" y="78" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                  <rect x="0" y="104" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                </ContentLoader>
+              </td>
+              <td className="format-download">
+                <ContentLoader
+                  speed={2}
+                  height={50}
+                  backgroundColor="#f3f3f3"
+                  foregroundColor="#ecebeb"
+                  style={{ width: '100%' }}
+                >
+                  <rect x="25%" y="0" rx="0" ry="0" height="50" style={{ width: '50%' }}/>
+                </ContentLoader>
+              </td>
+              <td className="format-form">
+                <ContentLoader
+                  speed={2}
+                  height={50}
+                  backgroundColor="#f3f3f3"
+                  foregroundColor="#ecebeb"
+                  style={{ width: '100%' }}
+                >
+                  <rect x="25%" y="0" rx="0" ry="0" height="50" style={{ width: '50%' }}/>
+                </ContentLoader>
+              </td>
+            </tr>
+            <tr>
+              <td className="format-name">
+                <div>
+                  <ContentLoader
+                    speed={2}
+                    height={24}
+                    backgroundColor="#f3f3f3"
+                    foregroundColor="#ecebeb"
+                    style={{ width: '100%' }}
+                  >
+                    <rect x="0" y="0" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                  </ContentLoader>
+                </div>
+              </td>
+              <td className="format-description">
+                <ContentLoader
+                  speed={2}
+                  height={132}
+                  backgroundColor="#f3f3f3"
+                  foregroundColor="#ecebeb"
+                  style={{ width: '100%' }}
+                >
+                  <rect x="0" y="0" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                  <rect x="0" y="26" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                  <rect x="0" y="52" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                  <rect x="0" y="78" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                  <rect x="0" y="104" rx="0" ry="0" height="24" style={{ width: '100%' }}/>
+                </ContentLoader>
+              </td>
+              <td className="format-download">
+                <ContentLoader
+                  speed={2}
+                  height={50}
+                  backgroundColor="#f3f3f3"
+                  foregroundColor="#ecebeb"
+                  style={{ width: '100%' }}
+                >
+                  <rect x="25%" y="0" rx="0" ry="0" height="50" style={{ width: '50%' }}/>
+                </ContentLoader>
+              </td>
+              <td className="format-form">
+                <ContentLoader
+                  speed={2}
+                  height={50}
+                  backgroundColor="#f3f3f3"
+                  foregroundColor="#ecebeb"
+                  style={{ width: '100%' }}
+                >
+                  <rect x="25%" y="0" rx="0" ry="0" height="50" style={{ width: '50%' }}/>
+                </ContentLoader>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       )
     }
     return (
