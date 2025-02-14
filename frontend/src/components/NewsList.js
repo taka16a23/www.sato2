@@ -59,7 +59,6 @@ class NewsList extends Component {
   }
 
   render() {
-    console.log(this.props.limit);
     if(this.state.isLoading === true) {
       return (
         <ContentLoader
