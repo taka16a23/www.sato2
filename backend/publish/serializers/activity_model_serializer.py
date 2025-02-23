@@ -14,6 +14,8 @@ class ActivityModelSerializer(serializers.ModelSerializer):
     ActivityModelSerializer is a serializers.ModelSerializer.
     Responsibility:
     """
+    image = serializers.CharField(source="image.url")
+
     class Meta:
         model = ActivityModel
         fields = '__all__'
