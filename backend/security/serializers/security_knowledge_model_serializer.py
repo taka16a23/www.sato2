@@ -14,6 +14,8 @@ class SecurityKnowledgeModelSerializer(serializers.ModelSerializer):
     SecurityKnowledgeModelSerializer is a serializers.ModelSerializer.
     Responsibility:
     """
+    # urlをフルパスから相対パスに変換
+    thumbnail = serializers.CharField(source="thumbnail.url")
 
     class Meta:
         model = SecurityKnowledgeModel

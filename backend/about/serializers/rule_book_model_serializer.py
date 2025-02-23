@@ -17,6 +17,8 @@ class RuleBookModelSerializer(serializers.ModelSerializer):
     Responsibility:
     """
     images = SerializerMethodField()
+    # urlをフルパスから相対パスに変換
+    document = serializers.CharField(source="document.url")
 
     class Meta:
         model = RuleBookModel

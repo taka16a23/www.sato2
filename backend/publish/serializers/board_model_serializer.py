@@ -14,6 +14,10 @@ class BoardModelSerializer(serializers.ModelSerializer):
     BoardModelSerializer is a serializers.ModelSerializer.
     Responsibility:
     """
+    # urlをフルパスから相対パスに変換
+    file = serializers.CharField(source="file.url")
+    # urlをフルパスから相対パスに変換
+    thumbnail = serializers.CharField(source="thumbnail.url")
 
     class Meta:
         model = BoardModel
