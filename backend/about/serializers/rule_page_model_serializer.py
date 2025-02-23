@@ -14,6 +14,9 @@ class RulePageModelSerializer(serializers.ModelSerializer):
     RulePageModelSerializer is a serializers.ModelSerializer.
     Responsibility:
     """
+
+    image = serializers.CharField(source="image.url")
+
     class Meta:
         model = RulePageModel
         fields = (
