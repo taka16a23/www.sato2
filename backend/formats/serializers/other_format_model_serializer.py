@@ -14,8 +14,6 @@ class OtherFormatModelSerializer(serializers.ModelSerializer):
     OtherFormatModelSerializer is a serializers.ModelSerializer.
     Responsibility:
     """
-    # urlをフルパスから相対パスに変換
-    file = serializers.CharField(source="file.url")
 
     class Meta:
         model = OtherFormatModel
