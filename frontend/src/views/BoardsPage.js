@@ -240,7 +240,7 @@ class BoardsPage extends Component {
             <div className="board-container">
               <div className="board-container-inner">
                 <div className="board-list">
-                  {this.props.boards.models.map((oModel) =>
+                  {this.props.boards.models.length <= 0 ? <div>表示する記事がありません。</div> : this.props.boards.models.map((oModel) =>
                     <div className="board-item" key={oModel.id}>
                       <div className="board-item-container">
                         <div className="board-item-container-inner">
