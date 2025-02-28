@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+
 import { Routes, Route } from "react-router-dom";
-import AliasRoutes from "routes/AliasRoutes";
+
 import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Home from 'views/Home';
 import SecurityPortal from 'views/SecurityPortal';
+import Home from 'views/Home';
 import SideNavigationLayout from 'layouts/SideNavigationLayout';
+import Footer from 'components/Footer';
+import AliasRoutes from "routes/AliasRoutes";
 
 
 class Layout extends Component {

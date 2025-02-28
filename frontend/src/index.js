@@ -1,5 +1,7 @@
 import React, { Suspense, lazy } from "react";
+
 import ReactDOM from "react-dom/client";
+
 import Spinner from "components/spinner/Spinner";
 import "assets/scss/style.min.css";
 import axiosSetup from "helpers/interceptors";
@@ -13,7 +15,7 @@ const App = lazy(() => new Promise((resolve) => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <Suspense fallback={<Spinner />}>
-    <App />
+  <Suspense fallback={<Spinner/>}>
+    <App/>
   </Suspense>
 )

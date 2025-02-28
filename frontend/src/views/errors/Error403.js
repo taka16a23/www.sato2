@@ -5,7 +5,7 @@ class Error403 extends Component {
 
   render() {
     return (
-      <div class="error-box" style={{background: "none"}}>
+      <div class="error-box">
         <div class="error-body text-center">
           <h1 class="error-title ">
             403

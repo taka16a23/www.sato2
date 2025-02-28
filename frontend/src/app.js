@@ -1,13 +1,16 @@
 import React, { Component } from "react";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
 import { configureStore } from "redux/Store";
 import { createBrowserHistory } from "history";
 import Layout from 'layouts/Layout';
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
 import enJson from 'locales/en.json';
 import jaJson from 'locales/ja.json';
+
 
 const History = createBrowserHistory({ basename: "/" });
 
