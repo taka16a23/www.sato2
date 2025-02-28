@@ -10,8 +10,8 @@ import SecurityKnowledge from 'views/SecurityKnowledge';
 import Formats from 'views/Formats';
 import Rules from 'views/about/rule/Rules';
 import Group from 'views/about/group/Group';
-import Hall from 'views/Hall';
-import Query from 'views/Query';
+import Hall from 'views/about/hall/Hall';
+import Query from 'views/about/query/Query';
 import BoardsPage from 'views/BoardsPage';
 import AliasRoutes from "routes/AliasRoutes";
 
