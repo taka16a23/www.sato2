@@ -6,7 +6,7 @@ import SideNavigations from 'components/SideNavigations';
 import NewsPage from 'views/NewsPage';
 import Activities from 'views/activities/Activities';
 import ActivityPage from 'views/ActivityPage';
-import SecurityKnowledge from 'views/SecurityKnowledge';
+import SecurityKnowledge from 'views/security/knowledge/SecurityKnowledge';
 import Formats from 'views/formats/Formats';
 import Rules from 'views/about/rule/Rules';
 import Group from 'views/about/group/Group';
