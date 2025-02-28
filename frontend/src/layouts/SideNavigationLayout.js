@@ -8,7 +8,7 @@ import Activities from 'views/activities/Activities';
 import ActivityPage from 'views/ActivityPage';
 import SecurityKnowledge from 'views/SecurityKnowledge';
 import Formats from 'views/Formats';
-import Rules from 'views/Rules';
+import Rules from 'views/about/rule/Rules';
 import Group from 'views/about/group/Group';
 import Hall from 'views/Hall';
 import Query from 'views/Query';
