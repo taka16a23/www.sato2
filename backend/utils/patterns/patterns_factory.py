@@ -44,8 +44,8 @@ class PatternFactory(object):
     LOCALE = re.LOCALE
     L = re.L
 
-    TEMPLATE = re.TEMPLATE
-    T = re.T
+    # TEMPLATE = re.TEMPLATE
+    # T = re.T
 
     UNICODE = re.UNICODE
     U = re.U
