@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Routes, Route } from "react-router-dom";
 
 import Header from 'components/Header';
-import SecurityPortal from 'views/SecurityPortal';
+import SecurityPortal from 'views/security/portal/SecurityPortal';
 import Home from 'views/Home';
 import SideNavigationLayout from 'layouts/SideNavigationLayout';
 import Footer from 'components/Footer';
