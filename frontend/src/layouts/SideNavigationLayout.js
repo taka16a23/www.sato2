@@ -9,7 +9,7 @@ import ActivityPage from 'views/ActivityPage';
 import SecurityKnowledge from 'views/SecurityKnowledge';
 import Formats from 'views/Formats';
 import Rules from 'views/Rules';
-import Group from 'views/Group';
+import Group from 'views/about/group/Group';
 import Hall from 'views/Hall';
 import Query from 'views/Query';
 import BoardsPage from 'views/BoardsPage';
