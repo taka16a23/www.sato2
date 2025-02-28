@@ -1,17 +1,20 @@
 import React, { Component, lazy } from 'react';
+
 import { Routes, Route } from "react-router-dom";
+
+import SideNavigations from 'components/SideNavigations';
 import NewsPage from 'views/NewsPage';
-import Activities from 'views/Activities';
+import Activities from 'views/activities/Activities';
 import ActivityPage from 'views/ActivityPage';
 import SecurityKnowledge from 'views/SecurityKnowledge';
 import Formats from 'views/Formats';
 import Rules from 'views/Rules';
-import Hall from 'views/Hall';
 import Group from 'views/Group';
+import Hall from 'views/Hall';
 import Query from 'views/Query';
 import BoardsPage from 'views/BoardsPage';
 import AliasRoutes from "routes/AliasRoutes";
-import SideNavigations from 'components/SideNavigations';
+
 
 const Error403 = lazy(() => new Promise((resolve) => {
   setTimeout(() => resolve(import("views/errors/Error403")), 0);

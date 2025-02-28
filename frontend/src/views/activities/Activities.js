@@ -91,7 +91,7 @@ class ActivitiesComponent extends Component {
             <span className="title">{this.props.activity.year + '年 '} 活動報告</span>
           </h2>
           <ul className="tile-list">
-            {this.props.activity.models.map((oModel) =>
+            {this.props.activity.models.length <= 0 ? <div style={{marginLeft: "auto", marginRight: "auto"}}>表示する記事がありません。</div> : this.props.activity.models.map((oModel) =>
               <li className="tile-item" key={oModel.id}>
                 <NavLink to={AliasRoutes.Activity.replace(':id', oModel.id)}>
                   <img className="tile-image" src={oModel.image} alt={oModel.title}/>
