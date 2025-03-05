@@ -27,9 +27,17 @@ class SecurityKnowledgeModelViewset(viewsets.ModelViewSet):
     serializer_class = SecurityKnowledgeModelSerializer
 
     queryset = SecurityKnowledgeModel.objects.filter(
-        status=DisplayStatusChoices.PUBLISHED).filter(
-            publish_date__lte=datetime.now()).filter(
-                Q(expiry_date__gte=datetime.now())|Q(expiry_date__isnull=True))
+        status=DisplayStatusChoices.PUBLISHED)
+
+    def filter_queryset(self, queryset):
+        """一覧絞り込みクエリを取得
+
+        最大件数(limit)を拡張
+        """
+        queryset = super(SecurityKnowledgeModelViewset, self).filter_queryset(queryset)
+        queryset = queryset.filter(publish_date__lte=datetime.now()).filter(
+            Q(expiry_date__gte=datetime.now())|Q(expiry_date__isnull=True))
+        return queryset
 
 
 
