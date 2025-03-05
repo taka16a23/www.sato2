@@ -27,9 +27,17 @@ class FrequentlyQuetionAnswerModelViewset(viewsets.ModelViewSet):
     serializer_class = FrequentlyQuetionAnswerModelSerializer
 
     queryset = FrequentlyQuetionAnswerModel.objects.filter(
-        status=DisplayStatusChoices.PUBLISHED).filter(
-            publish_date__lte=datetime.now()).filter(
-                Q(expiry_date__gte=datetime.now())|Q(expiry_date__isnull=True))
+        status=DisplayStatusChoices.PUBLISHED)
+
+    def filter_queryset(self, queryset):
+        """一覧絞り込みクエリを取得
+
+        最大件数(limit)を拡張
+        """
+        queryset = super(FrequentlyQuetionAnswerModelViewset, self).filter_queryset(queryset)
+        queryset = queryset.filter(publish_date__lte=datetime.now()).filter(
+            Q(expiry_date__gte=datetime.now())|Q(expiry_date__isnull=True))
+        return queryset
 
 
 

@@ -28,9 +28,7 @@ class ActivityModelViewset(viewsets.ModelViewSet):
     ]
     http_method_names = ['get', ]
     queryset = ActivityModel.objects.filter(
-        status=DisplayStatusChoices.PUBLISHED).filter(
-            publish_date__lte=datetime.now()).filter(
-                Q(expiry_date__gte=datetime.now())|Q(expiry_date__isnull=True))
+        status=DisplayStatusChoices.PUBLISHED)
     serializer_class = ActivityModelSerializer
     filterset_fields = ['id', ]
 
@@ -40,6 +38,8 @@ class ActivityModelViewset(viewsets.ModelViewSet):
         公開年指定(year)
         """
         queryset = super(ActivityModelViewset, self).filter_queryset(queryset)
+        queryset = queryset.filter(publish_date__lte=datetime.now()).filter(
+            Q(expiry_date__gte=datetime.now())|Q(expiry_date__isnull=True))
         id_ = self.request.GET.get('id', None)
         if id_ is not None and id_.isdigit() == True:
             queryset = queryset.filter(id=id_)

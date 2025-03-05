@@ -25,9 +25,7 @@ class NewsModelViewset(viewsets.ModelViewSet):
     ]
     http_method_names = ['get', ]
     queryset = NewsModel.objects.filter(
-        status=DisplayStatusChoices.PUBLISHED).filter(
-            publish_date__lte=datetime.now()).filter(
-                Q(expiry_date__gte=datetime.now())|Q(expiry_date__isnull=True))
+        status=DisplayStatusChoices.PUBLISHED)
     serializer_class = NewsModelSerializer
 
     def filter_queryset(self, queryset):
@@ -36,6 +34,8 @@ class NewsModelViewset(viewsets.ModelViewSet):
         最大件数(limit)を拡張
         """
         queryset = super(NewsModelViewset, self).filter_queryset(queryset)
+        queryset = queryset.filter(publish_date__lte=datetime.now()).filter(
+            Q(expiry_date__gte=datetime.now())|Q(expiry_date__isnull=True))
         year = self.request.GET.get('year', None)
         if year is not None and year.isdigit() == True:
             queryset = queryset.filter(publish_date__year=year)
