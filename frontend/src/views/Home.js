@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { NavLink } from 'react-router-dom'
-import NewsList from 'components/NewsList'
-import SideNavigations from 'components/SideNavigations';
-import TodayEvents from 'components/TodayEvents';
-import TomorrowEvents from 'components/TomorrowEvents';
+
+import { NavLink } from 'react-router-dom';
 
 import { ServiceFactory } from 'services';
+import NewsList from 'components/NewsList';
 import AliasRoutes from "routes/AliasRoutes";
+import TodayEvents from 'components/TodayEvents';
+import TomorrowEvents from 'components/TomorrowEvents';
+import SideNavigations from 'components/SideNavigations';
 
 
 class HomeComponent extends Component {

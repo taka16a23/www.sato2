@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { NavLink } from 'react-router-dom'
-import { slide as BurgerMenu } from 'react-burger-menu'
+
+import { NavLink } from 'react-router-dom';
+
+import { slide as BurgerMenu } from 'react-burger-menu';
 import SideNavigations from 'components/SideNavigations';
-
 import AliasRoutes from "routes/AliasRoutes";
-
 import header_img from 'assets/images/header.webp';
 
 

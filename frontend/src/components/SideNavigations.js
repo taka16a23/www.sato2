@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { NavLink } from 'react-router-dom'
+
+import { NavLink } from 'react-router-dom';
+
 import NewsNavigation from 'components/NewsNavigation';
 import ActivityNavigation from 'components/ActivityNavigation';
 import SecurityNavigation from 'components/SecurityNavigatoin';
 import AboutNavigation from 'components/AboutNavitaion';
 import BoardNavigation from 'components/BoardNavigation';
-
-
 import AliasRoutes from "routes/AliasRoutes";
 
 

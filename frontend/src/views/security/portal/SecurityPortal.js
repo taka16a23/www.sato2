@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import AliasRoutes from "routes/AliasRoutes";
-import { Timeline } from 'react-twitter-widgets'
-import WeatherAlert from 'components/WeatherAlert'
-import Emergency from 'components/Emergency'
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
 
 import axios from "axios";
 import moment from "moment";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import { Timeline } from 'react-twitter-widgets';
+
+import AliasRoutes from "routes/AliasRoutes";
+import WeatherAlert from 'components/WeatherAlert';
+import Emergency from 'components/Emergency';
 
 
 class SecurityPortalComponent extends Component {

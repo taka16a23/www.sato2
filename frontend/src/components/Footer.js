@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom'
 
 import { ServiceFactory } from 'services';
 import AliasRoutes from "routes/AliasRoutes";
@@ -56,7 +57,6 @@ class Footer extends Component {
     }).catch(err => {
       alert(err);
     });
-
   }
 
   handleNewsOnClick(year) {
@@ -88,7 +88,6 @@ class Footer extends Component {
   handleOnClick(ev) {
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
-
 
   render() {
     return (
