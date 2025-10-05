@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ServiceFactory } from 'services';
-import ContentLoader from "react-content-loader"
+import ContentLoader from "react-content-loader";
 
 
 class SatoFormats extends Component {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ContentLoader from "react-content-loader"
+import ContentLoader from "react-content-loader";
 
 import { ServiceFactory } from 'services';
 

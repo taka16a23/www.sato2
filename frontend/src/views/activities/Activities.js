@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { withRouter } from "helpers/withRouter";
-import { NavLink } from 'react-router-dom'
-import moment from 'moment'
+import { NavLink } from 'react-router-dom';
+import moment from 'moment';
 import AliasRoutes from "routes/AliasRoutes";
 import { ServiceFactory } from 'services';
 import {
   setActivityYear,
   setActivityModels,
 } from 'redux/activity/Action';
-import ContentLoader from "react-content-loader"
+import ContentLoader from "react-content-loader";
 
 
 class ActivitiesComponent extends Component {

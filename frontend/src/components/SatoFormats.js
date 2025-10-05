@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { ServiceFactory } from 'services';
 import downlaodImg from 'assets/images/formats_download.svg';
 import formImg from 'assets/images/formats_form.svg';
-import ContentLoader from "react-content-loader"
+import ContentLoader from "react-content-loader";
 
 
 class SatoFormats extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { ServiceFactory } from 'services';
-import moment from 'moment'
+import moment from 'moment';
 
 
 export default class TodayMainEvents extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import SatoFormats from 'components/SatoFormats'
-import OtherFormats from 'components/OtherFormats'
+import SatoFormats from 'components/SatoFormats';
+import OtherFormats from 'components/OtherFormats';
 
 
 class FormatsComponent extends Component {

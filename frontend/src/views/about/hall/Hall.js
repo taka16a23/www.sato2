@@ -6,8 +6,8 @@ import {
   closeHallRequestConfirmModal,
 } from "redux/modals/Action";
 import { HallRequestModel } from 'models';
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 
 class HallComponent extends Component {
